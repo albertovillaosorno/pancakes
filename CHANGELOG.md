@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-07-25
+
+- Marked Pancakes as an unmaintained historical project without archiving the repository.
+- Recorded the project start as April 2026.
+
 ## 2026-06-19
 
 - `c461403` chore(catalog): document mcp export boundary

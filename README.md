@@ -1,12 +1,14 @@
 # Pancakes
 
+> Project started: April 2026.
+
 Pancakes is a static-analysis engine for automation blueprints. It parses them
 into a language-neutral IR, validates that IR against a rule set covering
 security and delivery correctness, and renders client-safe output.
 Make.com is the first implemented source language, not the system model.
 
-> **Archived.** This repository is published as a record of how the engine was
-> built. It is not maintained and accepts no issues or pull requests.
+> **Status: unmaintained.** This is an older project kept as a record of the work.
+> It will not receive further maintenance.
 
 ## What is here
 
