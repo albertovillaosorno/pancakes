@@ -1,0 +1,14 @@
+{
+  "status": "rejected",
+  "findings": [
+    {
+      "code_prefix": "import",
+      "code_suffix": "ability.placeholder_unresolved",
+      "severity": "error",
+      "node_id": "2",
+      "path": ["flow", 1, "parameters", "url"],
+      "client_message": "A blueprint field still contains an unresolved handoff placeholder.",
+      "internal_message": "Fixture placeholder failure: node 2 still contains placeholder text."
+    }
+  ]
+}

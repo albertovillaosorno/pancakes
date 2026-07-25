@@ -1,0 +1,104 @@
+{
+  "name": "layout-router-two-branches",
+  "flow": [
+    {
+      "id": "1",
+      "module": "builtin:BasicRouter",
+      "version": 1,
+      "parameters": {
+        "strategy": "first-match"
+      },
+      "mapper": {
+        "source": "{{1.body}}"
+      },
+      "metadata": {
+        "designer": {
+          "x": -1,
+          "y": -1,
+          "messages": []
+        }
+      },
+      "routes": [
+        {
+          "filter": {
+            "name": "Qualified",
+            "conditions": {
+              "status": "qualified"
+            }
+          },
+          "flow": [
+            {
+              "id": "2",
+              "module": "http:MakeRequest",
+              "version": 1,
+              "parameters": {
+                "url": "https://example.invalid/qualified"
+              },
+              "mapper": {
+                "body": "{{1.lead}}"
+              },
+              "metadata": {
+                "designer": {
+                  "x": -1,
+                  "y": -1,
+                  "messages": []
+                }
+              }
+            }
+          ]
+        },
+        {
+          "filter": {
+            "name": "Review",
+            "conditions": {
+              "status": "review"
+            }
+          },
+          "flow": [
+            {
+              "id": "3",
+              "module": "json:ParseJSON",
+              "version": 1,
+              "parameters": {
+                "schema": "demo-only"
+              },
+              "mapper": {
+                "json": "{{1.lead}}"
+              },
+              "metadata": {
+                "designer": {
+                  "x": -1,
+                  "y": -1,
+                  "messages": []
+                }
+              }
+            },
+            {
+              "id": "4",
+              "module": "slack:CreateMessage",
+              "version": 1,
+              "parameters": {
+                "channel": "demo-review"
+              },
+              "mapper": {
+                "text": "{{3.summary}}"
+              },
+              "metadata": {
+                "designer": {
+                  "x": -1,
+                  "y": -1,
+                  "messages": []
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "scenario": {
+      "name": "layout-router-two-branches"
+    }
+  }
+}

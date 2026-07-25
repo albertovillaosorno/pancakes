@@ -1,0 +1,9 @@
+[
+  {
+    "category": "designer_layout",
+    "severity": "warning",
+    "message": "The modules are close together.",
+    "module": "webhooks:CustomWebhook",
+    "evidence_path": "$.flow[0].metadata.designer.messages[0]"
+  }
+]

@@ -1,0 +1,93 @@
+{
+  "flow": [
+    {
+      "id": 1,
+      "metadata": {
+        "designer": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "module": "builtin:BasicRouter",
+      "routes": [
+        {
+          "filter": {
+            "condition": "{{2.lead_score}} > 50"
+          },
+          "flow": [
+            {
+              "connection": "runtime_connection_draft",
+              "id": 2,
+              "mapper": {
+                "method": "POST",
+                "url": "{{runtime_endpoint}}"
+              },
+              "metadata": {
+                "designer": {
+                  "x": 220,
+                  "y": 20
+                }
+              },
+              "module": "http:MakeRequest",
+              "version": 3
+            }
+          ]
+        },
+        {
+          "filter": {
+            "condition": "{{2.region}} = \"north\""
+          },
+          "flow": [
+            {
+              "id": 3,
+              "mapper": {
+                "table": "fixture_leads"
+              },
+              "metadata": {
+                "designer": {
+                  "x": 220,
+                  "y": 180
+                }
+              },
+              "module": "datastore:AddRecord",
+              "version": 1
+            }
+          ]
+        }
+      ],
+      "version": 1
+    },
+    {
+      "connection": "runtime_connection_draft",
+      "id": 4,
+      "mapper": {
+        "method": "POST",
+        "url": "{{runtime_endpoint}}"
+      },
+      "metadata": {
+        "designer": {
+          "x": 480,
+          "y": 80
+        }
+      },
+      "module": "http:MakeRequest",
+      "version": 3
+    }
+  ],
+  "metadata": {
+    "notes": [
+      {
+        "content": "Synthetic generated fixture.",
+        "metadata": {
+          "color": "blue"
+        },
+        "moduleIds": ["1"]
+      }
+    ],
+    "scenario": {
+      "fixture_stage": "generated",
+      "name": "Router Diff Fixture"
+    }
+  },
+  "name": "synthetic-router-diff"
+}

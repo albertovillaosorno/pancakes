@@ -1,0 +1,13 @@
+{
+  "create_scenario_entrypoint": true,
+  "credentials_nav": true,
+  "data_stores_nav": true,
+  "data_structures_nav": true,
+  "mcp_toolboxes_nav": true,
+  "scenarios_nav": true,
+  "schema_version": 1,
+  "secret_like_text_detected": false,
+  "templates_nav": true,
+  "url_host": "us2.make.com",
+  "webhooks_nav": true
+}

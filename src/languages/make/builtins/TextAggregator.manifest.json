@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "asset": "make_module_projector_manifest",
+  "visibility": "private_engine_asset",
+  "module": "util:TextAggregator",
+  "aliases": ["text aggregator", "tools:TextAggregator", "util.TextAggregator"],
+  "native_token": "util:TextAggregator",
+  "version_policy": {
+    "kind": "fixed",
+    "version": 1
+  },
+  "projector": {
+    "kind": "text_aggregator"
+  },
+  "mapper_policy": {
+    "kind": "text_value",
+    "required_keys": ["value"]
+  },
+  "parameters_policy": {
+    "required_keys": ["feeder"]
+  },
+  "metadata_expect_policy": {
+    "kind": "text_value",
+    "required_keys": ["value"]
+  },
+  "metadata_restore_policy": {
+    "kind": "aggregator_source_and_row_separator"
+  },
+  "metadata_interface_policy": {
+    "kind": "text_output",
+    "required_keys": ["text"]
+  },
+  "connection_projection_policy": {
+    "kind": "none"
+  },
+  "placeholder_policy": {
+    "mode": "none",
+    "placeholders": []
+  },
+  "volatile_field_policy": {
+    "known_paths": [
+      "metadata.designer",
+      "metadata.restore.feeder.label",
+      "metadata.restore.extra.feeder.label"
+    ]
+  },
+  "zero_trace_constraints": {
+    "private_fields_forbidden": true,
+    "customer_artifact": false
+  },
+  "roundtrip_behavior": {
+    "status": "fixture_observed",
+    "notes": "Text Aggregator combines feeder bundle text into one text output."
+  },
+  "confidence": "medium",
+  "fixtures": [
+    "src/languages/make/data/golden/data/public/top100/042-4066-4066-generate-a-random-string-text.blueprint.json",
+    "tests/mcp/tool_contracts/mcp_make_builtin_manifest_contract.py"
+  ],
+  "last_evidence_source": "local_fixture"
+}

@@ -1,0 +1,119 @@
+{
+  "api_surface": "make_mcp_typed_tools",
+  "capabilities_proven": [
+    "datastore_create",
+    "datastore_delete",
+    "datastore_record_create",
+    "datastore_record_delete_batch",
+    "datastore_record_upsert_batch",
+    "datastore_strict_schema_validation",
+    "datastore_update_schema"
+  ],
+  "cleanup_counts": {
+    "data_stores": 0,
+    "data_structures": 0
+  },
+  "credential_value_transfer": false,
+  "credentials_printed": false,
+  "customer_data_used": false,
+  "data_store_delete_response": "Data store has been deleted.",
+  "data_structure_delete_response": "Data structure has been deleted.",
+  "invalid_record_response_shape": {
+    "error_class": "schema_validation_failed",
+    "error_count": 2,
+    "error_messages": [
+      "missing_required_request_id",
+      "invalid_number_amount"
+    ]
+  },
+  "live_make_called": true,
+  "provider_api_call": true,
+  "record_delete_response": "Records have been deleted.",
+  "request_contract": {
+    "data_store_create": {
+      "datastructureId": "int",
+      "maxSizeMB": "int",
+      "name": "string",
+      "teamId": "int"
+    },
+    "data_structure_create": {
+      "name": "string",
+      "required_fields": [
+        "request_id"
+      ],
+      "strict": "bool_true",
+      "teamId": "int",
+      "typed_fields": [
+        "amount",
+        "request_id",
+        "status"
+      ]
+    },
+    "invalid_record_create": {
+      "data.amount": "invalid_number_string",
+      "data.request_id": "missing",
+      "data.status": "string",
+      "dataStoreId": "int",
+      "key": "string"
+    },
+    "valid_record_create": {
+      "data.amount": "number",
+      "data.request_id": "string",
+      "data.status": "string",
+      "dataStoreId": "int",
+      "key": "string"
+    }
+  },
+  "scenario_activation_called": false,
+  "scenario_run_once_called": false,
+  "schema_version": 1,
+  "secret_output": false,
+  "status": "datastore_strict_schema_validation_probe_captured",
+  "steps": [
+    {
+      "name": "data_structures_create_strict_schema",
+      "status": "ok"
+    },
+    {
+      "name": "data_stores_create_strict_store",
+      "status": "ok"
+    },
+    {
+      "name": "data_store_records_create_invalid_rejected",
+      "status": "ok"
+    },
+    {
+      "name": "data_store_records_create_valid_accepted",
+      "status": "ok"
+    },
+    {
+      "name": "data_store_records_delete_valid",
+      "status": "ok"
+    },
+    {
+      "name": "data_stores_delete",
+      "status": "ok"
+    },
+    {
+      "name": "data_structures_delete",
+      "status": "ok"
+    },
+    {
+      "name": "cleanup_data_stores_list",
+      "status": "empty"
+    },
+    {
+      "name": "cleanup_data_structures_list",
+      "status": "empty"
+    }
+  ],
+  "valid_record_response_shape": {
+    "data": {
+      "amount": "number",
+      "request_id": "string",
+      "status": "string"
+    },
+    "key": "string"
+  },
+  "validation_actor": "codex_make_mcp_typed_tools"
+}

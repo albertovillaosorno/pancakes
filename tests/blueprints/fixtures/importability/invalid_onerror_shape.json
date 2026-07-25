@@ -1,0 +1,30 @@
+{
+  "flow": [
+    {
+      "id": 1,
+      "module": "http:MakeRequest",
+      "onerror": [
+        {
+          "id": 2,
+          "module": "builtin:Ignore",
+          "onerror": [
+            {
+              "id": 3,
+              "module": "builtin:Break"
+            }
+          ]
+        }
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "https://example.invalid/items"
+      }
+    }
+  ],
+  "metadata": {
+    "schedule": {
+      "id": "schedule:manual"
+    }
+  },
+  "name": "invalid-onerror-shape"
+}

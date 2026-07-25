@@ -1,0 +1,19 @@
+{
+  "expected_outputs": [
+    {
+      "lead_id": "lead-001",
+      "route": "qualified",
+      "destination": "qualified"
+    },
+    {
+      "lead_id": "lead-002",
+      "route": "incomplete",
+      "destination": "incomplete"
+    },
+    {
+      "lead_id": "lead-003",
+      "route": "incomplete",
+      "destination": "incomplete"
+    }
+  ]
+}

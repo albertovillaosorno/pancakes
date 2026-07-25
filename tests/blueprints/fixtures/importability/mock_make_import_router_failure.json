@@ -1,0 +1,14 @@
+{
+  "status": "rejected",
+  "findings": [
+    {
+      "code_prefix": "import",
+      "code_suffix": "ability.router_topology",
+      "severity": "error",
+      "node_id": "1",
+      "path": ["flow", 0, "routes"],
+      "client_message": "A router needs at least one usable route before import.",
+      "internal_message": "Fixture router failure: node 1 has no importable route flow."
+    }
+  ]
+}

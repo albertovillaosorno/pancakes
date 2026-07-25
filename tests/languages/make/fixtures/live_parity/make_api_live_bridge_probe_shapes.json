@@ -1,0 +1,80 @@
+{
+  "api_doc_refs": [
+    "https://developers.make.com/api-documentation/api-reference/hooks",
+    "https://developers.make.com/api-documentation/api-reference/connections",
+    "https://developers.make.com/api-documentation/api-reference/data-structures",
+    "https://developers.make.com/api-documentation/api-reference/data-stores",
+    "https://developers.make.com/api-documentation/api-reference/data-stores/data"
+  ],
+  "api_surface": "make_api_v2",
+  "blockers": [],
+  "capabilities_proven": [
+    "connection_list_metadata",
+    "webhook_create_or_select",
+    "webhook_delete_or_cleanup",
+    "datastore_create",
+    "datastore_list",
+    "datastore_record_create",
+    "datastore_record_update",
+    "datastore_record_upsert_batch",
+    "datastore_record_delete_batch"
+  ],
+  "cleanup_status": "scratch_resources_deleted",
+  "credential_value_transfer": false,
+  "credentials_printed": false,
+  "customer_data_used": false,
+  "live_make_called": true,
+  "provider_api_call": true,
+  "scenario_activation_called": false,
+  "scenario_run_once_called": false,
+  "schema_version": 1,
+  "secret_output": false,
+  "status": "live_bridge_probe_captured",
+  "steps": [
+    {
+      "name": "connections_list_metadata",
+      "status": "ok"
+    },
+    {
+      "name": "hooks_create_gateway_webhook",
+      "status": "ok"
+    },
+    {
+      "name": "hooks_ping_gateway_webhook",
+      "status": "ok"
+    },
+    {
+      "name": "data_structures_create",
+      "status": "ok"
+    },
+    {
+      "name": "data_stores_create",
+      "status": "ok"
+    },
+    {
+      "name": "data_store_records_create",
+      "status": "ok"
+    },
+    {
+      "name": "data_store_records_update",
+      "status": "ok"
+    },
+    {
+      "name": "data_store_records_delete_batch",
+      "status": "ok"
+    },
+    {
+      "name": "cleanup_data_stores_delete",
+      "status": "ok"
+    },
+    {
+      "name": "cleanup_data_structures_delete",
+      "status": "ok"
+    },
+    {
+      "name": "cleanup_hooks_delete",
+      "status": "ok"
+    }
+  ],
+  "validation_actor": "codex_terminal_make_api"
+}

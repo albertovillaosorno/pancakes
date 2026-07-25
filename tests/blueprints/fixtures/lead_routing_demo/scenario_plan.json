@@ -1,0 +1,34 @@
+{
+  "scenario_id": "portfolio-demo-lead-routing",
+  "publication_status": "draft_not_publishable",
+  "intake": {
+    "kind": "webhook_or_form",
+    "required_fields": ["email", "company", "source", "score", "notes"],
+    "validation_rules": [
+      "email must contain @ and use a fake example domain in fixtures",
+      "company must be present",
+      "source must be one of website, referral, event, partner",
+      "score must be numeric"
+    ]
+  },
+  "routes": [
+    {
+      "route_id": "qualified",
+      "condition": "score >= 80 and email/company/source are present",
+      "destination": "demo_datastore_qualified_leads",
+      "notification": "demo_sales_notification"
+    },
+    {
+      "route_id": "incomplete",
+      "condition": "required field missing or score < 80",
+      "destination": "demo_datastore_review_queue",
+      "notification": "demo_ops_notification"
+    }
+  ],
+  "notes": [
+    "No real webhook URL is stored.",
+    "No credential or account-specific value is stored.",
+    "Qualified and incomplete leads are written to fake Make Data Store destinations for the MVP.",
+    "Scenario can become publishable only after all modules resolve in the validated catalog."
+  ]
+}

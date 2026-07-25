@@ -1,0 +1,327 @@
+{
+  "flow": [
+    {
+      "id": 1,
+      "mapper": {},
+      "metadata": {
+        "designer": {
+          "x": 100,
+          "y": 4200
+        },
+        "interface": [
+          {
+            "name": "email",
+            "type": "email"
+          },
+          {
+            "name": "company",
+            "type": "text"
+          },
+          {
+            "name": "score",
+            "type": "number"
+          }
+        ],
+        "restore": {
+          "parameters": {
+            "hook": {
+              "label": "Roundtrip intake"
+            }
+          }
+        }
+      },
+      "module": "gateway:CustomWebHook",
+      "parameters": {
+        "hook": "roundtrip-intake-hook"
+      },
+      "version": 1
+    },
+    {
+      "id": 2,
+      "metadata": {
+        "designer": {
+          "x": 400,
+          "y": 4200
+        }
+      },
+      "module": "builtin:BasicRouter",
+      "routes": [
+        {
+          "filter": {
+            "conditions": [
+              [
+                {
+                  "a": "{{1.score}}",
+                  "b": 80,
+                  "o": "number:greater"
+                }
+              ]
+            ],
+            "name": "qualified"
+          },
+          "flow": [
+            {
+              "id": 3,
+              "mapper": {
+                "array": "{{1.line_items}}"
+              },
+              "metadata": {
+                "designer": {
+                  "x": 1000,
+                  "y": 3600
+                },
+                "expect": [
+                  {
+                    "name": "array",
+                    "required": true,
+                    "type": "array"
+                  }
+                ]
+              },
+              "module": "builtin:Iterator",
+              "version": 1
+            },
+            {
+              "id": 4,
+              "mapper": {
+                "source": "{{3.value}}",
+                "target": "array"
+              },
+              "metadata": {
+                "designer": {
+                  "x": 1600,
+                  "y": 3600
+                },
+                "expect": [
+                  {
+                    "name": "source",
+                    "required": true,
+                    "type": "any"
+                  }
+                ]
+              },
+              "module": "builtin:BasicAggregator",
+              "version": 1
+            },
+            {
+              "id": 5,
+              "mapper": {
+                "agent": "lead-scoring-agent",
+                "input": "{{4.array}}",
+                "prompt": "Score lead {{1.email}} for {{1.company}}"
+              },
+              "metadata": {
+                "designer": {
+                  "x": 2200,
+                  "y": 3600
+                },
+                "expect": [
+                  {
+                    "name": "prompt",
+                    "required": true,
+                    "type": "text"
+                  }
+                ],
+                "restore": {
+                  "parameters": {
+                    "agent": {
+                      "label": "Lead scoring agent"
+                    }
+                  }
+                }
+              },
+              "module": "ai-local-agent:RunLocalAIAgent",
+              "tools": [
+                {
+                  "flow": [
+                    {
+                      "id": 11,
+                      "mapper": {
+                        "query": "{{1.company}}"
+                      },
+                      "metadata": {
+                        "designer": {
+                          "x": 2500,
+                          "y": 3900
+                        }
+                      },
+                      "module": "make-ai-web-search:generateAResponse",
+                      "version": 1
+                    }
+                  ]
+                }
+              ],
+              "version": 1
+            },
+            {
+              "id": 6,
+              "mapper": {
+                "model": "gpt-5.5",
+                "textPrompt": "{{5.result}}"
+              },
+              "metadata": {
+                "designer": {
+                  "x": 2800,
+                  "y": 3600
+                },
+                "expect": [
+                  {
+                    "name": "model",
+                    "required": true,
+                    "type": "select"
+                  },
+                  {
+                    "name": "textPrompt",
+                    "required": true,
+                    "type": "text"
+                  }
+                ],
+                "restore": {
+                  "expect": {
+                    "model": {
+                      "label": "GPT-5.5"
+                    }
+                  },
+                  "parameters": {
+                    "__IMTCONN__": {
+                      "label": "OpenAI connection"
+                    }
+                  }
+                }
+              },
+              "module": "openai-gpt-3:askAnything",
+              "parameters": {
+                "__IMTCONN__": "openai-placeholder"
+              },
+              "version": 1
+            }
+          ]
+        },
+        {
+          "filter": {
+            "conditions": [
+              [
+                {
+                  "a": "{{1.email}}",
+                  "o": "exist"
+                }
+              ]
+            ]
+          },
+          "flow": [
+            {
+              "id": 7,
+              "mapper": {
+                "data": {
+                  "company": "{{1.company}}",
+                  "email": "{{1.email}}",
+                  "score": "{{1.score}}",
+                  "source": "roundtrip"
+                },
+                "key": "{{1.email}}",
+                "overwrite": false
+              },
+              "metadata": {
+                "designer": {
+                  "x": 1000,
+                  "y": 4800
+                },
+                "expect": [
+                  {
+                    "name": "key",
+                    "required": true,
+                    "type": "text"
+                  },
+                  {
+                    "name": "data",
+                    "required": true,
+                    "type": "collection"
+                  }
+                ],
+                "restore": {
+                  "parameters": {
+                    "datastore": {
+                      "label": "Roundtrip leads"
+                    }
+                  }
+                }
+              },
+              "module": "datastore:AddRecord",
+              "onerror": [
+                {
+                  "flow": [
+                    {
+                      "id": 12,
+                      "mapper": {
+                        "duration": 5
+                      },
+                      "metadata": {
+                        "designer": {
+                          "x": 1300,
+                          "y": 5100
+                        }
+                      },
+                      "module": "util:FunctionSleep",
+                      "version": 1
+                    }
+                  ]
+                }
+              ],
+              "parameters": {
+                "datastore": "roundtrip-leads"
+              },
+              "version": 2
+            }
+          ]
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": 8,
+      "mapper": {
+        "channel": "roundtrip-ops",
+        "text": "{{6.result}}"
+      },
+      "metadata": {
+        "designer": {
+          "x": 3400,
+          "y": 4200
+        },
+        "restore": {
+          "parameters": {
+            "__IMTCONN__": {
+              "label": "Slack connection"
+            }
+          }
+        }
+      },
+      "module": "slack:CreateMessage",
+      "parameters": {
+        "__IMTCONN__": "slack-placeholder"
+      },
+      "version": 4
+    }
+  ],
+  "metadata": {
+    "export": {
+      "revisionCounter": 4
+    },
+    "notes": [
+      {
+        "content": "<h2>Roundtrip parity fixture</h2><p>Synthetic notes survive export.</p>",
+        "metadata": {
+          "color": "#9138FE"
+        },
+        "moduleIds": [
+          2
+        ]
+      }
+    ],
+    "scenario": {
+      "roundtrip_fixture": "make_reexport",
+      "sequential": false
+    }
+  },
+  "name": "roundtrip-parity-complex"
+}

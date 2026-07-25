@@ -1,0 +1,15 @@
+{
+  "name": "Golden privacy reference",
+  "metadata": {
+    "account_label": "Synthetic Private CRM Account"
+  },
+  "flow": [
+    {
+      "id": 1,
+      "module": "http:MakeRequest",
+      "mapper": {
+        "url": "https://example.invalid/api"
+      }
+    }
+  ]
+}

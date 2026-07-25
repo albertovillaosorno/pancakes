@@ -1,0 +1,268 @@
+{
+  "flow": [
+    {
+      "id": 1,
+      "mapper": {
+        "payload": "{{1.body}}",
+        "request_id": "{{1.headers.x-request-id}}"
+      },
+      "module": "gateway:CustomWebHook",
+      "parameters": {
+        "hook": "{{runtime.webhook.rich_project_smoke}}"
+      }
+    },
+    {
+      "id": 2,
+      "mapper": {
+        "json": "{{1.body}}",
+        "schema": "{{runtime.json_schema.rich_project_smoke}}"
+      },
+      "module": "json:ParseJSON"
+    },
+    {
+      "id": 3,
+      "module": "builtin:BasicRouter",
+      "routes": [
+        {
+          "filter": {
+            "condition": "{{2.priority}} = urgent",
+            "name": "Urgent Qualified Lead"
+          },
+          "flow": [
+            {
+              "id": 4,
+              "mapper": {
+                "data": {
+                  "email": "{{2.email}}",
+                  "priority": "{{2.priority}}",
+                  "request_id": "{{1.headers.x-request-id}}",
+                  "status": "stored"
+                },
+                "key": "{{1.headers.x-request-id}}",
+                "overwrite": false
+              },
+              "module": "datastore:AddRecord",
+              "onerror": [
+                {
+                  "directive": "resume",
+                  "flow": [
+                    {
+                      "id": 7,
+                      "mapper": {
+                        "text": "Datastore write failed for {{1.headers.x-request-id}}"
+                      },
+                      "module": "slack:ActionCreateMessage",
+                      "parameters": {
+                        "account": "{{runtime.connection.slack_ops}}",
+                        "channel": "{{runtime.slack.channel.ops_alerts}}"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "parameters": {
+                "datastore": "{{runtime.datastore.rich_project_smoke}}"
+              }
+            },
+            {
+              "id": 5,
+              "mapper": {
+                "text": "Urgent lead {{2.email}} needs review"
+              },
+              "module": "slack:ActionCreateMessage",
+              "parameters": {
+                "account": "{{runtime.connection.slack_ops}}",
+                "channel": "{{runtime.slack.channel.ops_alerts}}"
+              }
+            }
+          ]
+        },
+        {
+          "filter": {
+            "condition": "{{2.priority}} != urgent",
+            "name": "Routine Lead Follow Up"
+          },
+          "flow": [
+            {
+              "id": 6,
+              "mapper": {
+                "html": "<p>Thanks for contacting us. We received request {{1.headers.x-request-id}}.</p>",
+                "subject": "Request received",
+                "to": [
+                  "{{2.email}}"
+                ]
+              },
+              "module": "google-email:ActionSendEmail",
+              "parameters": {
+                "account": "{{runtime.connection.google_email_ops}}"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "notes": [
+      {
+        "body": "Receives the inbound request and exposes the request identifier.",
+        "note_kind": "module",
+        "sections": {
+          "Input": "Accepts the inbound request body and request identifier from the webhook.",
+          "Operator check": "Confirm the webhook is selected and available before handoff.",
+          "Output": "Makes the request body and identifier available to the parser.",
+          "Purpose": "Starts the customer workflow from the inbound webhook request."
+        },
+        "target_node_id": "1",
+        "title": "MOD-1 Webhook intake"
+      },
+      {
+        "body": "Parses the submitted JSON body for downstream routing fields.",
+        "note_kind": "module",
+        "sections": {
+          "Input": "Receives the webhook body and the configured parsing schema.",
+          "Operator check": "Confirm the expected JSON fields are present in the sample payload.",
+          "Output": "Produces parsed lead fields for routing and downstream actions.",
+          "Purpose": "Converts the inbound body into structured fields for the workflow."
+        },
+        "target_node_id": "2",
+        "title": "MOD-2 JSON parse"
+      },
+      {
+        "body": "Branches urgent and routine requests into separate handling paths.",
+        "note_kind": "module",
+        "sections": {
+          "Input": "Receives parsed lead fields including the priority value.",
+          "Operator check": "Confirm both route conditions match the customer priority policy.",
+          "Output": "Sends urgent and routine leads into their matching branches.",
+          "Purpose": "Chooses the correct handling path for each parsed lead."
+        },
+        "target_node_id": "3",
+        "title": "MOD-3 Router"
+      },
+      {
+        "body": "Stores urgent requests in the configured datastore.",
+        "note_kind": "module",
+        "sections": {
+          "Input": "Receives urgent lead identifiers, email, priority, and status fields.",
+          "Operator check": "Confirm the destination data store exists and accepts the mapped fields.",
+          "Output": "Creates or preserves the urgent lead record for operations follow-up.",
+          "Purpose": "Stores urgent lead details in the customer-owned data store."
+        },
+        "target_node_id": "4",
+        "title": "MOD-4 Datastore write"
+      },
+      {
+        "body": "Posts an urgent request summary to the operations channel.",
+        "note_kind": "module",
+        "sections": {
+          "Input": "Receives the stored urgent lead summary and contact fields.",
+          "Operator check": "Confirm the operations channel and account are selected in Make.",
+          "Output": "Posts a concise urgent lead notification to the operations channel.",
+          "Purpose": "Alerts the operations team when an urgent lead needs review."
+        },
+        "target_node_id": "5",
+        "title": "MOD-5 Slack alert"
+      },
+      {
+        "body": "Sends a routine acknowledgement email to the requester.",
+        "note_kind": "module",
+        "sections": {
+          "Input": "Receives the routine lead email address and acknowledgement content.",
+          "Operator check": "Confirm the sender account and email template are ready.",
+          "Output": "Sends the requester an acknowledgement for the received request.",
+          "Purpose": "Confirms receipt for routine leads without operations escalation."
+        },
+        "target_node_id": "6",
+        "title": "MOD-6 Email acknowledgement"
+      },
+      {
+        "body": "Reports datastore write failures without stopping the scenario.",
+        "note_kind": "module",
+        "sections": {
+          "Input": "Receives the failed datastore write context and request identifier.",
+          "Operator check": "Confirm the alert destination is monitored by operations.",
+          "Output": "Posts a failure notice while allowing controlled recovery behavior.",
+          "Purpose": "Notifies operations when urgent lead storage needs review."
+        },
+        "target_node_id": "7",
+        "title": "MOD-7 Error notification"
+      },
+      {
+        "body": "Passes the webhook body into the parser.",
+        "note_kind": "connection",
+        "sections": {
+          "Data contract": "The parser receives the request body and request identifier.",
+          "Failure signal": "A missing request body should pause activation review.",
+          "Handoff": "Moves the inbound webhook payload into the parser step."
+        },
+        "source_node_id": "1",
+        "target_node_id": "2",
+        "title": "CONN-1-2 Intake to parser"
+      },
+      {
+        "body": "Passes parsed fields into the router.",
+        "note_kind": "connection",
+        "sections": {
+          "Data contract": "The router receives parsed priority and contact fields.",
+          "Failure signal": "Missing priority should block route handoff review.",
+          "Handoff": "Moves parsed lead fields into the routing step."
+        },
+        "source_node_id": "2",
+        "target_node_id": "3",
+        "title": "CONN-2-3 Parser to router"
+      },
+      {
+        "body": "Sends urgent requests into the datastore path.",
+        "note_kind": "connection",
+        "sections": {
+          "Data contract": "The datastore receives request identity, email, priority, and status.",
+          "Failure signal": "Missing request identity should stop the storage handoff.",
+          "Handoff": "Moves urgent routed leads into the datastore write step."
+        },
+        "source_node_id": "3",
+        "target_node_id": "4",
+        "title": "CONN-3-4 Router to urgent store"
+      },
+      {
+        "body": "Posts a notification after the urgent request is stored.",
+        "note_kind": "connection",
+        "sections": {
+          "Data contract": "The notification receives the urgent lead summary after storage.",
+          "Failure signal": "Missing contact summary should stop notification handoff.",
+          "Handoff": "Moves stored urgent lead context into the operations alert."
+        },
+        "source_node_id": "4",
+        "target_node_id": "5",
+        "title": "CONN-4-5 Store to Slack"
+      },
+      {
+        "body": "Routes datastore failures into the error notification branch.",
+        "note_kind": "connection",
+        "sections": {
+          "Data contract": "The alert receives the failed write context and request identifier.",
+          "Failure signal": "Missing failure context should stop error notification handoff.",
+          "Handoff": "Moves datastore write failures into the operations alert branch."
+        },
+        "source_node_id": "4",
+        "target_node_id": "7",
+        "title": "CONN-4-7 Store to error notification"
+      },
+      {
+        "body": "Sends routine requests into the acknowledgement email path.",
+        "note_kind": "connection",
+        "sections": {
+          "Data contract": "The email step receives recipient address and acknowledgement content.",
+          "Failure signal": "Missing recipient address should stop email handoff.",
+          "Handoff": "Moves routine routed leads into the acknowledgement email step."
+        },
+        "source_node_id": "3",
+        "target_node_id": "6",
+        "title": "CONN-3-6 Router to routine email"
+      }
+    ],
+    "project_id": "fixture-rich-project-smoke",
+    "project_kind": "fixture_project"
+  },
+  "name": "Rich Project Smoke"
+}

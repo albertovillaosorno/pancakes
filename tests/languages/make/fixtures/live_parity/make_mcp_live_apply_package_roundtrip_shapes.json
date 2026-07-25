@@ -1,0 +1,108 @@
+{
+  "api_surface": "make_mcp_typed_tools",
+  "capabilities_proven": [
+    "live_apply_package",
+    "scenario_create",
+    "scenario_export",
+    "scenario_interface",
+    "scenario_delete"
+  ],
+  "cleanup_counts": {
+    "scratch_scenarios": 0
+  },
+  "credential_value_transfer": false,
+  "credentials_printed": false,
+  "customer_data_used": false,
+  "live_make_called": true,
+  "package_source_shape": {
+    "artifact_format": "make_blueprint_json",
+    "blueprint_readiness_status": "ready",
+    "module_count": 2,
+    "package_status": "ready",
+    "source_tool": "project.make",
+    "zero_trace_status": "passed"
+  },
+  "provider_api_call": true,
+  "request_contract": {
+    "scenario_create": {
+      "blueprint.flow.modules": [
+        "json:ParseJSON",
+        "json:CreateJSON"
+      ],
+      "blueprint.name": "string",
+      "confirmed": "bool_true",
+      "scheduling.type": "immediately",
+      "teamId": "int"
+    },
+    "validate_blueprint_schema": {
+      "message": "Blueprint is valid against the schema."
+    }
+  },
+  "scenario_activation_called": false,
+  "scenario_create_response_shape": {
+    "hookId": "none",
+    "id": "int",
+    "isActive": "bool_false",
+    "isinvalid": "bool_false",
+    "scheduling": {
+      "type": "immediately"
+    },
+    "teamId": "int",
+    "usedPackages": [
+      "json",
+      "json"
+    ]
+  },
+  "scenario_delete_response": "Scenario has been deleted.",
+  "scenario_get_blueprint_contract": {
+    "$.blueprint.flow.modules": [
+      "json:ParseJSON",
+      "json:CreateJSON"
+    ],
+    "$.blueprint.interface.input": [],
+    "$.blueprint.interface.output": [],
+    "$.blueprint.metadata.instant": "bool_true",
+    "$.blueprint.scheduling.type": "immediately",
+    "$.hookId": "none",
+    "$.isActive": "bool_false"
+  },
+  "scenario_interface_shape": {
+    "input": [],
+    "output": []
+  },
+  "scenario_run_once_called": false,
+  "schema_version": 1,
+  "secret_output": false,
+  "status": "live_apply_package_roundtrip_probe_captured",
+  "steps": [
+    {
+      "name": "project_make_package_zero_trace_ready",
+      "status": "ok"
+    },
+    {
+      "name": "validate_blueprint_schema",
+      "status": "ok"
+    },
+    {
+      "name": "scenarios_create_inactive_from_package_blueprint",
+      "status": "ok"
+    },
+    {
+      "name": "scenarios_get_export_package_blueprint",
+      "status": "ok"
+    },
+    {
+      "name": "scenarios_interface_empty",
+      "status": "ok"
+    },
+    {
+      "name": "cleanup_scenarios_delete",
+      "status": "ok"
+    },
+    {
+      "name": "cleanup_scratch_scenarios_count",
+      "status": "empty"
+    }
+  ],
+  "validation_actor": "codex_make_mcp_typed_tools"
+}

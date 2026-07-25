@@ -1,0 +1,41 @@
+{
+  "flow": [
+    {
+      "id": 1,
+      "metadata": {
+        "designer": {
+          "messages": [
+            {
+              "category": "last",
+              "message": "A transformer should not be the last module in the route.",
+              "severity": "warning"
+            }
+          ],
+          "x": -46,
+          "y": 47
+        }
+      },
+      "module": "json:ParseJSON",
+      "version": 1
+    }
+  ],
+  "metadata": {
+    "designer": {
+      "orphans": []
+    },
+    "instant": false,
+    "scenario": {
+      "autoCommit": true,
+      "autoCommitTriggerLast": true,
+      "confidential": false,
+      "dataloss": false,
+      "dlq": false,
+      "freshVariables": false,
+      "maxErrors": 3,
+      "roundtrips": 1,
+      "sequential": false
+    },
+    "version": 1
+  },
+  "name": "Live parity JSON ParseJSON roundtrip fixture"
+}

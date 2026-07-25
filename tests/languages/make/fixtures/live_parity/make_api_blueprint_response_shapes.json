@@ -1,0 +1,100 @@
+{
+  "cleanup_status": "deleted_scratch_scenario",
+  "credential_value_transfer": false,
+  "raw_scenario_id_persisted": false,
+  "scenario_activation_called": false,
+  "scenario_id_sha256_16": "d001bce3aa0a4810",
+  "scenario_run_once_called": false,
+  "schema_version": 1,
+  "secret_output": false,
+  "shape_reports": [
+    {
+      "candidate_blueprint_paths": [],
+      "label": "draft_true",
+      "top_level_keys": ["code", "response"],
+      "type_tree": {
+        "code": "str",
+        "response": {
+          "blueprint": "NoneType",
+          "concept": "bool",
+          "created": "str",
+          "idSequence": "int",
+          "last_edit": "str",
+          "metadata": {
+            "input_spec": [],
+            "output_spec": []
+          },
+          "scheduling": {
+            "interval": "int",
+            "type": "str"
+          }
+        }
+      }
+    },
+    {
+      "candidate_blueprint_paths": ["$.response.blueprint"],
+      "label": "draft_false",
+      "top_level_keys": ["code", "response"],
+      "type_tree": {
+        "code": "str",
+        "response": {
+          "blueprint": {
+            "flow": ["dict"],
+            "metadata": {
+              "designer": "dict",
+              "instant": "bool",
+              "scenario": "dict",
+              "version": "int"
+            },
+            "name": "str"
+          },
+          "concept": "bool",
+          "created": "str",
+          "idSequence": "int",
+          "last_edit": "str",
+          "metadata": {
+            "input_spec": [],
+            "output_spec": []
+          },
+          "scheduling": {
+            "interval": "int",
+            "type": "str"
+          }
+        }
+      }
+    },
+    {
+      "candidate_blueprint_paths": ["$.response.blueprint"],
+      "label": "no_query",
+      "top_level_keys": ["code", "response"],
+      "type_tree": {
+        "code": "str",
+        "response": {
+          "blueprint": {
+            "flow": ["dict"],
+            "metadata": {
+              "designer": "dict",
+              "instant": "bool",
+              "scenario": "dict",
+              "version": "int"
+            },
+            "name": "str"
+          },
+          "concept": "bool",
+          "created": "str",
+          "idSequence": "int",
+          "last_edit": "str",
+          "metadata": {
+            "input_spec": [],
+            "output_spec": []
+          },
+          "scheduling": {
+            "interval": "int",
+            "type": "str"
+          }
+        }
+      }
+    }
+  ],
+  "status": "shape_captured"
+}

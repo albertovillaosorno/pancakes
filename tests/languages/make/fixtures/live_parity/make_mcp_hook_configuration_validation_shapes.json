@@ -1,0 +1,88 @@
+{
+  "api_surface": "make_mcp_typed_tools",
+  "capabilities_proven": [
+    "webhook_configuration_validation",
+    "webhook_create_or_select"
+  ],
+  "credential_value_transfer": false,
+  "credentials_printed": false,
+  "customer_data_used": false,
+  "default_values_response_shape": {
+    "errors": [],
+    "valid": true,
+    "warnings": []
+  },
+  "empty_values_response_shape": {
+    "errors": [
+      {
+        "domain": "default",
+        "message_class": "field_is_mandatory",
+        "path": "headers"
+      },
+      {
+        "domain": "default",
+        "message_class": "field_is_mandatory",
+        "path": "method"
+      },
+      {
+        "domain": "default",
+        "message_class": "field_is_mandatory",
+        "path": "stringify"
+      }
+    ],
+    "valid": false,
+    "warnings": []
+  },
+  "hook_config_schema_shape": {
+    "optional_fields": [
+      "authenticationMethod",
+      "ip",
+      "udt"
+    ],
+    "required_default_fields": [
+      "headers",
+      "method",
+      "stringify"
+    ],
+    "required_defaults": {
+      "headers": false,
+      "method": false,
+      "stringify": false
+    },
+    "selfAttaching": false,
+    "selfDetaching": false,
+    "transport": "http",
+    "typeName": "gateway-webhook"
+  },
+  "live_make_called": true,
+  "provider_api_call": true,
+  "request_contract": {
+    "accepted_values": {
+      "headers": "bool_false",
+      "method": "bool_false",
+      "stringify": "bool_false"
+    },
+    "strict": "bool_true",
+    "typeName": "gateway-webhook"
+  },
+  "scenario_activation_called": false,
+  "scenario_run_once_called": false,
+  "schema_version": 1,
+  "secret_output": false,
+  "status": "hook_configuration_validation_probe_captured",
+  "steps": [
+    {
+      "name": "hook_config_get_gateway_webhook",
+      "status": "ok"
+    },
+    {
+      "name": "validate_gateway_webhook_empty_rejected",
+      "status": "ok"
+    },
+    {
+      "name": "validate_gateway_webhook_defaults_accepted",
+      "status": "ok"
+    }
+  ],
+  "validation_actor": "codex_make_mcp_typed_tools"
+}

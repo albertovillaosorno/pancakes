@@ -1,0 +1,15 @@
+{
+  "flow": [
+    {
+      "id": 1,
+      "module": "unknown:ImaginaryModule",
+      "parameters": {}
+    }
+  ],
+  "metadata": {
+    "schedule": {
+      "id": "schedule:manual"
+    }
+  },
+  "name": "invalid-unknown-module-token"
+}

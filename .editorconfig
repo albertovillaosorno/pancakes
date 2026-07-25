@@ -1,0 +1,25 @@
+root = true
+
+# Editor hints mirror repository validation; they never replace Jig, rustfmt,
+# CSpell, MarkdownLint, or compiler enforcement.
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 2
+tab_width = 2
+max_line_length = 80
+
+[*.rs]
+indent_size = 4
+tab_width = 4
+
+[*.{c,cc,cpp,cxx,h,hpp,hxx,py}]
+indent_size = 4
+tab_width = 4
+
+[*.{ts,tsx,json,jsonc,yml,yaml,toml,md}]
+indent_size = 2
+tab_width = 2

@@ -1,0 +1,53 @@
+{
+  "schema_version": "assisted_delivery_capture.v1",
+  "session": {
+    "captured_at": null,
+    "timezone": null,
+    "operator": null,
+    "credentialed_live_service_used": false,
+    "blocked": false,
+    "blocker": null
+  },
+  "mcp_surface": {
+    "server_name": null,
+    "transport": "stdio",
+    "tools_seen": [],
+    "missing_expected_tools": []
+  },
+  "planning": {
+    "goal": null,
+    "catalog_or_ast_fingerprint": null,
+    "selected_modules": [],
+    "selection_rationale": []
+  },
+  "blueprint": {
+    "name": null,
+    "ast_artifact_path": null,
+    "validation_status": null,
+    "repair_status": null,
+    "unrecoverable_failure_class": null
+  },
+  "handoff": {
+    "pdf_artifact_path": null,
+    "manual_canary_performed": false,
+    "manual_canary_artifacts": [],
+    "operator_verdict": null,
+    "requested_revision": []
+  },
+  "media": {
+    "mp4_artifact_path": null,
+    "wav_artifact_paths": [],
+    "srt_artifact_path": null,
+    "timestamp_metadata_present": false
+  },
+  "decision": {
+    "status": null,
+    "accepted_verdicts": [
+      "accepted_as_generated",
+      "accepted_after_repair",
+      "rejected_with_reasons",
+      "blocked"
+    ],
+    "notes": []
+  }
+}

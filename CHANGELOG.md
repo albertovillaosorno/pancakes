@@ -1,0 +1,1327 @@
+# Changelog
+
+## 2026-06-19
+
+- `c461403` chore(catalog): document mcp export boundary
+
+## 2026-06-18
+
+- `f39c381` feat(catalog): load intelligence prompt from repository source
+
+## 2026-06-14
+
+- `6ab541b` fix(mcp): make catalog intelligence leases platform safe
+- `df5837e` fix(gitguard): normalize pancakes large-file metadata
+
+## 2026-06-13
+
+- `fac7161` fix(catalog): persist semantic work state
+- `f80cda8` feat(mcp): add catalog graph preview tools
+
+## 2026-06-12
+
+- `f5459ef` fix(catalog): preserve sqlite state on rebuild
+- `41251cd` fix(mcp): classify local project state
+- `3e46865` feat(catalog): expose semantic work lease surface
+
+## 2026-06-11
+
+- `cdc1b5e` fix(mcp): classify scenario tests as optional
+
+## 2026-06-03
+
+- `e06217f` feat(sre): enforce public launch contract
+
+## 2026-06-01
+
+- `f437c70` feat(make): enforce public artifact boundary
+
+## 2026-05-31
+
+- `a9bc402` fix(catalog): enforce explicit intent ranking
+- `5d1d5fe` feat(raw-specs): track Make update reviews
+- `d7b642c` fix(raw-specs): refresh unchanged manifest timestamps
+- `8d67297` refactor(mcp): split project loop storage helpers
+- `5bd5075` fix(mcp): clarify catalog readiness and safe intake errors
+- `25e817e` fix(make): harden live upload cleanup evidence
+- `5115e15` test(make): require quality live canary evidence
+- `c3269e3` test(make): reject skip discard live canaries
+- `0896f07` fix(mcp): explain live canary readiness
+- `2232d8f` feat(mcp): inspect package sections
+- `fa1609b` fix(mcp): clarify structure evidence scope
+- `56b3ad3` fix(mcp): tighten package readiness status surfaces
+
+## 2026-05-29
+
+- `23575c9` fix(make): mirror designer parity offline
+- `ea0d63f` fix(make): lock scenario mutation contract
+- `e8b5d4b` fix(make): capture datastore lifecycle parity
+- `6e4a84b` fix(make): prove webhook bind parity
+- `a9ec9b7` fix(make): prove connection bind parity
+- `0a5758c` fix(make): prove live apply package roundtrip
+- `c43f975` fix(make): align bridge fallback posture
+- `6fc71c0` fix(make): capture module requirement extraction parity
+- `a1adf6c` fix(make): infer required module connections
+- `9aee66c` fix(make): infer required runtime resources
+- `22fbe88` docs(make): name runtime resource parity evidence
+- `3f01b2c` fix(make): mirror scenario interface scheduling
+- `2b0c645` fix(make): mirror module configuration validation
+- `1237fa9` fix(make): mirror scenario run-once contract
+- `1a53711` fix(make): mirror webhook configuration validation
+- `a1c0b59` fix(make): mirror datastore strict schema validation
+- `5fddb98` fix(project-make): emit live importable module shapes
+- `2ba9cd3` fix(project-make): emit live resource upload bundle
+- `1226237` fix(project-make): export native notes and handlers
+- `ec2de94` fix(project-make): sync indexed Make notes
+- `eff7a51` fix(mcp): use UUID public base URL
+- `fdaa812` docs(mcp): add connector icon assets
+- `a2e87ec` fix(catalog): demote generic JSON graph ranking
+
+## 2026-05-28
+
+- `3fd5514` feat(tooling): add linter rule editor tools
+- `666f7e6` fix(tooling): reject onboarding secret-like values
+- `c06addf` feat(tooling): validate onboarding project placeholders
+- `81b7e23` feat(tooling): polish onboarding validation schema
+- `3ac249e` feat(tooling): normalize project filter editor payloads
+- `b54afb5` feat(tooling): normalize project error handler editor payloads
+- `e80b43d` test(tooling): add rich local project smoke fixture
+- `2404cf2` fix(tooling): harden project verify import safety boundary
+- `00e5d98` fix(tooling): expose safe runtime project diagnostics
+- `5459578` fix(tooling): audit project make package dry runs
+- `c403a8d` feat(tooling): expose project handoff missing note plan
+- `2ad717c` fix(tooling): normalize documentation tool schemas
+- `cc36a9b` feat(tooling): close documentation note readiness loop
+- `9cdd11d` fix(tooling): rank catalog graph candidates by query context
+- `1faf9e7` feat(tooling): surface compact catalog field candidates
+- `d35fafe` fix(tooling): gate webhook structure evidence search
+- `323c5bc` fix(tooling): validate edge apply dry runs
+- `35a7083` fix(tooling): make catalog dry runs write-free
+- `ef931a1` fix(tooling): close stale catalog backlog evidence
+- `3019c6c` fix(tooling): make linter inspect read only
+- `b31b80a` fix(tooling): bound project verify capability output
+- `6f37d26` fix(tooling): clarify project artifact paths
+- `5d6771e` fix(mcp): bound catalog sqlite read timeout
+- `ffcad98` fix(mcp): allow public action descriptor refresh
+- `d8a614c` fix(mcp): stop onboarding secret value prompts
+- `2ab072b` test(mcp): cover rich smoke documentation validation
+- `50f0b47` fix(mcp): make filter editor route aware
+- `fcc4a1c` feat(mcp): mark generated docs as manuals
+- `c624872` fix(catalog): rank graph candidates by scenario intent
+- `e515321` test(catalog): cover field-aware search cases
+- `e6cc83d` fix(catalog): expose webhook structure field paths
+- `3111dde` feat(mcp): inspect one project capability
+- `f2dcddd` fix(mcp): report legacy project artifact migration
+- `ad5db73` fix(mcp): expose bounded sqlite read timeout policy
+- `6b28e65` feat(mcp): define live apply package contract
+- `ce471e5` feat(mcp): define resource bind bridge contracts
+- `09de4d8` feat(mcp): define datastore batch upsert contract
+- `cccb91f` feat(catalog): derive module intelligence metadata
+- `d38fc04` fix(mcp): persist remote OAuth tokens
+- `30803d7` fix(mcp): harden local permission posture
+- `5a54f2c` fix(mcp): strip project create prompt payloads
+- `3334c53` fix(mcp): make delete wrappers preview-only
+- `bfc4960` fix(mcp): fail closed on unsafe project readiness
+- `782d7f3` fix(mcp): add staged project draft intake
+- `2f485d3` fix(mcp): add artifact draft import gate
+- `1da3bea` fix(make): promote live parity bridge evidence
+
+## 2026-05-27
+
+- `75f0b29` chore(linter): quarantine flat rulebook candidates
+- `725fc97` chore(linter): review quarantine backlog dispositions
+- `b3fb973` feat(linter): implement AI agent timeout rules
+- `4ccc293` chore(linter): merge aggregator source candidate
+- `0fdce11` chore(linter): merge aggregator output-shape candidate
+- `973a775` chore(linter): merge aggregator grouping candidate
+- `21243ac` chore(linter): merge iterator source candidate
+- `86b43da` chore(linter): merge AI timeout maximum candidate
+- `3b0c80f` chore(linter): merge AI default timeout candidate
+- `93aed94` chore(linter): merge AI on-demand tool candidate
+- `8e6248d` chore(linter): merge AI scheduler on-demand candidate
+- `094a6f6` chore(linter): merge webhook sequential-processing candidate
+- `709948c` chore(linter): merge webhook response sequencing candidate
+- `a4c14e0` chore(linter): merge HTTP pagination candidate
+- `5919218` chore(linter): merge pagination stop-condition candidate
+- `b365218` chore(linter): merge data-store key candidate
+- `862e780` chore(linter): merge data-store retention candidate
+- `9896639` chore(linter): merge data-store delete recovery candidate
+- `b139e68` chore(linter): merge data-store restore warning candidate
+- `10c392f` chore(linter): merge output field mapping candidate
+- `f9a6fe8` chore(linter): merge pagination exhausted-stop candidate
+- `1573db0` chore(linter): merge webhook timeout candidate
+- `f35efe4` chore(linter): merge webhook queue review candidate
+- `c0e7f61` chore(linter): merge webhook response timing candidate
+- `e474630` chore(linter): merge webhook payload shape candidate
+- `fe1ef10` chore(linter): merge iterator item-bounds candidate
+- `6c876c1` chore(linter): merge parse-json schema candidate
+- `29a5cd3` chore(linter): merge HTTP parse-response candidate
+- `73131cd` chore(linter): merge HTTP multipart upload candidate
+- `e5e4d12` chore(linter): merge webhook IP allowlist candidate
+- `e0285a4` chore(linter): merge HTTP response-schema candidate
+- `4a9359a` chore(linter): merge pagination loop stop candidate
+- `529a0b9` chore(linter): merge pagination empty-result candidate
+- `392bb8c` chore(linter): merge HTTP 5xx backoff candidate
+- `aa9495b` chore(linter): merge HTTP success-status candidate
+- `c987eb6` chore(linter): merge HTTP 4xx handling candidate
+- `2f1ab2c` chore(linter): merge HTTP rate-limit candidate
+- `0c18ad8` chore(linter): merge HTTP query-encoding candidate
+- `dedeefe` chore(linter): merge HTTP PATCH semantics candidate
+- `7b01792` chore(linter): merge HTTP PUT replacement candidate
+- `2d01d5c` chore(linter): merge webhook payload sample candidate
+- `62f6031` chore(linter): merge text aggregator strategy candidate
+- `3cba4da` chore(linter): merge aggregator type strategy candidate
+- `aec8d67` chore(linter): merge array aggregator output candidate
+- `08194fe` chore(linter): merge function semicolon candidate
+- `7a3e868` chore(linter): merge AI fallback candidate
+- `787e2dc` chore(linter): merge AI return output candidate
+- `59461a5` chore(linter): merge rollback governance candidate
+- `a15773b` feat(linter): implement webhook response body limit
+- `687fc1d` feat(linter): implement redirect response contract
+- `6099d7e` chore(linter): merge redirect consumer candidate
+- `5176470` feat(linter): flag disabled HTTP error evaluation
+- `5aebd72` chore(linter): merge webhook body limit note
+- `bf9415b` feat(linter): require webhook response content type
+- `3ab0c2b` chore(linter): merge AI output definition candidate
+- `ac982a2` feat(linter): require AI agent response format
+- `5210137` feat(linter): require AI agent memory policy
+- `bc6344c` feat(linter): require AI sensitive action approval
+- `9ae73c9` chore(linter): merge webhook response format candidate
+- `6c1a2dd` chore(linter): merge aggregator source candidate
+- `f536ff9` chore(linter): merge production debug candidate
+- `e19bf1c` chore(linter): merge rollback compensation candidate
+- `9e14435` chore(linter): merge weak HMAC candidate
+- `7869161` chore(linter): merge provider webhook signature candidates
+- `1e6dd6d` chore(linter): merge AI model selection candidate
+- `795c744` chore(linter): merge AI agent tools candidate
+- `4e74c13` chore(linter): merge AI external tools candidate
+- `c28da61` chore(linter): merge AI manual-execution tools candidate
+- `9d00837` chore(linter): merge AI objective candidate
+- `e3fa4af` chore(linter): merge AI clear objective candidate
+- `e06ab31` chore(linter): merge AI objective handoff candidate
+- `6d0ddc8` chore(linter): merge AI provider connection candidate
+- `77460a5` chore(linter): merge AI LLM provider candidate
+- `553aa88` chore(linter): merge AI model provider candidate
+- `831e14a` feat(linter): cover AI conversation context memory
+- `ffa179b` chore(linter): merge AI model-size candidate
+- `5e15f32` feat(linter): cover AI transformation evidence
+- `0f5b263` chore(linter): merge AI deployment test candidate
+- `fcb9428` chore(linter): merge AI real-scenario test candidate
+- `e333110` chore(linter): merge AI real-world test candidate
+- `e767e81` chore(linter): merge AI context structure candidate
+- `01660a5` chore(linter): merge AI system prompt role candidate
+- `fca66f4` chore(linter): merge AI instructions context candidate
+- `a8dfe73` chore(linter): merge AI prompt context candidate
+- `a825b22` chore(linter): merge AI safe-boundary candidate
+- `591ca7b` feat(linter): warn on high AI conversation history
+- `4c01b7c` feat(linter): require defaults for optional AI tool inputs
+- `40bcf2a` chore(linter): merge AI sensitive approval candidate
+- `ef39bba` feat(linter): require AI session isolation evidence
+- `739bb9c` feat(linter): require AI file-processing capability
+- `7e6cce0` feat(linter): require AI knowledge source evidence
+- `b9d58e5` chore(linter): merge AI missing-information fallback candidate
+- `063e35b` feat(linter): require AI knowledge retrieval tests
+- `a330b9c` feat(linter): require AI response field descriptions
+- `4a7aed0` feat(linter): require AI multi-tool plans
+- `9266ce6` feat(linter): require AI mutating tool guards
+- `91078df` feat(linter): require AI tool output filtering
+- `1d6d673` feat(linter): require scoped AI knowledge retrieval
+- `3c79177` feat(linter): limit AI temperature for deterministic tasks
+- `9d04c23` feat(linter): require AI production metrics
+- `66ea2e4` chore(linter): merge AI knowledge-base retrieval candidate
+- `cab9474` chore(linter): merge AI RAG retrieval candidate
+- `2faa994` chore(linter): merge AI knowledge-file retrieval candidate
+- `816b4ee` chore(linter): merge AI contract retrieval candidate
+- `14fb784` feat(linter): cover AI personal information guardrails
+- `438c0d2` chore(linter): merge AI unnecessary data candidate
+- `0e735b0` chore(linter): merge AI irrelevant fields candidate
+- `686672b` test(linter): guard quarantine review reclassification
+- `57eed23` chore(linter): preserve AET-001 quarantine review
+- `6e7551b` chore(linter): preserve AET-003 quarantine review
+- `3786ee5` chore(linter): preserve AET-004 quarantine review
+- `e02d138` chore(linter): preserve AET-007 quarantine review
+- `338eda1` chore(linter): preserve AET-008 quarantine review
+- `9bf6c17` chore(linter): preserve AET-010 quarantine review
+- `305c88d` chore(linter): preserve AGENT-PROMPT-006 quarantine review
+- `3c55d6e` chore(linter): preserve AGENT-PROMPT-008 quarantine review
+- `5a2572a` chore(linter): preserve AIR-001 quarantine review
+- `e277c00` chore(linter): preserve AIR-002 quarantine review
+- `739f478` chore(linter): preserve AIR-003 quarantine review
+- `d53706e` chore(linter): preserve AIR-004 quarantine review
+- `91bc699` chore(linter): preserve AIR-005 quarantine review
+- `b74706a` chore(linter): preserve APP-AIRTABLE-006 quarantine review
+- `719ffc5` chore(linter): preserve APP-ANTHROPIC-003 quarantine review
+- `c47fc9c` chore(linter): preserve APP-ANTHROPIC-004 quarantine review
+- `0c0d169` chore(linter): preserve APP-ANTHROPIC-005 quarantine review
+- `82cfb54` chore(linter): preserve APP-ANTHROPIC-006 quarantine review
+- `47e2f7d` chore(linter): preserve APP-DISCORD-001 quarantine review
+- `7ab7733` chore(linter): preserve APP-DISCORD-002 quarantine review
+- `81b6383` chore(linter): preserve APP-DISCORD-004 quarantine review
+- `a9830f6` chore(linter): preserve APP-DISCORD-005 quarantine review
+- `c88da4f` chore(linter): preserve APP-DISCORD-006 quarantine review
+- `9b6adbc` chore(linter): preserve APP-GDOC-001 quarantine review
+- `a11c097` chore(linter): preserve APP-GDOC-002 quarantine review
+- `9b9964d` chore(linter): preserve APP-GDOC-003 quarantine review
+- `dae5fab` chore(linter): preserve APP-GDOC-004 quarantine review
+- `883a9bb` chore(linter): preserve APP-GDOC-005 quarantine review
+- `6016e2d` chore(linter): preserve APP-GDOC-006 quarantine review
+- `db0ab30` chore(linter): preserve APP-GDRIVE-001 quarantine review
+- `d437159` chore(linter): preserve APP-GDRIVE-002 quarantine review
+- `e2cbbd7` chore(linter): preserve APP-GDRIVE-003 quarantine review
+- `359d8bf` chore(linter): preserve APP-GDRIVE-004 quarantine review
+- `cb7b367` chore(linter): preserve APP-GDRIVE-005 quarantine review
+- `07bc962` chore(linter): preserve APP-GDRIVE-006 quarantine review
+- `f7e02af` chore(linter): preserve APP-HUBSPOT-002 quarantine review
+- `cd8c828` chore(linter): preserve APP-HUBSPOT-006 quarantine review
+- `90b5d34` chore(linter): preserve APP-NOTION-001 quarantine review
+- `4576f96` chore(linter): preserve APP-NOTION-002 quarantine review
+- `dd7ab30` chore(linter): preserve APP-NOTION-003 quarantine review
+- `192f8dd` chore(linter): preserve APP-NOTION-004 quarantine review
+- `a18810f` chore(linter): preserve APP-NOTION-005 quarantine review
+- `3b63be7` chore(linter): preserve APP-NOTION-006 quarantine review
+- `40d4316` chore(linter): preserve APP-OPENAI-003 quarantine review
+- `80a3e43` chore(linter): preserve APP-OPENAI-004 quarantine review
+- `fb041fe` chore(linter): preserve APP-OPENAI-005 quarantine review
+- `39655d4` chore(linter): preserve APP-OPENAI-006 quarantine review
+- `2509a78` chore(linter): preserve APP-S3-001 quarantine review
+- `dde54a8` chore(linter): preserve APP-S3-002 quarantine review
+- `dc10bbc` chore(linter): preserve APP-S3-003 quarantine review
+- `d77f022` chore(linter): preserve APP-S3-004 quarantine review
+- `c05587a` chore(linter): preserve APP-S3-005 quarantine review
+- `96ca333` chore(linter): preserve APP-S3-006 quarantine review
+- `747931b` chore(linter): preserve APP-SALESFORCE-001 quarantine review
+- `bd73195` chore(linter): preserve APP-SALESFORCE-002 quarantine review
+- `61a72d4` chore(linter): preserve APP-SALESFORCE-003 quarantine review
+- `2fb9e5d` chore(linter): preserve APP-SALESFORCE-004 quarantine review
+- `dd8ba8e` chore(linter): preserve APP-SALESFORCE-005 quarantine review
+- `c10bf65` chore(linter): preserve APP-SALESFORCE-006 quarantine review
+- `0d0c47c` chore(linter): merge APP-SHOPIFY-001 quarantine review
+- `90b293f` chore(linter): preserve APP-SHOPIFY-002 quarantine review
+- `b2fac2f` chore(linter): preserve APP-SHOPIFY-003 quarantine review
+- `7480fc2` chore(linter): preserve APP-SHOPIFY-004 quarantine review
+- `94b9893` chore(linter): preserve APP-SHOPIFY-005 quarantine review
+- `dc540da` chore(linter): preserve APP-SHOPIFY-006 quarantine review
+- `c753634` chore(linter): preserve APP-SLACK-001 quarantine review
+- `3d6877e` chore(linter): preserve APP-SLACK-002 quarantine review
+- `f490685` chore(linter): preserve APP-SLACK-003 quarantine review
+- `84b440c` chore(linter): preserve APP-SLACK-004 quarantine review
+- `3d51ffe` chore(linter): preserve APP-SLACK-005 quarantine review
+- `fcbc4b9` chore(linter): preserve APP-SLACK-006 quarantine review
+- `32e2fac` chore(linter): preserve APP-STRIPE-003 quarantine review
+- `7880555` chore(linter): merge APP-STRIPE-004 quarantine review
+- `f5a8bd6` chore(linter): preserve APP-TELEGRAM-001 quarantine review
+- `3243bba` chore(linter): preserve APP-TELEGRAM-002 quarantine review
+- `3b1aefa` chore(linter): preserve APP-TELEGRAM-004 quarantine review
+- `25ca78c` chore(linter): preserve APP-TELEGRAM-005 quarantine review
+- `aef615f` chore(linter): preserve APP-TELEGRAM-006 quarantine review
+- `71dc8ba` chore(linter): preserve APP-TWILIO-001 quarantine review
+- `4d50bc2` chore(linter): merge APP-TWILIO-002 quarantine review
+- `310fa77` chore(linter): preserve APP-TWILIO-003 quarantine review
+- `903423a` chore(linter): preserve APP-TWILIO-004 quarantine review
+- `dcbd2c2` chore(linter): preserve APP-TWILIO-005 quarantine review
+- `1feb1b0` chore(linter): preserve APP-TWILIO-006 quarantine review
+- `5366569` chore(linter): preserve ARH-001 quarantine review
+- `7b23463` chore(linter): preserve ARH-002 quarantine review
+- `74745e4` chore(linter): preserve ARH-003 quarantine review
+- `271df29` chore(linter): preserve ARH-004 quarantine review
+- `4877476` chore(linter): preserve ARH-005 quarantine review
+- `509f8aa` chore(linter): preserve ARH-006 quarantine review
+- `30516ef` chore(linter): preserve ARH-008 quarantine review
+- `ca5a518` chore(linter): preserve ARH-009 quarantine review
+- `c156eca` chore(linter): preserve ARH-010 quarantine review
+- `c49d2d9` chore(linter): preserve ARH-011 quarantine review
+- `eda9e9d` chore(linter): preserve ARH-012 quarantine review
+- `e4f3252` chore(linter): preserve ARH-013 quarantine review
+- `f6cf6e3` chore(linter): preserve ARH-014 quarantine review
+- `bb14a34` chore(linter): preserve ARH-015 quarantine review
+- `c11b27b` chore(linter): preserve ARH-016 quarantine review
+- `f5c0e16` chore(linter): preserve ARH-017 quarantine review
+- `8ff4743` chore(linter): preserve ARH-018 quarantine review
+- `1b4d05f` chore(linter): preserve ARH-019 quarantine review
+- `e775bb1` chore(linter): preserve ARH-020 quarantine review
+- `fd5efdb` chore(linter): preserve BPI-001 quarantine review
+- `05a49f3` chore(linter): preserve BPI-003 quarantine review
+- `1b26407` chore(linter): preserve BPI-005 quarantine review
+- `419e815` chore(linter): preserve BPI-007 quarantine review
+- `b4616e1` chore(linter): preserve BPI-008 quarantine review
+- `0871817` chore(linter): preserve BPI-009 quarantine review
+- `525a442` chore(linter): preserve BPI-010 quarantine review
+- `e0c158e` chore(linter): preserve BPI-012 quarantine review
+- `f8de2ed` chore(linter): preserve BPI-013 quarantine review
+- `49ebe4c` chore(linter): preserve BPI-014 quarantine review
+- `3233512` chore(linter): preserve BPI-015 quarantine review
+- `b1cb5ce` chore(linter): preserve BPI-019 quarantine review
+- `f77f1fc` chore(linter): preserve BPI-020 quarantine review
+- `d21e7dd` chore(linter): preserve BPI-021 quarantine review
+- `ca4c9e9` chore(linter): preserve BPI-022 quarantine review
+- `87465be` chore(linter): preserve BPI-025 quarantine review
+- `e87f9c2` chore(linter): preserve C-CLN-001 quarantine review
+- `6936bf6` chore(linter): preserve C-CLN-002 quarantine review
+- `558cdf8` chore(linter): preserve C-CLN-005 quarantine review
+- `ca2c6fa` chore(linter): preserve C-OPX-002 quarantine review
+- `6aff8e2` chore(linter): preserve C-SRE-002 quarantine review
+- `57530a4` chore(linter): preserve C-SRE-004 quarantine review
+- `7e94d6a` chore(linter): preserve C-SRE-005 quarantine review
+- `56db036` chore(linter): preserve CBR-002 quarantine review
+- `2016d7b` chore(linter): preserve CBR-003 quarantine review
+- `bbc4cee` chore(linter): preserve CBR-005 quarantine review
+- `51fd3b0` chore(linter): preserve CBR-006 quarantine review
+- `981125a` chore(linter): preserve CBR-007 quarantine review
+- `0e6f431` chore(linter): preserve CBR-008 quarantine review
+- `6a9b699` chore(linter): preserve CBR-009 quarantine review
+- `1662bc8` chore(linter): preserve CBR-010 quarantine review
+- `d14bdb6` chore(linter): preserve CBR-011 quarantine review
+- `b32f5fd` chore(linter): preserve CBR-012 quarantine review
+- `569d8de` chore(linter): preserve CBR-013 quarantine review
+- `b35c524` chore(linter): preserve CBR-014 quarantine review
+- `d27f5f5` chore(linter): preserve CBR-018 quarantine review
+- `3c07bc0` chore(linter): preserve CBR-020 quarantine review
+- `2d1a41e` chore(linter): preserve CBR-022 quarantine review
+- `4d4d6e7` chore(linter): preserve CBR-024 quarantine review
+- `a51b264` chore(linter): preserve CBR-801 quarantine review
+- `a870254` chore(linter): preserve CMP-001 quarantine review
+- `c650823` chore(linter): preserve CMP-002 quarantine review
+- `65d342d` chore(linter): preserve CMP-004 quarantine review
+- `e75a1ce` chore(linter): preserve CMP-005 quarantine review
+- `a77f86a` chore(linter): preserve CMP-007 quarantine review
+- `0102238` chore(linter): preserve CMP-010 quarantine review
+- `baed114` chore(linter): preserve CON-001 quarantine review
+- `221deef` chore(linter): preserve CON-002 quarantine review
+- `e753b1d` chore(linter): preserve CON-003 quarantine review
+- `2dca2e7` chore(linter): preserve CON-004 quarantine review
+- `6184b7e` chore(linter): preserve CON-005 quarantine review
+- `0d0933e` chore(linter): preserve CON-006 quarantine review
+- `ceddc63` chore(linter): preserve CON-007 quarantine review
+- `da96db4` chore(linter): preserve CON-008 quarantine review
+- `5e57495` chore(linter): preserve CON-010 quarantine review
+- `4a6f33c` chore(linter): preserve CON-011 quarantine review
+- `d17950e` chore(linter): preserve CON-012 quarantine review
+- `413f629` chore(linter): preserve CON-013 quarantine review
+- `7ac2d4d` chore(linter): preserve CON-014 quarantine review
+- `a491f22` chore(linter): preserve CON-015 quarantine review
+- `8addaad` chore(linter): preserve CON-018 quarantine review
+- `aa562ab` chore(linter): preserve CON-019 quarantine review
+- `fe68ab2` chore(linter): preserve CON-1201 quarantine review
+- `568241c` chore(linter): preserve CON-1202 quarantine review
+- `694cb4b` chore(linter): preserve CON-1203 quarantine review
+- `51a33a0` chore(linter): preserve CONN-LABEL-001 quarantine review
+- `fc5751c` chore(linter): preserve CONN-LABEL-002 quarantine review
+- `c16276d` chore(linter): preserve CONN-LABEL-003 quarantine review
+- `534369a` chore(linter): preserve CONN-LABEL-004 quarantine review
+- `8a09a38` chore(linter): preserve CRM-001 quarantine review
+- `a4143fd` chore(linter): preserve CRM-002 quarantine review
+- `b669d47` chore(linter): preserve CRM-003 quarantine review
+- `11efbeb` chore(linter): preserve CRM-004 quarantine review
+- `b699d54` chore(linter): preserve CRM-005 quarantine review
+- `f5f7320` chore(linter): preserve CST-001 quarantine review
+- `e5d1861` chore(linter): preserve CST-003 quarantine review
+- `1d84627` chore(linter): preserve CST-006 quarantine review
+- `005c263` chore(linter): preserve CST-007 quarantine review
+- `33f915a` chore(linter): preserve CST-009 quarantine review
+- `2272d38` chore(linter): preserve CST-010 quarantine review
+- `87e232c` chore(linter): preserve CST-011 quarantine review
+- `e0e58d8` chore(linter): preserve CST-012 quarantine review
+- `7fb74ac` chore(linter): preserve CST-015 quarantine review
+- `69ebcc3` chore(linter): preserve DAT-1401 quarantine review
+- `28898d3` chore(linter): preserve DAT-1403 quarantine review
+- `7038255` chore(linter): preserve DB-002 quarantine review
+- `c8a8161` chore(linter): preserve DB-003 quarantine review
+- `435fdd3` chore(linter): preserve DB-004 quarantine review
+- `f4a5eda` chore(linter): preserve DB-005 quarantine review
+- `a8bf2ce` chore(linter): preserve DB-006 quarantine review
+- `424cf96` chore(linter): preserve DB-007 quarantine review
+- `952982c` chore(linter): preserve DB-008 quarantine review
+- `5153a69` chore(linter): preserve DB-009 quarantine review
+- `b4fef6f` chore(linter): preserve DB-010 quarantine review
+- `f985279` chore(linter): preserve DB-011 quarantine review
+- `6b45fdf` chore(linter): preserve DB-012 quarantine review
+- `71a1177` chore(linter): preserve DB-013 quarantine review
+- `0de74ee` chore(linter): preserve DB-014 quarantine review
+- `8a257c1` chore(linter): preserve DB-015 quarantine review
+- `e9cd46f` chore(linter): preserve DOC-CONSISTENCY-001 quarantine review
+- `5887dbb` chore(linter): preserve DOC-CONSISTENCY-002 quarantine review
+- `7a6f296` chore(linter): preserve DOC-CONSISTENCY-003 quarantine review
+- `2591900` chore(linter): preserve DOC-CONSISTENCY-004 quarantine review
+- `c8c0080` chore(linter): preserve DOC-CONSISTENCY-005 quarantine review
+- `f0f1ae5` chore(linter): preserve DOC-CONSISTENCY-006 quarantine review
+- `c7b0e1b` chore(linter): preserve DOC-CONSISTENCY-007 quarantine review
+- `a5e469d` chore(linter): preserve DOC-CONSISTENCY-008 quarantine review
+- `d1be008` chore(linter): preserve DOC-CONSISTENCY-009 quarantine review
+- `0258509` chore(linter): preserve DOC-CONSISTENCY-010 quarantine review
+- `6427898` chore(linter): preserve DS-002 quarantine review
+- `f6e111e` chore(linter): preserve DS-003 quarantine review
+- `b2207de` chore(linter): preserve DS-005 quarantine review
+- `25cd865` chore(linter): preserve DS-006 quarantine review
+- `1a60773` chore(linter): preserve DS-007 quarantine review
+- `ff7a3fa` chore(linter): preserve DS-008 quarantine review
+- `61cca5e` chore(linter): preserve DS-009 quarantine review
+- `47398c3` chore(linter): preserve DS-010 quarantine review
+- `2c533f8` chore(linter): preserve DS-012 quarantine review
+- `3f3dbb1` chore(linter): preserve DS-014 quarantine review
+- `37d3ee8` chore(linter): preserve DS-015 quarantine review
+- `552020b` chore(linter): preserve DS-016 quarantine review
+- `6beb24b` chore(linter): preserve DS-017 quarantine review
+- `bbcd39d` chore(linter): preserve DS-018 quarantine review
+- `e78b6c2` chore(linter): preserve DS-019 quarantine review
+- `b944a62` chore(linter): preserve DS-020 quarantine review
+- `16dfc79` chore(linter): preserve DST-003 quarantine review
+- `2d9facd` chore(linter): preserve DST-006 quarantine review
+- `1e4762c` chore(linter): preserve DST-007 quarantine review
+- `747b2c8` chore(linter): preserve DST-009 quarantine review
+- `e30fdf6` chore(linter): preserve DST-011 quarantine review
+- `ce7e628` chore(linter): preserve DST-013 quarantine review
+- `10b2748` chore(linter): preserve DST-014 quarantine review
+- `98f9f0f` chore(linter): preserve DST-015 quarantine review
+- `6496684` chore(linter): preserve EMAIL-001 quarantine review
+- `a47e0b4` chore(linter): preserve EMAIL-004 quarantine review
+- `8a52635` chore(linter): preserve EMAIL-005 quarantine review
+- `b02e99f` chore(linter): preserve EMAIL-006 quarantine review
+- `2725c5c` chore(linter): preserve EMAIL-008 quarantine review
+- `e2e213e` chore(linter): preserve EMAIL-009 quarantine review
+- `0f814b9` chore(linter): preserve EMAIL-010 quarantine review
+- `0b35570` chore(linter): preserve ENV-501 quarantine review
+- `5a88da7` chore(linter): preserve ENV-502 quarantine review
+- `4f91979` chore(linter): preserve ENV-502 quarantine review
+- `af1e000` chore(linter): preserve ENV-504 quarantine review
+- `e96522b` chore(linter): preserve ENV-505 quarantine review
+- `fcaf068` chore(linter): preserve ERR-002 quarantine review
+- `16c7b21` chore(linter): preserve ERR-007 quarantine review
+- `615fcdd` chore(linter): preserve ERR-008 quarantine review
+- `cb1c5cb` chore(linter): preserve ERR-009 quarantine review
+- `0f453d4` chore(linter): preserve ERR-010 quarantine review
+- `d114aa1` chore(linter): preserve ERR-012 quarantine review
+- `236faa9` chore(linter): preserve ERR-013 quarantine review
+- `b02a71d` chore(linter): preserve ERR-014 quarantine review
+- `ad6dc25` chore(linter): preserve EXT-005 quarantine review
+- `1fcf341` chore(linter): preserve FIL-001 quarantine review
+- `85c47c5` chore(linter): preserve FIL-002 quarantine review
+- `75f1f75` chore(linter): preserve FIL-005 quarantine review
+- `4e8675b` chore(linter): preserve FIL-007 quarantine review
+- `5f8fec5` chore(linter): preserve FIL-008 quarantine review
+- `22ba1bf` chore(linter): preserve FIL-009 quarantine review
+- `b25584c` chore(linter): preserve FIL-010 quarantine review
+- `384c1e2` chore(linter): preserve FIL-011 quarantine review
+- `30d67fb` chore(linter): preserve FIL-012 quarantine review
+- `3810129` chore(linter): preserve FIL-013 quarantine review
+- `2465827` chore(linter): preserve FIL-014 quarantine review
+- `386194b` chore(linter): preserve FIL-015 quarantine review
+- `27bb38a` chore(linter): preserve FIL-016 quarantine review
+- `3c53320` chore(linter): preserve FIL-017 quarantine review
+- `36afe96` chore(linter): preserve FIN-702 quarantine review
+- `52c2536` chore(linter): preserve FIN-703 quarantine review
+- `df3a305` chore(linter): preserve GOV-001 quarantine review
+- `6a6f177` chore(linter): preserve GOV-002 quarantine review
+- `1080cbb` chore(linter): preserve GOV-003 quarantine review
+- `b580c18` chore(linter): preserve GOV-004 quarantine review
+- `8da3d54` chore(linter): preserve GOV-005 quarantine review
+- `981818f` chore(linter): preserve GOV-006 quarantine review
+- `122dd55` chore(linter): preserve GOV-007 quarantine review
+- `8cf376a` chore(linter): preserve GOV-008 quarantine review
+- `e034f7c` chore(linter): preserve GOV-009 quarantine review
+- `3c6a6be` chore(linter): preserve GOV-010 quarantine review
+- `7c31c26` chore(linter): preserve IDM-002 quarantine review
+- `2231061` chore(linter): preserve IDM-003 quarantine review
+- `2a16fea` chore(linter): preserve IDM-005 quarantine review
+- `e32040b` chore(linter): preserve IDM-007 quarantine review
+- `9df52eb` chore(linter): preserve IDM-008 quarantine review
+- `b86a943` chore(linter): preserve IDM-009 quarantine review
+- `2f20002` chore(linter): preserve IDM-010 quarantine review
+- `65fb065` chore(linter): preserve IDM-011 quarantine review
+- `cfdb1dc` chore(linter): preserve IDM-012 quarantine review
+- `0d97ae8` chore(linter): preserve IDM-014 quarantine review
+- `d703642` chore(linter): preserve IDM-015 quarantine review
+- `e6fdbaf` chore(linter): preserve IDM-016 quarantine review
+- `f304d6d` chore(linter): preserve IDM-018 quarantine review
+- `34b5c23` chore(linter): preserve IDM-019 quarantine review
+- `12aafec` chore(linter): preserve IDM-020 quarantine review
+- `26db9e9` chore(linter): preserve ING-002 quarantine review
+- `9c6ff29` chore(linter): preserve ING-004 quarantine review
+- `039fedf` chore(linter): preserve ING-005 quarantine review
+- `1f0246f` chore(linter): preserve ING-007 quarantine review
+- `943f161` chore(linter): preserve ING-012 quarantine review
+- `03f0a5d` chore(linter): preserve ING-013 quarantine review
+- `ab6144d` chore(linter): preserve ING-017 quarantine review
+- `7df7086` chore(linter): preserve ING-018 quarantine review
+- `4703794` chore(linter): preserve ING-019 quarantine review
+- `ea39623` chore(linter): preserve LLM-001 quarantine review
+- `79378ab` chore(linter): preserve LLM-002 quarantine review
+- `fa00ca8` chore(linter): preserve LLM-003 quarantine review
+- `98b3109` chore(linter): preserve LLM-005 quarantine review
+- `0125add` chore(linter): preserve LLM-008 quarantine review
+- `7e585b0` chore(linter): preserve LLM-009 quarantine review
+- `72c6279` chore(linter): preserve LLM-010 quarantine review
+- `76fbcd6` chore(linter): preserve LLM-011 quarantine review
+- `3250925` chore(linter): preserve LLM-012 quarantine review
+- `2e1074f` chore(linter): preserve LLM-015 quarantine review
+- `e2b9f35` chore(linter): preserve LLM-016 quarantine review
+- `a2689d9` chore(linter): preserve LLM-017 quarantine review
+- `7ef06e2` chore(linter): preserve LLM-020 quarantine review
+- `41e4d6b` chore(linter): preserve LLM-022 quarantine review
+- `fe67c19` chore(linter): preserve LLM-024 quarantine review
+- `a3352a5` chore(linter): preserve LLM-025 quarantine review
+- `e03f6e8` chore(linter): preserve MAK-1101 quarantine review
+- `0b5b646` chore(linter): preserve MAK-1102 quarantine review
+- `d8bc814` chore(linter): preserve MAK-1103 quarantine review
+- `de09851` chore(linter): preserve MAK-1301 quarantine review
+- `2c841ab` chore(linter): preserve MAK-1302 quarantine review
+- `a8ad5b6` chore(linter): preserve MAK-1303 quarantine review
+- `9f791b9` chore(linter): preserve MAK-1304 quarantine review
+- `09ff54f` chore(linter): preserve MAKE-001 quarantine review
+- `51af9bb` chore(linter): preserve MAKE-002 quarantine review
+- `f6f3bd5` chore(linter): preserve MAKE-003 quarantine review
+- `563f318` chore(linter): preserve MAKE-004 quarantine review
+- `9912396` chore(linter): preserve MAKE-009 quarantine review
+- `eac1f9f` chore(linter): preserve MAKE-010 quarantine review
+- `73ce188` chore(linter): preserve MAKE-011 quarantine review
+- `5c10b29` chore(linter): preserve MAKE-013 quarantine review
+- `f9d71e4` chore(linter): preserve MAKE-014 quarantine review
+- `7878c4c` chore(linter): preserve MAKE-015 quarantine review
+- `f116031` chore(linter): preserve MEM-002 quarantine review
+- `4bacc7e` chore(linter): preserve MEM-003 quarantine review
+- `0760c86` chore(linter): preserve MEM-005 quarantine review
+- `2da8f7f` chore(linter): preserve MEM-006 quarantine review
+- `430f689` chore(linter): preserve MEM-007 quarantine review
+- `027d54b` chore(linter): preserve MEM-008 quarantine review
+- `39191a1` chore(linter): preserve MEM-009 quarantine review
+- `8b8e2b1` chore(linter): preserve MEM-010 quarantine review
+- `697940a` chore(linter): preserve MEM-011 quarantine review
+- `1a55cc4` chore(linter): preserve MEM-012 quarantine review
+- `18d75b3` chore(linter): preserve MEM-015 quarantine review
+- `ba2d39b` chore(linter): preserve MEM-102 quarantine review
+- `65e791c` chore(linter): preserve MEM-103 quarantine review
+- `0ac57e4` chore(linter): preserve MEM-104 quarantine review
+- `34a5799` chore(linter): preserve MEM-106 quarantine review
+- `a53e372` chore(linter): preserve MEM-107 quarantine review
+- `076d656` chore(linter): preserve MEM-108 quarantine review
+- `1d6adf9` chore(linter): preserve MEM-112 quarantine review
+- `a5a6ca3` chore(linter): preserve MEM-113 quarantine review
+- `cf498ff` chore(linter): preserve MEM-114 quarantine review
+- `92bd693` chore(linter): preserve MEM-115 quarantine review
+- `aa139b9` chore(linter): preserve MSG-002 quarantine review
+- `811b4cf` chore(linter): preserve MSG-004 quarantine review
+- `96eb83f` chore(linter): preserve MSG-005 quarantine review
+- `da708a8` chore(linter): preserve MSG-006 quarantine review
+- `28ad0a7` chore(linter): preserve MSG-007 quarantine review
+- `ee7da9d` chore(linter): preserve NET-203 quarantine review
+- `58a5564` chore(linter): preserve NOT-001 quarantine review
+- `71012f7` chore(linter): preserve NOT-002 quarantine review
+- `cb0aeaa` chore(linter): preserve NOT-003 quarantine review
+- `c160b1c` chore(linter): preserve NOT-004 quarantine review
+- `09aad71` chore(linter): preserve NOT-006 quarantine review
+- `559551e` chore(linter): preserve NOT-007 quarantine review
+- `35a2114` chore(linter): preserve NOT-008 quarantine review
+- `d578061` chore(linter): preserve NOT-009 quarantine review
+- `fd1478f` chore(linter): preserve NOT-010 quarantine review
+- `dbf4016` chore(linter): preserve NOT-011 quarantine review
+- `8c69122` chore(linter): preserve NOT-012 quarantine review
+- `fe9e6dd` chore(linter): preserve NOT-014 quarantine review
+- `8e660d7` chore(linter): preserve NOT-015 quarantine review
+- `28fd9e5` chore(linter): preserve NOT-016 quarantine review
+- `c8589bd` chore(linter): preserve NOT-019 quarantine review
+- `cdf273d` chore(linter): preserve NOT-020 quarantine review
+- `ad58c9b` chore(linter): preserve NOT-023 quarantine review
+- `bb86b3a` chore(linter): preserve NOT-024 quarantine review
+- `14734f7` chore(linter): preserve NOT-025 quarantine review
+- `7cef02b` chore(linter): preserve NOT-026 quarantine review
+- `6271b91` chore(linter): preserve NOT-028 quarantine review
+- `0e02cd4` chore(linter): preserve NOT-029 quarantine review
+- `a680ea6` chore(linter): preserve NOT-030 quarantine review
+- `4af1631` chore(linter): preserve NOTE-FMT-002 quarantine review
+- `06e9607` chore(linter): preserve NOTE-FMT-005 quarantine review
+- `8ffb2fc` chore(linter): preserve NOTE-FMT-008 quarantine review
+- `2f6aad8` chore(linter): preserve NOTE-FMT-009 quarantine review
+- `f3f1b70` chore(linter): preserve NOTE-FMT-010 quarantine review
+- `888bf60` chore(linter): preserve NOTE-FMT-011 quarantine review
+- `49ec885` chore(linter): preserve NOTE-FMT-012 quarantine review
+- `fa5b7c7` chore(linter): preserve NOTE-FMT-014 quarantine review
+- `1021050` chore(linter): preserve NOTE-FMT-015 quarantine review
+- `5af2803` chore(linter): preserve NOTE-FMT-016 quarantine review
+- `003150b` chore(linter): preserve NOTE-FMT-017 quarantine review
+- `40295c0` chore(linter): preserve NOTE-FMT-019 quarantine review
+- `a969af5` chore(linter): preserve NOTE-FMT-020 quarantine review
+- `9f0def0` chore(linter): preserve NOTE-FMT-021 quarantine review
+- `8f5a70a` chore(linter): preserve NOTE-FMT-022 quarantine review
+- `2c3ee15` chore(linter): preserve NOTE-FMT-023 quarantine review
+- `6b5a093` chore(linter): preserve NOTE-FMT-024 quarantine review
+- `9324c00` chore(linter): preserve NOTE-FMT-025 quarantine review
+- `e59e3ae` chore(linter): preserve NOTE-FMT-026 quarantine review
+- `a368276` chore(linter): preserve NOTE-FMT-028 quarantine review
+- `4438226` chore(linter): preserve NOTE-FMT-029 quarantine review
+- `6fc98a0` chore(linter): preserve NOTE-FMT-031 quarantine review
+- `1be49c1` chore(linter): preserve NOTE-FMT-032 quarantine review
+- `58272ba` chore(linter): preserve NOTE-FMT-033 quarantine review
+- `ee01ebd` chore(linter): preserve NOTE-FMT-034 quarantine review
+- `52fe84e` chore(linter): preserve NOTE-FMT-036 quarantine review
+- `ab2684d` chore(linter): preserve NOTE-FMT-037 quarantine review
+- `66e07a1` chore(linter): preserve NOTE-FMT-038 quarantine review
+- `decde17` chore(linter): reject NOTE-FMT-039 quarantine review
+- `1e6e0ba` chore(linter): preserve NOTE-FMT-040 quarantine review
+- `3409780` chore(linter): preserve OBS-1601 quarantine review
+- `9794011` chore(linter): preserve OBS-1602 quarantine review
+- `db15f75` chore(linter): preserve OBS-402 quarantine review
+- `a61336d` chore(linter): preserve OBS-403 quarantine review
+- `71b7e80` chore(linter): preserve OBS-404 quarantine review
+- `2a412d2` chore(linter): preserve OBS-405 quarantine review
+- `6261d21` chore(linter): preserve OPS-001 quarantine review
+- `b3b4e8c` chore(linter): preserve OPS-004 quarantine review
+- `8ba172e` chore(linter): preserve OPS-006 quarantine review
+- `b8807c1` chore(linter): preserve OPS-011 quarantine review
+- `d0ab543` chore(linter): preserve OPS-012 quarantine review
+- `69d5f69` chore(linter): preserve OPS-013 quarantine review
+- `6f4b732` chore(linter): preserve OPS-014 quarantine review
+- `bef4da7` chore(linter): preserve OPS-015 quarantine review
+- `ac9da96` chore(linter): preserve OPS-016 quarantine review
+- `3fd4047` chore(linter): preserve OPS-017 quarantine review
+- `aff05d3` chore(linter): preserve OPS-018 quarantine review
+- `b41434e` chore(linter): preserve OPS-020 quarantine review
+- `8128b1e` chore(linter): preserve OPX-002 quarantine review
+- `2210c7f` chore(linter): preserve OPX-003 quarantine review
+- `5205679` chore(linter): preserve OPX-004 quarantine review
+- `c6a2c6b` chore(linter): preserve OPX-005 quarantine review
+- `0c3765b` chore(linter): preserve PAY-001 quarantine review
+- `b1fe200` chore(linter): preserve PAY-002 quarantine review
+- `18a0a89` chore(linter): preserve PAY-003 quarantine review
+- `f0b1f6e` chore(linter): preserve PAY-004 quarantine review
+- `d2a61b4` chore(linter): preserve PAY-005 quarantine review
+- `79b1b8e` chore(linter): preserve PAY-006 quarantine review
+- `c3df519` chore(linter): preserve PAY-007 quarantine review
+- `22438fc` chore(linter): preserve PAY-008 quarantine review
+- `e7b474d` chore(linter): preserve PAY-009 quarantine review
+- `2dd5910` chore(linter): preserve PAY-010 quarantine review
+- `6810442` chore(linter): preserve PAY-011 quarantine review
+- `e019914` chore(linter): preserve PAY-012 quarantine review
+- `bf97b95` chore(linter): preserve PAY-013 quarantine review
+- `09c9722` chore(linter): preserve PAY-014 quarantine review
+- `34068b2` chore(linter): preserve PAY-015 quarantine review
+- `fbbc3ae` chore(linter): preserve PRIV-001 quarantine review
+- `0c4b85e` chore(linter): preserve PRIV-003 quarantine review
+- `d5bf106` chore(linter): preserve PRIV-004 quarantine review
+- `ea7c381` chore(linter): preserve PRIV-005 quarantine review
+- `768d111` chore(linter): preserve PRIV-006 quarantine review
+- `e5bf179` chore(linter): preserve PRIV-007 quarantine review
+- `c007abb` chore(linter): preserve PRIV-008 quarantine review
+- `aad0ac3` chore(linter): preserve PRIV-009 quarantine review
+- `4f2fa5f` chore(linter): preserve PRIV-010 quarantine review
+- `49d77dc` chore(linter): preserve PRIV-011 quarantine review
+- `b02536f` chore(linter): preserve PRIV-013 quarantine review
+- `190b5cf` chore(linter): preserve PRIV-015 quarantine review
+- `2ca39fd` chore(linter): preserve Q-CBR-002 quarantine review
+- `3f8b119` chore(linter): preserve Q-EMAIL-010 quarantine review
+- `4c087da` chore(linter): preserve Q-LLM-010 quarantine review
+- `30ed4e1` chore(linter): preserve Q-PRIV-008 quarantine review
+- `fd03f19` chore(linter): preserve Q-SCH-007 quarantine review
+- `6496bb8` chore(linter): preserve Q-TME-001 quarantine review
+- `ea487af` chore(linter): preserve Q-TME-010 quarantine review
+- `d42da04` chore(linter): preserve Q-TYP-009 quarantine review
+- `5129ee3` chore(linter): preserve REL-004 quarantine review
+- `a840889` chore(linter): preserve REL-005 quarantine review
+- `1cb163d` chore(linter): preserve REL-006 quarantine review
+- `5c6d78f` chore(linter): merge REL-007 quarantine review
+- `f6fcc4a` chore(linter): preserve REL-009 quarantine review
+- `08e49e5` chore(linter): preserve REL-011 quarantine review
+- `cb7071d` chore(linter): preserve REL-012 quarantine review
+- `c53c31a` chore(linter): preserve REL-013 quarantine review
+- `d55d551` chore(linter): preserve REL-014 quarantine review
+- `a716a86` chore(linter): preserve REL-016 quarantine review
+- `8943427` chore(linter): preserve REL-017 quarantine review
+- `dfae169` chore(linter): preserve REL-019 quarantine review
+- `a3e3569` chore(linter): preserve REL-020 quarantine review
+- `84d64b8` chore(linter): preserve RTR-001 quarantine review
+- `63d4d1f` chore(linter): preserve RTR-002 quarantine review
+- `e74c91a` chore(linter): preserve RTR-003 quarantine review
+- `7c3cc0b` chore(linter): preserve RTR-004 quarantine review
+- `cfeda05` chore(linter): preserve RTR-005 quarantine review
+- `7f9c3b0` chore(linter): preserve RTR-006 quarantine review
+- `af1e9ce` chore(linter): preserve RTR-008 quarantine review
+- `3423f97` chore(linter): preserve RTR-009 quarantine review
+- `d5728c0` chore(linter): preserve RTR-010 quarantine review
+- `6ee4062` chore(linter): preserve RTR-011 quarantine review
+- `15410a3` chore(linter): preserve RTR-012 quarantine review
+- `76b3c72` chore(linter): preserve RTR-013 quarantine review
+- `7e100f0` chore(linter): preserve RTR-014 quarantine review
+- `a765815` chore(linter): preserve RTR-015 quarantine review
+- `2e19c92` chore(linter): preserve SAN-003 quarantine review
+- `7cb54ae` chore(linter): preserve SAN-004 quarantine review
+- `9ae80e0` chore(linter): preserve SCH-001 quarantine review
+- `8f3ab42` chore(linter): preserve SCH-002 quarantine review
+- `0ba0a91` chore(linter): preserve SCH-003 quarantine review
+- `e71a7f2` chore(linter): preserve SCH-004 quarantine review
+- `80c996c` chore(linter): preserve SCH-005 quarantine review
+- `89eabe5` chore(linter): preserve SCH-006 quarantine review
+- `6c2bf19` chore(linter): preserve SCH-007 quarantine review
+- `131092f` chore(linter): preserve SCH-009 quarantine review
+- `4172047` chore(linter): preserve SCH-010 quarantine review
+- `e425dbc` chore(linter): preserve SEC-005 quarantine review
+- `028d7d2` chore(linter): preserve SEC-011 quarantine review
+- `ab49650` chore(linter): preserve SEC-012 quarantine review
+- `680e9f9` chore(linter): preserve SEC-014 quarantine review
+- `0af154a` chore(linter): preserve SEC-017 quarantine review
+- `7369b61` chore(linter): preserve SEC-018 quarantine review
+- `8ec9e67` chore(linter): preserve SEC-020 quarantine review
+- `3900664` chore(linter): merge SEC-027 quarantine review
+- `d66722d` chore(linter): preserve SEC-028 quarantine review
+- `84e257c` chore(linter): preserve SEC-034 quarantine review
+- `a7a871e` chore(linter): preserve SEC-037 quarantine review
+- `327cc5f` chore(linter): preserve SEC-038 quarantine review
+- `5fb2609` chore(linter): preserve SEC-040 quarantine review
+- `9027aac` chore(linter): preserve SEC-042 quarantine review
+- `c60e000` chore(linter): preserve SEC-043 quarantine review
+- `5a88008` chore(linter): preserve SEC-044 quarantine review
+- `0a998c5` chore(linter): preserve SHEET-001 quarantine review
+- `66b0c13` chore(linter): preserve SHEET-002 quarantine review
+- `79e1f17` chore(linter): preserve SHEET-003 quarantine review
+- `b8b2566` chore(linter): preserve SHEET-004 quarantine review
+- `8b39342` chore(linter): preserve SHEET-005 quarantine review
+- `ed2f1e2` chore(linter): preserve SHEET-006 quarantine review
+- `738e56b` chore(linter): preserve SHEET-007 quarantine review
+- `e4a64c6` chore(linter): preserve SHEET-008 quarantine review
+- `8a80faf` chore(linter): preserve SHEET-009 quarantine review
+- `3d4a783` chore(linter): preserve SHEET-010 quarantine review
+- `3741d16` chore(linter): preserve STM-001 quarantine review
+- `3394e94` chore(linter): preserve STM-002 quarantine review
+- `9fdabe5` chore(linter): preserve STM-004 quarantine review
+- `c653dfd` chore(linter): preserve STM-005 quarantine review
+- `e97110e` chore(linter): preserve STM-006 quarantine review
+- `03889a8` chore(linter): preserve STM-007 quarantine review
+- `13190dd` chore(linter): preserve STM-008 quarantine review
+- `e978fc1` chore(linter): preserve STM-009 quarantine review
+- `b606c73` chore(linter): preserve STM-010 quarantine review
+- `97f370c` chore(linter): preserve TEL-001 quarantine review
+- `4ca1228` chore(linter): preserve TEL-002 quarantine review
+- `042cd3d` chore(linter): preserve TEL-003 quarantine review
+- `e2dae69` chore(linter): preserve TEL-005 quarantine review
+- `af5c94d` chore(linter): preserve TEL-006 quarantine review
+- `8ee10c2` chore(linter): preserve TEL-007 quarantine review
+- `8644486` chore(linter): preserve TEL-008 quarantine review
+- `2804b09` chore(linter): preserve TEL-009 quarantine review
+- `ac65f95` chore(linter): preserve TEL-010 quarantine review
+- `71ccec7` chore(linter): preserve TEL-011 quarantine review
+- `89ce417` chore(linter): preserve TEL-012 quarantine review
+- `e709973` chore(linter): preserve TEL-013 quarantine review
+- `116891c` chore(linter): preserve TEL-014 quarantine review
+- `7a52f10` chore(linter): preserve TEL-015 quarantine review
+- `7ed2044` chore(linter): preserve TEL-016 quarantine review
+- `436f68d` chore(linter): preserve TEL-019 quarantine review
+- `cc1738a` chore(linter): preserve TEL-020 quarantine review
+- `f185dc2` chore(linter): preserve TEL-021 quarantine review
+- `cdbdf11` chore(linter): preserve TEL-022 quarantine review
+- `7cb4717` chore(linter): preserve TEL-024 quarantine review
+- `67261f2` chore(linter): preserve TEL-025 quarantine review
+- `cb94e4a` chore(linter): preserve TME-001 quarantine review
+- `2002d35` chore(linter): preserve TME-002 quarantine review
+- `d96b589` chore(linter): preserve TME-003 quarantine review
+- `8d7e597` chore(linter): preserve TME-004 quarantine review
+- `0b49e55` chore(linter): preserve TME-005 quarantine review
+- `68310e3` chore(linter): preserve TME-007 quarantine review
+- `4b0a44c` chore(linter): preserve TME-008 quarantine review
+- `a119967` chore(linter): preserve TME-009 quarantine review
+- `ea423a0` chore(linter): preserve TME-011 quarantine review
+- `19913ad` chore(linter): preserve TME-012 quarantine review
+- `4826ff8` chore(linter): preserve TME-013 quarantine review
+- `ee523d4` chore(linter): preserve TME-014 quarantine review
+- `c0d380f` chore(linter): preserve TME-015 quarantine review
+- `8580d95` chore(linter): preserve TME-017 quarantine review
+- `7641c6f` chore(linter): preserve TME-018 quarantine review
+- `f0e9e5b` chore(linter): preserve TME-019 quarantine review
+- `f47bdf9` chore(linter): preserve TME-020 quarantine review
+- `2873bd5` chore(linter): preserve TME-601 quarantine review
+- `994f409` chore(linter): preserve TME-602 quarantine review
+- `041a162` chore(linter): preserve TME-603 quarantine review
+- `9e54b6a` chore(linter): preserve TME-604 quarantine review
+- `99240b8` chore(linter): preserve TME-605 quarantine review
+- `90b409c` chore(linter): preserve TOOL-DESC-002 quarantine review
+- `5538490` chore(linter): preserve TOOL-DESC-008 quarantine review
+- `38350f3` chore(linter): preserve TOOL-DESC-009 quarantine review
+- `2720ddc` chore(linter): preserve TOOL-DESC-011 quarantine review
+- `dfe4aa4` chore(linter): preserve TOOL-DESC-012 quarantine review
+- `09b6a7f` chore(linter): preserve TOOL-DESC-014 quarantine review
+- `fadcd54` chore(linter): preserve TOOL-DESC-015 quarantine review
+- `33e00f0` chore(linter): preserve TOOL-DESC-016 quarantine review
+- `ab89b5f` chore(linter): preserve TOOL-DESC-017 quarantine review
+- `56b95a9` chore(linter): preserve TOOL-DESC-019 quarantine review
+- `3e677e3` chore(linter): preserve TOOL-DESC-020 quarantine review
+- `e1b2d0e` chore(linter): preserve TOOL-FLOW-002 quarantine review
+- `4a42a80` chore(linter): preserve TOOL-FLOW-003 quarantine review
+- `b0090f2` chore(linter): preserve TOOL-FLOW-004 quarantine review
+- `e59f804` chore(linter): preserve TOOL-FLOW-005 quarantine review
+- `a6a000f` chore(linter): preserve TOOL-NAME-002 quarantine review
+- `4845189` chore(linter): preserve TOOL-NAME-003 quarantine review
+- `46010f0` chore(linter): preserve TOOL-NAME-005 quarantine review
+- `b4b58b0` chore(linter): preserve TOOL-NAME-006 quarantine review
+- `22811cc` chore(linter): preserve TOOL-NAME-007 quarantine review
+- `43c16cd` chore(linter): preserve TOOL-NAME-009 quarantine review
+- `557c3e7` chore(linter): preserve TOOL-NAME-010 quarantine review
+- `0b6f0ae` chore(linter): preserve TOP-503 quarantine review
+- `afbd2cc` chore(linter): preserve TOP-504 quarantine review
+- `8ac952c` chore(linter): preserve TOP-505 quarantine review
+- `d7ab2ba` chore(linter): preserve TYP-001 quarantine review
+- `fc93519` chore(linter): preserve TYP-002 quarantine review
+- `a0be8c2` chore(linter): preserve TYP-003 quarantine review
+- `b183995` chore(linter): preserve TYP-004 quarantine review
+- `94c9265` chore(linter): preserve TYP-005 quarantine review
+- `cadf624` chore(linter): preserve TYP-006 quarantine review
+- `8a3d82c` chore(linter): preserve TYP-007 quarantine review
+- `c8fc80c` chore(linter): preserve TYP-008 quarantine review
+- `61dbf52` chore(linter): preserve TYP-012 quarantine review
+- `3456523` chore(linter): preserve TYP-013 quarantine review
+- `24b8446` chore(linter): preserve TYP-014 quarantine review
+- `cfa3a27` chore(linter): preserve TYP-015 quarantine review
+- `82a1788` chore(linter): preserve TYP-017 quarantine review
+- `1fa6799` chore(linter): preserve TYP-018 quarantine review
+- `97150c1` chore(linter): preserve TYP-019 quarantine review
+- `076e683` chore(linter): preserve TYP-020 quarantine review
+- `58e6da5` chore(linter): preserve TYP-021 quarantine review
+- `af71328` chore(linter): preserve TYP-022 quarantine review
+- `d8d2c96` chore(linter): preserve TYP-023 quarantine review
+- `7a333d9` chore(linter): preserve TYP-024 quarantine review
+- `4210402` chore(linter): preserve TYP-025 quarantine review
+- `aa08b05` chore(linter): preserve TYP-026 quarantine review
+- `6207846` chore(linter): preserve TYP-027 quarantine review
+- `a7dc760` chore(linter): preserve TYP-028 quarantine review
+- `7f1113f` chore(linter): preserve TYP-029 quarantine review
+- `6a5c5f1` chore(linter): preserve TYP-031 quarantine review
+- `0536d36` chore(linter): preserve TYP-032 quarantine review
+- `6d0bb53` chore(linter): preserve TYP-033 quarantine review
+- `ed50843` chore(linter): preserve TYP-034 quarantine review
+- `712115b` chore(linter): preserve TYP-035 quarantine review
+- `b051ec6` chore(linter): preserve TYP-901 quarantine review
+- `3ccd3cd` chore(linter): preserve TYP-902 quarantine review
+- `3105e40` chore(linter): preserve VIS-004 quarantine review
+- `c08a0cf` chore(linter): preserve VIS-005 quarantine review
+- `5297e66` chore(linter): preserve VIS-006 quarantine review
+- `448f583` chore(linter): preserve VIS-007 quarantine review
+- `6e4cb91` chore(linter): preserve VIS-010 quarantine review
+- `4e00d7d` chore(linter): preserve WHK-013 quarantine review
+- `df09637` chore(linter): preserve WHK-014 quarantine review
+- `5d82535` chore(linter): preserve WHK-016 quarantine review
+- `8aaaf1f` chore(linter): preserve WHK-017 quarantine review
+- `694d874` chore(linter): preserve WHK-018 quarantine review
+- `068f776` chore(linter): preserve WHK-019 quarantine review
+- `02eda49` chore(linter): preserve WHK-025 quarantine review
+- `ff4ddb3` chore(linter): preserve WHK-029 quarantine review
+- `4fd4663` chore(linter): preserve WHK-030 quarantine review
+- `3ed8f4b` chore(linter): preserve ZDT-003 quarantine review
+- `320f2c3` chore(linter): preserve ZDT-005 quarantine review
+- `90b6ad0` chore(linter): preserve ZDT-007 quarantine review
+- `c536347` docs(linter): refresh quarantine review coverage snapshot
+- `0b8049a` chore(linter): merge AI verbosity filtering candidate
+- `581925d` chore(linter): merge AI context filtering candidate
+- `7077997` chore(linter): merge AI result filtering candidate
+- `3f11915` chore(linter): merge AI relevant fields candidate
+- `eef368e` chore(linter): merge AI irrelevant data candidate
+- `36a5692` chore(linter): merge AI required fields candidate
+- `a3eeed7` chore(linter): merge AI field limit candidate
+- `3aa89da` chore(linter): merge AI approval guard candidate
+- `13aca3e` chore(linter): merge AI refund policy candidate
+- `8883469` chore(linter): merge AI refund approval candidate
+- `c802e2d` chore(linter): merge AI invoice approval candidate
+- `62a2950` chore(linter): merge AI sensitive authorization candidate
+- `50f791a` chore(linter): merge AI access control candidate
+- `11c5d83` chore(linter): merge AI authorization boundary candidate
+- `9a24e4b` chore(linter): merge AI boundary scope candidate
+- `e7348f0` fix(linter): flag sensitive knowledge data
+- `1d899b9` fix(linter): flag risky knowledge files
+- `ee9b53c` chore(linter): merge ambiguous fallback candidate
+- `3b6bc4b` chore(linter): merge missing data fallback candidate
+- `509a2cd` chore(linter): merge out-of-scope fallback candidate
+- `0929325` chore(linter): merge unsafe fallback candidate
+- `0cc870b` chore(linter): merge conversation history default candidate
+- `1bdea84` chore(linter): merge AI production readiness candidate
+- `a03091b` chore(linter): merge AI model sizing candidate
+- `e48ab0e` chore(linter): merge webhook payload structure candidate
+- `b5665c6` chore(linter): merge HTTP success status candidate
+- `7c68ae7` chore(linter): merge attachment budget candidate
+- `95bb506` chore(linter): merge Stripe API version candidate
+- `f851850` chore(linter): merge JSON content type candidate
+- `61a4f06` chore(linter): merge AI approval gate candidate
+- `8eec65a` chore(linter): merge mapping parentheses candidate
+- `ecc16e5` chore(linter): merge required field setup candidate
+- `29b82d0` chore(linter): merge tool output filtering candidate
+- `ee4d1fc` chore(linter): merge setup schema candidate
+- `653ad92` chore(linter): merge AI provider connection candidates
+- `82814e5` chore(linter): reject assessment quarantine rows
+- `a432aeb` chore(linter): reject course content quarantine rows
+- `d8aac62` chore(linter): reject training fragment quarantine rows
+- `b4506e6` chore(linter): reject tutorial action quarantine rows
+- `ba5b6ef` chore(linter): reject manual review prose quarantine rows
+- `a0442f9` chore(linter): reject source-poor legacy quarantine rows
+- `34be723` chore(linter): reject high-risk legacy title rows
+- `26ce7ad` chore(linter): reject generic review-surface scaffolds
+- `0dbf455` chore(linter): resolve final quarantine detectors
+
+## 2026-05-26
+
+- `7ad9096` feat(mcp): add customer blueprint delivery package
+- `f786503` feat(make): add custom tool product registry
+- `07316f8` feat(make): validate custom tool delivery packages
+- `71329d3` feat(catalog): add quality audit sampling gate
+- `ee886b3` feat(catalog): rank contextual graph candidates
+- `9261b3b` feat(catalog): dedupe graph confidence metadata
+- `ebd89cb` feat(mcp): add bounded graph rag context
+- `31644bf` feat(validation): add local blueprint parity checks
+- `6127fbb` fix(security): flag benchmark network HTTP targets
+- `945d99a` docs(adr): define public demo aggregate score boundary
+- `2f3315c` feat(validation): add public demo aggregate score
+- `18812bb` feat(validation): add scenario rule surface taxonomy
+- `b75aa67` feat(validation): add technical PDF note references
+- `68ea314` feat(mcp): add documentation validation tools
+- `d51ade6` feat(validation): gate linter promotion readiness
+- `c856252` fix(security): flag ipv6 unspecified infrastructure urls
+- `7e1bab5` fix(mcp): remove retired resources cli route
+- `9141d27` fix(sqlite): index backlog domain filters
+- `4b90def` fix(sqlite): align backlog extension indexes
+
+## 2026-05-25
+
+- `b569588` fix(mcp): route project artifacts to generated state
+- `631033e` test(mcp): cover project read structured errors
+- `155731e` feat(mcp): create project ASTs from intent
+- `b185d43` feat(mcp): expose project verification linter smoke
+- `5f585a1` feat(mcp): import Make blueprints as project ASTs
+- `386c21a` feat(mcp): quarantine unknown blueprint imports
+- `005694d` feat(mcp): validate project blueprint roundtrips
+
+## 2026-05-24
+
+- `442cf79` fix(catalog): recover stranded work units
+- `0cabf1c` feat(catalog): add canonical value indexes
+- `51704b6` fix(catalog): canonicalize catalog value index
+- `e96df8d` feat(mcp): expose catalog index lookup
+- `87e46f7` feat(catalog): add deterministic placeholder replacement plan
+- `f7d42d1` fix(mcp): route catalog index intents
+- `33e1394` fix(mcp): deactivate catalog work tools
+- `5b7d115` fix(mcp): compact catalog prompt indexes
+- `76380f0` fix(mcp): compact catalog search indexes
+- `1d1b65e` fix(catalog): type sample placeholders
+- `ed15f70` fix(mcp): structure local project IDE errors
+- `057caac` fix(catalog): match placeholder alias lookup terms
+- `5a42350` test(catalog): hardlink SQL snapshot fixtures
+
+## 2026-05-22
+
+- `1fdd921` fix(mcp): store oauth state under operator root
+- `23f53a7` fix(catalog): speed up lease scans and extend sqlite waits
+
+## 2026-05-21
+
+- `c73a1a7` fix(tests): prune ignored source inventory directories
+- `d4bd8fc` fix(docs): clarify external todo scheduler
+- `b11e2e8` fix(sqlite): index raw spec manifest metadata
+- `927a4ad` fix(mcp): skip duplicate project search scenario reads
+- `70849a0` fix(docs): route test entrypoint through command profile
+- `01e2dc1` chore(pancakes): refactor knowledge schema authority
+- `c1db548` chore(pancakes): harden remote mcp authorization
+- `6a1b17b` chore(pancakes): Add catalog quality reset ledger
+- `18c0694` test(data): gate sqlite supersedes decision
+- `897666c` feat(mcp): lease catalog work units
+- `a630788` feat(catalog): rebaseline deterministic graph projections
+- `7b550f8` feat(catalog): gate future neural graph behavior
+- `f26dce5` test(mcp): gate catalog semantic worker flow
+- `e308001` fix(mcp): require bearer auth at http boundary
+- `52540ce` fix(catalog): bootstrap hard reset leases
+- `531b853` fix(catalog): enforce reset worker quality order
+- `e02cef2` fix(mcp): separate legacy catalog saves from reset leases
+- `7ee43a9` fix(catalog): fragment reset units for safe graph workers
+- `407e10a` fix(catalog): rank explicit connection apps first
+- `e6f1326` fix(catalog): expose reset baseline in search
+- `9536b85` fix(catalog): canonicalize intelligence prompt trigger
+- `968666c` fix(catalog): expose reusable hard-reset leases
+- `79fadef` fix(catalog): harden reset lease save contracts
+- `3aaa82e` fix(catalog): keep compact search off-intent payloads bounded
+- `d867362` perf(catalog): make lookup readiness lightweight
+
+## 2026-05-20
+
+- `7577017` docs(data): document sql snapshot inventory
+- `189182c` docs(data): harden SQLite snapshot retention
+- `2521a18` perf(catalog): short-circuit exact SQLite searches
+- `abe4e36` test(mcp): expose catalog SQLite SSOT authority
+- `26e6113` feat(projects): add SQLite-backed project envelopes
+- `880ffec` perf(catalog): use read-only SQLite search connections
+- `3f6921c` feat(mcp): expose datastore structure evidence
+- `495549a` feat(mcp): expose browser-gated live parity boundary
+- `0f85949` perf(search): ignore generated SQL snapshots
+- `6283e80` fix(mcp): map Make webhook capabilities from schema evidence
+- `1de4a6e` fix(mcp): require auth for remote descriptors
+- `dc746a7` fix(mcp): keep root rpc alias bearer gated
+- `5a67539` refactor(mcp): keep project tools local-only
+
+## 2026-05-19
+
+- `b5c547f` feat(mcp): split SQLite ownership and trim public tools
+- `3538193` feat(mcp): expose local agent IDE workflow
+- `ca6b118` feat(mcp): rebuild local agent IDE intelligence
+- `f4a2875` fix(mcp): canonicalize catalog intelligence checkpoint
+- `ae45212` feat(mcp): harden offline Make IDE contracts
+- `385e078` feat(mcp): package local Make handoffs
+- `b53ac0f` feat(mcp): polish package contracts
+- `cff2017` fix(mcp): clarify package readiness contracts
+
+## 2026-05-18
+
+- `78d82e1` fix(mcp): harden catalog plan local metadata
+- `4fd1a9b` docs(catalog): clarify ChatGPT web sandbox limits
+- `a9ce79b` docs(catalog): define semantic graph batch worker
+- `7ee363d` docs(catalog): add semantic feedback loop
+- `c83fd66` fix(mcp): add catalog plan semantic unit loop
+- `7deb78e` fix(mcp): include raw evidence in catalog plan loop
+- `434dded` feat(catalog): add catalog plan sqlite ssot schema
+- `a13d7cc` fix(catalog): quarantine placeholder semantic answers
+- `65531ea` feat(mcp): add backed catalog search
+- `c985483` refactor(mcp): hide obsolete public tools
+- `7b068b8` refactor(mcp): retire markdown context resources
+- `b0b8e4c` feat(mcp): add sqlite backlog tools
+- `0bd0247` feat(mcp): move catalog worker tools to sqlite
+- `b4745e1` feat(mcp): persist project lifecycle in sqlite
+- `4c7f030` feat(mcp): persist searchable project lifecycle metadata
+- `2714747` feat(mcp): add compact project health and view tools
+- `0b011ab` feat(mcp): add domain project edit tools
+- `0dcd2aa` feat(mcp): add sqlite project infrastructure facts
+- `e1d747f` feat(mcp): add sqlite derived project cache
+- `9c3d161` feat(mcp): persist linter quarantine in sqlite
+- `aa9c453` feat(linter): audit sqlite rule coverage
+- `8bdd31b` feat(make): persist native infrastructure evidence
+- `3bd68c1` feat(make): ingest scraped infrastructure evidence
+- `0d6c2fe` feat(catalog): record refresh feedback in SQLite
+- `b79af41` refactor(catalog): retire legacy catalog artifact workspaces
+- `afbbce2` test(mcp): seed offline local smoke project
+- `3c07294` refactor(data): unify Make catalog state in Pancakes SQLite
+
+## 2026-05-17
+
+- `3533727` feat(validation): warn on unversioned production API calls
+- `c9e1cfc` docs(linter): record HTTP API version review
+- `ad42041` feat(validation): warn on missing GraphQL error guards
+- `4ca974b` docs(linter): record GraphQL error guard review
+- `efe6f9a` feat(validation): warn on missing GraphQL partial-data guards
+- `26de391` docs(linter): record GraphQL partial-data review
+- `5afed32` feat(validation): warn on missing GraphQL schema evidence
+- `25b9c6b` docs(linter): record GraphQL schema review
+- `6fac7ab` feat(validation): warn on missing GraphQL variable types
+- `06b0d72` docs(linter): record GraphQL variable type review
+- `2c5428f` feat(validation): warn on untrusted proxy header mappings
+- `9b816b0` docs(linter): record proxy header review
+- `c379acc` feat(validation): reject duplicate route identifiers
+- `75ab8a4` docs(linter): record duplicate route review
+- `5a5aaa0` feat(validation): warn on GraphQL mutation idempotency gaps
+- `5de4ac1` docs(linter): record GraphQL mutation quarantine review
+- `34cc5ac` feat(validation): warn on cookie header pass-through
+- `bd6e193` fix(mcp): keep quarantine coverage counts current
+- `39fee36` docs(linter): record ingress quarantine review
+- `26caad0` feat(validation): warn on sub-minute schedules
+- `67d1c16` feat(validation): warn on datastore secret storage
+- `08f059b` docs(linter): record reliability quarantine review
+- `619d6bd` docs(linter): record full quarantine blocker review
+- `4495b3d` fix(golden): accept nameless Make fixture exports
+- `fcf2406` fix(mcp): require pkce for public oauth codes
+- `f10f129` fix(mcp): reject unsafe oauth redirect characters
+- `bc24228` fix(mcp): preserve oauth authorization state
+- `99c0221` fix(mcp): reject windows-ambiguous project ids
+- `fc3722f` fix(mcp): reject invalid json pointer escapes
+- `4e26fc8` fix(validation): detect ipv4-mapped private http targets
+- `b2b7a6b` fix(validation): detect mapped internal url literals
+- `254dae0` fix(mcp): omit empty blueprint line chunks
+- `0715a71` fix(mcp): find exported blueprint names case-insensitively
+- `ebeff89` fix(oauth): reject future-issued persisted clients
+- `accaf17` fix(mcp): show json patch source chunks
+- `06b1bdf` fix(oauth): restrict https redirect callbacks
+- `c9dbfde` fix(validation): classify numeric-prefix http hosts as external
+- `61a990c` fix(report): block parent directory output paths
+- `7036e57` fix(catalog): resolve legacy-prefixed module tokens
+- `23df8a6` fix(mcp): reject local OAuth public origins
+- `2bbd8e7` fix(mcp): reject non-public OAuth origins
+- `1d0dd42` fix(catalog): sort available module versions semantically
+- `f94177d` fix(catalog): order lineage versions semantically
+- `3cdbbf9` fix(catalog): mark projected latest versions accurately
+- `cf86025` fix(catalog): order compiled app versions semantically
+- `d65f739` fix(mcp): confine raw-spec diagnostics to repo
+- `38f883b` fix(catalog): sort current versions first
+- `50149bc` fix(catalog): keep current planner candidates
+- `e1c1021` fix(mcp): reject symlinked project archive entries
+- `c59eefb` fix(mcp): reject symlinked blueprint artifacts
+- `6262b80` fix(mcp): validate blueprint query filenames
+- `b8ed7f9` fix(make): preserve catalog-backed custom modules
+- `159d113` fix(make-raw-specs): cover default Make platform native specs
+- `02c772f` fix(mcp): bound catalog plan knowledge loading
+- `9209313` feat(mcp): add catalog intake and bounded runtime coverage
+- `3197e27` feat(mcp): share readiness profile semantics
+- `aadeaba` test(mcp): cover full export raw summaries
+- `8e253c4` test(mcp): cover unified Slack connection paths
+- `23ff851` test(mcp): cover zero trace failure state
+- `fa772ae` docs(mcp): clarify readiness evidence boundaries
+- `e4075d5` docs(catalog): refresh Make coverage audit
+- `3e0f5df` docs(make): define custom module source safeguards
+- `fc60b73` feat(make): add custom module sanitized intake storage
+- `059def2` feat(make): add local custom tool creator workflow
+- `bb47aba` docs(tests): refresh Pancakes runtime profile evidence
+- `5e90975` fix(mcp): compact readiness payloads and surface blockers
+- `1c51d20` feat(mcp): version readiness response contracts
+- `3657659` fix(mcp): reject unevaluated zero-trace leak counts
+- `e1f3685` feat(mcp): version IDE loop response contracts
+- `184d3fe` fix(mcp): remove finding walls from client-safe validation
+- `64be38d` fix(mcp): add safety flags to client-safe validation
+- `76174f0` fix(mcp): require evidence for failed zero trace
+- `eef5e57` fix(mcp): prioritize zero-trace failure status reasons
+- `ad60cad` fix(mcp): route next steps to zero-trace failures
+- `d1a1798` fix(mcp): preserve client-safe scenario test status
+- `5622b05` fix(mcp): overwrite stale response metadata
+- `76618b4` fix(mcp): narrow all-surface blocker labeling
+- `89f65b8` fix(mcp): reject unknown response surfaces
+- `d417cce` fix(mcp): prioritize zero-trace next steps
+- `722cd20` fix(mcp): hide compact zero-trace leak paths
+- `39beb50` fix(mcp): report IDE loop safety flags
+- `496138e` fix(mcp): expose local lifecycle safety flags
+- `334fe5f` fix(mcp): expose project list safety flags
+- `ced0efd` fix(mcp): expose patch preview safety flags
+- `6de797d` fix(mcp): expose full validation safety flags
+- `5d7f993` fix(mcp): expose stress catalog safety flags
+- `a843bb5` fix(mcp): preserve stress preview credential posture
+- `71a1335` fix(mcp): complete patch preview safety posture
+- `752a839` feat(mcp): version stress scenario responses
+- `dbf39a0` feat(mcp): version local IDE loop responses
+- `3f879e6` fix(mcp): make readiness response contracts unambiguous
+- `9823114` feat(make): codify first-principles parity doctrine
+- `232ea08` fix(mcp): define runtime setup count taxonomy
+- `d7506bd` fix(mcp): align parity repair next steps
+- `97d0a61` docs(mcp): restrict whole-json authoring fallback
+- `e8ce948` feat(mcp): generate complex stress scenarios
+- `7fdcdd9` feat(mcp): enforce client-ready note quality
+- `a2cade1` feat(mcp): generate handoff report package
+- `27f87c9` feat(make): preserve native designer diagnostics
+- `2f7fa42` fix(catalog): decompose broad MCP planning
+- `fae5dec` docs(mcp): codify Make UI browser review flow
+- `8def1b1` data(make): preserve expression palette observations
+- `e89bbe3` feat(mcp): define Make API browser parity harness
+- `2cc3c76` feat(mcp): require budgeted Make run-once approval
+- `8e96efe` feat(mcp): define Make connection handoff delivery policy
+- `684fde3` fix(mcp): enforce MCP response state invariants
+- `8ac564d` fix(mcp): reject nested provider side-effect flags
+- `e9625c7` docs(mcp): define AI privacy redaction boundary
+- `8db3c09` fix(catalog): ingest make native default collections
+- `15cf5a0` feat(make): recognize expression palette tokens
+- `1268620` feat(make): index priority connector families
+- `6236452` feat(make): generate client handoff packages
+- `7ff984a` feat(make): validate native route filter semantics
+- `485ce07` feat(make): use default manifest coverage as catalog fallback
+- `10812f4` feat(make): ingest public catalog research evidence
+- `99b9813` feat(make): expand native semantics matrix coverage
+- `d1758fe` feat(make): add roundtrip reexport parity corpus
+- `0055e32` feat(make): generalize raw-spec field evidence
+- `94e2c97` feat(make): add live Browser validation ledger
+- `343011f` feat(make): broaden catalog plan native semantics
+- `cdc9e7b` fix(mcp): preserve quarantine review provenance
+- `9a8d06f` fix(mcp): reject linked project storage paths
+- `59cdaf8` fix(mcp): reject linked scenario-builder storage paths
+- `72af076` fix(mcp): preserve broad catalog plan domains
+- `1cc6729` fix(raw-specs): reject linked artifact writes
+- `9fd76ec` fix(make): preserve symbol expression token lookups
+- `e837cde` fix(make): reject linked custom module storage
+- `e94847e` fix(make): validate live IMT path tokens
+- `7b6fe56` fix(mcp): generate importable complex stress scenarios
+- `1a5a8d7` fix(ast): capture redacted Make designer samples
+- `18789bd` fix(catalog): quarantine duplicate raw modules
+- `7993d16` fix(validation): flag localhost private HTTP targets
+- `f40f43e` fix(validation): catch numeric private HTTP hosts
+- `5a19a16` fix(validation): share numeric internal host detection
+- `e20af3f` fix(validation): recognize numeric loopback hosts
+- `137f84d` fix(validation): share local HTTP host parsing
+- `1530192` fix(mcp): reject obfuscated local public origins
+- `e766bd0` fix(reports): block obfuscated local endpoint leaks
+- `f40af41` fix(mcp): mark catalog plans local-only
+- `f7fd3a2` fix(validation): redact malformed mapping diagnostics
+- `39c0b14` fix(validation): flag partial dynamic mapping markers
+- `e5bc20f` fix(validation): classify malformed mapped sinks
+- `9b713ff` fix(validation): redact unsupported filter expressions
+- `aead2bd` fix(validation): redact schedule diagnostics
+- `686c13e` fix(raw-specs): redact env parse errors
+- `338cb99` fix(raw-specs): redact invalid CLI limits
+- `54e825e` fix(validation): redact path guard errors
+- `ee3866b` fix(mcp): redact json patch diagnostics
+- `f977616` fix(mcp): bound json patch array indices
+- `9676bd8` fix(mcp): reject malformed scenario test pointers
+- `662c97a` fix(mcp): redact reexport evidence paths
+- `efa3ad4` fix(mcp): accept ChatGPT connector redirect hosts
+- `8835309` feat(mcp): add catalog plan artifact devtools
+- `83a7ec5` docs(catalog): start grammar planning shard
+- `e03e2b4` fix(mcp): cache remote tool discovery payload
+- `5ac851b` fix(catalog): expand planner grammar guidance
+- `5cd99bb` fix(mcp): make catalog plan local-only and ledger-backed
+
+## 2026-05-15
+
+- `c338b51` fix(mcp): add neutral local permission copy
+- `757c756` fix(mcp): return structured import readiness surface
+- `6634e98` feat(make): add built-in router manifest
+- `2e27e7a` feat(mcp): support grouped runtime placeholders
+- `601592d` feat(mcp): group repeated scenario blockers
+- `79335f5` feat(mcp): add stress scenario factory
+- `cb99ea2` feat(mcp): add lead-ops stress fixture ladder
+- `bb7630f` test(mcp): classify giant blueprint diffs
+- `7fc109f` docs(adr): define Make compiler target policy
+- `f0b8c2f` feat(make): add native semantics matrix
+- `8e07e5e` feat(make): back native projectors with manifests
+- `4c9524c` feat(make): add iterator built-in manifest
+- `e9759a8` feat(make): add aggregator built-in manifests
+- `9e3343a` feat(make): add flow-control built-in manifests
+- `ff06e4d` feat(catalog): expose raw-spec refresh blockers
+- `1875f97` feat(diff): classify roundtrip discoveries
+- `c064915` test(make): add native fixture family corpus
+- `eaa31da` fix(diff): harden Make-native semantic classification
+- `a8fc0f7` test(make): prove native layout topology invariants
+- `3bc5f60` test(make): deepen app projector parity contracts
+- `a95365b` feat(mcp): add blueprint chunk query
+- `68be750` fix(make): preserve unknown module pass-through
+- `a042bcc` feat(make): add internal evidence ledger
+- `14548a2` feat(make): define parity completion gates
+- `333d45f` feat(make): score parity confidence
+- `98d33b1` feat(mcp): add Make re-export evidence ingestion
+- `b021400` feat(mcp): harden blueprint editing safety
+- `e63b6a0` test(mcp): enforce private engine output boundary
+- `fe262f7` fix(mcp): enforce OAuth scope boundaries
+- `f1c596b` feat(mcp): require self-documenting scenario notes
+- `67a6345` feat(linter): quarantine course-derived Make rules
+- `7d2c47a` feat(make): inventory non-raw Make evidence
+- `19209b9` feat(linter): promote HTTP method URL rule
+- `eceab73` fix(make-export): preserve existing route module filters
+- `adfec54` fix(make-export): fail closed on private note traces
+- `df50fea` fix(make): normalize note module anchors
+- `cd67c93` feat(notes): seed scenario note templates
+- `dad9437` feat(mcp): add micro project context index
+- `d6f8f15` fix(mcp): skip unnumbered context-index groups
+- `c925d10` fix(mcp): report malformed scenario notes
+- `065acfb` fix(mcp): reject orphan scenario note targets
+- `37b34bf` fix(mcp): exclude orphan notes from coverage counts
+- `454f7ac` fix(mcp): reject malformed note anchors
+- `027be14` fix(mcp): compact Make export readiness output
+- `20348ae` feat(mcp): add linter quarantine intake controls
+- `c08ec16` feat(mcp): snapshot linter quarantine coverage
+- `afb7147` fix(mcp): update quarantine coverage rows by candidate
+
+## 2026-05-14
+
+- `5291893` fix(mcp): compact project inspection output
+- `f07f0b5` fix(mcp): clarify project IDE output contracts
+- `48e5140` feat(mcp): add project next-step ergonomics
+- `fdf81f1` fix(mcp): keep local module expansion no-auth
+- `e78957c` fix(mcp): authorize once for autonomous tool calls
+- `698fa1c` fix(mcp): fail closed when operator password is missing
+- `602e9f9` fix(mcp): read operator root dotenv password
+- `268b9b5` feat(mcp): add surgical project JSON patch tools
+- `7d45304` fix(catalog): refresh generated knowledge store freshness
+- `4892a58` feat(mcp): expose scenario testing context
+- `1dd949f` fix(mcp): polish import readiness output
+- `7a7ce99` chore(mcp): keep generated projects out of Git
+- `ababa34` fix(mcp): repair scenario test prompt posture
+- `febd16a` fix(mcp): compact import readiness output by default
+- `0d4b7cf` refactor(make): isolate Make-native blueprint export
+
+## 2026-05-13
+
+- `f63fc9d` chore(repo): add pancakes metadata
+- `39d48d0` feat(core): add automation analysis engine
+- `ae29f3a` test(core): add product validation coverage
+- `0c8ae85` fix(make): canonicalize raw spec refresh paths
+- `b6a1fc7` chore(mcp): add image assets
+- `d681b3a` fix(make): skip empty authenticated raw specs
+- `bcae924` fix(mcp): classify local catalog tools as no-auth reads
+- `6e67702` feat(mcp): add project inspection loop

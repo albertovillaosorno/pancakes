@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "asset": "make_module_projector_manifest",
+  "visibility": "private_engine_asset",
+  "module": "builtin:BasicRepeater",
+  "aliases": ["repeater", "builtin:Repeater", "repeat"],
+  "native_token": "builtin:BasicRepeater",
+  "version_policy": {
+    "kind": "fixed",
+    "version": 1
+  },
+  "projector": {
+    "kind": "basic_repeater"
+  },
+  "mapper_policy": {
+    "kind": "repeater_bounds",
+    "required_keys": ["start", "repeats", "step"]
+  },
+  "parameters_policy": {
+    "required_keys": []
+  },
+  "metadata_expect_policy": {
+    "kind": "repeater_bounds",
+    "required_keys": ["start", "repeats", "step"]
+  },
+  "metadata_restore_policy": {
+    "kind": "none"
+  },
+  "metadata_interface_policy": {
+    "kind": "counter_output",
+    "required_keys": ["i"]
+  },
+  "connection_projection_policy": {
+    "kind": "none"
+  },
+  "placeholder_policy": {
+    "mode": "none",
+    "placeholders": []
+  },
+  "volatile_field_policy": {
+    "known_paths": ["metadata.designer"]
+  },
+  "zero_trace_constraints": {
+    "private_fields_forbidden": true,
+    "customer_artifact": false
+  },
+  "roundtrip_behavior": {
+    "status": "fixture_observed",
+    "notes": "Repeater emits an incremental counter from configured start, repeats, and step values."
+  },
+  "confidence": "medium",
+  "fixtures": [
+    "src/languages/make/data/golden/data/public/top100/042-4066-4066-generate-a-random-string-text.blueprint.json"
+  ],
+  "last_evidence_source": "local_fixture"
+}

@@ -1,0 +1,103 @@
+{
+  "api_endpoints_used": [
+    "GET /api/v2/scenarios?teamId={teamId}&limit=100",
+    "POST /api/v2/scenarios",
+    "GET /api/v2/scenarios/{scenarioId}/blueprint?draft=false",
+    "DELETE /api/v2/scenarios/{scenarioId}"
+  ],
+  "api_surface": "make_api_v2",
+  "cleanup_status": "scratch_scenario_deleted",
+  "create_id_path_candidates": ["$.scenario.id"],
+  "create_response_shape": {
+    "scenario": {
+      "concept": "bool",
+      "id": "int",
+      "isActive": "bool",
+      "isinvalid": "bool",
+      "name": "str",
+      "scheduling": {
+        "interval": "int",
+        "type": "str"
+      },
+      "teamId": "int",
+      "usedPackages": ["str"]
+    }
+  },
+  "credential_value_transfer": false,
+  "credentials_printed": false,
+  "customer_data_used": false,
+  "delete_id_path_candidates": ["$.scenario"],
+  "delete_response_shape": {
+    "scenario": "int"
+  },
+  "export_blueprint_path": "$.response.blueprint",
+  "export_response_shape": {
+    "code": "str",
+    "response": {
+      "blueprint": {
+        "flow": [
+          {
+            "id": "int",
+            "metadata": {
+              "designer": "dict"
+            },
+            "module": "str",
+            "version": "int"
+          }
+        ],
+        "metadata": {
+          "designer": {
+            "orphans": []
+          },
+          "instant": "bool",
+          "scenario": {
+            "autoCommit": "bool",
+            "autoCommitTriggerLast": "bool",
+            "confidential": "bool",
+            "dataloss": "bool",
+            "dlq": "bool",
+            "freshVariables": "bool",
+            "maxErrors": "int",
+            "roundtrips": "int",
+            "sequential": "bool"
+          },
+          "version": "int"
+        },
+        "name": "str"
+      },
+      "scheduling": {
+        "interval": "int",
+        "type": "str"
+      }
+    }
+  },
+  "list_created_row_summary": [
+    {
+      "isActive": false,
+      "isinvalid": false,
+      "matched_by_id": true,
+      "scheduling_shape": {
+        "interval": "int",
+        "type": "str"
+      },
+      "usedPackages": ["json"]
+    }
+  ],
+  "live_make_called": true,
+  "provider_api_call": true,
+  "raw_scenario_id_persisted": false,
+  "request_contract": {
+    "blueprint": "json_string",
+    "name": "string",
+    "scheduling": "json_string",
+    "teamId": "int"
+  },
+  "scenario_activation_called": false,
+  "scenario_created_inactive": true,
+  "scenario_run_once_called": false,
+  "schema_version": 1,
+  "scratch_remaining_count": 0,
+  "secret_output": false,
+  "status": "scenario_mutation_contract_captured",
+  "validation_actor": "codex_terminal_make_api"
+}

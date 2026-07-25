@@ -1,0 +1,315 @@
+{
+  "asset": "make_priority_module_families",
+  "schema_version": 1,
+  "visibility": "private_engine_asset",
+  "source": "todo:0004-priority-non-built-in-make-module-manifest-coverage",
+  "browser_verification_policy": {
+    "browser_required_when": "local_raw_spec_missing_or_dynamic_rpc_uncovered",
+    "forbidden_actions": [
+      "activate schedules",
+      "consume Make operations",
+      "create connections",
+      "run scenarios",
+      "save credentials"
+    ],
+    "preferred_surface": "Codex in-app Browser",
+    "read_only": true
+  },
+  "records": [
+    {
+      "label": "Google Sheets",
+      "status": "module_family",
+      "priority": "absolute",
+      "app_slugs": ["google-sheets"],
+      "aliases": ["sheets", "google spreadsheet", "spreadsheets"]
+    },
+    {
+      "label": "Gmail",
+      "status": "module_family",
+      "priority": "absolute",
+      "app_slugs": ["google-email"],
+      "aliases": ["google email"]
+    },
+    {
+      "label": "Verified",
+      "status": "catalog_badge",
+      "priority": "badge",
+      "app_slugs": [],
+      "aliases": []
+    },
+    {
+      "label": "OpenAI (ChatGPT, Sora, Whisper)",
+      "status": "module_family",
+      "priority": "absolute",
+      "app_slugs": ["openai-gpt-3"],
+      "aliases": ["chatgpt", "openai", "sora", "whisper"]
+    },
+    {
+      "label": "Telegram Bot",
+      "status": "module_family",
+      "priority": "absolute",
+      "app_slugs": ["telegram"],
+      "aliases": ["telegram"]
+    },
+    {
+      "label": "Google Drive",
+      "status": "module_family",
+      "priority": "absolute",
+      "app_slugs": ["google-drive"],
+      "aliases": ["drive"]
+    },
+    {
+      "label": "Pinterest",
+      "status": "module_family",
+      "priority": "standard",
+      "app_slugs": ["pinterest"],
+      "aliases": []
+    },
+    {
+      "label": "Airtable",
+      "status": "module_family",
+      "priority": "absolute",
+      "app_slugs": ["airtable"],
+      "aliases": []
+    },
+    {
+      "label": "Google Gemini AI",
+      "status": "module_family",
+      "priority": "standard",
+      "app_slugs": ["gemini-ai"],
+      "aliases": ["gemini", "google gemini"]
+    },
+    {
+      "label": "Notion",
+      "status": "module_family",
+      "priority": "absolute",
+      "app_slugs": ["notion"],
+      "aliases": []
+    },
+    {
+      "label": "Google Docs",
+      "status": "module_family",
+      "priority": "standard",
+      "app_slugs": ["google-docs"],
+      "aliases": ["docs"]
+    },
+    {
+      "label": "Slack",
+      "status": "module_family",
+      "priority": "absolute",
+      "app_slugs": ["slack"],
+      "aliases": []
+    },
+    {
+      "label": "Google Calendar",
+      "status": "module_family",
+      "priority": "absolute",
+      "app_slugs": ["google-calendar"],
+      "aliases": ["calendar"]
+    },
+    {
+      "label": "Facebook Lead Ads",
+      "status": "module_family",
+      "priority": "standard",
+      "app_slugs": ["facebook-lead-ads"],
+      "aliases": ["meta lead ads"]
+    },
+    {
+      "label": "Facebook Pages",
+      "status": "module_family",
+      "priority": "standard",
+      "app_slugs": ["facebook-pages"],
+      "aliases": ["meta pages"]
+    },
+    {
+      "label": "Microsoft 365 Email (Outlook)",
+      "status": "module_family",
+      "priority": "standard",
+      "app_slugs": ["microsoft-email"],
+      "aliases": ["microsoft email", "office 365 email", "outlook"]
+    },
+    {
+      "label": "Anthropic Claude",
+      "status": "module_family",
+      "priority": "standard",
+      "app_slugs": ["anthropic-claude"],
+      "aliases": ["anthropic", "claude"]
+    },
+    {
+      "label": "Instagram for Business (Facebook login)",
+      "status": "module_family",
+      "priority": "standard",
+      "app_slugs": ["instagram-business"],
+      "aliases": ["instagram business", "meta instagram"]
+    },
+    {
+      "label": "monday.com",
+      "status": "module_family",
+      "priority": "standard",
+      "app_slugs": ["monday"],
+      "aliases": ["monday", "monday com"]
+    },
+    {
+      "label": "Tally",
+      "status": "module_family",
+      "priority": "standard",
+      "app_slugs": ["tally"],
+      "aliases": []
+    },
+    {
+      "label": "HubSpot CRM",
+      "status": "module_family",
+      "priority": "standard",
+      "app_slugs": ["hubspotcrm"],
+      "aliases": ["hubspot"]
+    },
+    {
+      "label": "WordPress",
+      "status": "module_family",
+      "priority": "standard",
+      "app_slugs": ["wordpress"],
+      "aliases": []
+    },
+    {
+      "label": "Google Forms",
+      "status": "module_family",
+      "priority": "standard",
+      "app_slugs": ["google-forms"],
+      "aliases": ["forms"]
+    },
+    {
+      "label": "Dropbox",
+      "status": "module_family",
+      "priority": "standard",
+      "app_slugs": ["dropbox"],
+      "aliases": []
+    },
+    {
+      "label": "Make AI Agents",
+      "status": "module_family",
+      "priority": "absolute",
+      "app_slugs": ["ai-local-agent"],
+      "aliases": ["ai local agent", "make agents"],
+      "source_occurrences": 2
+    },
+    {
+      "label": "New",
+      "status": "catalog_badge",
+      "priority": "badge",
+      "app_slugs": [],
+      "aliases": []
+    },
+    {
+      "label": "Shopify",
+      "status": "module_family",
+      "priority": "absolute",
+      "app_slugs": ["shopify"],
+      "aliases": []
+    },
+    {
+      "label": "ClickUp",
+      "status": "module_family",
+      "priority": "standard",
+      "app_slugs": ["clickup"],
+      "aliases": []
+    },
+    {
+      "label": "LinkedIn",
+      "status": "module_family",
+      "priority": "standard",
+      "app_slugs": ["linkedin"],
+      "aliases": []
+    },
+    {
+      "label": "Supabase",
+      "status": "module_family",
+      "priority": "standard",
+      "app_slugs": ["supabase"],
+      "aliases": []
+    },
+    {
+      "label": "Brevo",
+      "status": "module_family",
+      "priority": "standard",
+      "app_slugs": ["sendinblue"],
+      "aliases": ["sendinblue"]
+    },
+    {
+      "label": "Stripe",
+      "status": "module_family",
+      "priority": "absolute",
+      "app_slugs": ["stripe"],
+      "aliases": []
+    },
+    {
+      "label": "Twilio",
+      "status": "module_family",
+      "priority": "absolute",
+      "app_slugs": ["twilio"],
+      "aliases": []
+    },
+    {
+      "label": "Apify",
+      "status": "module_family",
+      "priority": "standard",
+      "app_slugs": ["apify"],
+      "aliases": []
+    },
+    {
+      "label": "YouTube",
+      "status": "module_family",
+      "priority": "standard",
+      "app_slugs": ["youtube"],
+      "aliases": []
+    },
+    {
+      "label": "Make AI Toolkit",
+      "status": "module_family",
+      "priority": "absolute",
+      "app_slugs": ["ai-tools"],
+      "aliases": ["ai toolkit", "ai tools"]
+    },
+    {
+      "label": "Discord",
+      "status": "module_family",
+      "priority": "absolute",
+      "app_slugs": ["discord"],
+      "aliases": []
+    },
+    {
+      "label": "OneDrive",
+      "status": "module_family",
+      "priority": "standard",
+      "app_slugs": ["onedrive"],
+      "aliases": ["one drive"]
+    },
+    {
+      "label": "Pipedrive CRM",
+      "status": "module_family",
+      "priority": "standard",
+      "app_slugs": ["pipedrive"],
+      "aliases": ["pipedrive"]
+    },
+    {
+      "label": "LINE",
+      "status": "module_family",
+      "priority": "standard",
+      "app_slugs": ["line"],
+      "aliases": []
+    },
+    {
+      "label": "GoHighLevel",
+      "status": "module_family",
+      "priority": "standard",
+      "app_slugs": ["highlevel"],
+      "aliases": ["go high level", "highlevel"]
+    },
+    {
+      "label": "Make Code",
+      "status": "module_family",
+      "priority": "absolute",
+      "app_slugs": ["code"],
+      "aliases": ["make code"]
+    }
+  ]
+}

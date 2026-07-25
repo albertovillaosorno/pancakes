@@ -1,0 +1,133 @@
+{
+  "name": "Lead Routing Data Store MVP",
+  "flow": [
+    {
+      "id": 1,
+      "module": "gateway:CustomWebHook",
+      "parameters": {
+        "hook": "{{runtime.webhook.lead_intake_hook}}"
+      },
+      "mapper": {
+        "email": "{{1.email}}",
+        "company": "{{1.company}}",
+        "source": "{{1.source}}",
+        "score": "{{1.score}}"
+      },
+      "routes": [
+        {
+          "filter": {
+            "name": "qualified",
+            "conditions": {
+              "expression": "not empty({{1.email}}) and not empty({{1.company}}) and not empty({{1.source}}) and {{1.score}} >= 80"
+            }
+          },
+          "flow": [
+            {
+              "id": 2,
+              "module": "datastore:AddRecord",
+              "parameters": {
+                "datastore": "{{runtime.datastore.qualified_leads}}"
+              },
+              "mapper": {
+                "route": "qualified",
+                "email": "{{1.email}}",
+                "company": "{{1.company}}",
+                "source": "{{1.source}}",
+                "score": "{{1.score}}"
+              },
+              "metadata": {
+                "raw_spec": {
+                  "catalog_module_id": "module:datastore:2.0.5:action:AddRecord",
+                  "issues": [],
+                  "status": "resolved"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "filter": {
+            "name": "incomplete",
+            "conditions": {
+              "expression": "empty({{1.email}}) or empty({{1.company}}) or empty({{1.source}}) or empty({{1.score}}) or {{1.score}} < 80"
+            }
+          },
+          "flow": [
+            {
+              "id": 3,
+              "module": "datastore:AddRecord",
+              "parameters": {
+                "datastore": "{{runtime.datastore.incomplete_leads}}"
+              },
+              "mapper": {
+                "route": "incomplete",
+                "email": "{{1.email}}",
+                "company": "{{1.company}}",
+                "source": "{{1.source}}",
+                "score": "{{1.score}}"
+              },
+              "metadata": {
+                "raw_spec": {
+                  "catalog_module_id": "module:datastore:2.0.5:action:AddRecord",
+                  "issues": [],
+                  "status": "resolved"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "metadata": {
+        "raw_spec": {
+          "catalog_module_id": "module:gateway:1.14.1:trigger:CustomWebHook",
+          "issues": [],
+          "status": "resolved"
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "scenario": {
+      "name": "Lead Routing Data Store MVP"
+    },
+    "designer": {
+      "messages": [
+        {
+          "message": "Portfolio demo workflow. Replace runtime placeholders before publishing."
+        }
+      ]
+    },
+    "notes": [
+      {
+        "content": "Offline portfolio draft for fake lead intake and routing. No credentials or production endpoints are embedded.",
+        "isFilterNote": false,
+        "metadata": {
+          "color": "#9138FE",
+          "scope": "source_draft",
+          "source": "lead-routing-data-store-mvp"
+        },
+        "moduleIds": [1]
+      }
+    ],
+    "placeholder_registry": [
+      {
+        "placeholder": "runtime.webhook.lead_intake_hook",
+        "kind": "runtime_setup",
+        "target": "gateway:CustomWebHook"
+      },
+      {
+        "placeholder": "runtime.datastore.qualified_leads",
+        "kind": "runtime_setup",
+        "target": "datastore:AddRecord"
+      },
+      {
+        "placeholder": "runtime.datastore.incomplete_leads",
+        "kind": "runtime_setup",
+        "target": "datastore:AddRecord"
+      }
+    ],
+    "schedule": {
+      "id": "schedule:manual"
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "failure_diagnostics": [],
+  "generated_at_utc": "2026-05-08T11:00:17Z",
+  "is_truncated": true,
+  "records": [
+    {
+      "description": "Effortlessly enhance your content creation process by integrating ChatGPT with Google Sheets. This powerful template allows you to automatically generate relevant completions, ranging from SEO keywords to custom responses, boosting productivity and content quality with ease. [Learn more](https://community.make.com/t/getting-started-with-openai-gpt-3-and-make/7796?utm_source=make&utm_medium=in-app&utm_campaign=template)",
+      "id": 12593,
+      "name": "Generate ChatGPT Completions from Google Sheets Rows",
+      "url": "10570-create-new-completions-with-openai-chatgpt-from-new-rows-in-google-sheets",
+      "usage": 107004,
+      "usedApps": [
+        "google-sheets",
+        "openai-gpt-3"
+      ]
+    },
+    {
+      "description": "Use this automation to instantly capture data from a webhook and automatically add it as a new row in a Google Sheet. This is ideal for real-time data logging, form submissions, or any event-driven updates that must be stored in a spreadsheet.\n\n[Learn more about webhooks!](https://www.make.com/en/help/tools/webhooks)",
+      "id": 12289,
+      "name": "Add webhook data to a Google Sheet",
+      "url": "5893-add-data-to-a-google-sheet-received-from-a-webhook",
+      "usage": 39904,
+      "usedApps": [
+        "gateway",
+        "google-sheets"
+      ]
+    },
+    {
+      "description": "Elevate your Telegram channel with our ChatGPT-powered bot. Deliver instant, smart responses to user queries, enhancing engagement and customer satisfaction effortlessly.",
+      "id": 11697,
+      "name": "ChatGPT-Powered Telegram Bot for Instant Replies",
+      "url": "10813-generate-telegram-bot-responses-with-ai",
+      "usage": 39251,
+      "usedApps": [
+        "telegram",
+        "openai-gpt-3"
+      ]
+    },
+    {
+      "description": "Effortlessly send Gmail messages when a new row is added to your Google Sheets. Just ensure your spreadsheet includes these columns:\n\n- Email Address\n\n- Subject\n\n- Content",
+      "id": 11381,
+      "name": "Send a Gmail email from a new Google Sheets row",
+      "url": "5770-send-a-gmail-email-from-a-new-google-sheets-row",
+      "usage": 37810,
+      "usedApps": [
+        "google-sheets",
+        "google-email"
+      ]
+    },
+    {
+      "description": "Seamlessly capture and organize new Facebook Lead Ads leads by automatically adding them to a Google Sheets spreadsheet. Streamline your lead management process and enhance productivity with this efficient automation solution.",
+      "id": 12164,
+      "name": "Sync Facebook Lead Ads leads with Google Sheets",
+      "url": "4219-save-new-facebook-lead-ads-leads-into-google-sheets",
+      "usage": 37267,
+      "usedApps": [
+        "facebook-lead-ads",
+        "google-sheets"
+      ]
+    }
+  ],
+  "schema_version": 1,
+  "source_name": "Make Templates API public templates probe",
+  "truncation_reason": "operator_probe_limit_5"
+}

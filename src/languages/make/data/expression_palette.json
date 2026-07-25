@@ -1,0 +1,242 @@
+{
+  "schema_version": 1,
+  "asset": "make_expression_palette_observations",
+  "visibility": "private_engine_asset",
+  "observed_at_local_date": "2026-05-17",
+  "source_kind": "operator_screenclip",
+  "source_description": "Operator-provided Make expression palette screenshots.",
+  "raw_image_paths_omitted": true,
+  "safety_contract": {
+    "live_make_called_by_pancakes": false,
+    "provider_api_call": false,
+    "credential_value_transfer": false,
+    "secret_output": false,
+    "customer_facing": false
+  },
+  "purpose": [
+    "Preserve browser-observed Make expression palette tokens before TODO 0017 harness work.",
+    "Seed expression-language catalog research without promoting unverified arity or evaluator semantics.",
+    "Keep UI-observed expression evidence under the Make adapter instead of generic AST code."
+  ],
+  "promotion_gate": [
+    "Do not promote a token into executable expression validation until arity, argument separators, and return semantics are verified.",
+    "Do not infer hidden token identifiers from display labels in system variable screenshots.",
+    "Use browser/API roundtrip evidence before claiming complete Make expression parity."
+  ],
+  "not_authority_for": [
+    "Complete Make expression language coverage",
+    "Function arity",
+    "Runtime evaluator behavior",
+    "Hidden variable token ids behind display labels",
+    "Customer scenario business logic"
+  ],
+  "palettes": [
+    {
+      "palette_id": "general_functions",
+      "title": "General functions",
+      "variables": [
+        "executionId"
+      ],
+      "functions": [
+        "()",
+        "get",
+        "set",
+        "if",
+        "ifempty",
+        "switch",
+        "omit",
+        "pick"
+      ],
+      "operators": [
+        "=",
+        "!=",
+        "and",
+        "or"
+      ],
+      "keywords": [
+        "true",
+        "false",
+        "ignore",
+        "null",
+        "erase"
+      ]
+    },
+    {
+      "palette_id": "math_functions",
+      "title": "Math functions",
+      "variables": [
+        "pi",
+        "random"
+      ],
+      "functions": [
+        "average",
+        "ceil",
+        "floor",
+        "trunc",
+        "median",
+        "max",
+        "min",
+        "abs",
+        "round",
+        "sum",
+        "parseNumber",
+        "stdevS",
+        "stdevP",
+        "formatNumber"
+      ],
+      "operators": [
+        "*",
+        "/",
+        "mod",
+        "+",
+        "-",
+        "<",
+        "<=",
+        ">",
+        ">="
+      ],
+      "keywords": []
+    },
+    {
+      "palette_id": "text_and_binary_functions",
+      "title": "Text and binary functions",
+      "variables": [
+        "uuid"
+      ],
+      "functions": [
+        "length",
+        "lower",
+        "capitalize",
+        "startcase",
+        "ascii",
+        "replace",
+        "replaceEmojiCharacters",
+        "trim",
+        "upper",
+        "substring",
+        "indexOf",
+        "toBinary",
+        "toString",
+        "encodeURL",
+        "decodeURL",
+        "escapeHTML",
+        "escapeJSON",
+        "escapeMarkdown",
+        "stripHTML",
+        "contains",
+        "split",
+        "md5",
+        "sha1",
+        "sha256",
+        "sha512",
+        "base64"
+      ],
+      "operators": [],
+      "keywords": [
+        "space",
+        "nbsp",
+        "tab",
+        "emptystring",
+        "newline",
+        "carriagereturn"
+      ]
+    },
+    {
+      "palette_id": "date_and_time",
+      "title": "Date and time",
+      "ui_controls": [
+        "date_picker",
+        "time_picker"
+      ],
+      "observed_selected_date": "2026-05-17",
+      "variables": [
+        "timestamp",
+        "now"
+      ],
+      "functions": [
+        "addSeconds",
+        "addMinutes",
+        "addHours",
+        "addDays",
+        "addMonths",
+        "addYears",
+        "setSecond",
+        "setMinute",
+        "setHour",
+        "setDay",
+        "setDate",
+        "setMonth",
+        "setYear",
+        "formatDate",
+        "parseDate"
+      ],
+      "operators": [],
+      "keywords": []
+    },
+    {
+      "palette_id": "array_functions",
+      "title": "Functions for working with arrays",
+      "variables": [],
+      "functions": [
+        "arrayIntersect",
+        "join",
+        "length",
+        "keys",
+        "slice",
+        "merge",
+        "contains",
+        "remove",
+        "add",
+        "arrayDiff",
+        "map",
+        "shuffle",
+        "sort",
+        "reverse",
+        "first",
+        "last",
+        "flatten",
+        "distinct",
+        "deduplicate",
+        "toCollection",
+        "toArray"
+      ],
+      "operators": [],
+      "keywords": [
+        "emptyarray"
+      ]
+    },
+    {
+      "palette_id": "custom_and_system_variables",
+      "title": "Custom and system variables",
+      "scenario_variables": [
+        "Credits consumed",
+        "Data consumed",
+        "Execution id",
+        "Execution name",
+        "Execution started at",
+        "Execution type",
+        "Execution URL",
+        "Scenario id",
+        "Is incomplete execution",
+        "Scenario name",
+        "Operations consumed",
+        "Scenario URI"
+      ],
+      "team_variables": [
+        "Team id",
+        "Team name"
+      ],
+      "organization_variables": [
+        "Data left",
+        "Organization id",
+        "Organization name",
+        "Remaining credits",
+        "Zone domain"
+      ],
+      "variables": [],
+      "functions": [],
+      "operators": [],
+      "keywords": []
+    }
+  ]
+}

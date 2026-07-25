@@ -1,0 +1,96 @@
+{
+  "api_surface": "make_mcp_typed_tools",
+  "capabilities_proven": [
+    "module_configuration_validation",
+    "required_mapper_field_validation",
+    "module_schema_extraction"
+  ],
+  "credential_value_transfer": false,
+  "credentials_printed": false,
+  "customer_data_used": false,
+  "live_make_called": true,
+  "probes": [
+    {
+      "label": "parse_json_missing_required_mapper_json",
+      "request_contract": {
+        "validate_module_configuration": {
+          "appName": "json",
+          "appVersion": 1,
+          "mapper": {},
+          "moduleName": "ParseJSON",
+          "parameters": {},
+          "strict": "bool_true"
+        }
+      },
+      "response_shape": {
+        "errors": [
+          {
+            "domain": "expect",
+            "message_class": "field_is_mandatory",
+            "path": "json"
+          }
+        ],
+        "valid": false,
+        "warnings": []
+      }
+    },
+    {
+      "label": "parse_json_valid_required_mapper_json",
+      "request_contract": {
+        "validate_module_configuration": {
+          "appName": "json",
+          "appVersion": 1,
+          "mapper.json": "string",
+          "moduleName": "ParseJSON",
+          "schemas": "bool_true",
+          "states": "bool_true",
+          "strict": "bool_true"
+        }
+      },
+      "response_shape": {
+        "errors": [],
+        "schemas": {
+          "default": [
+            {
+              "label": "Data structure",
+              "name": "type",
+              "type": "udt"
+            }
+          ],
+          "expect": [
+            {
+              "label": "JSON string",
+              "name": "json",
+              "required": true,
+              "type": "text"
+            }
+          ]
+        },
+        "states": {},
+        "valid": true,
+        "warnings": []
+      }
+    }
+  ],
+  "provider_api_call": true,
+  "scenario_activation_called": false,
+  "scenario_run_once_called": false,
+  "schema_version": 1,
+  "secret_output": false,
+  "status": "module_configuration_validation_probe_captured",
+  "steps": [
+    {
+      "name": "validate_parse_json_missing_required_mapper",
+      "status": "ok"
+    },
+    {
+      "name": "validate_parse_json_valid_required_mapper",
+      "status": "ok"
+    },
+    {
+      "name": "inspect_schema_fields_from_valid_response",
+      "status": "ok"
+    }
+  ],
+  "validation_actor": "codex_make_mcp_typed_tools"
+}

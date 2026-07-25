@@ -1,0 +1,719 @@
+{
+  "schema_version": 1,
+  "asset": "make_non_raw_evidence_inventory",
+  "visibility": "private_engine_asset",
+  "generated_at_utc": "2026-05-15T00:00:00Z",
+  "raw_specs_excluded": true,
+  "raw_spec_dir": "temp/raw-specs-json",
+  "raw_spec_file_count_at_generation": 2953,
+  "safety_contract": {
+    "live_make_called": false,
+    "provider_api_call": false,
+    "credential_value_transfer": false,
+    "secret_output": false,
+    "customer_facing": false
+  },
+  "purpose": [
+    "Make adapter evidence that is not raw provider module specs.",
+    "Audit which Make-native builtins, UI metadata, golden fixtures, courses, templates, and generated SQL/SQLite material are available to the local compiler.",
+    "Keep Make-specific evidence under languages/make instead of leaking vendor details into the core AST or future non-Make adapters."
+  ],
+  "surfaces": [
+    {
+      "surface_id": "make_native_semantics_matrix",
+      "path": "src/languages/make/data/native_semantics_matrix.json",
+      "kind": "engine_input",
+      "file_count": 1,
+      "purpose": "Private supported-module shape matrix for mapper, parameters, metadata, placeholders, volatile fields, and parity confidence.",
+      "promotion_gate": "Matrix records must have fixture or policy evidence and stay private to the Make adapter.",
+      "validation_tests": [
+        "tests/languages/make/make_native_semantics_matrix_contract.py"
+      ]
+    },
+    {
+      "surface_id": "make_module_projector_manifests",
+      "path": "src/languages/make/{builtins,modules}/**/*.manifest.json",
+      "kind": "engine_input",
+      "file_count": 12,
+      "purpose": "Executable Make-native projector contracts for builtins and supported app modules.",
+      "promotion_gate": "Each manifest must declare version, projector, mapper, metadata, placeholder, zero-trace, fixture, and confidence policies.",
+      "validation_tests": [
+        "tests/languages/make/make_module_projector_manifest_contract.py"
+      ]
+    },
+    {
+      "surface_id": "make_golden_corpus",
+      "path": "src/languages/make/data/golden",
+      "kind": "evidence_only",
+      "file_count": 130,
+      "purpose": "Public Make blueprint exports used as shape evidence for topology, filters, notes, metadata, and module names.",
+      "promotion_gate": "Golden fixtures prove JSON shape only; business logic, prompt text, and route intent require separate review before promotion.",
+      "validation_tests": [
+        "tests/data/make_golden/golden_coverage_contract.py",
+        "tests/data/make_golden/golden_coverage_summary_contract.py",
+        "tests/data/make_golden/golden_promotion_contract.py"
+      ]
+    },
+    {
+      "surface_id": "make_academy_courses",
+      "path": "src/languages/make/data/courses",
+      "kind": "quarantine_source",
+      "file_count": 37,
+      "purpose": "Course-derived conceptual evidence for lint candidates and educational semantics before deterministic promotion.",
+      "promotion_gate": "Course claims enter quarantine first and must become local deterministic predicates before runtime lint promotion.",
+      "validation_tests": [
+        "tests/data/course_evidence/course_linter_quarantine_contract.py"
+      ]
+    },
+    {
+      "surface_id": "make_expression_palette_observations",
+      "path": "src/languages/make/data/expression_palette.json",
+      "kind": "engine_input",
+      "file_count": 1,
+      "purpose": "Operator screenclip evidence consumed for Make expression palette variables, functions, operators, keywords, and custom/system variable labels.",
+      "promotion_gate": "Palette tokens may suppress unknown-token noise only; arity, hidden variable ids, evaluator semantics, and full expression parity require separate browser/API roundtrip evidence.",
+      "validation_tests": [
+        "tests/languages/make/make_expression_palette_contract.py"
+      ]
+    },
+    {
+      "surface_id": "make_default_manifest_coverage",
+      "path": "src/languages/make/data/default_manifest_coverage.json",
+      "kind": "engine_input",
+      "file_count": 1,
+      "purpose": "Operator-reviewed Make default built-in and AI module coverage ledger used as identity-only fallback when generated raw-spec catalog artifacts are absent.",
+      "promotion_gate": "Coverage rows may expose module identity and source-file provenance only; exact fields, selectors, account-specific RPCs, and live execution parity still require raw specs or browser roundtrip evidence.",
+      "validation_tests": [
+        "tests/languages/make/make_default_manifest_coverage_contract.py",
+        "tests/mcp/tool_contracts/mcp_make_default_manifest_coverage_contract.py"
+      ]
+    },
+    {
+      "surface_id": "make_priority_module_families",
+      "path": "src/languages/make/data/priority_module_families.json",
+      "kind": "engine_input",
+      "file_count": 1,
+      "purpose": "Private priority connector family names, public-name aliases, and read-only browser escalation policy for high-value Make apps.",
+      "promotion_gate": "Priority families may steer offline search and coverage checks only; dynamic RPC selectors, account-scoped choices, and full UI parity require separate read-only browser evidence.",
+      "validation_tests": [
+        "tests/languages/make/make_priority_module_family_contract.py",
+        "tests/catalog/priority_module_planning_contract.py"
+      ]
+    },
+    {
+      "surface_id": "make_public_research_evidence",
+      "path": "src/languages/make/data/public_research_evidence.json",
+      "kind": "engine_input",
+      "file_count": 1,
+      "purpose": "Compact public and sanitized source ledger for Make built-ins, AI Agents, dynamic selectors, catalog-plan terms, native semantics, expression tokens, and blueprint diff evidence.",
+      "promotion_gate": "Public research rows may explain source posture and local gates only; exact field parity, dynamic account selectors, and runtime behavior require raw specs or separate live Browser roundtrip evidence.",
+      "validation_tests": [
+        "tests/languages/make/make_public_research_evidence_contract.py"
+      ]
+    },
+    {
+      "surface_id": "make_roundtrip_reexport_parity_corpus",
+      "path": "src/languages/make/data/roundtrip_reexport_parity_corpus.json",
+      "kind": "engine_input",
+      "file_count": 1,
+      "purpose": "Private local generated-vs-reexport parity corpus for routing Make blueprint deltas into generalized compiler, manifest, canonicalizer, readiness, and zero-trace rules.",
+      "promotion_gate": "Synthetic corpus rows may classify stable local delta categories only; current Make.com live import/export parity requires the queued Browser validation task before runtime parity claims.",
+      "validation_tests": [
+        "tests/languages/make/make_roundtrip_reexport_parity_corpus_contract.py"
+      ]
+    },
+    {
+      "surface_id": "make_db_snapshots",
+      "path": "src/data/sql_snapshots",
+      "kind": "generated_sql_source",
+      "file_count": 7,
+      "purpose": "SQL seed/snapshot material used to regenerate local Make knowledge artifacts; SQLite remains generated, not source of truth.",
+      "promotion_gate": "SQL snapshots may feed generated SQLite, but raw specs and authored evidence stay the authoritative inputs.",
+      "validation_tests": [
+        "tests/catalog/raw_specs/raw_specs_refresh_contract.py"
+      ]
+    },
+    {
+      "surface_id": "make_knowledge_sqlite",
+      "path": "src/data/pancakes.sqlite",
+      "kind": "generated_artifact",
+      "file_count": 1,
+      "purpose": "Generated local lookup artifact for fast Make catalog and evidence reads.",
+      "promotion_gate": "Do not edit by hand; regenerate from raw specs and approved non-raw SQL/evidence inputs.",
+      "validation_tests": [
+        "tests/catalog/raw_specs/raw_specs_refresh_contract.py"
+      ]
+    },
+    {
+      "surface_id": "make_templates_manifest",
+      "path": "src/languages/make/data/templates/raw/manifest.json",
+      "kind": "evidence_only",
+      "file_count": 1,
+      "purpose": "Template collection metadata for public Make template fixture boundaries.",
+      "promotion_gate": "Template material must stay public-safe and cannot imply complete Make platform coverage.",
+      "validation_tests": [
+        "tests/data/make_golden/golden_coverage_contract.py"
+      ]
+    }
+  ],
+  "module_projector_contracts": [
+    {
+      "module": "builtin:BasicAggregator",
+      "native_token": "builtin:BasicAggregator",
+      "version": 1,
+      "projector_kind": "array_aggregator",
+      "path": "src/languages/make/builtins/BasicAggregator.manifest.json",
+      "aliases": [
+        "array aggregator",
+        "builtin:ArrayAggregator",
+        "builtin.array_aggregator"
+      ],
+      "evidence_source": "local_fixture",
+      "confidence": "medium",
+      "fixtures": [
+        "src/languages/make/data/golden/data/public/top100/041-4923-4923-save-media-insight-from-instagram-to-google-sheets.blueprint.json",
+        "tests/mcp/tool_contracts/mcp_make_builtin_manifest_contract.py"
+      ]
+    },
+    {
+      "module": "builtin:BasicRepeater",
+      "native_token": "builtin:BasicRepeater",
+      "version": 1,
+      "projector_kind": "basic_repeater",
+      "path": "src/languages/make/builtins/BasicRepeater.manifest.json",
+      "aliases": [
+        "repeater",
+        "builtin:Repeater",
+        "repeat"
+      ],
+      "evidence_source": "local_fixture",
+      "confidence": "medium",
+      "fixtures": [
+        "src/languages/make/data/golden/data/public/top100/042-4066-4066-generate-a-random-string-text.blueprint.json"
+      ]
+    },
+    {
+      "module": "builtin:BasicRouter",
+      "native_token": "builtin:BasicRouter",
+      "version": 1,
+      "projector_kind": "router_container",
+      "path": "src/languages/make/builtins/BasicRouter.manifest.json",
+      "aliases": [],
+      "evidence_source": "local_fixture",
+      "confidence": "medium",
+      "fixtures": [
+        "tests/blueprints/fixtures/diff_blueprint/generated_router.json",
+        "tests/mcp/tool_contracts/mcp_stress_scenario_factory_contract.py"
+      ]
+    },
+    {
+      "module": "util:FunctionIncrement",
+      "native_token": "util:FunctionIncrement",
+      "version": 1,
+      "projector_kind": "function_increment",
+      "path": "src/languages/make/builtins/FunctionIncrement.manifest.json",
+      "aliases": [
+        "increment",
+        "increment function",
+        "tools:Increment"
+      ],
+      "evidence_source": "local_fixture",
+      "confidence": "medium",
+      "fixtures": [
+        "src/languages/make/data/golden/data/public/top100/061-2952-2952-controlled-distribution-of-data-flow.blueprint.json"
+      ]
+    },
+    {
+      "module": "util:FunctionSleep",
+      "native_token": "util:FunctionSleep",
+      "version": 1,
+      "projector_kind": "function_sleep",
+      "path": "src/languages/make/builtins/FunctionSleep.manifest.json",
+      "aliases": [
+        "sleep",
+        "delay",
+        "tools:Sleep",
+        "util:Sleep"
+      ],
+      "evidence_source": "local_fixture",
+      "confidence": "medium",
+      "fixtures": [
+        "src/languages/make/data/golden/data/public/top100/022-12041-12000-get-youtube-videos-in-a-channel-summarize-transcripts-with-chatgpt-and-send-an-email.blueprint.json"
+      ]
+    },
+    {
+      "module": "util:GetVariable2",
+      "native_token": "util:GetVariable2",
+      "version": 1,
+      "projector_kind": "get_variable",
+      "path": "src/languages/make/builtins/GetVariable2.manifest.json",
+      "aliases": [
+        "get variable",
+        "util:GetVariable",
+        "tools:GetVariable"
+      ],
+      "evidence_source": "raw_spec",
+      "confidence": "medium",
+      "fixtures": [
+        "temp/raw-specs-json/util__1.11.14.json"
+      ]
+    },
+    {
+      "module": "builtin:Iterator",
+      "native_token": "builtin:Iterator",
+      "version": 1,
+      "projector_kind": "array_iterator",
+      "path": "src/languages/make/builtins/Iterator.manifest.json",
+      "aliases": [
+        "builtin:BasicFeeder",
+        "util:Iterator",
+        "tools:Iterator",
+        "builtin.iterator",
+        "iterator"
+      ],
+      "evidence_source": "course_evidence",
+      "confidence": "medium",
+      "fixtures": [
+        "src/languages/make/data/golden/data/public/priority/Social Media Content & Scheduling Agent.blueprint.json",
+        "tests/mcp/tool_contracts/mcp_make_builtin_manifest_contract.py",
+        "tests/blueprints/validation/blueprint_validation_contract.py"
+      ]
+    },
+    {
+      "module": "util:SetVariable2",
+      "native_token": "util:SetVariable2",
+      "version": 1,
+      "projector_kind": "set_variable",
+      "path": "src/languages/make/builtins/SetVariable2.manifest.json",
+      "aliases": [
+        "set variable",
+        "util:SetVariable",
+        "tools:SetVariable"
+      ],
+      "evidence_source": "local_fixture",
+      "confidence": "medium",
+      "fixtures": [
+        "src/languages/make/data/golden/data/public/priority/Competitor Price Monitor Agent.blueprint.json"
+      ]
+    },
+    {
+      "module": "util:TextAggregator",
+      "native_token": "util:TextAggregator",
+      "version": 1,
+      "projector_kind": "text_aggregator",
+      "path": "src/languages/make/builtins/TextAggregator.manifest.json",
+      "aliases": [
+        "text aggregator",
+        "tools:TextAggregator",
+        "util.TextAggregator"
+      ],
+      "evidence_source": "local_fixture",
+      "confidence": "medium",
+      "fixtures": [
+        "src/languages/make/data/golden/data/public/top100/042-4066-4066-generate-a-random-string-text.blueprint.json",
+        "tests/mcp/tool_contracts/mcp_make_builtin_manifest_contract.py"
+      ]
+    },
+    {
+      "module": "datastore:AddRecord",
+      "native_token": "datastore:AddRecord",
+      "version": 2,
+      "projector_kind": "datastore_add_record",
+      "path": "src/languages/make/modules/datastore/AddRecord.manifest.json",
+      "aliases": [],
+      "evidence_source": "local_fixture",
+      "confidence": "medium",
+      "fixtures": [
+        "tests/mcp/tool_contracts/mcp_stress_scenario_factory_contract.py",
+        "tests/mcp/tool_contracts/mcp_diff_blueprint_giant_fixture_contract.py"
+      ]
+    },
+    {
+      "module": "gateway:CustomWebHook",
+      "native_token": "gateway:CustomWebHook",
+      "version": 1,
+      "projector_kind": "gateway_custom_webhook",
+      "path": "src/languages/make/modules/gateway/CustomWebHook.manifest.json",
+      "aliases": [],
+      "evidence_source": "local_fixture",
+      "confidence": "medium",
+      "fixtures": [
+        "tests/blueprints/fixtures/diff_blueprint/generated_router.json",
+        "tests/mcp/tool_contracts/mcp_diff_blueprint_giant_fixture_contract.py"
+      ]
+    },
+    {
+      "module": "slack:CreateMessage",
+      "native_token": "slack:CreateMessage",
+      "version": 4,
+      "projector_kind": "slack_create_message",
+      "path": "src/languages/make/modules/slack/CreateMessage.manifest.json",
+      "aliases": [
+        "slack:ActionCreateMessage"
+      ],
+      "evidence_source": "local_fixture",
+      "confidence": "low",
+      "fixtures": [
+        "tests/mcp/tool_contracts/mcp_stress_scenario_factory_contract.py"
+      ]
+    }
+  ],
+  "golden_analysis": {
+    "coverage_file": "src/languages/make/data/golden/coverage.json",
+    "fixture_count": 130,
+    "families": [
+      {
+        "family": "data/public/priority",
+        "count": 30
+      },
+      {
+        "family": "data/public/top100",
+        "count": 100
+      }
+    ],
+    "module_instance_count": 530,
+    "unique_module_count": 163,
+    "top_modules": [
+      {
+        "module": "ai-local-agent:RunLocalAIAgent",
+        "count": 31,
+        "example_path": "/flow/2"
+      },
+      {
+        "module": "openai-gpt-3:CreateCompletion",
+        "count": 30,
+        "example_path": "/flow/1"
+      },
+      {
+        "module": "google-sheets:addRow",
+        "count": 24,
+        "example_path": "/flow/1/tools/1/flow/0"
+      },
+      {
+        "module": "slack:CreateMessage",
+        "count": 23,
+        "example_path": "/flow/3"
+      },
+      {
+        "module": "builtin:BasicRouter",
+        "count": 17,
+        "example_path": "/flow/3"
+      },
+      {
+        "module": "google-sheets:watchRows",
+        "count": 15,
+        "example_path": "/flow/0"
+      },
+      {
+        "module": "slack:watchNewEvents",
+        "count": 13,
+        "example_path": "/flow/0"
+      },
+      {
+        "module": "google-docs:createADocument",
+        "count": 11,
+        "example_path": "/flow/1/tools/3/flow/0"
+      },
+      {
+        "module": "telegram:SendReplyMessage",
+        "count": 10,
+        "example_path": "/flow/2"
+      },
+      {
+        "module": "gateway:CustomWebHook",
+        "count": 9,
+        "example_path": "/flow/0"
+      },
+      {
+        "module": "util:SetVariable",
+        "count": 9,
+        "example_path": "/flow/0"
+      },
+      {
+        "module": "json:ParseJSON",
+        "count": 8,
+        "example_path": "/flow/2"
+      },
+      {
+        "module": "google-docs:getADocument",
+        "count": 8,
+        "example_path": "/flow/2/tools/0/flow/0"
+      },
+      {
+        "module": "google-sheets:filterRows",
+        "count": 7,
+        "example_path": "/flow/2/tools/0/flow/0"
+      },
+      {
+        "module": "make-ai-web-search:generateAResponse",
+        "count": 7,
+        "example_path": "/flow/1/tools/0/flow/0"
+      },
+      {
+        "module": "google-sheets:updateRow",
+        "count": 7,
+        "example_path": "/flow/1/tools/1/flow/0"
+      },
+      {
+        "module": "google-email:TriggerNewEmail",
+        "count": 7,
+        "example_path": "/flow/0"
+      },
+      {
+        "module": "knowledge:KnowledgeStandAlone",
+        "count": 6,
+        "example_path": "/flow/1/tools/0/flow/0"
+      },
+      {
+        "module": "notion:updateADatabaseItem",
+        "count": 6,
+        "example_path": "/flow/1/tools/3/flow/0"
+      },
+      {
+        "module": "telegram:WatchUpdates",
+        "count": 6,
+        "example_path": "/flow/0"
+      }
+    ],
+    "supported_manifest_observations": [
+      {
+        "module": "slack:CreateMessage",
+        "count": 23,
+        "manifest_module": "slack:CreateMessage",
+        "example_path": "/flow/3"
+      },
+      {
+        "module": "builtin:BasicRouter",
+        "count": 17,
+        "manifest_module": "builtin:BasicRouter",
+        "example_path": "/flow/3"
+      },
+      {
+        "module": "gateway:CustomWebHook",
+        "count": 9,
+        "manifest_module": "gateway:CustomWebHook",
+        "example_path": "/flow/0"
+      },
+      {
+        "module": "util:SetVariable",
+        "count": 9,
+        "manifest_module": "util:SetVariable2",
+        "example_path": "/flow/0"
+      },
+      {
+        "module": "builtin:BasicFeeder",
+        "count": 6,
+        "manifest_module": "builtin:Iterator",
+        "example_path": "/flow/4/routes/0/flow/0"
+      },
+      {
+        "module": "util:TextAggregator",
+        "count": 4,
+        "manifest_module": "util:TextAggregator",
+        "example_path": "/flow/6"
+      },
+      {
+        "module": "builtin:BasicAggregator",
+        "count": 3,
+        "manifest_module": "builtin:BasicAggregator",
+        "example_path": "/flow/2"
+      },
+      {
+        "module": "util:SetVariable2",
+        "count": 2,
+        "manifest_module": "util:SetVariable2",
+        "example_path": "/flow/0"
+      },
+      {
+        "module": "util:FunctionSleep",
+        "count": 2,
+        "manifest_module": "util:FunctionSleep",
+        "example_path": "/flow/2"
+      },
+      {
+        "module": "builtin:BasicRepeater",
+        "count": 2,
+        "manifest_module": "builtin:BasicRepeater",
+        "example_path": "/flow/1"
+      },
+      {
+        "module": "datastore:AddRecord",
+        "count": 1,
+        "manifest_module": "datastore:AddRecord",
+        "example_path": "/flow/1/tools/3/flow/0"
+      },
+      {
+        "module": "util:FunctionIncrement",
+        "count": 1,
+        "manifest_module": "util:FunctionIncrement",
+        "example_path": "/flow/0"
+      }
+    ],
+    "candidate_projector_gaps": [
+      {
+        "module": "ai-local-agent:RunLocalAIAgent",
+        "count": 31,
+        "example_path": "/flow/2",
+        "classification": "golden_observed_no_projector_manifest"
+      },
+      {
+        "module": "openai-gpt-3:CreateCompletion",
+        "count": 30,
+        "example_path": "/flow/1",
+        "classification": "golden_observed_no_projector_manifest"
+      },
+      {
+        "module": "google-sheets:addRow",
+        "count": 24,
+        "example_path": "/flow/1/tools/1/flow/0",
+        "classification": "golden_observed_no_projector_manifest"
+      },
+      {
+        "module": "google-sheets:watchRows",
+        "count": 15,
+        "example_path": "/flow/0",
+        "classification": "golden_observed_no_projector_manifest"
+      },
+      {
+        "module": "slack:watchNewEvents",
+        "count": 13,
+        "example_path": "/flow/0",
+        "classification": "golden_observed_no_projector_manifest"
+      },
+      {
+        "module": "google-docs:createADocument",
+        "count": 11,
+        "example_path": "/flow/1/tools/3/flow/0",
+        "classification": "golden_observed_no_projector_manifest"
+      },
+      {
+        "module": "telegram:SendReplyMessage",
+        "count": 10,
+        "example_path": "/flow/2",
+        "classification": "golden_observed_no_projector_manifest"
+      },
+      {
+        "module": "json:ParseJSON",
+        "count": 8,
+        "example_path": "/flow/2",
+        "classification": "golden_observed_no_projector_manifest"
+      },
+      {
+        "module": "google-docs:getADocument",
+        "count": 8,
+        "example_path": "/flow/2/tools/0/flow/0",
+        "classification": "golden_observed_no_projector_manifest"
+      },
+      {
+        "module": "google-sheets:filterRows",
+        "count": 7,
+        "example_path": "/flow/2/tools/0/flow/0",
+        "classification": "golden_observed_no_projector_manifest"
+      },
+      {
+        "module": "make-ai-web-search:generateAResponse",
+        "count": 7,
+        "example_path": "/flow/1/tools/0/flow/0",
+        "classification": "golden_observed_no_projector_manifest"
+      },
+      {
+        "module": "google-sheets:updateRow",
+        "count": 7,
+        "example_path": "/flow/1/tools/1/flow/0",
+        "classification": "golden_observed_no_projector_manifest"
+      },
+      {
+        "module": "google-email:TriggerNewEmail",
+        "count": 7,
+        "example_path": "/flow/0",
+        "classification": "golden_observed_no_projector_manifest"
+      },
+      {
+        "module": "knowledge:KnowledgeStandAlone",
+        "count": 6,
+        "example_path": "/flow/1/tools/0/flow/0",
+        "classification": "golden_observed_no_projector_manifest"
+      },
+      {
+        "module": "notion:updateADatabaseItem",
+        "count": 6,
+        "example_path": "/flow/1/tools/3/flow/0",
+        "classification": "golden_observed_no_projector_manifest"
+      },
+      {
+        "module": "telegram:WatchUpdates",
+        "count": 6,
+        "example_path": "/flow/0",
+        "classification": "golden_observed_no_projector_manifest"
+      },
+      {
+        "module": "google-email:ActionSendEmail",
+        "count": 6,
+        "example_path": "/flow/1",
+        "classification": "golden_observed_no_projector_manifest"
+      },
+      {
+        "module": "email:TriggerNewEmail",
+        "count": 6,
+        "example_path": "/flow/0",
+        "classification": "golden_observed_no_projector_manifest"
+      },
+      {
+        "module": "facebook-pages:CreatePost",
+        "count": 6,
+        "example_path": "/flow/1/routes/1/flow/1",
+        "classification": "golden_observed_no_projector_manifest"
+      },
+      {
+        "module": "airtable:ActionUpdateRecords",
+        "count": 6,
+        "example_path": "/flow/1/routes/0/flow/1",
+        "classification": "golden_observed_no_projector_manifest"
+      }
+    ],
+    "shape_evidence_counts": {
+      "builtin_module_instances": 30,
+      "filter_objects": 91,
+      "metadata_designer_objects": 660,
+      "metadata_expect_objects": 398,
+      "metadata_interface_objects": 107,
+      "metadata_note_entries": 63,
+      "metadata_restore_objects": 496,
+      "route_containers": 17,
+      "route_count": 43,
+      "util_module_instances": 23
+    },
+    "note_color_observations": [
+      {
+        "color": "#9138FE",
+        "count": 63
+      }
+    ],
+    "useful_for": [
+      "Make-native module token spelling and version evidence",
+      "Router branch and filter placement evidence",
+      "Designer layout metadata shape evidence",
+      "metadata.expect, metadata.restore, and metadata.interface shape evidence",
+      "Public note/post-it color and metadata shape evidence"
+    ],
+    "not_authority_for": [
+      "Reusable customer business logic",
+      "Provider credentials or resource identifiers",
+      "Complete Make.com platform coverage",
+      "Runtime linter rules without quarantine and deterministic promotion"
+    ]
+  },
+  "adapter_gaps": [
+    {
+      "gap_id": "golden-observed-basic-feeder-alias",
+      "status": "covered_by_iterator_alias",
+      "module": "builtin:BasicFeeder",
+      "contract": "Make exports the UI Iterator as BasicFeeder; Pancakes keeps builtin:Iterator as the agent-friendly alias and resolves BasicFeeder through the same iterator projector."
+    },
+    {
+      "gap_id": "top-golden-modules-without-projector-manifest",
+      "status": "tracked_as_candidate_gaps",
+      "contract": "High-frequency golden modules without projector manifests are evidence candidates, not implicit runtime support."
+    }
+  ]
+}

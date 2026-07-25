@@ -1,0 +1,29 @@
+{
+  "flow": [
+    {
+      "id": 1,
+      "module": "gateway:CustomWebHook",
+      "parameters": {},
+      "routes": [
+        {
+          "filter": {
+            "conditions": {
+              "expression": "{{1.score}} >= 80"
+            },
+            "name": "Misplaced route"
+          },
+          "flow": []
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "scenario": {
+      "name": "invalid-routes-on-non-router"
+    },
+    "schedule": {
+      "id": "schedule:manual"
+    }
+  },
+  "name": "invalid-routes-on-non-router"
+}

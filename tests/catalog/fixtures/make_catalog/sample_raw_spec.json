@@ -1,0 +1,69 @@
+{
+  "app": {
+    "actions": [
+      {
+        "deprecated": true,
+        "interface": [
+          {
+            "label": "Status code",
+            "name": "statusCode",
+            "type": "number"
+          }
+        ],
+        "label": "Make a request",
+        "name": "makeRequest",
+        "parameters": [
+          {
+            "label": "URL",
+            "name": "url",
+            "required": true,
+            "type": "url"
+          },
+          {
+            "enum": ["GET", "POST"],
+            "name": "method",
+            "required": true,
+            "type": "select"
+          },
+          {
+            "label": "Connection",
+            "name": "connection",
+            "rpc": "rpc://http/listConnections"
+          }
+        ]
+      }
+    ],
+    "label": "HTTP",
+    "latest": true,
+    "manifest": {
+      "version": 2
+    },
+    "name": "http",
+    "searches": [
+      {
+        "expect": [
+          {
+            "name": "query",
+            "required": false,
+            "type": "text"
+          }
+        ],
+        "interface": [
+          {
+            "fields": [
+              {
+                "name": "id",
+                "type": "text"
+              }
+            ],
+            "name": "items",
+            "type": "array"
+          }
+        ],
+        "label": "List requests",
+        "name": "listRequests"
+      }
+    ],
+    "version": "1.0"
+  }
+}

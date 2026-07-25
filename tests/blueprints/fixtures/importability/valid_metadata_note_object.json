@@ -1,0 +1,32 @@
+{
+  "flow": [
+    {
+      "id": 1,
+      "mapper": {
+        "body": "{{1.payload}}"
+      },
+      "module": "http:MakeRequest",
+      "parameters": {
+        "url": "https://example.invalid/note-policy"
+      }
+    }
+  ],
+  "metadata": {
+    "notes": [
+      {
+        "content": "Review this sanitized offline note before import.",
+        "metadata": {
+          "color": "#ffffcc"
+        },
+        "moduleIds": [1]
+      }
+    ],
+    "scenario": {
+      "name": "valid-metadata-note-object"
+    },
+    "schedule": {
+      "id": "schedule:manual"
+    }
+  },
+  "name": "valid-metadata-note-object"
+}

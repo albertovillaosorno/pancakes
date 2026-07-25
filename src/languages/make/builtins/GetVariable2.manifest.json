@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "asset": "make_module_projector_manifest",
+  "visibility": "private_engine_asset",
+  "module": "util:GetVariable2",
+  "aliases": ["get variable", "util:GetVariable", "tools:GetVariable"],
+  "native_token": "util:GetVariable2",
+  "version_policy": {
+    "kind": "fixed",
+    "version": 1
+  },
+  "projector": {
+    "kind": "get_variable"
+  },
+  "mapper_policy": {
+    "kind": "variable_lookup",
+    "required_keys": ["name"]
+  },
+  "parameters_policy": {
+    "required_keys": []
+  },
+  "metadata_expect_policy": {
+    "kind": "variable_lookup",
+    "required_keys": ["name"]
+  },
+  "metadata_restore_policy": {
+    "kind": "none"
+  },
+  "metadata_interface_policy": {
+    "kind": "variable_value_output",
+    "required_keys": ["value"]
+  },
+  "connection_projection_policy": {
+    "kind": "none"
+  },
+  "placeholder_policy": {
+    "mode": "none",
+    "placeholders": []
+  },
+  "volatile_field_policy": {
+    "known_paths": ["metadata.designer"]
+  },
+  "zero_trace_constraints": {
+    "private_fields_forbidden": true,
+    "customer_artifact": false
+  },
+  "roundtrip_behavior": {
+    "status": "raw_spec_evidence",
+    "notes": "Get variable reads a local scenario variable by name and outputs a value field."
+  },
+  "confidence": "medium",
+  "fixtures": [
+    "temp/raw-specs-json/util__1.11.14.json"
+  ],
+  "last_evidence_source": "raw_spec"
+}

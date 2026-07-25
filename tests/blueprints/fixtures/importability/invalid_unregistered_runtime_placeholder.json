@@ -1,0 +1,31 @@
+{
+  "flow": [
+    {
+      "id": 1,
+      "interface": [
+        {
+          "name": "email",
+          "type": "text"
+        }
+      ],
+      "metadata": {
+        "raw_spec": {
+          "catalog_module_id": "module:gateway:1.14.1:trigger:CustomWebHook",
+          "issues": [],
+          "raw_spec_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "status": "resolved"
+        }
+      },
+      "module": "gateway:CustomWebHook",
+      "parameters": {
+        "hook": "{{runtime.webhook.lead_intake_hook}}"
+      }
+    }
+  ],
+  "metadata": {
+    "schedule": {
+      "id": "schedule:manual"
+    }
+  },
+  "name": "invalid-unregistered-runtime-placeholder"
+}

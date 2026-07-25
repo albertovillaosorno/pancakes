@@ -1,0 +1,31 @@
+{
+  "sample_inputs": [
+    {
+      "lead_id": "lead-001",
+      "payload": {
+        "email": "alice@example.invalid",
+        "company": "Acme Demo Labs",
+        "source": "landing_page",
+        "score": 92
+      }
+    },
+    {
+      "lead_id": "lead-002",
+      "payload": {
+        "email": "beta.user@example.invalid",
+        "company": "DemoWorks LLC",
+        "source": "zapier-demo",
+        "score": 64
+      }
+    },
+    {
+      "lead_id": "lead-003",
+      "payload": {
+        "email": "charlie@example.invalid",
+        "company": "",
+        "source": "webhook",
+        "score": 88
+      }
+    }
+  ]
+}

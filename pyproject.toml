@@ -1,0 +1,205 @@
+# Schoenwald MCP: packaging, linting, typing, and test policy.
+#
+# Paradigm: this baseline is never relaxed to make a finding pass. The only
+#   sanctioned suppression is an inline, per-line marker in the affected file
+#   (# noqa: RULE with the exact rule id, or # pyright: ignore[rule]) — RUF100
+#   and reportUnnecessaryTypeIgnore delete any suppression that stops earning
+#   its keep. The per-path block at the bottom is structural test mechanics,
+#   not a style opt-out.
+# Machine-first: select = ALL with preview; the only rule-level ignores are
+#   documented formatter/style conflict pairs.
+
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "schoenwald-mcp"
+version = "2.0.0"
+description = "A Windows terminal MCP server, publishable over a Cloudflare Tunnel."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Alberto Villa Osorno" }]
+keywords = ["mcp", "windows", "terminal", "cloudflare-tunnel"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: Microsoft :: Windows",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: System :: Systems Administration",
+]
+# The server runs on the standard library alone: no runtime dependencies to
+# audit, pin, or ship. This is deliberate for something that holds a shell.
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/albertovillaosorno/schoenwald"
+Issues = "https://github.com/albertovillaosorno/schoenwald/issues"
+
+[project.scripts]
+schoenwald-mcp = "schoenwald_mcp.cli:main"
+
+[dependency-groups]
+dev = [
+  "basedpyright>=1.39",
+  "pytest>=8.3",
+  "pytest-cov>=6.0",
+  "ruff>=0.9",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/schoenwald_mcp"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src", "tests", "config", "scripts", "installer", "README.md", "LICENSE"]
+
+# ---------------------------------------------------------------------------
+# Ruff
+# ---------------------------------------------------------------------------
+[tool.ruff]
+line-length = 80
+target-version = "py311"
+cache-dir = "cache/ruff"
+# The validation surface is decided here, not by .gitignore.
+respect-gitignore = false
+exclude = ["cache", "data", "dependencies", "**/.git", "**/.venv", "**/__pycache__"]
+
+[tool.ruff.lint]
+# Every rule that exists, including preview rules. New ruff releases therefore
+# tighten this gate automatically.
+preview = true
+select = ["ALL"]
+# The ONLY rule-level ignores: mutually-exclusive pairs where exactly one side
+# must be chosen, and formatter collisions. Nothing here weakens a verdict —
+# the kept twin still enforces the concern.
+ignore = [
+  # COM812 (require trailing comma) conflicts with the ruff formatter, which
+  # owns comma placement; the formatter's output is authoritative.
+  "COM812",
+  # D203 (blank line before class docstring) contradicts D211 (no blank line).
+  # D211 is kept.
+  "D203",
+  # D213 (multi-line summary on second line) contradicts D212 (summary on the
+  # first line). D212 is kept.
+  "D213",
+  # ISC001 (single-line implicit concat) conflicts with the ruff formatter,
+  # which merges such literals itself.
+  "ISC001",
+]
+
+[tool.ruff.format]
+line-ending = "lf"
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.mccabe]
+# Pinned upstream default: a toolchain bump can never silently relax the
+# complexity gate. The repair strategy is always "extract function".
+max-complexity = 10
+
+[tool.ruff.lint.pylint]
+max-args = 5
+max-branches = 12
+max-returns = 6
+max-statements = 50
+
+[tool.ruff.lint.flake8-bandit]
+# The whole product is a command runner; S404/S603 would fire on every line of
+# terminal.py and say nothing. The real control is policy.py, which is tested.
+check-typed-exception = true
+
+[tool.ruff.lint.per-file-ignores]
+# Test mechanics, strictly limited to what pytest structurally requires: assert
+# IS the test primitive (S101), fixtures shadow their own names (ARG001), magic
+# values are expected literals (PLR2004), and test modules skip package and
+# docstring ceremony. This block never exempts correctness or security rules
+# beyond S101.
+"tests/**/*.py" = [
+  "ARG001",
+  "D100",
+  "D101",
+  "D102",
+  "D103",
+  "INP001",
+  "PLC0415",
+  "PLR2004",
+  "S101",
+  "S105",
+  "T201",
+]
+# The CLI prints to stdout by definition; that is its transport.
+"src/schoenwald_mcp/cli.py" = ["T201"]
+# subprocess is the entire point of this module.
+"src/schoenwald_mcp/terminal.py" = ["S404"]
+
+# ---------------------------------------------------------------------------
+# BasedPyright
+# ---------------------------------------------------------------------------
+[tool.basedpyright]
+pythonVersion = "3.11"
+typeCheckingMode = "strict"
+include = ["src", "tests"]
+exclude = ["**/__pycache__", "**/.venv", "cache", "data", "dependencies"]
+# Any-leak escalations: strict mode plus these makes every untyped or unknown
+# value a hard error instead of a silent inference hole.
+reportAny = true
+reportExplicitAny = true
+reportMissingTypeArgument = true
+reportImplicitStringConcatenation = true
+reportUnknownArgumentType = true
+reportUnknownLambdaType = true
+reportUnknownMemberType = true
+reportUnknownParameterType = true
+reportUnknownVariableType = true
+# Discarded return values must be explicit (`_ = call()`), mirroring Rust's
+# unused_results.
+reportUnusedCallResult = true
+enableTypeIgnoreComments = true
+
+# ---------------------------------------------------------------------------
+# Pytest and coverage
+# ---------------------------------------------------------------------------
+[tool.pytest.ini_options]
+# Unknown markers and config keys are errors; expected failures must actually
+# fail (xfail_strict); every warning is promoted to an error.
+addopts = [
+  "-ra",
+  "--strict-markers",
+  "--strict-config",
+  "--tb=short",
+  "--cov=src",
+  "--cov-branch",
+  "--cov-report=term-missing:skip-covered",
+  "--cov-fail-under=80",
+]
+cache_dir = "cache/pytest"
+console_output_style = "classic"
+norecursedirs = ["cache", "data", "dependencies"]
+filterwarnings = ["error"]
+xfail_strict = true
+testpaths = ["tests"]
+pythonpath = ["src"]
+python_files = ["test_*.py"]
+
+[tool.coverage.run]
+branch = true
+data_file = "cache/coverage/.coverage"
+relative_files = true
+source = ["src"]
+omit = ["tests/**", "**/__init__.py", "**/__main__.py"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = true
+exclude_also = [
+  "if TYPE_CHECKING:",
+  "if __name__ == .__main__.:",
+  "raise NotImplementedError",
+]

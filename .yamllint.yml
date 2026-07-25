@@ -1,0 +1,96 @@
+# Schoenwald operator authority for YAML validation (yamllint).
+#
+# Authority: commands/config/validation-authority.json ("yaml-strict").
+# Scope: one config validates every authored *.yaml/*.yml at the root
+#   and in child repositories; gates pass -c pointing here. Repo-local
+#   yamllint configs are never consulted and are forbidden.
+# Paradigm: this baseline is never relaxed. The only sanctioned
+#   suppression is an inline, per-line marker in the affected file
+#   (# yamllint disable-line rule:<id>) with the exact rule id.
+# Machine-first: starts from the full default rule set and pins every
+#   dial to one deterministic answer; the only disabled rule is
+#   document-start, justified below.
+
+extends: default
+
+# Generated, vendored, archived, or foreign trees — path scopes only.
+ignore: |
+  .git/
+  .venv/
+  cache/
+  dependencies/
+  logs/
+  node_modules/
+  repos/
+  temp/
+
+rules:
+  # Every file here is a single-document stream; a mandatory "---"
+  # marker would be pure noise with no disambiguation value. This is a
+  # deliberate exception, not a relaxation of a safety rule.
+  document-start: disable
+
+  # The repository-wide 80-column authority; non-breakable tokens
+  # (URLs, hashes) may exceed it because no compliant wrapping exists.
+  line-length:
+    max: 80
+    allow-non-breakable-words: true
+    allow-non-breakable-inline-mappings: true
+
+  # Booleans are exactly true/false — yes/no/on/off silently coerce and
+  # are a classic YAML defect. Keys are checked too.
+  truthy:
+    allowed-values:
+      - "true"
+      - "false"
+    check-keys: true
+
+  # One indentation shape: two spaces, sequences indented, multi-line
+  # strings checked so block scalars cannot drift.
+  indentation:
+    spaces: 2
+    indent-sequences: true
+    check-multi-line-strings: true
+
+  # Vertical whitespace is not a layout tool: at most one blank line,
+  # none at either edge of the file.
+  empty-lines:
+    max: 1
+    max-start: 0
+    max-end: 0
+
+  trailing-spaces: enable
+
+  # LF endings with exactly one final newline, matching .gitattributes.
+  new-lines:
+    type: unix
+  new-line-at-end-of-file: enable
+
+  # Duplicate keys are silent last-wins data loss; hard error.
+  key-duplicates: enable
+
+  # Numbers must be unambiguous: explicit 0o17 style only, never bare
+  # 017, whose octal meaning differs between YAML parsers.
+  octal-values:
+    forbid-implicit-octal: true
+    forbid-explicit-octal: false
+
+  # Flow-collection punctuation is pinned to zero inner padding.
+  braces:
+    min-spaces-inside: 0
+    max-spaces-inside: 0
+  brackets:
+    min-spaces-inside: 0
+    max-spaces-inside: 0
+  colons:
+    max-spaces-before: 0
+    max-spaces-after: 1
+  commas:
+    max-spaces-before: 0
+    min-spaces-after: 1
+    max-spaces-after: 1
+
+  # Comments are prose: "# " with two spaces separating them from code.
+  comments:
+    require-starting-space: true
+    min-spaces-from-content: 2

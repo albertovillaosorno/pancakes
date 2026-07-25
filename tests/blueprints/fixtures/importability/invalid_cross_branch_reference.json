@@ -1,0 +1,107 @@
+{
+  "flow": [
+    {
+      "id": 1,
+      "interface": [
+        {
+          "name": "email",
+          "type": "text"
+        }
+      ],
+      "metadata": {
+        "raw_spec": {
+          "catalog_module_id": "module:gateway:1.14.1:trigger:CustomWebHook",
+          "issues": [],
+          "raw_spec_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "status": "resolved"
+        }
+      },
+      "module": "gateway:CustomWebHook",
+      "parameters": {
+        "hook": "lead-intake-hook-configured-in-make"
+      }
+    },
+    {
+      "id": 2,
+      "metadata": {
+        "raw_spec": {
+          "catalog_module_id": "module:builtin:current:router:BasicRouter",
+          "issues": [],
+          "raw_spec_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "status": "resolved"
+        }
+      },
+      "module": "builtin:BasicRouter",
+      "routes": [
+        {
+          "filter": {
+            "conditions": {
+              "expression": "not empty({{1.email}})"
+            },
+            "name": "First branch"
+          },
+          "flow": [
+            {
+              "id": 3,
+              "interface": [
+                {
+                  "name": "email",
+                  "type": "text"
+                }
+              ],
+              "metadata": {
+                "raw_spec": {
+                  "catalog_module_id": "module:datastore:2.0.5:action:AddRecord",
+                  "issues": [],
+                  "raw_spec_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+                  "status": "resolved"
+                }
+              },
+              "module": "datastore:AddRecord",
+              "parameters": {
+                "datastore": "first-branch-store"
+              },
+              "mapper": {
+                "email": "{{1.email}}"
+              }
+            }
+          ]
+        },
+        {
+          "filter": {
+            "conditions": {
+              "expression": "{{3.email}} = \"copy\""
+            },
+            "name": "Second branch"
+          },
+          "flow": [
+            {
+              "id": 4,
+              "metadata": {
+                "raw_spec": {
+                  "catalog_module_id": "module:datastore:2.0.5:action:AddRecord",
+                  "issues": [],
+                  "raw_spec_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+                  "status": "resolved"
+                }
+              },
+              "module": "datastore:AddRecord",
+              "parameters": {
+                "datastore": "second-branch-store"
+              },
+              "mapper": {
+                "email": "{{3.email}}"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "schedule": {
+      "id": "schedule:manual"
+    }
+  },
+  "name": "invalid-cross-branch-reference"
+}

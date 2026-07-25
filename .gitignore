@@ -1,0 +1,43 @@
+cache/
+dependencies/
+logs/
+temp/
+.venv/
+.basedpyright/
+.pytest_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+coverage.xml
+__pycache__/
+**/__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
+.github/workflows/
+# MCP project workspaces are generated IDE/runtime artifacts. Keep only the
+# boundary README and reusable templates under version control.
+projects/*
+!projects/README.md
+!projects/templates/
+!projects/templates/**
+# Retired generated Make ingest roots. Current durable state belongs in
+# src/data/pancakes.sqlite; temporary raw-spec payloads remain ignored.
+data/make/
+src/languages/make/data/make.com.png
+src/languages/make/data/designer-messages/raw/
+src/data/*.sqlite
+src/data/*.sqlite*
+src/data/*.sqlite3
+src/data/*.sqlite3*
+src/data/*.db
+src/data/*.db-*
+src/data/sql_snapshots/make.sql
+src/data/sql_snapshots/*.dump.sql
+src/data/sql_snapshots/*.full.sql
+src/data/sql_snapshots/*.backup.sql
+src/data/sql_snapshots/*.generated.sql
+src/data/sql_snapshots/*.sqlite
+src/data/sql_snapshots/*.sqlite*
+src/mcp/data/oauth/*.json

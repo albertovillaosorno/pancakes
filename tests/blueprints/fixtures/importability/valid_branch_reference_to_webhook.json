@@ -1,0 +1,78 @@
+{
+  "flow": [
+    {
+      "id": 1,
+      "interface": [
+        {
+          "name": "email",
+          "type": "text"
+        },
+        {
+          "name": "score",
+          "type": "number"
+        }
+      ],
+      "metadata": {
+        "raw_spec": {
+          "catalog_module_id": "module:gateway:1.14.1:trigger:CustomWebHook",
+          "issues": [],
+          "raw_spec_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "status": "resolved"
+        }
+      },
+      "module": "gateway:CustomWebHook",
+      "parameters": {
+        "hook": "lead-intake-hook-configured-in-make"
+      }
+    },
+    {
+      "id": 2,
+      "metadata": {
+        "raw_spec": {
+          "catalog_module_id": "module:builtin:current:router:BasicRouter",
+          "issues": [],
+          "raw_spec_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "status": "resolved"
+        }
+      },
+      "module": "builtin:BasicRouter",
+      "routes": [
+        {
+          "filter": {
+            "conditions": {
+              "expression": "not empty({{1.email}}) and {{1.score}} >= 80"
+            },
+            "name": "Qualified"
+          },
+          "flow": [
+            {
+              "id": 3,
+              "metadata": {
+                "raw_spec": {
+                  "catalog_module_id": "module:datastore:2.0.5:action:AddRecord",
+                  "issues": [],
+                  "raw_spec_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+                  "status": "resolved"
+                }
+              },
+              "module": "datastore:AddRecord",
+              "parameters": {
+                "datastore": "qualified-leads-store"
+              },
+              "mapper": {
+                "email": "{{1.email}}",
+                "score": "{{1.score}}"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "schedule": {
+      "id": "schedule:manual"
+    }
+  },
+  "name": "valid-branch-reference-to-webhook"
+}

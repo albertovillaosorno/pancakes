@@ -1,0 +1,43 @@
+{
+  "generated_at_utc": "2026-05-05T00:00:00+00:00",
+  "manifest_sha256": "5fc6d5ef14296c3baac0fe78ae9ed4c042458913311d0390163aaea9dbf85a02",
+  "raw_spec_dir": "tests/catalog/fixtures/raw_specs",
+  "records": [
+    {
+      "app_label": "Synthetic Data Store",
+      "app_slug": "datastore",
+      "app_version": "1.15.1",
+      "latest": false,
+      "manifest_version": 1,
+      "module_count": 1,
+      "module_kinds": ["action"],
+      "relative_path": "tests/catalog/fixtures/raw_specs/datastore__1.15.1.json",
+      "sha256": "334c06e4244ca235d93bcaa296b4912f0fe3a6d7c2cb8060469cb6814faed990",
+      "size_bytes": 1469,
+      "source_metadata": {
+        "is_truncated": false,
+        "sanitization_status": "synthetic_fixture",
+        "source_type": "derived_fixture",
+        "truncation_reason": "not_truncated"
+      }
+    },
+    {
+      "app_label": "Synthetic Data Store",
+      "app_slug": "datastore",
+      "app_version": "2.0.5",
+      "latest": true,
+      "manifest_version": 1,
+      "module_count": 1,
+      "module_kinds": ["action"],
+      "relative_path": "tests/catalog/fixtures/raw_specs/datastore__2.0.5.json",
+      "sha256": "33d679979ec82b0ce16573713941c737f5378d7824298cbe801e0c226cd84ab0",
+      "size_bytes": 1468,
+      "source_metadata": {
+        "is_truncated": false,
+        "sanitization_status": "synthetic_fixture",
+        "source_type": "derived_fixture",
+        "truncation_reason": "not_truncated"
+      }
+    }
+  ]
+}

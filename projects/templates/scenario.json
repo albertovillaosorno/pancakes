@@ -1,0 +1,17 @@
+{
+  "name": "",
+  "flow": [],
+  "metadata": {
+    "scenario": {
+      "name": ""
+    },
+    "designer": {
+      "messages": []
+    },
+    "notes": [],
+    "placeholder_registry": [],
+    "schedule": {
+      "id": "schedule:manual"
+    }
+  }
+}

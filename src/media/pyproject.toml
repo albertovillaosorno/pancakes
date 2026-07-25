@@ -1,0 +1,13 @@
+[project]
+name = "pancakes-media"
+version = "0.1.0"
+description = "Private Pancakes media-delivery package with PDF-first handoff generation."
+requires-python = ">=3.14"
+dependencies = []
+
+[build-system]
+requires = ["setuptools>=80"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]

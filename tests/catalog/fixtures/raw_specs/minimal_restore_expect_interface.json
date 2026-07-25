@@ -1,0 +1,79 @@
+{
+  "app": {
+    "actions": [
+      {
+        "expect": [
+          {
+            "label": "Input Bundle",
+            "name": "bundle",
+            "schema": [
+              {
+                "label": "Lead ID",
+                "name": "leadId",
+                "required": true,
+                "type": "text"
+              }
+            ],
+            "type": "collection"
+          }
+        ],
+        "interface": [
+          {
+            "fields": [
+              {
+                "label": "Record ID",
+                "name": "recordId",
+                "type": "text"
+              }
+            ],
+            "label": "Result",
+            "name": "result",
+            "type": "collection"
+          }
+        ],
+        "label": "Create retained record",
+        "name": "createRetainedRecord",
+        "parameters": [
+          {
+            "fields": [
+              {
+                "label": "Account ID",
+                "name": "accountId",
+                "required": true,
+                "type": "text"
+              }
+            ],
+            "label": "Account",
+            "name": "account",
+            "advanced": true,
+            "required": true,
+            "restore": {
+              "mode": "connection",
+              "source": "accountId"
+            },
+            "type": "account:retention-test"
+          },
+          {
+            "label": "Payload",
+            "name": "payload",
+            "spec": [
+              {
+                "label": "Lead Email",
+                "name": "leadEmail",
+                "type": "email"
+              }
+            ],
+            "type": "collection"
+          }
+        ]
+      }
+    ],
+    "label": "Retention Fixture",
+    "latest": true,
+    "manifest": {
+      "version": 1
+    },
+    "name": "retention-fixture",
+    "version": "1.0"
+  }
+}

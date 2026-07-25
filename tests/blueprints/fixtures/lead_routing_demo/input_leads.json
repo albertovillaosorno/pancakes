@@ -1,0 +1,28 @@
+{
+  "leads": [
+    {
+      "lead_id": "demo-lead-001",
+      "email": "avery.demo@example.invalid",
+      "company": "Example North",
+      "source": "website",
+      "score": 92,
+      "notes": "Asked for implementation estimate."
+    },
+    {
+      "lead_id": "demo-lead-002",
+      "email": "morgan.demo@example.invalid",
+      "company": "Example Studio",
+      "source": "referral",
+      "score": 64,
+      "notes": "Needs qualification follow-up."
+    },
+    {
+      "lead_id": "demo-lead-003",
+      "email": "",
+      "company": "Example Labs",
+      "source": "event",
+      "score": 81,
+      "notes": "Missing email should route to review."
+    }
+  ]
+}

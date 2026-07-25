@@ -1,0 +1,75 @@
+{
+  "flow": [
+    {
+      "id": 1,
+      "interface": [
+        {
+          "name": "email",
+          "type": "text"
+        },
+        {
+          "name": "company",
+          "type": "text"
+        }
+      ],
+      "metadata": {
+        "raw_spec": {
+          "catalog_module_id": "module:gateway:1.14.1:trigger:CustomWebHook",
+          "issues": [],
+          "raw_spec_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "status": "resolved"
+        }
+      },
+      "module": "gateway:CustomWebHook",
+      "parameters": {
+        "hook": "{{runtime.webhook.lead_intake_hook}}"
+      }
+    },
+    {
+      "id": 2,
+      "mapper": {
+        "company": "{{1.company}}",
+        "email": "{{1.email}}"
+      },
+      "metadata": {
+        "raw_spec": {
+          "catalog_module_id": "module:datastore:2.0.5:action:AddRecord",
+          "issues": [],
+          "raw_spec_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+          "status": "resolved"
+        }
+      },
+      "module": "datastore:AddRecord",
+      "parameters": {
+        "datastore": "{{runtime.datastore.qualified_leads}}"
+      }
+    }
+  ],
+  "metadata": {
+    "placeholder_registry": [
+      {
+        "expected_type": "hook_id",
+        "handoff_instructions": "Create a Custom webhook in Make, then paste its hook ID before activation.",
+        "kind": "runtime_setup",
+        "placeholder": "runtime.webhook.lead_intake_hook",
+        "required": true,
+        "target_path": "/flow/0/parameters/hook"
+      },
+      {
+        "expected_type": "id",
+        "handoff_instructions": "Create or select the qualified leads Data Store, then paste its ID before activation.",
+        "kind": "runtime_setup",
+        "placeholder": "runtime.datastore.qualified_leads",
+        "required": true,
+        "target_path": "/flow/1/parameters/datastore"
+      }
+    ],
+    "scenario": {
+      "name": "placeholder-registry-handoff-bridge"
+    },
+    "schedule": {
+      "id": "schedule:manual"
+    }
+  },
+  "name": "placeholder-registry-handoff-bridge"
+}

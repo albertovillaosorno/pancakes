@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "reviewed_at": "2026-05-13",
+  "status": "manual_candidate_intake_complete",
+  "active_rule_behavior": false,
+  "source_ledger": "src/blueprints/validation/data/linter/compliance/standards-source-ledger.json",
+  "promotion_policy": "Candidate records in this file do not activate runtime behavior. A later queue task must add or change validator behavior and fixtures explicitly.",
+  "records": [
+    {
+      "candidate_id": "STD-OWASP-API-001",
+      "source_file": "src/blueprints/validation/data/linter/compliance/standards-source-ledger.json",
+      "source_standard": "owasp-api-security-top-10",
+      "original_heading": "API transport and sensitive-response exposure candidate",
+      "decision": "downgrade",
+      "canonical_rule_code": "http.url_unencrypted_transport",
+      "alias_of_candidate_id": null,
+      "evidence_surfaces": [
+        "ast_structure",
+        "validation_fixture"
+      ],
+      "deterministic_predicate": "HTTP request URLs with an http:// scheme are locally visible in the blueprint AST and do not require external legal, audit, or provider interpretation.",
+      "severity_posture": "warning",
+      "profile_gates": [
+        "customer_facing_api",
+        "regulated"
+      ],
+      "implementation_owner": "src/blueprints/validation/validator.py",
+      "failing_fixture_plan": "Fixture with a customer-facing HTTP request using an http:// URL.",
+      "passing_fixture_plan": "Companion fixture with the same request using an https:// URL.",
+      "adr_impact": "ADR 001079 remains the manual-intake gate; no new active standards-derived rule is approved by this record.",
+      "bibliography_impact": "Use the source ledger for source metadata; do not copy standards text.",
+      "false_positive_risk": "Keep warning severity because internal networks, proxies, or test endpoints can make transport context ambiguous without deployment evidence.",
+      "quarantine_reason": null,
+      "rejection_reason": null,
+      "rationale": "Manual review maps the standards-derived API transport concern to an existing local deterministic rule without adding certification, compliance, audit, or legal claims.",
+      "activation_state": "research_complete_no_new_runtime_behavior"
+    }
+  ]
+}

@@ -1,0 +1,4229 @@
+{
+  "browser_evidence": {
+    "fallback_status": "authenticated_scenario_list_reached",
+    "fallback_surface": "none_browser_only",
+    "forbidden_actions": [
+      "run scenarios",
+      "activate schedules",
+      "create connections",
+      "save credentials",
+      "consume Make operations"
+    ],
+    "observed_signals": [
+      "Scenarios navigation",
+      "All scenarios filter"
+    ],
+    "observed_surface": "Make scenarios list",
+    "preferred_surface": "Codex in-app Browser",
+    "status": "manual_login_ready_read_only"
+  },
+  "coverage": {
+    "missing_local_catalog_manifest_count": 0,
+    "missing_modules": [],
+    "raw_spec_backed_count": 197,
+    "source_node_count": 198,
+    "unique_module_count": 197
+  },
+  "generated_at_utc": "2026-05-17T10:07:06.567672+00:00",
+  "priority_non_builtin_apps": [
+    "Google Sheets",
+    "Gmail",
+    "Verified",
+    "OpenAI (ChatGPT, Sora, Whisper)",
+    "Telegram Bot",
+    "Google Drive",
+    "Pinterest",
+    "Airtable",
+    "Google Gemini AI",
+    "Notion",
+    "Google Docs",
+    "Slack",
+    "Google Calendar",
+    "Facebook Lead Ads",
+    "Facebook Pages",
+    "Microsoft 365 Email (Outlook)",
+    "Anthropic Claude",
+    "Instagram for Business (Facebook login)",
+    "monday.com",
+    "Tally",
+    "HubSpot CRM",
+    "WordPress",
+    "Google Forms",
+    "Dropbox",
+    "Make AI Agents",
+    "New",
+    "Shopify",
+    "ClickUp",
+    "LinkedIn",
+    "Supabase",
+    "Brevo",
+    "Stripe",
+    "Twilio",
+    "Apify",
+    "YouTube",
+    "Make AI Toolkit",
+    "Discord",
+    "OneDrive",
+    "Pipedrive CRM",
+    "LINE",
+    "GoHighLevel",
+    "Make Code"
+  ],
+  "records": [
+    {
+      "app_slug": "ai-local-agent",
+      "catalog_evidence": {
+        "app_slug": "ai-local-agent",
+        "app_version": "0.39.0",
+        "display_name": "Run an agent",
+        "internal_name": "RunLocalAIAgent",
+        "module_id": "module:ai-local-agent:0.39.0:agent:RunLocalAIAgent",
+        "module_kind": "agent"
+      },
+      "internal_name": "RunLocalAIAgent",
+      "module": "ai-local-agent:RunLocalAIAgent",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Make AI Agents, Make AI Toolkit, Make AI Web Search, Make AI Content Extractor"
+      ],
+      "source_files": [
+        "make_built_in_ai.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "ai-tools",
+      "catalog_evidence": {
+        "app_slug": "ai-tools",
+        "app_version": "2.11.0",
+        "display_name": "Analyze sentiment",
+        "internal_name": "AnalyzeSentiment",
+        "module_id": "module:ai-tools:2.11.0:action:AnalyzeSentiment",
+        "module_kind": "action"
+      },
+      "internal_name": "AnalyzeSentiment",
+      "module": "ai-tools:AnalyzeSentiment",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Make AI Agents, Make AI Toolkit, Make AI Web Search, Make AI Content Extractor"
+      ],
+      "source_files": [
+        "make_built_in_ai.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "ai-tools",
+      "catalog_evidence": {
+        "app_slug": "ai-tools",
+        "app_version": "2.11.0",
+        "display_name": "Simple Text Prompt",
+        "internal_name": "Ask",
+        "module_id": "module:ai-tools:2.11.0:action:Ask",
+        "module_kind": "action"
+      },
+      "internal_name": "Ask",
+      "module": "ai-tools:Ask",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Make AI Agents, Make AI Toolkit, Make AI Web Search, Make AI Content Extractor"
+      ],
+      "source_files": [
+        "make_built_in_ai.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "ai-tools",
+      "catalog_evidence": {
+        "app_slug": "ai-tools",
+        "app_version": "2.11.0",
+        "display_name": "Categorize text",
+        "internal_name": "Categorize",
+        "module_id": "module:ai-tools:2.11.0:action:Categorize",
+        "module_kind": "action"
+      },
+      "internal_name": "Categorize",
+      "module": "ai-tools:Categorize",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Make AI Agents, Make AI Toolkit, Make AI Web Search, Make AI Content Extractor"
+      ],
+      "source_files": [
+        "make_built_in_ai.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "ai-tools",
+      "catalog_evidence": {
+        "app_slug": "ai-tools",
+        "app_version": "2.11.0",
+        "display_name": "Chunk text",
+        "internal_name": "CountAndChunkText",
+        "module_id": "module:ai-tools:2.11.0:action:CountAndChunkText",
+        "module_kind": "action"
+      },
+      "internal_name": "CountAndChunkText",
+      "module": "ai-tools:CountAndChunkText",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Make AI Agents, Make AI Toolkit, Make AI Web Search, Make AI Content Extractor"
+      ],
+      "source_files": [
+        "make_built_in_ai.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "ai-tools",
+      "catalog_evidence": {
+        "app_slug": "ai-tools",
+        "app_version": "2.11.0",
+        "display_name": "Identify language",
+        "internal_name": "DetectLanguage",
+        "module_id": "module:ai-tools:2.11.0:action:DetectLanguage",
+        "module_kind": "action"
+      },
+      "internal_name": "DetectLanguage",
+      "module": "ai-tools:DetectLanguage",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Make AI Agents, Make AI Toolkit, Make AI Web Search, Make AI Content Extractor"
+      ],
+      "source_files": [
+        "make_built_in_ai.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "ai-tools",
+      "catalog_evidence": {
+        "app_slug": "ai-tools",
+        "app_version": "2.11.0",
+        "display_name": "Extract information from text",
+        "internal_name": "Extract",
+        "module_id": "module:ai-tools:2.11.0:action:Extract",
+        "module_kind": "action"
+      },
+      "internal_name": "Extract",
+      "module": "ai-tools:Extract",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Make AI Agents, Make AI Toolkit, Make AI Web Search, Make AI Content Extractor"
+      ],
+      "source_files": [
+        "make_built_in_ai.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "ai-tools",
+      "catalog_evidence": {
+        "app_slug": "ai-tools",
+        "app_version": "2.11.0",
+        "display_name": "Standardize text",
+        "internal_name": "Standardize",
+        "module_id": "module:ai-tools:2.11.0:action:Standardize",
+        "module_kind": "action"
+      },
+      "internal_name": "Standardize",
+      "module": "ai-tools:Standardize",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Make AI Agents, Make AI Toolkit, Make AI Web Search, Make AI Content Extractor"
+      ],
+      "source_files": [
+        "make_built_in_ai.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "ai-tools",
+      "catalog_evidence": {
+        "app_slug": "ai-tools",
+        "app_version": "2.11.0",
+        "display_name": "Summarize text",
+        "internal_name": "Summarize",
+        "module_id": "module:ai-tools:2.11.0:action:Summarize",
+        "module_kind": "action"
+      },
+      "internal_name": "Summarize",
+      "module": "ai-tools:Summarize",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Make AI Agents, Make AI Toolkit, Make AI Web Search, Make AI Content Extractor"
+      ],
+      "source_files": [
+        "make_built_in_ai.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "ai-tools",
+      "catalog_evidence": {
+        "app_slug": "ai-tools",
+        "app_version": "2.11.0",
+        "display_name": "Translate text",
+        "internal_name": "Translate",
+        "module_id": "module:ai-tools:2.11.0:action:Translate",
+        "module_kind": "action"
+      },
+      "internal_name": "Translate",
+      "module": "ai-tools:Translate",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Make AI Agents, Make AI Toolkit, Make AI Web Search, Make AI Content Extractor"
+      ],
+      "source_files": [
+        "make_built_in_ai.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "android",
+      "catalog_evidence": {
+        "app_slug": "android",
+        "app_version": "1.9.2",
+        "display_name": "Watch connections to Bluetooth devices",
+        "internal_name": "BluetoothDeviceConnected",
+        "module_id": "module:android:1.9.2:trigger:BluetoothDeviceConnected",
+        "module_kind": "trigger"
+      },
+      "internal_name": "BluetoothDeviceConnected",
+      "module": "android:BluetoothDeviceConnected",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "android",
+      "catalog_evidence": {
+        "app_slug": "android",
+        "app_version": "1.9.2",
+        "display_name": "Watch disconnections from Bluetooth devices",
+        "internal_name": "BluetoothDeviceDisconnected",
+        "module_id": "module:android:1.9.2:trigger:BluetoothDeviceDisconnected",
+        "module_kind": "trigger"
+      },
+      "internal_name": "BluetoothDeviceDisconnected",
+      "module": "android:BluetoothDeviceDisconnected",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "android",
+      "catalog_evidence": {
+        "app_slug": "android",
+        "app_version": "1.9.2",
+        "display_name": "Watch Bluetooth deactivations",
+        "internal_name": "BluetoothDisabled",
+        "module_id": "module:android:1.9.2:trigger:BluetoothDisabled",
+        "module_kind": "trigger"
+      },
+      "internal_name": "BluetoothDisabled",
+      "module": "android:BluetoothDisabled",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "android",
+      "catalog_evidence": {
+        "app_slug": "android",
+        "app_version": "1.9.2",
+        "display_name": "Watch Bluetooth activations",
+        "internal_name": "BluetoothEnabled",
+        "module_id": "module:android:1.9.2:trigger:BluetoothEnabled",
+        "module_kind": "trigger"
+      },
+      "internal_name": "BluetoothEnabled",
+      "module": "android:BluetoothEnabled",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "android",
+      "catalog_evidence": {
+        "app_slug": "android",
+        "app_version": "1.9.2",
+        "display_name": "Watch Button",
+        "internal_name": "ButtonPressed",
+        "module_id": "module:android:1.9.2:trigger:ButtonPressed",
+        "module_kind": "trigger"
+      },
+      "internal_name": "ButtonPressed",
+      "module": "android:ButtonPressed",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "android",
+      "catalog_evidence": {
+        "app_slug": "android",
+        "app_version": "1.9.2",
+        "display_name": "Change a ring mode",
+        "internal_name": "ChangeRingMode",
+        "module_id": "module:android:1.9.2:action:ChangeRingMode",
+        "module_kind": "action"
+      },
+      "internal_name": "ChangeRingMode",
+      "module": "android:ChangeRingMode",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "android",
+      "catalog_evidence": {
+        "app_slug": "android",
+        "app_version": "1.9.2",
+        "display_name": "Close a web browser",
+        "internal_name": "CloseBrowser",
+        "module_id": "module:android:1.9.2:action:CloseBrowser",
+        "module_kind": "action"
+      },
+      "internal_name": "CloseBrowser",
+      "module": "android:CloseBrowser",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "android",
+      "catalog_evidence": {
+        "app_slug": "android",
+        "app_version": "1.9.2",
+        "display_name": "Disable Bluetooth",
+        "internal_name": "DisableBluetooth",
+        "module_id": "module:android:1.9.2:action:DisableBluetooth",
+        "module_kind": "action"
+      },
+      "internal_name": "DisableBluetooth",
+      "module": "android:DisableBluetooth",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "android",
+      "catalog_evidence": {
+        "app_slug": "android",
+        "app_version": "1.9.2",
+        "display_name": "Disable WiFi",
+        "internal_name": "DisableWifi",
+        "module_id": "module:android:1.9.2:action:DisableWifi",
+        "module_kind": "action"
+      },
+      "internal_name": "DisableWifi",
+      "module": "android:DisableWifi",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "android",
+      "catalog_evidence": {
+        "app_slug": "android",
+        "app_version": "1.9.2",
+        "display_name": "Enable Bluetooth",
+        "internal_name": "EnableBluetooth",
+        "module_id": "module:android:1.9.2:action:EnableBluetooth",
+        "module_kind": "action"
+      },
+      "internal_name": "EnableBluetooth",
+      "module": "android:EnableBluetooth",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "android",
+      "catalog_evidence": {
+        "app_slug": "android",
+        "app_version": "1.9.2",
+        "display_name": "Enable WiFi",
+        "internal_name": "EnableWifi",
+        "module_id": "module:android:1.9.2:action:EnableWifi",
+        "module_kind": "action"
+      },
+      "internal_name": "EnableWifi",
+      "module": "android:EnableWifi",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "android",
+      "catalog_evidence": {
+        "app_slug": "android",
+        "app_version": "1.9.2",
+        "display_name": "Watch incoming calls",
+        "internal_name": "IncomingCall",
+        "module_id": "module:android:1.9.2:trigger:IncomingCall",
+        "module_kind": "trigger"
+      },
+      "internal_name": "IncomingCall",
+      "module": "android:IncomingCall",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "android",
+      "catalog_evidence": {
+        "app_slug": "android",
+        "app_version": "1.9.2",
+        "display_name": "Watch completed incoming calls",
+        "internal_name": "IncomingCallCompleted",
+        "module_id": "module:android:1.9.2:trigger:IncomingCallCompleted",
+        "module_kind": "trigger"
+      },
+      "internal_name": "IncomingCallCompleted",
+      "module": "android:IncomingCallCompleted",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "android",
+      "catalog_evidence": {
+        "app_slug": "android",
+        "app_version": "1.9.2",
+        "display_name": "Watch location changes",
+        "internal_name": "LocationChangedEvent",
+        "module_id": "module:android:1.9.2:trigger:LocationChangedEvent",
+        "module_kind": "trigger"
+      },
+      "internal_name": "LocationChangedEvent",
+      "module": "android:LocationChangedEvent",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "android",
+      "catalog_evidence": {
+        "app_slug": "android",
+        "app_version": "1.9.2",
+        "display_name": "Make a call",
+        "internal_name": "MakeCall",
+        "module_id": "module:android:1.9.2:action:MakeCall",
+        "module_kind": "action"
+      },
+      "internal_name": "MakeCall",
+      "module": "android:MakeCall",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "android",
+      "catalog_evidence": {
+        "app_slug": "android",
+        "app_version": "1.9.2",
+        "display_name": "Watch entrances to/exits from a geofence area",
+        "internal_name": "NewGeofencingEvent",
+        "module_id": "module:android:1.9.2:trigger:NewGeofencingEvent",
+        "module_kind": "trigger"
+      },
+      "internal_name": "NewGeofencingEvent",
+      "module": "android:NewGeofencingEvent",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "android",
+      "catalog_evidence": {
+        "app_slug": "android",
+        "app_version": "1.9.2",
+        "display_name": "Open a web browser",
+        "internal_name": "OpenBrowser",
+        "module_id": "module:android:1.9.2:action:OpenBrowser",
+        "module_kind": "action"
+      },
+      "internal_name": "OpenBrowser",
+      "module": "android:OpenBrowser",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "android",
+      "catalog_evidence": {
+        "app_slug": "android",
+        "app_version": "1.9.2",
+        "display_name": "Watch outgoing calls",
+        "internal_name": "OutgoingCall",
+        "module_id": "module:android:1.9.2:trigger:OutgoingCall",
+        "module_kind": "trigger"
+      },
+      "internal_name": "OutgoingCall",
+      "module": "android:OutgoingCall",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "android",
+      "catalog_evidence": {
+        "app_slug": "android",
+        "app_version": "1.9.2",
+        "display_name": "Watch completed outgoing calls",
+        "internal_name": "OutgoingCallCompleted",
+        "module_id": "module:android:1.9.2:trigger:OutgoingCallCompleted",
+        "module_kind": "trigger"
+      },
+      "internal_name": "OutgoingCallCompleted",
+      "module": "android:OutgoingCallCompleted",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "android",
+      "catalog_evidence": {
+        "app_slug": "android",
+        "app_version": "1.9.2",
+        "display_name": "Prepare a phone call",
+        "internal_name": "PrepareCall",
+        "module_id": "module:android:1.9.2:action:PrepareCall",
+        "module_kind": "action"
+      },
+      "internal_name": "PrepareCall",
+      "module": "android:PrepareCall",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "android",
+      "catalog_evidence": {
+        "app_slug": "android",
+        "app_version": "1.9.2",
+        "display_name": "Watch text messages",
+        "internal_name": "ReceiveSMS",
+        "module_id": "module:android:1.9.2:trigger:ReceiveSMS",
+        "module_kind": "trigger"
+      },
+      "internal_name": "ReceiveSMS",
+      "module": "android:ReceiveSMS",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "android",
+      "catalog_evidence": {
+        "app_slug": "android",
+        "app_version": "1.9.2",
+        "display_name": "Save a photo",
+        "internal_name": "SavePhoto",
+        "module_id": "module:android:1.9.2:action:SavePhoto",
+        "module_kind": "action"
+      },
+      "internal_name": "SavePhoto",
+      "module": "android:SavePhoto",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "android",
+      "catalog_evidence": {
+        "app_slug": "android",
+        "app_version": "1.9.2",
+        "display_name": "Watch barcode / QR code",
+        "internal_name": "ScanTaken",
+        "module_id": "module:android:1.9.2:trigger:ScanTaken",
+        "module_kind": "trigger"
+      },
+      "internal_name": "ScanTaken",
+      "module": "android:ScanTaken",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "android",
+      "catalog_evidence": {
+        "app_slug": "android",
+        "app_version": "1.9.2",
+        "display_name": "Send a push notification",
+        "internal_name": "SendNotification",
+        "module_id": "module:android:1.9.2:action:SendNotification",
+        "module_kind": "action"
+      },
+      "internal_name": "SendNotification",
+      "module": "android:SendNotification",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "android",
+      "catalog_evidence": {
+        "app_slug": "android",
+        "app_version": "1.9.2",
+        "display_name": "Send text message",
+        "internal_name": "SendSMS",
+        "module_id": "module:android:1.9.2:action:SendSMS",
+        "module_kind": "action"
+      },
+      "internal_name": "SendSMS",
+      "module": "android:SendSMS",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "android",
+      "catalog_evidence": {
+        "app_slug": "android",
+        "app_version": "1.9.2",
+        "display_name": "Watch sent SMS",
+        "internal_name": "SentSMS",
+        "module_id": "module:android:1.9.2:trigger:SentSMS",
+        "module_kind": "trigger"
+      },
+      "internal_name": "SentSMS",
+      "module": "android:SentSMS",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "android",
+      "catalog_evidence": {
+        "app_slug": "android",
+        "app_version": "1.9.2",
+        "display_name": "Take a photo",
+        "internal_name": "TakePhoto",
+        "module_id": "module:android:1.9.2:action:TakePhoto",
+        "module_kind": "action"
+      },
+      "internal_name": "TakePhoto",
+      "module": "android:TakePhoto",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "archive",
+      "catalog_evidence": {
+        "app_slug": "archive",
+        "app_version": "1.4.3",
+        "display_name": "Deflate",
+        "internal_name": "Deflate",
+        "module_id": "module:archive:1.4.3:transformer:Deflate",
+        "module_kind": "transformer"
+      },
+      "internal_name": "Deflate",
+      "module": "archive:Deflate",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "archive",
+      "catalog_evidence": {
+        "app_slug": "archive",
+        "app_version": "1.4.3",
+        "display_name": "Gunzip",
+        "internal_name": "Gunzip",
+        "module_id": "module:archive:1.4.3:transformer:Gunzip",
+        "module_kind": "transformer"
+      },
+      "internal_name": "Gunzip",
+      "module": "archive:Gunzip",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "archive",
+      "catalog_evidence": {
+        "app_slug": "archive",
+        "app_version": "1.4.3",
+        "display_name": "Gzip",
+        "internal_name": "Gzip",
+        "module_id": "module:archive:1.4.3:transformer:Gzip",
+        "module_kind": "transformer"
+      },
+      "internal_name": "Gzip",
+      "module": "archive:Gzip",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "archive",
+      "catalog_evidence": {
+        "app_slug": "archive",
+        "app_version": "1.4.3",
+        "display_name": "Inflate",
+        "internal_name": "Inflate",
+        "module_id": "module:archive:1.4.3:transformer:Inflate",
+        "module_kind": "transformer"
+      },
+      "internal_name": "Inflate",
+      "module": "archive:Inflate",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "archive",
+      "catalog_evidence": {
+        "app_slug": "archive",
+        "app_version": "1.4.3",
+        "display_name": "Create an archive",
+        "internal_name": "PackAggregator",
+        "module_id": "module:archive:1.4.3:aggregator:PackAggregator",
+        "module_kind": "aggregator"
+      },
+      "internal_name": "PackAggregator",
+      "module": "archive:PackAggregator",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "archive",
+      "catalog_evidence": {
+        "app_slug": "archive",
+        "app_version": "1.4.3",
+        "display_name": "Extract an archive",
+        "internal_name": "UnpackAction",
+        "module_id": "module:archive:1.4.3:action:UnpackAction",
+        "module_kind": "action"
+      },
+      "internal_name": "UnpackAction",
+      "module": "archive:UnpackAction",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "barcode",
+      "catalog_evidence": {
+        "app_slug": "barcode",
+        "app_version": "1.1.4",
+        "display_name": "Generate barcode",
+        "internal_name": "GenerateBarcode",
+        "module_id": "module:barcode:1.1.4:action:GenerateBarcode",
+        "module_kind": "action"
+      },
+      "internal_name": "GenerateBarcode",
+      "module": "barcode:GenerateBarcode",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "builtin",
+      "catalog_evidence": {
+        "app_slug": "builtin",
+        "app_version": "1.8.3",
+        "display_name": "Array aggregator",
+        "internal_name": "BasicAggregator",
+        "module_id": "module:builtin:1.8.3:aggregator:BasicAggregator",
+        "module_kind": "aggregator"
+      },
+      "internal_name": "BasicAggregator",
+      "module": "builtin:BasicAggregator",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "builtin",
+      "catalog_evidence": {
+        "app_slug": "builtin",
+        "app_version": "1.8.3",
+        "display_name": "Iterator",
+        "internal_name": "BasicFeeder",
+        "module_id": "module:builtin:1.8.3:transformer:BasicFeeder",
+        "module_kind": "transformer"
+      },
+      "internal_name": "BasicFeeder",
+      "module": "builtin:BasicFeeder",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "builtin",
+      "catalog_evidence": {
+        "app_slug": "builtin",
+        "app_version": "1.8.3",
+        "display_name": "If-else",
+        "internal_name": "BasicIfElse",
+        "module_id": "module:builtin:1.8.3:router:BasicIfElse",
+        "module_kind": "router"
+      },
+      "internal_name": "BasicIfElse",
+      "module": "builtin:BasicIfElse",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "builtin",
+      "catalog_evidence": {
+        "app_slug": "builtin",
+        "app_version": "1.8.3",
+        "display_name": "Merge",
+        "internal_name": "BasicMerge",
+        "module_id": "module:builtin:1.8.3:router:BasicMerge",
+        "module_kind": "router"
+      },
+      "internal_name": "BasicMerge",
+      "module": "builtin:BasicMerge",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "builtin",
+      "catalog_evidence": {
+        "app_slug": "builtin",
+        "app_version": "1.8.3",
+        "display_name": "Repeater",
+        "internal_name": "BasicRepeater",
+        "module_id": "module:builtin:1.8.3:action:BasicRepeater",
+        "module_kind": "action"
+      },
+      "internal_name": "BasicRepeater",
+      "module": "builtin:BasicRepeater",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "builtin",
+      "catalog_evidence": {
+        "app_slug": "builtin",
+        "app_version": "1.8.3",
+        "display_name": "Router",
+        "internal_name": "BasicRouter",
+        "module_id": "module:builtin:1.8.3:router:BasicRouter",
+        "module_kind": "router"
+      },
+      "internal_name": "BasicRouter",
+      "module": "builtin:BasicRouter",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "code",
+      "catalog_evidence": {
+        "app_slug": "code",
+        "app_version": "1.2.3",
+        "display_name": "Run code",
+        "internal_name": "ExecuteCode",
+        "module_id": "module:code:1.2.3:action:ExecuteCode",
+        "module_kind": "action"
+      },
+      "internal_name": "ExecuteCode",
+      "module": "code:ExecuteCode",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "crypto",
+      "catalog_evidence": {
+        "app_slug": "crypto",
+        "app_version": "3.1.0",
+        "display_name": "AES Decrypt (simple)",
+        "internal_name": "AES256Decrypt",
+        "module_id": "module:crypto:3.1.0:transformer:AES256Decrypt",
+        "module_kind": "transformer"
+      },
+      "internal_name": "AES256Decrypt",
+      "module": "crypto:AES256Decrypt",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "crypto",
+      "catalog_evidence": {
+        "app_slug": "crypto",
+        "app_version": "3.1.0",
+        "display_name": "AES Encrypt (simple)",
+        "internal_name": "AES256Encrypt",
+        "module_id": "module:crypto:3.1.0:transformer:AES256Encrypt",
+        "module_kind": "transformer"
+      },
+      "internal_name": "AES256Encrypt",
+      "module": "crypto:AES256Encrypt",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "crypto",
+      "catalog_evidence": {
+        "app_slug": "crypto",
+        "app_version": "3.1.0",
+        "display_name": "AES Decrypt (advanced)",
+        "internal_name": "AESDecrypt",
+        "module_id": "module:crypto:3.1.0:transformer:AESDecrypt",
+        "module_kind": "transformer"
+      },
+      "internal_name": "AESDecrypt",
+      "module": "crypto:AESDecrypt",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "crypto",
+      "catalog_evidence": {
+        "app_slug": "crypto",
+        "app_version": "3.1.0",
+        "display_name": "AES Encrypt (advanced)",
+        "internal_name": "AESEncrypt",
+        "module_id": "module:crypto:3.1.0:transformer:AESEncrypt",
+        "module_kind": "transformer"
+      },
+      "internal_name": "AESEncrypt",
+      "module": "crypto:AESEncrypt",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "crypto",
+      "catalog_evidence": {
+        "app_slug": "crypto",
+        "app_version": "3.1.0",
+        "display_name": "Create digital signature",
+        "internal_name": "CreateSignature",
+        "module_id": "module:crypto:3.1.0:transformer:CreateSignature",
+        "module_kind": "transformer"
+      },
+      "internal_name": "CreateSignature",
+      "module": "crypto:CreateSignature",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "crypto",
+      "catalog_evidence": {
+        "app_slug": "crypto",
+        "app_version": "3.1.0",
+        "display_name": "Decrypt a PGP message",
+        "internal_name": "PGPDecrypt",
+        "module_id": "module:crypto:3.1.0:transformer:PGPDecrypt",
+        "module_kind": "transformer"
+      },
+      "internal_name": "PGPDecrypt",
+      "module": "crypto:PGPDecrypt",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "crypto",
+      "catalog_evidence": {
+        "app_slug": "crypto",
+        "app_version": "3.1.0",
+        "display_name": "Encrypt a PGP message",
+        "internal_name": "PGPEncrypt",
+        "module_id": "module:crypto:3.1.0:transformer:PGPEncrypt",
+        "module_kind": "transformer"
+      },
+      "internal_name": "PGPEncrypt",
+      "module": "crypto:PGPEncrypt",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "csv",
+      "catalog_evidence": {
+        "app_slug": "csv",
+        "app_version": "1.8.2",
+        "display_name": "Create CSV (advanced)",
+        "internal_name": "CreateAdvancedAggregator",
+        "module_id": "module:csv:1.8.2:aggregator:CreateAdvancedAggregator",
+        "module_kind": "aggregator"
+      },
+      "internal_name": "CreateAdvancedAggregator",
+      "module": "csv:CreateAdvancedAggregator",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "csv",
+      "catalog_evidence": {
+        "app_slug": "csv",
+        "app_version": "1.8.2",
+        "display_name": "Create CSV",
+        "internal_name": "CreateAggregator",
+        "module_id": "module:csv:1.8.2:aggregator:CreateAggregator",
+        "module_kind": "aggregator"
+      },
+      "internal_name": "CreateAggregator",
+      "module": "csv:CreateAggregator",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "csv",
+      "catalog_evidence": {
+        "app_slug": "csv",
+        "app_version": "1.8.2",
+        "display_name": "Parse CSV",
+        "internal_name": "ParseCSV",
+        "module_id": "module:csv:1.8.2:transformer:ParseCSV",
+        "module_kind": "transformer"
+      },
+      "internal_name": "ParseCSV",
+      "module": "csv:ParseCSV",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "currency",
+      "catalog_evidence": {
+        "app_slug": "currency",
+        "app_version": "1.0.10",
+        "display_name": "Convert an amount between currencies",
+        "internal_name": "ActionConvert",
+        "module_id": "module:currency:1.0.10:action:ActionConvert",
+        "module_kind": "action"
+      },
+      "internal_name": "ActionConvert",
+      "module": "currency:ActionConvert",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "datastore",
+      "catalog_evidence": {
+        "app_slug": "datastore",
+        "app_version": "1.15.1",
+        "display_name": "Add/replace a record",
+        "internal_name": "AddRecord",
+        "module_id": "module:datastore:1.15.1:action:AddRecord",
+        "module_kind": "action"
+      },
+      "internal_name": "AddRecord",
+      "module": "datastore:AddRecord",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "datastore",
+      "catalog_evidence": {
+        "app_slug": "datastore",
+        "app_version": "1.15.1",
+        "display_name": "Delete all records",
+        "internal_name": "DeleteAllRecords",
+        "module_id": "module:datastore:1.15.1:action:DeleteAllRecords",
+        "module_kind": "action"
+      },
+      "internal_name": "DeleteAllRecords",
+      "module": "datastore:DeleteAllRecords",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "datastore",
+      "catalog_evidence": {
+        "app_slug": "datastore",
+        "app_version": "1.15.1",
+        "display_name": "Delete a record",
+        "internal_name": "DeleteRecord",
+        "module_id": "module:datastore:1.15.1:action:DeleteRecord",
+        "module_kind": "action"
+      },
+      "internal_name": "DeleteRecord",
+      "module": "datastore:DeleteRecord",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "datastore",
+      "catalog_evidence": {
+        "app_slug": "datastore",
+        "app_version": "1.15.1",
+        "display_name": "Check the existence of a record",
+        "internal_name": "ExistRecord",
+        "module_id": "module:datastore:1.15.1:action:ExistRecord",
+        "module_kind": "action"
+      },
+      "internal_name": "ExistRecord",
+      "module": "datastore:ExistRecord",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "datastore",
+      "catalog_evidence": {
+        "app_slug": "datastore",
+        "app_version": "1.15.1",
+        "display_name": "Get a record",
+        "internal_name": "GetRecord",
+        "module_id": "module:datastore:1.15.1:action:GetRecord",
+        "module_kind": "action"
+      },
+      "internal_name": "GetRecord",
+      "module": "datastore:GetRecord",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "datastore",
+      "catalog_evidence": {
+        "app_slug": "datastore",
+        "app_version": "1.15.1",
+        "display_name": "Search records",
+        "internal_name": "SearchRecord",
+        "module_id": "module:datastore:1.15.1:search:SearchRecord",
+        "module_kind": "search"
+      },
+      "internal_name": "SearchRecord",
+      "module": "datastore:SearchRecord",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "datastore",
+      "catalog_evidence": {
+        "app_slug": "datastore",
+        "app_version": "1.15.1",
+        "display_name": "Count records",
+        "internal_name": "Stats",
+        "module_id": "module:datastore:1.15.1:action:Stats",
+        "module_kind": "action"
+      },
+      "internal_name": "Stats",
+      "module": "datastore:Stats",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "datastore",
+      "catalog_evidence": {
+        "app_slug": "datastore",
+        "app_version": "1.15.1",
+        "display_name": "Update a record",
+        "internal_name": "UpdateRecord",
+        "module_id": "module:datastore:1.15.1:action:UpdateRecord",
+        "module_kind": "action"
+      },
+      "internal_name": "UpdateRecord",
+      "module": "datastore:UpdateRecord",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "email",
+      "catalog_evidence": {
+        "app_slug": "email",
+        "app_version": "7.5.10",
+        "display_name": "Copy an Email",
+        "internal_name": "ActionCopyEmail",
+        "module_id": "module:email:7.5.10:action:ActionCopyEmail",
+        "module_kind": "action"
+      },
+      "internal_name": "ActionCopyEmail",
+      "module": "email:ActionCopyEmail",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "email",
+      "catalog_evidence": {
+        "app_slug": "email",
+        "app_version": "7.5.10",
+        "display_name": "Create a Draft",
+        "internal_name": "ActionCreateDraft",
+        "module_id": "module:email:7.5.10:action:ActionCreateDraft",
+        "module_kind": "action"
+      },
+      "internal_name": "ActionCreateDraft",
+      "module": "email:ActionCreateDraft",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "email",
+      "catalog_evidence": {
+        "app_slug": "email",
+        "app_version": "7.5.10",
+        "display_name": "Delete an Email",
+        "internal_name": "ActionDeleteEmail",
+        "module_id": "module:email:7.5.10:action:ActionDeleteEmail",
+        "module_kind": "action"
+      },
+      "internal_name": "ActionDeleteEmail",
+      "module": "email:ActionDeleteEmail",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "email",
+      "catalog_evidence": {
+        "app_slug": "email",
+        "app_version": "7.5.10",
+        "display_name": "Get Emails",
+        "internal_name": "ActionGetEmails",
+        "module_id": "module:email:7.5.10:action:ActionGetEmails",
+        "module_kind": "action"
+      },
+      "internal_name": "ActionGetEmails",
+      "module": "email:ActionGetEmails",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "email",
+      "catalog_evidence": {
+        "app_slug": "email",
+        "app_version": "7.5.10",
+        "display_name": "Move an Email",
+        "internal_name": "ActionMoveEmail",
+        "module_id": "module:email:7.5.10:action:ActionMoveEmail",
+        "module_kind": "action"
+      },
+      "internal_name": "ActionMoveEmail",
+      "module": "email:ActionMoveEmail",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "email",
+      "catalog_evidence": {
+        "app_slug": "email",
+        "app_version": "7.5.10",
+        "display_name": "Send an Email",
+        "internal_name": "ActionSendEmail",
+        "module_id": "module:email:7.5.10:action:ActionSendEmail",
+        "module_kind": "action"
+      },
+      "internal_name": "ActionSendEmail",
+      "module": "email:ActionSendEmail",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "email",
+      "catalog_evidence": {
+        "app_slug": "email",
+        "app_version": "7.5.10",
+        "display_name": "Send an Email to a Team Member",
+        "internal_name": "ActionSendMeEmail",
+        "module_id": "module:email:7.5.10:action:ActionSendMeEmail",
+        "module_kind": "action"
+      },
+      "internal_name": "ActionSendMeEmail",
+      "module": "email:ActionSendMeEmail",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "email",
+      "catalog_evidence": {
+        "app_slug": "email",
+        "app_version": "7.5.10",
+        "display_name": "Mark an Email as Read",
+        "internal_name": "ActionSetFlagSeen",
+        "module_id": "module:email:7.5.10:action:ActionSetFlagSeen",
+        "module_kind": "action"
+      },
+      "internal_name": "ActionSetFlagSeen",
+      "module": "email:ActionSetFlagSeen",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "email",
+      "catalog_evidence": {
+        "app_slug": "email",
+        "app_version": "7.5.10",
+        "display_name": "Mark an Email as Unread",
+        "internal_name": "ActionSetFlagUnseen",
+        "module_id": "module:email:7.5.10:action:ActionSetFlagUnseen",
+        "module_kind": "action"
+      },
+      "internal_name": "ActionSetFlagUnseen",
+      "module": "email:ActionSetFlagUnseen",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "email",
+      "catalog_evidence": {
+        "app_slug": "email",
+        "app_version": "7.5.10",
+        "display_name": "Iterate Attachments",
+        "internal_name": "FeedAttachments",
+        "module_id": "module:email:7.5.10:transformer:FeedAttachments",
+        "module_kind": "transformer"
+      },
+      "internal_name": "FeedAttachments",
+      "module": "email:FeedAttachments",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "email",
+      "catalog_evidence": {
+        "app_slug": "email",
+        "app_version": "7.5.10",
+        "display_name": "Watch Emails",
+        "internal_name": "TriggerNewEmail",
+        "module_id": "module:email:7.5.10:trigger:TriggerNewEmail",
+        "module_kind": "trigger"
+      },
+      "internal_name": "TriggerNewEmail",
+      "module": "email:TriggerNewEmail",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "ftp",
+      "catalog_evidence": {
+        "app_slug": "ftp",
+        "app_version": "8.2.5",
+        "display_name": "Change permissions",
+        "internal_name": "ActionChangeMode",
+        "module_id": "module:ftp:8.2.5:action:ActionChangeMode",
+        "module_kind": "action"
+      },
+      "internal_name": "ActionChangeMode",
+      "module": "ftp:ActionChangeMode",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "ftp",
+      "catalog_evidence": {
+        "app_slug": "ftp",
+        "app_version": "8.2.5",
+        "display_name": "Delete a file",
+        "internal_name": "ActionDeleteFile",
+        "module_id": "module:ftp:8.2.5:action:ActionDeleteFile",
+        "module_kind": "action"
+      },
+      "internal_name": "ActionDeleteFile",
+      "module": "ftp:ActionDeleteFile",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "ftp",
+      "catalog_evidence": {
+        "app_slug": "ftp",
+        "app_version": "8.2.5",
+        "display_name": "Get a file",
+        "internal_name": "ActionGetFile",
+        "module_id": "module:ftp:8.2.5:action:ActionGetFile",
+        "module_kind": "action"
+      },
+      "internal_name": "ActionGetFile",
+      "module": "ftp:ActionGetFile",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "ftp",
+      "catalog_evidence": {
+        "app_slug": "ftp",
+        "app_version": "8.2.5",
+        "display_name": "List of files/folders in a folder",
+        "internal_name": "ActionListFiles",
+        "module_id": "module:ftp:8.2.5:action:ActionListFiles",
+        "module_kind": "action"
+      },
+      "internal_name": "ActionListFiles",
+      "module": "ftp:ActionListFiles",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "ftp",
+      "catalog_evidence": {
+        "app_slug": "ftp",
+        "app_version": "8.2.5",
+        "display_name": "Create a folder",
+        "internal_name": "ActionMakeDir",
+        "module_id": "module:ftp:8.2.5:action:ActionMakeDir",
+        "module_kind": "action"
+      },
+      "internal_name": "ActionMakeDir",
+      "module": "ftp:ActionMakeDir",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "ftp",
+      "catalog_evidence": {
+        "app_slug": "ftp",
+        "app_version": "8.2.5",
+        "display_name": "Delete a folder",
+        "internal_name": "ActionRemoveDir",
+        "module_id": "module:ftp:8.2.5:action:ActionRemoveDir",
+        "module_kind": "action"
+      },
+      "internal_name": "ActionRemoveDir",
+      "module": "ftp:ActionRemoveDir",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "ftp",
+      "catalog_evidence": {
+        "app_slug": "ftp",
+        "app_version": "8.2.5",
+        "display_name": "Move a file or folder",
+        "internal_name": "ActionRename",
+        "module_id": "module:ftp:8.2.5:action:ActionRename",
+        "module_kind": "action"
+      },
+      "internal_name": "ActionRename",
+      "module": "ftp:ActionRename",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "ftp",
+      "catalog_evidence": {
+        "app_slug": "ftp",
+        "app_version": "8.2.5",
+        "display_name": "Upload a file",
+        "internal_name": "ActionUploadFile",
+        "module_id": "module:ftp:8.2.5:action:ActionUploadFile",
+        "module_kind": "action"
+      },
+      "internal_name": "ActionUploadFile",
+      "module": "ftp:ActionUploadFile",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "ftp",
+      "catalog_evidence": {
+        "app_slug": "ftp",
+        "app_version": "8.2.5",
+        "display_name": "Watch files",
+        "internal_name": "TriggerNewFile",
+        "module_id": "module:ftp:8.2.5:trigger:TriggerNewFile",
+        "module_kind": "trigger"
+      },
+      "internal_name": "TriggerNewFile",
+      "module": "ftp:TriggerNewFile",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "gateway",
+      "catalog_evidence": {
+        "app_slug": "gateway",
+        "app_version": "1.14.1",
+        "display_name": "Custom mailhook",
+        "internal_name": "CustomMailHook",
+        "module_id": "module:gateway:1.14.1:trigger:CustomMailHook",
+        "module_kind": "trigger"
+      },
+      "internal_name": "CustomMailHook",
+      "module": "gateway:CustomMailHook",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "gateway",
+      "catalog_evidence": {
+        "app_slug": "gateway",
+        "app_version": "1.14.1",
+        "display_name": "Custom webhook",
+        "internal_name": "CustomWebHook",
+        "module_id": "module:gateway:1.14.1:trigger:CustomWebHook",
+        "module_kind": "trigger"
+      },
+      "internal_name": "CustomWebHook",
+      "module": "gateway:CustomWebHook",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "gateway",
+      "catalog_evidence": {
+        "app_slug": "gateway",
+        "app_version": "1.14.1",
+        "display_name": "Webhook response",
+        "internal_name": "WebhookRespond",
+        "module_id": "module:gateway:1.14.1:action:WebhookRespond",
+        "module_kind": "action"
+      },
+      "internal_name": "WebhookRespond",
+      "module": "gateway:WebhookRespond",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "gps-tools",
+      "catalog_evidence": {
+        "app_slug": "gps-tools",
+        "app_version": "1.0.2",
+        "display_name": "Calculate Distance",
+        "internal_name": "Distance",
+        "module_id": "module:gps-tools:1.0.2:action:Distance",
+        "module_kind": "action"
+      },
+      "internal_name": "Distance",
+      "module": "gps-tools:Distance",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "gps-tools",
+      "catalog_evidence": {
+        "app_slug": "gps-tools",
+        "app_version": "1.0.2",
+        "display_name": "Find the Closest Destination",
+        "internal_name": "multipledistance",
+        "module_id": "module:gps-tools:1.0.2:action:multipledistance",
+        "module_kind": "action"
+      },
+      "internal_name": "multipledistance",
+      "module": "gps-tools:multipledistance",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "gps-tools",
+      "catalog_evidence": {
+        "app_slug": "gps-tools",
+        "app_version": "1.0.2",
+        "display_name": "Sort Distance",
+        "internal_name": "sortDistance",
+        "module_id": "module:gps-tools:1.0.2:search:sortDistance",
+        "module_kind": "search"
+      },
+      "internal_name": "sortDistance",
+      "module": "gps-tools:sortDistance",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "http",
+      "catalog_evidence": {
+        "app_slug": "http",
+        "app_version": "4.13.6",
+        "display_name": "Download a file",
+        "internal_name": "DownloadFile",
+        "module_id": "module:http:4.13.6:action:DownloadFile",
+        "module_kind": "action"
+      },
+      "internal_name": "DownloadFile",
+      "module": "http:DownloadFile",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "http",
+      "catalog_evidence": {
+        "app_slug": "http",
+        "app_version": "4.13.6",
+        "display_name": "Make a request",
+        "internal_name": "MakeRequest",
+        "module_id": "module:http:4.13.6:action:MakeRequest",
+        "module_kind": "action"
+      },
+      "internal_name": "MakeRequest",
+      "module": "http:MakeRequest",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "http",
+      "catalog_evidence": {
+        "app_slug": "http",
+        "app_version": "4.13.6",
+        "display_name": "Resolve URL",
+        "internal_name": "ResolveUrl",
+        "module_id": "module:http:4.13.6:action:ResolveUrl",
+        "module_kind": "action"
+      },
+      "internal_name": "ResolveUrl",
+      "module": "http:ResolveUrl",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "human-in-the-loop-enterprise",
+      "catalog_evidence": {
+        "app_slug": "human-in-the-loop-enterprise",
+        "app_version": "1.0.2",
+        "display_name": "Cancel review request",
+        "internal_name": "cancelLoop",
+        "module_id": "module:human-in-the-loop-enterprise:1.0.2:action:cancelLoop",
+        "module_kind": "action"
+      },
+      "internal_name": "cancelLoop",
+      "module": "human-in-the-loop-enterprise:cancelLoop",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "human-in-the-loop-enterprise",
+      "catalog_evidence": {
+        "app_slug": "human-in-the-loop-enterprise",
+        "app_version": "1.0.2",
+        "display_name": "List reviews",
+        "internal_name": "listReviews",
+        "module_id": "module:human-in-the-loop-enterprise:1.0.2:search:listReviews",
+        "module_kind": "search"
+      },
+      "internal_name": "listReviews",
+      "module": "human-in-the-loop-enterprise:listReviews",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "human-in-the-loop-enterprise",
+      "catalog_evidence": {
+        "app_slug": "human-in-the-loop-enterprise",
+        "app_version": "1.0.2",
+        "display_name": "Create a review request",
+        "internal_name": "sendData",
+        "module_id": "module:human-in-the-loop-enterprise:1.0.2:action:sendData",
+        "module_kind": "action"
+      },
+      "internal_name": "sendData",
+      "module": "human-in-the-loop-enterprise:sendData",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "human-in-the-loop-enterprise",
+      "catalog_evidence": {
+        "app_slug": "human-in-the-loop-enterprise",
+        "app_version": "1.0.2",
+        "display_name": "Watch completed reviews",
+        "internal_name": "watchData",
+        "module_id": "module:human-in-the-loop-enterprise:1.0.2:trigger:watchData",
+        "module_kind": "trigger"
+      },
+      "internal_name": "watchData",
+      "module": "human-in-the-loop-enterprise:watchData",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "image",
+      "catalog_evidence": {
+        "app_slug": "image",
+        "app_version": "2.0.12",
+        "display_name": "Convert a format",
+        "internal_name": "Convert",
+        "module_id": "module:image:2.0.12:transformer:Convert",
+        "module_kind": "transformer"
+      },
+      "internal_name": "Convert",
+      "module": "image:Convert",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "image",
+      "catalog_evidence": {
+        "app_slug": "image",
+        "app_version": "2.0.12",
+        "display_name": "Extract metadata",
+        "internal_name": "ExtractMetadata",
+        "module_id": "module:image:2.0.12:transformer:ExtractMetadata",
+        "module_kind": "transformer"
+      },
+      "internal_name": "ExtractMetadata",
+      "module": "image:ExtractMetadata",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "image",
+      "catalog_evidence": {
+        "app_slug": "image",
+        "app_version": "2.0.12",
+        "display_name": "Resize",
+        "internal_name": "Resize",
+        "module_id": "module:image:2.0.12:transformer:Resize",
+        "module_kind": "transformer"
+      },
+      "internal_name": "Resize",
+      "module": "image:Resize",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "ios",
+      "catalog_evidence": {
+        "app_slug": "ios",
+        "app_version": "1.7.2",
+        "display_name": "Watch Button",
+        "internal_name": "ButtonPressed",
+        "module_id": "module:ios:1.7.2:trigger:ButtonPressed",
+        "module_kind": "trigger"
+      },
+      "internal_name": "ButtonPressed",
+      "module": "ios:ButtonPressed",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "ios",
+      "catalog_evidence": {
+        "app_slug": "ios",
+        "app_version": "1.7.2",
+        "display_name": "Watch a calendar",
+        "internal_name": "NewCalendarEvent",
+        "module_id": "module:ios:1.7.2:trigger:NewCalendarEvent",
+        "module_kind": "trigger"
+      },
+      "internal_name": "NewCalendarEvent",
+      "module": "ios:NewCalendarEvent",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "ios",
+      "catalog_evidence": {
+        "app_slug": "ios",
+        "app_version": "1.7.2",
+        "display_name": "Watch contacts",
+        "internal_name": "NewConctact",
+        "module_id": "module:ios:1.7.2:trigger:NewConctact",
+        "module_kind": "trigger"
+      },
+      "internal_name": "NewConctact",
+      "module": "ios:NewConctact",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "ios",
+      "catalog_evidence": {
+        "app_slug": "ios",
+        "app_version": "1.7.2",
+        "display_name": "Watch entrances to/exits from a geofence area",
+        "internal_name": "NewGeofencingEvent",
+        "module_id": "module:ios:1.7.2:trigger:NewGeofencingEvent",
+        "module_kind": "trigger"
+      },
+      "internal_name": "NewGeofencingEvent",
+      "module": "ios:NewGeofencingEvent",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "ios",
+      "catalog_evidence": {
+        "app_slug": "ios",
+        "app_version": "1.7.2",
+        "display_name": "Watch reminders",
+        "internal_name": "NewReminderEvent",
+        "module_id": "module:ios:1.7.2:trigger:NewReminderEvent",
+        "module_kind": "trigger"
+      },
+      "internal_name": "NewReminderEvent",
+      "module": "ios:NewReminderEvent",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "ios",
+      "catalog_evidence": {
+        "app_slug": "ios",
+        "app_version": "1.7.2",
+        "display_name": "Watch photos",
+        "internal_name": "PhotoTaken",
+        "module_id": "module:ios:1.7.2:trigger:PhotoTaken",
+        "module_kind": "trigger"
+      },
+      "internal_name": "PhotoTaken",
+      "module": "ios:PhotoTaken",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "ios",
+      "catalog_evidence": {
+        "app_slug": "ios",
+        "app_version": "1.7.2",
+        "display_name": "Create a calendar event",
+        "internal_name": "SaveCalendarEvent",
+        "module_id": "module:ios:1.7.2:action:SaveCalendarEvent",
+        "module_kind": "action"
+      },
+      "internal_name": "SaveCalendarEvent",
+      "module": "ios:SaveCalendarEvent",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "ios",
+      "catalog_evidence": {
+        "app_slug": "ios",
+        "app_version": "1.7.2",
+        "display_name": "Create a contact",
+        "internal_name": "SaveContact",
+        "module_id": "module:ios:1.7.2:action:SaveContact",
+        "module_kind": "action"
+      },
+      "internal_name": "SaveContact",
+      "module": "ios:SaveContact",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "ios",
+      "catalog_evidence": {
+        "app_slug": "ios",
+        "app_version": "1.7.2",
+        "display_name": "Upload a photo",
+        "internal_name": "SavePhoto",
+        "module_id": "module:ios:1.7.2:action:SavePhoto",
+        "module_kind": "action"
+      },
+      "internal_name": "SavePhoto",
+      "module": "ios:SavePhoto",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "ios",
+      "catalog_evidence": {
+        "app_slug": "ios",
+        "app_version": "1.7.2",
+        "display_name": "Create a reminder",
+        "internal_name": "SaveReminder",
+        "module_id": "module:ios:1.7.2:action:SaveReminder",
+        "module_kind": "action"
+      },
+      "internal_name": "SaveReminder",
+      "module": "ios:SaveReminder",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "ios",
+      "catalog_evidence": {
+        "app_slug": "ios",
+        "app_version": "1.7.2",
+        "display_name": "Watch barcode / QR code",
+        "internal_name": "ScanTaken",
+        "module_id": "module:ios:1.7.2:trigger:ScanTaken",
+        "module_kind": "trigger"
+      },
+      "internal_name": "ScanTaken",
+      "module": "ios:ScanTaken",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "ios",
+      "catalog_evidence": {
+        "app_slug": "ios",
+        "app_version": "1.7.2",
+        "display_name": "Send a push notification",
+        "internal_name": "SendNotification",
+        "module_id": "module:ios:1.7.2:action:SendNotification",
+        "module_kind": "action"
+      },
+      "internal_name": "SendNotification",
+      "module": "ios:SendNotification",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "iso",
+      "catalog_evidence": {
+        "app_slug": "iso",
+        "app_version": "1.1.6",
+        "display_name": "Convert country code to country name",
+        "internal_name": "CountryCode2Name",
+        "module_id": "module:iso:1.1.6:transformer:CountryCode2Name",
+        "module_kind": "transformer"
+      },
+      "internal_name": "CountryCode2Name",
+      "module": "iso:CountryCode2Name",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "iso",
+      "catalog_evidence": {
+        "app_slug": "iso",
+        "app_version": "1.1.6",
+        "display_name": "Convert country name to country code",
+        "internal_name": "CountryName2Code",
+        "module_id": "module:iso:1.1.6:transformer:CountryName2Code",
+        "module_kind": "transformer"
+      },
+      "internal_name": "CountryName2Code",
+      "module": "iso:CountryName2Code",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "iso",
+      "catalog_evidence": {
+        "app_slug": "iso",
+        "app_version": "1.1.6",
+        "display_name": "Convert currency code to currency name",
+        "internal_name": "CurrencyCode2Name",
+        "module_id": "module:iso:1.1.6:transformer:CurrencyCode2Name",
+        "module_kind": "transformer"
+      },
+      "internal_name": "CurrencyCode2Name",
+      "module": "iso:CurrencyCode2Name",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "iso",
+      "catalog_evidence": {
+        "app_slug": "iso",
+        "app_version": "1.1.6",
+        "display_name": "Convert currency name to currency code",
+        "internal_name": "CurrencyName2Code",
+        "module_id": "module:iso:1.1.6:transformer:CurrencyName2Code",
+        "module_kind": "transformer"
+      },
+      "internal_name": "CurrencyName2Code",
+      "module": "iso:CurrencyName2Code",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "iso",
+      "catalog_evidence": {
+        "app_slug": "iso",
+        "app_version": "1.1.6",
+        "display_name": "Convert language code to language name",
+        "internal_name": "LanguageCode2Name",
+        "module_id": "module:iso:1.1.6:transformer:LanguageCode2Name",
+        "module_kind": "transformer"
+      },
+      "internal_name": "LanguageCode2Name",
+      "module": "iso:LanguageCode2Name",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "iso",
+      "catalog_evidence": {
+        "app_slug": "iso",
+        "app_version": "1.1.6",
+        "display_name": "Convert language name to language code",
+        "internal_name": "LanguageName2Code",
+        "module_id": "module:iso:1.1.6:transformer:LanguageName2Code",
+        "module_kind": "transformer"
+      },
+      "internal_name": "LanguageName2Code",
+      "module": "iso:LanguageName2Code",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "json",
+      "catalog_evidence": {
+        "app_slug": "json",
+        "app_version": "1.8.0",
+        "display_name": "Aggregate to JSON",
+        "internal_name": "AggregateToJSON",
+        "module_id": "module:json:1.8.0:aggregator:AggregateToJSON",
+        "module_kind": "aggregator"
+      },
+      "internal_name": "AggregateToJSON",
+      "module": "json:AggregateToJSON",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "json",
+      "catalog_evidence": {
+        "app_slug": "json",
+        "app_version": "1.8.0",
+        "display_name": "Create JSON",
+        "internal_name": "CreateJSON",
+        "module_id": "module:json:1.8.0:transformer:CreateJSON",
+        "module_kind": "transformer"
+      },
+      "internal_name": "CreateJSON",
+      "module": "json:CreateJSON",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "json",
+      "catalog_evidence": {
+        "app_slug": "json",
+        "app_version": "1.8.0",
+        "display_name": "Convert JSON to XML",
+        "internal_name": "JSONtoXML",
+        "module_id": "module:json:1.8.0:transformer:JSONtoXML",
+        "module_kind": "transformer"
+      },
+      "internal_name": "JSONtoXML",
+      "module": "json:JSONtoXML",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "json",
+      "catalog_evidence": {
+        "app_slug": "json",
+        "app_version": "1.8.0",
+        "display_name": "Parse JSON",
+        "internal_name": "ParseJSON",
+        "module_id": "module:json:1.8.0:transformer:ParseJSON",
+        "module_kind": "transformer"
+      },
+      "internal_name": "ParseJSON",
+      "module": "json:ParseJSON",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "json",
+      "catalog_evidence": {
+        "app_slug": "json",
+        "app_version": "1.8.0",
+        "display_name": "Transform to JSON",
+        "internal_name": "TransformToJSON",
+        "module_id": "module:json:1.8.0:transformer:TransformToJSON",
+        "module_kind": "transformer"
+      },
+      "internal_name": "TransformToJSON",
+      "module": "json:TransformToJSON",
+      "occurrences": 2,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "make-ai-extractors",
+      "catalog_evidence": {
+        "app_slug": "make-ai-extractors",
+        "app_version": "1.2.31",
+        "display_name": "Generate a caption for an image",
+        "internal_name": "captionAnImage",
+        "module_id": "module:make-ai-extractors:1.2.31:action:captionAnImage",
+        "module_kind": "action"
+      },
+      "internal_name": "captionAnImage",
+      "module": "make-ai-extractors:captionAnImage",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Make AI Agents, Make AI Toolkit, Make AI Web Search, Make AI Content Extractor"
+      ],
+      "source_files": [
+        "make_built_in_ai.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "make-ai-extractors",
+      "catalog_evidence": {
+        "app_slug": "make-ai-extractors",
+        "app_version": "1.2.31",
+        "display_name": "Generate captions for an image (advanced)",
+        "internal_name": "captionAnImageAdvanced",
+        "module_id": "module:make-ai-extractors:1.2.31:action:captionAnImageAdvanced",
+        "module_kind": "action"
+      },
+      "internal_name": "captionAnImageAdvanced",
+      "module": "make-ai-extractors:captionAnImageAdvanced",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Make AI Agents, Make AI Toolkit, Make AI Web Search, Make AI Content Extractor"
+      ],
+      "source_files": [
+        "make_built_in_ai.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "make-ai-extractors",
+      "catalog_evidence": {
+        "app_slug": "make-ai-extractors",
+        "app_version": "1.2.31",
+        "display_name": "Describe an image",
+        "internal_name": "describeAnImage",
+        "module_id": "module:make-ai-extractors:1.2.31:action:describeAnImage",
+        "module_kind": "action"
+      },
+      "internal_name": "describeAnImage",
+      "module": "make-ai-extractors:describeAnImage",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Make AI Agents, Make AI Toolkit, Make AI Web Search, Make AI Content Extractor"
+      ],
+      "source_files": [
+        "make_built_in_ai.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "make-ai-extractors",
+      "catalog_evidence": {
+        "app_slug": "make-ai-extractors",
+        "app_version": "1.2.31",
+        "display_name": "Detect objects in an image",
+        "internal_name": "detectObjectInAnImage",
+        "module_id": "module:make-ai-extractors:1.2.31:search:detectObjectInAnImage",
+        "module_kind": "search"
+      },
+      "internal_name": "detectObjectInAnImage",
+      "module": "make-ai-extractors:detectObjectInAnImage",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Make AI Agents, Make AI Toolkit, Make AI Web Search, Make AI Content Extractor"
+      ],
+      "source_files": [
+        "make_built_in_ai.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "make-ai-extractors",
+      "catalog_evidence": {
+        "app_slug": "make-ai-extractors",
+        "app_version": "1.2.31",
+        "display_name": "Extract text from a document",
+        "internal_name": "extractADocument",
+        "module_id": "module:make-ai-extractors:1.2.31:search:extractADocument",
+        "module_kind": "search"
+      },
+      "internal_name": "extractADocument",
+      "module": "make-ai-extractors:extractADocument",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Make AI Agents, Make AI Toolkit, Make AI Web Search, Make AI Content Extractor"
+      ],
+      "source_files": [
+        "make_built_in_ai.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "make-ai-extractors",
+      "catalog_evidence": {
+        "app_slug": "make-ai-extractors",
+        "app_version": "1.2.31",
+        "display_name": "Extract information from a receipt",
+        "internal_name": "extractAReceipt",
+        "module_id": "module:make-ai-extractors:1.2.31:action:extractAReceipt",
+        "module_kind": "action"
+      },
+      "internal_name": "extractAReceipt",
+      "module": "make-ai-extractors:extractAReceipt",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Make AI Agents, Make AI Toolkit, Make AI Web Search, Make AI Content Extractor"
+      ],
+      "source_files": [
+        "make_built_in_ai.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "make-ai-extractors",
+      "catalog_evidence": {
+        "app_slug": "make-ai-extractors",
+        "app_version": "1.2.31",
+        "display_name": "Extract information from an invoice",
+        "internal_name": "extractAnInvoice",
+        "module_id": "module:make-ai-extractors:1.2.31:action:extractAnInvoice",
+        "module_kind": "action"
+      },
+      "internal_name": "extractAnInvoice",
+      "module": "make-ai-extractors:extractAnInvoice",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Make AI Agents, Make AI Toolkit, Make AI Web Search, Make AI Content Extractor"
+      ],
+      "source_files": [
+        "make_built_in_ai.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "make-ai-extractors",
+      "catalog_evidence": {
+        "app_slug": "make-ai-extractors",
+        "app_version": "1.2.31",
+        "display_name": "Extract text from an image",
+        "internal_name": "extractTextFromAnImage",
+        "module_id": "module:make-ai-extractors:1.2.31:search:extractTextFromAnImage",
+        "module_kind": "search"
+      },
+      "internal_name": "extractTextFromAnImage",
+      "module": "make-ai-extractors:extractTextFromAnImage",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Make AI Agents, Make AI Toolkit, Make AI Web Search, Make AI Content Extractor"
+      ],
+      "source_files": [
+        "make_built_in_ai.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "make-ai-extractors",
+      "catalog_evidence": {
+        "app_slug": "make-ai-extractors",
+        "app_version": "1.2.31",
+        "display_name": "Generate image tags",
+        "internal_name": "getImageTags",
+        "module_id": "module:make-ai-extractors:1.2.31:search:getImageTags",
+        "module_kind": "search"
+      },
+      "internal_name": "getImageTags",
+      "module": "make-ai-extractors:getImageTags",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Make AI Agents, Make AI Toolkit, Make AI Web Search, Make AI Content Extractor"
+      ],
+      "source_files": [
+        "make_built_in_ai.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "make-ai-extractors",
+      "catalog_evidence": {
+        "app_slug": "make-ai-extractors",
+        "app_version": "1.2.31",
+        "display_name": "Transcribe an audio file",
+        "internal_name": "transcribeAnAudio",
+        "module_id": "module:make-ai-extractors:1.2.31:action:transcribeAnAudio",
+        "module_kind": "action"
+      },
+      "internal_name": "transcribeAnAudio",
+      "module": "make-ai-extractors:transcribeAnAudio",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Make AI Agents, Make AI Toolkit, Make AI Web Search, Make AI Content Extractor"
+      ],
+      "source_files": [
+        "make_built_in_ai.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "make-ai-extractors",
+      "catalog_evidence": {
+        "app_slug": "make-ai-extractors",
+        "app_version": "1.2.31",
+        "display_name": "Translate an audio file",
+        "internal_name": "translateAnAudio",
+        "module_id": "module:make-ai-extractors:1.2.31:action:translateAnAudio",
+        "module_kind": "action"
+      },
+      "internal_name": "translateAnAudio",
+      "module": "make-ai-extractors:translateAnAudio",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Make AI Agents, Make AI Toolkit, Make AI Web Search, Make AI Content Extractor"
+      ],
+      "source_files": [
+        "make_built_in_ai.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "make-ai-web-search",
+      "catalog_evidence": {
+        "app_slug": "make-ai-web-search",
+        "app_version": "1.0.11",
+        "display_name": "Generate a response",
+        "internal_name": "generateAResponse",
+        "module_id": "module:make-ai-web-search:1.0.11:action:generateAResponse",
+        "module_kind": "action"
+      },
+      "internal_name": "generateAResponse",
+      "module": "make-ai-web-search:generateAResponse",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Make AI Agents, Make AI Toolkit, Make AI Web Search, Make AI Content Extractor"
+      ],
+      "source_files": [
+        "make_built_in_ai.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "markdown",
+      "catalog_evidence": {
+        "app_slug": "markdown",
+        "app_version": "2.2.0",
+        "display_name": "Markdown to HTML",
+        "internal_name": "Compile",
+        "module_id": "module:markdown:2.2.0:transformer:Compile",
+        "module_kind": "transformer"
+      },
+      "internal_name": "Compile",
+      "module": "markdown:Compile",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "markdown",
+      "catalog_evidence": {
+        "app_slug": "markdown",
+        "app_version": "2.2.0",
+        "display_name": "HTML to Markdown",
+        "internal_name": "Decompile",
+        "module_id": "module:markdown:2.2.0:transformer:Decompile",
+        "module_kind": "transformer"
+      },
+      "internal_name": "Decompile",
+      "module": "markdown:Decompile",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "math",
+      "catalog_evidence": {
+        "app_slug": "math",
+        "app_version": "1.1.4",
+        "display_name": "Evaluate a math expression",
+        "internal_name": "EvaluateExpression",
+        "module_id": "module:math:1.1.4:transformer:EvaluateExpression",
+        "module_kind": "transformer"
+      },
+      "internal_name": "EvaluateExpression",
+      "module": "math:EvaluateExpression",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "mime",
+      "catalog_evidence": {
+        "app_slug": "mime",
+        "app_version": "1.0.7",
+        "display_name": "Get a file extension",
+        "internal_name": "GetExtension",
+        "module_id": "module:mime:1.0.7:transformer:GetExtension",
+        "module_kind": "transformer"
+      },
+      "internal_name": "GetExtension",
+      "module": "mime:GetExtension",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "mime",
+      "catalog_evidence": {
+        "app_slug": "mime",
+        "app_version": "1.0.7",
+        "display_name": "Get a MIME type",
+        "internal_name": "GetType",
+        "module_id": "module:mime:1.0.7:transformer:GetType",
+        "module_kind": "transformer"
+      },
+      "internal_name": "GetType",
+      "module": "mime:GetType",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "phonenumber",
+      "catalog_evidence": {
+        "app_slug": "phonenumber",
+        "app_version": "1.1.9",
+        "display_name": "Parse a phone number",
+        "internal_name": "TransformerParseNumber",
+        "module_id": "module:phonenumber:1.1.9:transformer:TransformerParseNumber",
+        "module_kind": "transformer"
+      },
+      "internal_name": "TransformerParseNumber",
+      "module": "phonenumber:TransformerParseNumber",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "regexp",
+      "catalog_evidence": {
+        "app_slug": "regexp",
+        "app_version": "1.10.5",
+        "display_name": "Match pattern (Advanced)",
+        "internal_name": "AdvancedParser",
+        "module_id": "module:regexp:1.10.5:transformer:AdvancedParser",
+        "module_kind": "transformer"
+      },
+      "internal_name": "AdvancedParser",
+      "module": "regexp:AdvancedParser",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "regexp",
+      "catalog_evidence": {
+        "app_slug": "regexp",
+        "app_version": "1.10.5",
+        "display_name": "Match elements",
+        "internal_name": "GetElementsFromText",
+        "module_id": "module:regexp:1.10.5:transformer:GetElementsFromText",
+        "module_kind": "transformer"
+      },
+      "internal_name": "GetElementsFromText",
+      "module": "regexp:GetElementsFromText",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "regexp",
+      "catalog_evidence": {
+        "app_slug": "regexp",
+        "app_version": "1.10.5",
+        "display_name": "Get elements from HTML",
+        "internal_name": "HTMLParser",
+        "module_id": "module:regexp:1.10.5:transformer:HTMLParser",
+        "module_kind": "transformer"
+      },
+      "internal_name": "HTMLParser",
+      "module": "regexp:HTMLParser",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "regexp",
+      "catalog_evidence": {
+        "app_slug": "regexp",
+        "app_version": "1.10.5",
+        "display_name": "Get content from HTML table",
+        "internal_name": "HTMLTableParser2",
+        "module_id": "module:regexp:1.10.5:transformer:HTMLTableParser2",
+        "module_kind": "transformer"
+      },
+      "internal_name": "HTMLTableParser2",
+      "module": "regexp:HTMLTableParser2",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "regexp",
+      "catalog_evidence": {
+        "app_slug": "regexp",
+        "app_version": "1.10.5",
+        "display_name": "HTML to text",
+        "internal_name": "HTMLToText",
+        "module_id": "module:regexp:1.10.5:transformer:HTMLToText",
+        "module_kind": "transformer"
+      },
+      "internal_name": "HTMLToText",
+      "module": "regexp:HTMLToText",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "regexp",
+      "catalog_evidence": {
+        "app_slug": "regexp",
+        "app_version": "1.10.5",
+        "display_name": "Match pattern",
+        "internal_name": "Parser",
+        "module_id": "module:regexp:1.10.5:transformer:Parser",
+        "module_kind": "transformer"
+      },
+      "internal_name": "Parser",
+      "module": "regexp:Parser",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "regexp",
+      "catalog_evidence": {
+        "app_slug": "regexp",
+        "app_version": "1.10.5",
+        "display_name": "Replace",
+        "internal_name": "Replace",
+        "module_id": "module:regexp:1.10.5:transformer:Replace",
+        "module_kind": "transformer"
+      },
+      "internal_name": "Replace",
+      "module": "regexp:Replace",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "rss",
+      "catalog_evidence": {
+        "app_slug": "rss",
+        "app_version": "4.8.20",
+        "display_name": "Retrieve RSS feed items",
+        "internal_name": "ActionReadArticles",
+        "module_id": "module:rss:4.8.20:action:ActionReadArticles",
+        "module_kind": "action"
+      },
+      "internal_name": "ActionReadArticles",
+      "module": "rss:ActionReadArticles",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "rss",
+      "catalog_evidence": {
+        "app_slug": "rss",
+        "app_version": "4.8.20",
+        "display_name": "Watch RSS feed items",
+        "internal_name": "TriggerNewArticle",
+        "module_id": "module:rss:4.8.20:trigger:TriggerNewArticle",
+        "module_kind": "trigger"
+      },
+      "internal_name": "TriggerNewArticle",
+      "module": "rss:TriggerNewArticle",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "scenario-service",
+      "catalog_evidence": {
+        "app_slug": "scenario-service",
+        "app_version": "2.15.6",
+        "display_name": "Customize run name",
+        "internal_name": "NameExecution",
+        "module_id": "module:scenario-service:2.15.6:action:NameExecution",
+        "module_kind": "action"
+      },
+      "internal_name": "NameExecution",
+      "module": "scenario-service:NameExecution",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "scenario-service",
+      "catalog_evidence": {
+        "app_slug": "scenario-service",
+        "app_version": "2.15.6",
+        "display_name": "Return output",
+        "internal_name": "ReturnData",
+        "module_id": "module:scenario-service:2.15.6:action:ReturnData",
+        "module_kind": "action"
+      },
+      "internal_name": "ReturnData",
+      "module": "scenario-service:ReturnData",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "scenario-service",
+      "catalog_evidence": {
+        "app_slug": "scenario-service",
+        "app_version": "2.15.6",
+        "display_name": "Start scenario",
+        "internal_name": "StartSubscenario",
+        "module_id": "module:scenario-service:2.15.6:trigger:StartSubscenario",
+        "module_kind": "trigger"
+      },
+      "internal_name": "StartSubscenario",
+      "module": "scenario-service:StartSubscenario",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "sftp",
+      "catalog_evidence": {
+        "app_slug": "sftp",
+        "app_version": "2.3.2",
+        "display_name": "Update file permissions",
+        "internal_name": "ActionChmod",
+        "module_id": "module:sftp:2.3.2:action:ActionChmod",
+        "module_kind": "action"
+      },
+      "internal_name": "ActionChmod",
+      "module": "sftp:ActionChmod",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "sftp",
+      "catalog_evidence": {
+        "app_slug": "sftp",
+        "app_version": "2.3.2",
+        "display_name": "Get files",
+        "internal_name": "ActionGetFiles",
+        "module_id": "module:sftp:2.3.2:action:ActionGetFiles",
+        "module_kind": "action"
+      },
+      "internal_name": "ActionGetFiles",
+      "module": "sftp:ActionGetFiles",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "sftp",
+      "catalog_evidence": {
+        "app_slug": "sftp",
+        "app_version": "2.3.2",
+        "display_name": "Create a folder",
+        "internal_name": "ActionMkdir",
+        "module_id": "module:sftp:2.3.2:action:ActionMkdir",
+        "module_kind": "action"
+      },
+      "internal_name": "ActionMkdir",
+      "module": "sftp:ActionMkdir",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "sftp",
+      "catalog_evidence": {
+        "app_slug": "sftp",
+        "app_version": "2.3.2",
+        "display_name": "Move a file",
+        "internal_name": "ActionMove",
+        "module_id": "module:sftp:2.3.2:action:ActionMove",
+        "module_kind": "action"
+      },
+      "internal_name": "ActionMove",
+      "module": "sftp:ActionMove",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "sftp",
+      "catalog_evidence": {
+        "app_slug": "sftp",
+        "app_version": "2.3.2",
+        "display_name": "Get a file",
+        "internal_name": "ActionReadFile",
+        "module_id": "module:sftp:2.3.2:action:ActionReadFile",
+        "module_kind": "action"
+      },
+      "internal_name": "ActionReadFile",
+      "module": "sftp:ActionReadFile",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "sftp",
+      "catalog_evidence": {
+        "app_slug": "sftp",
+        "app_version": "2.3.2",
+        "display_name": "List a folder's content",
+        "internal_name": "ActionReaddir",
+        "module_id": "module:sftp:2.3.2:action:ActionReaddir",
+        "module_kind": "action"
+      },
+      "internal_name": "ActionReaddir",
+      "module": "sftp:ActionReaddir",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "sftp",
+      "catalog_evidence": {
+        "app_slug": "sftp",
+        "app_version": "2.3.2",
+        "display_name": "Rename a file",
+        "internal_name": "ActionRename",
+        "module_id": "module:sftp:2.3.2:action:ActionRename",
+        "module_kind": "action"
+      },
+      "internal_name": "ActionRename",
+      "module": "sftp:ActionRename",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "sftp",
+      "catalog_evidence": {
+        "app_slug": "sftp",
+        "app_version": "2.3.2",
+        "display_name": "Delete a folder",
+        "internal_name": "ActionRmdir",
+        "module_id": "module:sftp:2.3.2:action:ActionRmdir",
+        "module_kind": "action"
+      },
+      "internal_name": "ActionRmdir",
+      "module": "sftp:ActionRmdir",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "sftp",
+      "catalog_evidence": {
+        "app_slug": "sftp",
+        "app_version": "2.3.2",
+        "display_name": "Delete a file",
+        "internal_name": "ActionUnlink",
+        "module_id": "module:sftp:2.3.2:action:ActionUnlink",
+        "module_kind": "action"
+      },
+      "internal_name": "ActionUnlink",
+      "module": "sftp:ActionUnlink",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "sftp",
+      "catalog_evidence": {
+        "app_slug": "sftp",
+        "app_version": "2.3.2",
+        "display_name": "Upload a file",
+        "internal_name": "ActionWriteFile",
+        "module_id": "module:sftp:2.3.2:action:ActionWriteFile",
+        "module_kind": "action"
+      },
+      "internal_name": "ActionWriteFile",
+      "module": "sftp:ActionWriteFile",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "sftp",
+      "catalog_evidence": {
+        "app_slug": "sftp",
+        "app_version": "2.3.2",
+        "display_name": "Watch subfolders in a folder",
+        "internal_name": "TriggerNewDirectory",
+        "module_id": "module:sftp:2.3.2:trigger:TriggerNewDirectory",
+        "module_kind": "trigger"
+      },
+      "internal_name": "TriggerNewDirectory",
+      "module": "sftp:TriggerNewDirectory",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "sftp",
+      "catalog_evidence": {
+        "app_slug": "sftp",
+        "app_version": "2.3.2",
+        "display_name": "Watch files in a folder",
+        "internal_name": "TriggerNewFile",
+        "module_id": "module:sftp:2.3.2:trigger:TriggerNewFile",
+        "module_kind": "trigger"
+      },
+      "internal_name": "TriggerNewFile",
+      "module": "sftp:TriggerNewFile",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "soap",
+      "catalog_evidence": {
+        "app_slug": "soap",
+        "app_version": "1.11.1",
+        "display_name": "Execute SOAP action",
+        "internal_name": "SoapAction2",
+        "module_id": "module:soap:1.11.1:action:SoapAction2",
+        "module_kind": "action"
+      },
+      "internal_name": "SoapAction2",
+      "module": "soap:SoapAction2",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "ssh",
+      "catalog_evidence": {
+        "app_slug": "ssh",
+        "app_version": "2.4.0",
+        "display_name": "Execute a command",
+        "internal_name": "ExecuteCommand",
+        "module_id": "module:ssh:2.4.0:action:ExecuteCommand",
+        "module_kind": "action"
+      },
+      "internal_name": "ExecuteCommand",
+      "module": "ssh:ExecuteCommand",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "units",
+      "catalog_evidence": {
+        "app_slug": "units",
+        "app_version": "1.2.0",
+        "display_name": "Convert a value between units",
+        "internal_name": "Convert",
+        "module_id": "module:units:1.2.0:transformer:Convert",
+        "module_kind": "transformer"
+      },
+      "internal_name": "Convert",
+      "module": "units:Convert",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "util",
+      "catalog_evidence": {
+        "app_slug": "util",
+        "app_version": "1.11.14",
+        "display_name": "Table aggregator",
+        "internal_name": "AggregateAggregator",
+        "module_id": "module:util:1.11.14:aggregator:AggregateAggregator",
+        "module_kind": "aggregator"
+      },
+      "internal_name": "AggregateAggregator",
+      "module": "util:AggregateAggregator",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "util",
+      "catalog_evidence": {
+        "app_slug": "util",
+        "app_version": "1.11.14",
+        "display_name": "Basic trigger",
+        "internal_name": "BasicTrigger",
+        "module_id": "module:util:1.11.14:trigger:BasicTrigger",
+        "module_kind": "trigger"
+      },
+      "internal_name": "BasicTrigger",
+      "module": "util:BasicTrigger",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "util",
+      "catalog_evidence": {
+        "app_slug": "util",
+        "app_version": "1.11.14",
+        "display_name": "Compose a string",
+        "internal_name": "ComposeTransformer",
+        "module_id": "module:util:1.11.14:transformer:ComposeTransformer",
+        "module_kind": "transformer"
+      },
+      "internal_name": "ComposeTransformer",
+      "module": "util:ComposeTransformer",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "util",
+      "catalog_evidence": {
+        "app_slug": "util",
+        "app_version": "1.11.14",
+        "display_name": "Numeric aggregator",
+        "internal_name": "FunctionAggregator2",
+        "module_id": "module:util:1.11.14:aggregator:FunctionAggregator2",
+        "module_kind": "aggregator"
+      },
+      "internal_name": "FunctionAggregator2",
+      "module": "util:FunctionAggregator2",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "util",
+      "catalog_evidence": {
+        "app_slug": "util",
+        "app_version": "1.11.14",
+        "display_name": "Increment function",
+        "internal_name": "FunctionIncrement",
+        "module_id": "module:util:1.11.14:action:FunctionIncrement",
+        "module_kind": "action"
+      },
+      "internal_name": "FunctionIncrement",
+      "module": "util:FunctionIncrement",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "util",
+      "catalog_evidence": {
+        "app_slug": "util",
+        "app_version": "1.11.14",
+        "display_name": "Sleep",
+        "internal_name": "FunctionSleep",
+        "module_id": "module:util:1.11.14:action:FunctionSleep",
+        "module_kind": "action"
+      },
+      "internal_name": "FunctionSleep",
+      "module": "util:FunctionSleep",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "util",
+      "catalog_evidence": {
+        "app_slug": "util",
+        "app_version": "1.11.14",
+        "display_name": "Get variable",
+        "internal_name": "GetVariable2",
+        "module_id": "module:util:1.11.14:action:GetVariable2",
+        "module_kind": "action"
+      },
+      "internal_name": "GetVariable2",
+      "module": "util:GetVariable2",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "util",
+      "catalog_evidence": {
+        "app_slug": "util",
+        "app_version": "1.11.14",
+        "display_name": "Get multiple variables",
+        "internal_name": "GetVariables",
+        "module_id": "module:util:1.11.14:action:GetVariables",
+        "module_kind": "action"
+      },
+      "internal_name": "GetVariables",
+      "module": "util:GetVariables",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "util",
+      "catalog_evidence": {
+        "app_slug": "util",
+        "app_version": "1.11.14",
+        "display_name": "Set variable",
+        "internal_name": "SetVariable2",
+        "module_id": "module:util:1.11.14:action:SetVariable2",
+        "module_kind": "action"
+      },
+      "internal_name": "SetVariable2",
+      "module": "util:SetVariable2",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "util",
+      "catalog_evidence": {
+        "app_slug": "util",
+        "app_version": "1.11.14",
+        "display_name": "Set multiple variables",
+        "internal_name": "SetVariables",
+        "module_id": "module:util:1.11.14:action:SetVariables",
+        "module_kind": "action"
+      },
+      "internal_name": "SetVariables",
+      "module": "util:SetVariables",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "util",
+      "catalog_evidence": {
+        "app_slug": "util",
+        "app_version": "1.11.14",
+        "display_name": "Switch",
+        "internal_name": "Switcher",
+        "module_id": "module:util:1.11.14:transformer:Switcher",
+        "module_kind": "transformer"
+      },
+      "internal_name": "Switcher",
+      "module": "util:Switcher",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "util",
+      "catalog_evidence": {
+        "app_slug": "util",
+        "app_version": "1.11.14",
+        "display_name": "Text aggregator",
+        "internal_name": "TextAggregator",
+        "module_id": "module:util:1.11.14:aggregator:TextAggregator",
+        "module_kind": "aggregator"
+      },
+      "internal_name": "TextAggregator",
+      "module": "util:TextAggregator",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "util",
+      "catalog_evidence": {
+        "app_slug": "util",
+        "app_version": "1.11.14",
+        "display_name": "Convert the encoding of a text",
+        "internal_name": "TransformEncoding",
+        "module_id": "module:util:1.11.14:transformer:TransformEncoding",
+        "module_kind": "transformer"
+      },
+      "internal_name": "TransformEncoding",
+      "module": "util:TransformEncoding",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "weather",
+      "catalog_evidence": {
+        "app_slug": "weather",
+        "app_version": "1.0.11",
+        "display_name": "Get current weather",
+        "internal_name": "ActionGetCurrentWeather",
+        "module_id": "module:weather:1.0.11:action:ActionGetCurrentWeather",
+        "module_kind": "action"
+      },
+      "internal_name": "ActionGetCurrentWeather",
+      "module": "weather:ActionGetCurrentWeather",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "weather",
+      "catalog_evidence": {
+        "app_slug": "weather",
+        "app_version": "1.0.11",
+        "display_name": "Get daily weather forecast",
+        "internal_name": "ActionGetDailyForecast",
+        "module_id": "module:weather:1.0.11:action:ActionGetDailyForecast",
+        "module_kind": "action"
+      },
+      "internal_name": "ActionGetDailyForecast",
+      "module": "weather:ActionGetDailyForecast",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration Webhooks"
+      ],
+      "source_files": [
+        "make_built_in_1.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "xls",
+      "catalog_evidence": {
+        "app_slug": "xls",
+        "app_version": "1.2.1",
+        "display_name": "Create Excel",
+        "internal_name": "CreateExcel",
+        "module_id": "module:xls:1.2.1:aggregator:CreateExcel",
+        "module_kind": "aggregator"
+      },
+      "internal_name": "CreateExcel",
+      "module": "xls:CreateExcel",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "xls",
+      "catalog_evidence": {
+        "app_slug": "xls",
+        "app_version": "1.2.1",
+        "display_name": "Create Excel (advanced)",
+        "internal_name": "CreateExcelAdvanced",
+        "module_id": "module:xls:1.2.1:aggregator:CreateExcelAdvanced",
+        "module_kind": "aggregator"
+      },
+      "internal_name": "CreateExcelAdvanced",
+      "module": "xls:CreateExcelAdvanced",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "xml",
+      "catalog_evidence": {
+        "app_slug": "xml",
+        "app_version": "1.6.1",
+        "display_name": "Parse XML",
+        "internal_name": "ParseXML",
+        "module_id": "module:xml:1.6.1:transformer:ParseXML",
+        "module_kind": "transformer"
+      },
+      "internal_name": "ParseXML",
+      "module": "xml:ParseXML",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "xml",
+      "catalog_evidence": {
+        "app_slug": "xml",
+        "app_version": "1.6.1",
+        "display_name": "Create XML",
+        "internal_name": "TransformToXML",
+        "module_id": "module:xml:1.6.1:transformer:TransformToXML",
+        "module_kind": "transformer"
+      },
+      "internal_name": "TransformToXML",
+      "module": "xml:TransformToXML",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "xml",
+      "catalog_evidence": {
+        "app_slug": "xml",
+        "app_version": "1.6.1",
+        "display_name": "Perform XPath Query",
+        "internal_name": "XPathQuery",
+        "module_id": "module:xml:1.6.1:search:XPathQuery",
+        "module_kind": "search"
+      },
+      "internal_name": "XPathQuery",
+      "module": "xml:XPathQuery",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "xmp",
+      "catalog_evidence": {
+        "app_slug": "xmp",
+        "app_version": "1.0.31",
+        "display_name": "Get Tags",
+        "internal_name": "GetTags",
+        "module_id": "module:xmp:1.0.31:action:GetTags",
+        "module_kind": "action"
+      },
+      "internal_name": "GetTags",
+      "module": "xmp:GetTags",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "xmp",
+      "catalog_evidence": {
+        "app_slug": "xmp",
+        "app_version": "1.0.31",
+        "display_name": "Remove Tags",
+        "internal_name": "RemoveTags",
+        "module_id": "module:xmp:1.0.31:action:RemoveTags",
+        "module_kind": "action"
+      },
+      "internal_name": "RemoveTags",
+      "module": "xmp:RemoveTags",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    },
+    {
+      "app_slug": "xmp",
+      "catalog_evidence": {
+        "app_slug": "xmp",
+        "app_version": "1.0.31",
+        "display_name": "Set Tags",
+        "internal_name": "SetTags",
+        "module_id": "module:xmp:1.0.31:action:SetTags",
+        "module_kind": "action"
+      },
+      "internal_name": "SetTags",
+      "module": "xmp:SetTags",
+      "occurrences": 1,
+      "scenario_names": [
+        "Integration XML"
+      ],
+      "source_files": [
+        "make_built_in_2.json"
+      ],
+      "status": "raw_spec_backed"
+    }
+  ],
+  "redaction": {
+    "browser_screenshots": "not_recorded",
+    "customer_payloads": "not_recorded",
+    "provider_credentials": "not_recorded",
+    "provider_urls_and_ids": "redacted"
+  },
+  "schema_version": 1,
+  "source_files": [
+    "make_built_in_1.json",
+    "make_built_in_2.json",
+    "make_built_in_ai.json"
+  ],
+  "source_file_sha256": {
+    "make_built_in_1.json": "bfc312399a77b534d6405c145d8c3161a8e9b2c25c6082d337222600029227a9",
+    "make_built_in_2.json": "5fa5ffe611d83aaea86b40c826bc557115642bcde281b7c8f67ea0e3995c79cf",
+    "make_built_in_ai.json": "8ed95cea683718544cbea110c0bc00e8380faf45ded4802a1b0a038ea0130e14"
+  },
+  "source_set": "operator_make_built_in_default_exports"
+}

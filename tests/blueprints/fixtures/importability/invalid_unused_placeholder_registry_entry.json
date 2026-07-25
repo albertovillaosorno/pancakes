@@ -1,0 +1,41 @@
+{
+  "flow": [
+    {
+      "id": 1,
+      "interface": [
+        {
+          "name": "email",
+          "type": "text"
+        }
+      ],
+      "metadata": {
+        "raw_spec": {
+          "catalog_module_id": "module:gateway:1.14.1:trigger:CustomWebHook",
+          "issues": [],
+          "raw_spec_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "status": "resolved"
+        }
+      },
+      "module": "gateway:CustomWebHook",
+      "parameters": {
+        "hook": "lead-intake-hook-configured-in-make"
+      }
+    }
+  ],
+  "metadata": {
+    "placeholder_registry": [
+      {
+        "expected_type": "hook_id",
+        "handoff_instructions": "Create a custom webhook in Make and paste its hook identifier here.",
+        "kind": "runtime_setup",
+        "placeholder": "runtime.webhook.unused_hook",
+        "required": true,
+        "target_path": "/flow/0/parameters/hook"
+      }
+    ],
+    "schedule": {
+      "id": "schedule:manual"
+    }
+  },
+  "name": "invalid-unused-placeholder-registry-entry"
+}

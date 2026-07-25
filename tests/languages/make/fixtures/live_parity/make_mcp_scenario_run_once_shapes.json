@@ -1,0 +1,125 @@
+{
+  "api_surface": "make_mcp_typed_tools",
+  "capabilities_proven": [
+    "scenario_create",
+    "scenario_activate",
+    "scenario_run_once",
+    "scenario_execution_list",
+    "scenario_deactivate",
+    "scenario_delete"
+  ],
+  "cleanup_counts": {
+    "scratch_scenarios": 0
+  },
+  "credential_value_transfer": false,
+  "credentials_printed": false,
+  "customer_data_used": false,
+  "deleted_scenario_get_error_class": "insufficient_rights_after_delete",
+  "executions_list_shape": {
+    "activity_event_types": [
+      "start",
+      "modify"
+    ],
+    "success_execution_end": {
+      "centicredits": "positive_int",
+      "duration": "non_negative_int",
+      "eventType": "EXECUTION_END",
+      "instant": false,
+      "isReplayable": true,
+      "operations": 1,
+      "status": 1,
+      "transfer": "non_negative_int",
+      "type": "auto"
+    }
+  },
+  "live_make_called": true,
+  "provider_api_call": true,
+  "request_contract": {
+    "inactive_run_rejection": {
+      "error_class": "MakeError",
+      "message_class": "scenario_not_activated"
+    },
+    "scenario_create": {
+      "blueprint.flow[0].mapper.json": "json_string",
+      "blueprint.flow[0].module": "json:ParseJSON",
+      "blueprint.flow[0].version": 1,
+      "confirmed": "bool_true",
+      "scheduling.type": "on-demand",
+      "teamId": "int"
+    },
+    "validate_blueprint_schema": {
+      "message": "Blueprint is valid against the schema."
+    },
+    "validate_on_demand_scheduling_schema": {
+      "message": "Scheduling configuration is valid against the schema."
+    }
+  },
+  "run_response_shape": {
+    "executionId": "hex_string",
+    "status": 1
+  },
+  "scenario_activate_response": "Scenario has been activated.",
+  "scenario_activation_called": true,
+  "scenario_create_response_shape": {
+    "hookId": "none",
+    "id": "int",
+    "isActive": "bool_false",
+    "isinvalid": "bool_false",
+    "scheduling": {
+      "type": "on-demand"
+    },
+    "teamId": "int",
+    "usedPackages": [
+      "json"
+    ]
+  },
+  "scenario_deactivate_response": "Scenario has been deactivated.",
+  "scenario_delete_response": "Scenario has been deleted.",
+  "scenario_run_once_called": true,
+  "schema_version": 1,
+  "secret_output": false,
+  "status": "scenario_run_once_probe_captured",
+  "steps": [
+    {
+      "name": "validate_blueprint_schema",
+      "status": "ok"
+    },
+    {
+      "name": "validate_on_demand_scheduling_schema",
+      "status": "ok"
+    },
+    {
+      "name": "scenarios_create_on_demand_inactive",
+      "status": "ok"
+    },
+    {
+      "name": "scenarios_run_rejected_when_inactive",
+      "status": "ok"
+    },
+    {
+      "name": "scenarios_activate",
+      "status": "ok"
+    },
+    {
+      "name": "scenarios_run_responsive",
+      "status": "ok"
+    },
+    {
+      "name": "executions_list_success",
+      "status": "ok"
+    },
+    {
+      "name": "scenarios_deactivate",
+      "status": "ok"
+    },
+    {
+      "name": "cleanup_scenarios_delete",
+      "status": "ok"
+    },
+    {
+      "name": "cleanup_deleted_scenario_unavailable",
+      "status": "ok"
+    }
+  ],
+  "validation_actor": "codex_make_mcp_typed_tools"
+}

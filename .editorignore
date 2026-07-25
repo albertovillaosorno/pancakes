@@ -1,0 +1,4 @@
+# Editor performance only. Validation must not consume this file as authority.
+.git/
+target/
+.cache/jig/

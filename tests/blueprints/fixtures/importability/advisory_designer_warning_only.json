@@ -1,0 +1,181 @@
+{
+  "flow": [
+    {
+      "id": 1,
+      "interface": [
+        {
+          "name": "email",
+          "type": "text"
+        },
+        {
+          "name": "score",
+          "type": "number"
+        }
+      ],
+      "mapper": {
+        "email": "{{1.email}}",
+        "score": "{{1.score}}"
+      },
+      "metadata": {
+        "designer": {
+          "x": 0,
+          "y": 0,
+          "messages": []
+        },
+        "raw_spec": {
+          "catalog_module_id": "module:gateway:1.14.1:trigger:CustomWebHook",
+          "issues": [],
+          "raw_spec_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "status": "resolved"
+        }
+      },
+      "module": "gateway:CustomWebHook",
+      "parameters": {
+        "hook": "demo-lead-intake-hook"
+      }
+    },
+    {
+      "id": 2,
+      "metadata": {
+        "designer": {
+          "x": 160,
+          "y": 0,
+          "messages": []
+        },
+        "raw_spec": {
+          "catalog_module_id": "module:builtin:current:router:BasicRouter",
+          "issues": [],
+          "raw_spec_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "status": "resolved"
+        }
+      },
+      "module": "builtin:BasicRouter",
+      "routes": [
+        {
+          "filter": {
+            "conditions": {
+              "expression": "{{1.score}} >= 80"
+            },
+            "name": "Qualified"
+          },
+          "flow": [
+            {
+              "id": 3,
+              "mapper": {
+                "email": "{{1.email}}",
+                "route": "qualified",
+                "score": "{{1.score}}"
+              },
+              "metadata": {
+                "designer": {
+                  "x": 320,
+                  "y": 0,
+                  "messages": []
+                },
+                "raw_spec": {
+                  "catalog_module_id": "module:datastore:2.0.5:action:AddRecord",
+                  "issues": [],
+                  "raw_spec_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+                  "status": "resolved"
+                }
+              },
+              "module": "datastore:AddRecord",
+              "parameters": {
+                "datastore": "demo-qualified-leads"
+              }
+            }
+          ]
+        },
+        {
+          "filter": {
+            "conditions": {
+              "expression": "{{1.score}} < 80"
+            },
+            "name": "Review"
+          },
+          "flow": [
+            {
+              "id": 4,
+              "mapper": {
+                "email": "{{1.email}}",
+                "route": "review",
+                "score": "{{1.score}}"
+              },
+              "metadata": {
+                "designer": {
+                  "x": 320,
+                  "y": 0,
+                  "messages": []
+                },
+                "raw_spec": {
+                  "catalog_module_id": "module:datastore:2.0.5:action:AddRecord",
+                  "issues": [],
+                  "raw_spec_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+                  "status": "resolved"
+                }
+              },
+              "module": "datastore:AddRecord",
+              "parameters": {
+                "datastore": "demo-review-leads"
+              }
+            }
+          ]
+        },
+        {
+          "filter": {
+            "conditions": {
+              "expression": "empty({{1.score}})"
+            },
+            "name": "Incomplete"
+          },
+          "flow": [
+            {
+              "id": 5,
+              "mapper": {
+                "email": "{{1.email}}",
+                "route": "incomplete",
+                "score": "{{1.score}}"
+              },
+              "metadata": {
+                "designer": {
+                  "x": 320,
+                  "y": 160,
+                  "messages": []
+                },
+                "raw_spec": {
+                  "catalog_module_id": "module:datastore:2.0.5:action:AddRecord",
+                  "issues": [],
+                  "raw_spec_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+                  "status": "resolved"
+                }
+              },
+              "module": "datastore:AddRecord",
+              "parameters": {
+                "datastore": "demo-incomplete-leads"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "notes": [
+      {
+        "content": "<p>Router overview for the sanitized offline advisory fixture.</p>",
+        "isFilterNote": false,
+        "metadata": {
+          "color": "#ffffcc"
+        },
+        "moduleIds": [2]
+      }
+    ],
+    "scenario": {
+      "name": "advisory-designer-warning-only"
+    },
+    "schedule": {
+      "id": "schedule:manual"
+    }
+  },
+  "name": "advisory-designer-warning-only"
+}

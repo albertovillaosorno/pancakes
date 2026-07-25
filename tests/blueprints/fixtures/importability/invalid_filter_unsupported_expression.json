@@ -1,0 +1,56 @@
+{
+  "flow": [
+    {
+      "id": 1,
+      "interface": [
+        {
+          "name": "email",
+          "type": "text"
+        },
+        {
+          "name": "score",
+          "type": "number"
+        }
+      ],
+      "module": "gateway:CustomWebHook",
+      "parameters": {}
+    },
+    {
+      "id": 2,
+      "module": "builtin:BasicRouter",
+      "routes": [
+        {
+          "filter": {
+            "conditions": {
+              "expression": "lead looks qualified and should route to sales"
+            },
+            "name": "Natural language"
+          },
+          "flow": [
+            {
+              "id": 3,
+              "mapper": {
+                "email": "{{1.email}}",
+                "route": "review",
+                "score": "{{1.score}}"
+              },
+              "module": "datastore:AddRecord",
+              "parameters": {
+                "datastore": "demo_datastore_review_queue"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "scenario": {
+      "name": "invalid-filter-unsupported-expression"
+    },
+    "schedule": {
+      "id": "schedule:manual"
+    }
+  },
+  "name": "invalid-filter-unsupported-expression"
+}

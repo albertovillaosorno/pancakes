@@ -1,0 +1,8 @@
+{
+  "approval_timestamp": "2026-05-06T00:00:00+00:00",
+  "module_token": "datastore:AddRecord",
+  "operator_approved": true,
+  "operator_note": "Sanitized local offline placeholder for Data Store AddRecord while raw-spec evidence is unavailable.",
+  "source": "operator-approved-local-stub",
+  "unsupported_fields": ["expect_schema", "interface_schema", "parameters", "rpc_dependencies"]
+}

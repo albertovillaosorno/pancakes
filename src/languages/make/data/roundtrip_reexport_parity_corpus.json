@@ -1,0 +1,251 @@
+{
+  "schema_version": 1,
+  "asset": "make_roundtrip_reexport_parity_corpus",
+  "visibility": "private_engine_asset",
+  "generated_at_utc": "2026-05-17T00:00:00Z",
+  "safety_contract": {
+    "live_make_called": false,
+    "authenticated_make_ui_used": false,
+    "provider_api_call": false,
+    "credential_value_transfer": false,
+    "secret_output": false,
+    "customer_facing": false
+  },
+  "browser_capture": {
+    "status": "deferred_to_queue_0012",
+    "operation_class": "read_only_import_export_diff_follow_up",
+    "reason": "This corpus records synthetic local triplets only. Live Browser import, export, and Make-normalized diff capture stay in the dedicated 0012 queue item to avoid mutating authenticated Make state inside the local corpus task.",
+    "redaction_contract": "Live captures must store only sanitized blueprint JSON or compact category counts, never cookies, provider payloads, resource ids, screenshots, or connection values."
+  },
+  "fixture_triplets": [
+    {
+      "triplet_id": "complex_router_aggregator_ai_error_roundtrip",
+      "status": "synthetic_local_fixture",
+      "make_export_source": "synthetic_make_reexport_shape",
+      "generated_path": "tests/blueprints/fixtures/diff_blueprint/roundtrip_parity/generated_complex.json",
+      "make_reexport_path": "tests/blueprints/fixtures/diff_blueprint/roundtrip_parity/make_reexport_complex.json",
+      "known_good_path": "tests/blueprints/fixtures/diff_blueprint/roundtrip_parity/known_good_complex.json",
+      "topology_coverage": [
+        "routers",
+        "aggregators",
+        "filters",
+        "error_handlers",
+        "ai_modules",
+        "dynamic_placeholders",
+        "notes",
+        "large_canvas_layout"
+      ],
+      "expected_categories": [
+        "layout_delta",
+        "filter_shape_delta",
+        "mapper_shape_delta",
+        "metadata_expect_missing",
+        "restore_missing",
+        "runtime_resource_placeholder",
+        "zero_trace_violation",
+        "native_parity_gap",
+        "volatile_make_noise",
+        "semantic_lineage_breakage"
+      ],
+      "zero_trace_posture": "intentionally_contaminated_for_gate_coverage",
+      "stable_normalization_rules": [
+        "make.diff.layout.editor_geometry",
+        "make.diff.filter.native_conditions_shape",
+        "make.diff.mapper.native_mapper_shape",
+        "make.diff.metadata.expect_restore_shape",
+        "make.diff.runtime.resource_placeholders",
+        "make.diff.zero_trace.private_markers",
+        "make.diff.volatile_export_noise",
+        "make.diff.semantic_lineage.module_identity"
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "category": "layout_delta",
+      "severity": "P2",
+      "roundtrip_discovery_class": "layout_rule",
+      "rule_target": "layout_rule",
+      "stable_normalization_rule": "make.diff.layout.editor_geometry",
+      "fixture_triplets": ["complex_router_aggregator_ai_error_roundtrip"],
+      "deterministic_tests": [
+        "tests/languages/make/make_roundtrip_reexport_parity_corpus_contract.py::test_roundtrip_parity_complex_fixture_diff_exercises_required_categories"
+      ],
+      "promotion_gate": "Repeated Make re-exports may tune layout policy; one fixture cannot hardcode coordinates."
+    },
+    {
+      "category": "filter_shape_delta",
+      "severity": "P0",
+      "roundtrip_discovery_class": "native_shape_rule",
+      "rule_target": "module_or_filter_lowering_rule",
+      "stable_normalization_rule": "make.diff.filter.native_conditions_shape",
+      "fixture_triplets": ["complex_router_aggregator_ai_error_roundtrip"],
+      "deterministic_tests": [
+        "tests/languages/make/make_roundtrip_reexport_parity_corpus_contract.py::test_roundtrip_parity_complex_fixture_diff_exercises_required_categories"
+      ],
+      "promotion_gate": "Filter deltas must become generalized native condition rendering tests, not scenario-specific patches."
+    },
+    {
+      "category": "mapper_shape_delta",
+      "severity": "P0",
+      "roundtrip_discovery_class": "native_shape_rule",
+      "rule_target": "module_projector_manifest",
+      "stable_normalization_rule": "make.diff.mapper.native_mapper_shape",
+      "fixture_triplets": ["complex_router_aggregator_ai_error_roundtrip"],
+      "deterministic_tests": [
+        "tests/languages/make/make_roundtrip_reexport_parity_corpus_contract.py::test_roundtrip_parity_complex_fixture_diff_exercises_required_categories",
+        "tests/mcp/tool_contracts/mcp_reexport_evidence_contract.py::test_reexport_evidence_ingestion_reports_local_diff_candidates"
+      ],
+      "promotion_gate": "Mapper fixes must land in projectors or manifests with fixture coverage."
+    },
+    {
+      "category": "metadata_expect_missing",
+      "severity": "P1",
+      "roundtrip_discovery_class": "restore_expect_rule",
+      "rule_target": "module_projector_manifest",
+      "stable_normalization_rule": "make.diff.metadata.expect_restore_shape",
+      "fixture_triplets": ["complex_router_aggregator_ai_error_roundtrip"],
+      "deterministic_tests": [
+        "tests/languages/make/make_roundtrip_reexport_parity_corpus_contract.py::test_roundtrip_parity_complex_fixture_diff_exercises_required_categories"
+      ],
+      "promotion_gate": "Expect schema promotion requires module-family evidence and zero-trace-safe fixtures."
+    },
+    {
+      "category": "restore_missing",
+      "severity": "P1",
+      "roundtrip_discovery_class": "restore_expect_rule",
+      "rule_target": "module_projector_manifest",
+      "stable_normalization_rule": "make.diff.metadata.expect_restore_shape",
+      "fixture_triplets": ["complex_router_aggregator_ai_error_roundtrip"],
+      "deterministic_tests": [
+        "tests/languages/make/make_roundtrip_reexport_parity_corpus_contract.py::test_roundtrip_parity_complex_fixture_diff_exercises_required_categories"
+      ],
+      "promotion_gate": "Restore labels are safe only as redacted labels or generic placeholder labels."
+    },
+    {
+      "category": "runtime_resource_placeholder",
+      "severity": "P1",
+      "roundtrip_discovery_class": "runtime_binding_rule",
+      "rule_target": "readiness_binding_policy",
+      "stable_normalization_rule": "make.diff.runtime.resource_placeholders",
+      "fixture_triplets": ["complex_router_aggregator_ai_error_roundtrip"],
+      "deterministic_tests": [
+        "tests/languages/make/make_roundtrip_reexport_parity_corpus_contract.py::test_roundtrip_parity_complex_fixture_diff_exercises_required_categories"
+      ],
+      "promotion_gate": "Runtime bindings stay placeholders until client resource mapping or Make connection checks provide safe ids."
+    },
+    {
+      "category": "zero_trace_violation",
+      "severity": "P0",
+      "roundtrip_discovery_class": "zero_trace_violation",
+      "rule_target": "zero_trace_blocker",
+      "stable_normalization_rule": "make.diff.zero_trace.private_markers",
+      "fixture_triplets": ["complex_router_aggregator_ai_error_roundtrip"],
+      "deterministic_tests": [
+        "tests/languages/make/make_roundtrip_reexport_parity_corpus_contract.py::test_roundtrip_parity_reexport_evidence_blocks_zero_trace_fixture_candidates",
+        "tests/mcp/tool_contracts/mcp_reexport_evidence_contract.py::test_reexport_evidence_ingestion_blocks_private_or_secret_like_evidence"
+      ],
+      "promotion_gate": "Any private/local trace is a hard export blocker before client handoff."
+    },
+    {
+      "category": "native_parity_gap",
+      "severity": "P1",
+      "roundtrip_discovery_class": "unknown_requires_evidence",
+      "rule_target": "semantics_matrix_record",
+      "stable_normalization_rule": "make.diff.native_version_and_unknown_gap",
+      "fixture_triplets": ["complex_router_aggregator_ai_error_roundtrip"],
+      "deterministic_tests": [
+        "tests/languages/make/make_roundtrip_reexport_parity_corpus_contract.py::test_roundtrip_parity_complex_fixture_diff_exercises_required_categories"
+      ],
+      "promotion_gate": "Generic native gaps need matrix or manifest evidence before compiler behavior changes."
+    },
+    {
+      "category": "volatile_make_noise",
+      "severity": "P2",
+      "roundtrip_discovery_class": "volatile_noise",
+      "rule_target": "canonicalizer_rule",
+      "stable_normalization_rule": "make.diff.volatile_export_noise",
+      "fixture_triplets": ["complex_router_aggregator_ai_error_roundtrip"],
+      "deterministic_tests": [
+        "tests/languages/make/make_roundtrip_reexport_parity_corpus_contract.py::test_roundtrip_parity_complex_fixture_diff_exercises_required_categories",
+        "tests/mcp/tool_contracts/mcp_diff_blueprint_command_contract.py::test_mcp_diff_blueprint_canonicalizes_noise_and_classifies_native_gaps"
+      ],
+      "promotion_gate": "A volatile field becomes canonicalized only after repeated export evidence proves it is non-semantic."
+    },
+    {
+      "category": "semantic_lineage_breakage",
+      "severity": "P0",
+      "roundtrip_discovery_class": "semantic_breakage",
+      "rule_target": "damp_test_or_projector_rule",
+      "stable_normalization_rule": "make.diff.semantic_lineage.module_identity",
+      "fixture_triplets": ["complex_router_aggregator_ai_error_roundtrip"],
+      "deterministic_tests": [
+        "tests/languages/make/make_roundtrip_reexport_parity_corpus_contract.py::test_roundtrip_parity_complex_fixture_diff_exercises_required_categories"
+      ],
+      "promotion_gate": "Module identity changes remain behavior-changing until abstract lineage tests prove otherwise."
+    }
+  ],
+  "stable_normalization_rules": [
+    {
+      "rule_id": "make.diff.layout.editor_geometry",
+      "categories": ["layout_delta"],
+      "deterministic_tests": ["tests/languages/make/make_roundtrip_reexport_parity_corpus_contract.py"],
+      "browser_follow_up": "0012-full-make-catalog-live-browser-diff-validation"
+    },
+    {
+      "rule_id": "make.diff.filter.native_conditions_shape",
+      "categories": ["filter_shape_delta"],
+      "deterministic_tests": ["tests/languages/make/make_roundtrip_reexport_parity_corpus_contract.py"],
+      "browser_follow_up": "0012-full-make-catalog-live-browser-diff-validation"
+    },
+    {
+      "rule_id": "make.diff.mapper.native_mapper_shape",
+      "categories": ["mapper_shape_delta"],
+      "deterministic_tests": ["tests/languages/make/make_roundtrip_reexport_parity_corpus_contract.py"],
+      "browser_follow_up": "0012-full-make-catalog-live-browser-diff-validation"
+    },
+    {
+      "rule_id": "make.diff.metadata.expect_restore_shape",
+      "categories": ["metadata_expect_missing", "restore_missing"],
+      "deterministic_tests": ["tests/languages/make/make_roundtrip_reexport_parity_corpus_contract.py"],
+      "browser_follow_up": "0012-full-make-catalog-live-browser-diff-validation"
+    },
+    {
+      "rule_id": "make.diff.runtime.resource_placeholders",
+      "categories": ["runtime_resource_placeholder"],
+      "deterministic_tests": ["tests/languages/make/make_roundtrip_reexport_parity_corpus_contract.py"],
+      "browser_follow_up": "0012-full-make-catalog-live-browser-diff-validation"
+    },
+    {
+      "rule_id": "make.diff.zero_trace.private_markers",
+      "categories": ["zero_trace_violation"],
+      "deterministic_tests": ["tests/languages/make/make_roundtrip_reexport_parity_corpus_contract.py"],
+      "browser_follow_up": "0012-full-make-catalog-live-browser-diff-validation"
+    },
+    {
+      "rule_id": "make.diff.native_version_and_unknown_gap",
+      "categories": ["native_parity_gap"],
+      "deterministic_tests": ["tests/languages/make/make_roundtrip_reexport_parity_corpus_contract.py"],
+      "browser_follow_up": "0012-full-make-catalog-live-browser-diff-validation"
+    },
+    {
+      "rule_id": "make.diff.volatile_export_noise",
+      "categories": ["volatile_make_noise"],
+      "deterministic_tests": ["tests/languages/make/make_roundtrip_reexport_parity_corpus_contract.py"],
+      "browser_follow_up": "0012-full-make-catalog-live-browser-diff-validation"
+    },
+    {
+      "rule_id": "make.diff.semantic_lineage.module_identity",
+      "categories": ["semantic_lineage_breakage"],
+      "deterministic_tests": ["tests/languages/make/make_roundtrip_reexport_parity_corpus_contract.py"],
+      "browser_follow_up": "0012-full-make-catalog-live-browser-diff-validation"
+    }
+  ],
+  "maintenance_queue": [
+    {
+      "todo_id": "0012",
+      "title": "Full Make catalog live Browser diff validation",
+      "reason": "Capture current Make import/export behavior with Browser after this local corpus is deterministic."
+    }
+  ]
+}

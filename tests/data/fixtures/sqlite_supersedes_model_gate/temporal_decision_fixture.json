@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "decision_id": "sqlite_supersedes_model_gate",
+  "decision": "no_explicit_supersedes_edges_required",
+  "timestamps": {
+    "first_refresh": "2026-05-20T00:00:00Z",
+    "between_refreshes": "2026-05-20T12:00:00Z",
+    "second_refresh": "2026-05-21T00:00:00Z",
+    "after_second_refresh": "2026-05-21T12:00:00Z"
+  },
+  "raw_spec_refresh_rows": [
+    {
+      "app_slug": "http",
+      "app_version": "1.0",
+      "source_ref": "temp/raw-specs-json/http/current.json",
+      "sha256": "hash-http-v1",
+      "valid_from": "2026-05-20T00:00:00Z",
+      "valid_to": "2026-05-21T00:00:00Z",
+      "fingerprint": "fingerprint-http-v1",
+      "ingest_run_id": "raw-refresh-0001"
+    },
+    {
+      "app_slug": "http",
+      "app_version": "1.0",
+      "source_ref": "temp/raw-specs-json/http/current.json",
+      "sha256": "hash-http-v2",
+      "valid_from": "2026-05-21T00:00:00Z",
+      "valid_to": null,
+      "fingerprint": "fingerprint-http-v2",
+      "ingest_run_id": "raw-refresh-0002"
+    }
+  ],
+  "catalog_runs": [
+    {
+      "run_id": "catalog-run-old",
+      "run_status": "obsolete",
+      "reset_strategy": "canonical_catalog"
+    },
+    {
+      "run_id": "catalog-run-active",
+      "run_status": "active",
+      "reset_strategy": "canonical_catalog"
+    }
+  ],
+  "catalog_units": [
+    {
+      "run_id": "catalog-run-old",
+      "unit_id": "unit-http-v1",
+      "source_ref": "temp/raw-specs-json/http/current.json",
+      "source_hash": "hash-http-v1",
+      "validation_status": "stale_source"
+    },
+    {
+      "run_id": "catalog-run-active",
+      "unit_id": "unit-http-v2",
+      "source_ref": "temp/raw-specs-json/http/current.json",
+      "source_hash": "hash-http-v2",
+      "validation_status": "pending"
+    }
+  ],
+  "package_readiness_facts": [
+    {
+      "fact_id": "readiness-http-v1",
+      "subject_id": "package:http-import",
+      "readiness_status": "ready",
+      "source_hash": "hash-http-v1",
+      "valid_from": "2026-05-20T00:00:00Z",
+      "valid_to": "2026-05-21T00:00:00Z",
+      "fingerprint": "readiness-fingerprint-v1",
+      "ingest_run_id": "readiness-run-0001"
+    },
+    {
+      "fact_id": "readiness-http-v2",
+      "subject_id": "package:http-import",
+      "readiness_status": "needs_review",
+      "source_hash": "hash-http-v2",
+      "valid_from": "2026-05-21T00:00:00Z",
+      "valid_to": null,
+      "fingerprint": "readiness-fingerprint-v2",
+      "ingest_run_id": "readiness-run-0002"
+    }
+  ],
+  "measured_queries": [
+    "current raw spec by app/version",
+    "point-in-time raw spec by app/version",
+    "catalog units stale against current source hash",
+    "active canonical catalog run by source hash",
+    "point-in-time package readiness history",
+    "previous package readiness row for rollback evidence"
+  ],
+  "future_supersedes_edge_triggers": [
+    "non-temporal manual lineage must be explained across rows with different source refs",
+    "two valid rows must be merged or branched without closing either row",
+    "rollback evidence must name an operator-selected predecessor that is not the previous temporal row"
+  ]
+}

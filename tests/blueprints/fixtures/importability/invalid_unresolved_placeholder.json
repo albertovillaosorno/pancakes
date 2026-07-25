@@ -1,0 +1,24 @@
+{
+  "flow": [
+    {
+      "id": 1,
+      "mapper": {
+        "email": "{{1.email}}",
+        "route": "qualified"
+      },
+      "module": "datastore:AddRecord",
+      "parameters": {
+        "datastore": "{{TODO:demo-datastore-id}}"
+      }
+    }
+  ],
+  "metadata": {
+    "scenario": {
+      "name": "invalid-unresolved-placeholder"
+    },
+    "schedule": {
+      "id": "schedule:manual"
+    }
+  },
+  "name": "invalid-unresolved-placeholder"
+}

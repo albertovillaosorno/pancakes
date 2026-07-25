@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "asset": "make_module_projector_manifest",
+  "visibility": "private_engine_asset",
+  "module": "slack:CreateMessage",
+  "aliases": ["slack:ActionCreateMessage"],
+  "native_token": "slack:CreateMessage",
+  "version_policy": {
+    "kind": "fixed",
+    "version": 4
+  },
+  "projector": {
+    "kind": "slack_create_message"
+  },
+  "mapper_policy": {
+    "kind": "message_mapper",
+    "required_keys": ["text"],
+    "optional_keys": ["channel", "thread_ts", "summary"]
+  },
+  "parameters_policy": {
+    "required_keys": ["__IMTCONN__"],
+    "legacy_aliases": {
+      "account": "__IMTCONN__"
+    },
+    "promote_to_mapper_except": ["__IMTCONN__"]
+  },
+  "metadata_expect_policy": {
+    "kind": "message_fields"
+  },
+  "metadata_restore_policy": {
+    "kind": "connection_and_channel_selectors",
+    "required_keys": ["parameters.__IMTCONN__"],
+    "labels": {
+      "__IMTCONN__": "Slack connection"
+    }
+  },
+  "metadata_interface_policy": {
+    "kind": "provider_defined"
+  },
+  "connection_projection_policy": {
+    "kind": "make_connection_alias",
+    "legacy_parameter": "account",
+    "native_parameter": "__IMTCONN__",
+    "families": ["slack2", "slack3"],
+    "label": "Slack connection"
+  },
+  "placeholder_policy": {
+    "mode": "runtime_required",
+    "placeholders": [
+      "runtime.connection.slack_ops",
+      "runtime.slack.channel.*"
+    ]
+  },
+  "volatile_field_policy": {
+    "known_paths": [
+      "metadata.designer",
+      "metadata.restore.parameters.__IMTCONN__.label",
+      "metadata.restore.parameters.channel.label"
+    ]
+  },
+  "zero_trace_constraints": {
+    "private_fields_forbidden": true,
+    "customer_artifact": false
+  },
+  "roundtrip_behavior": {
+    "status": "single_fixture",
+    "notes": "Connection selectors and channel restore labels vary by workspace."
+  },
+  "confidence": "low",
+  "fixtures": [
+    "tests/mcp/tool_contracts/mcp_stress_scenario_factory_contract.py"
+  ],
+  "last_evidence_source": "local_fixture"
+}

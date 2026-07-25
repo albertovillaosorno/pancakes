@@ -1,0 +1,127 @@
+{
+  "api_surface": "make_mcp_typed_tools",
+  "capabilities_proven": [
+    "scenario_create",
+    "scenario_export",
+    "webhook_bind_to_module",
+    "webhook_create_or_select",
+    "webhook_delete_or_cleanup"
+  ],
+  "cleanup_counts": {
+    "scratch_hooks": 0,
+    "scratch_scenarios": 0
+  },
+  "credential_value_transfer": false,
+  "credentials_printed": false,
+  "customer_data_used": false,
+  "hook_create_response_shape": {
+    "data": {
+      "headers": "bool",
+      "method": "bool",
+      "stringify": "bool",
+      "teamId": "int"
+    },
+    "enabled": "bool",
+    "gone": "bool",
+    "id": "int",
+    "name": "str",
+    "scenarioId": "none",
+    "teamId": "int",
+    "type": "str",
+    "typeName": "gateway-webhook",
+    "url": "webhook_url_redacted"
+  },
+  "hook_delete_response": "Hook has been deleted.",
+  "hook_get_bound_response_shape": {
+    "enabled": "bool",
+    "gone": "bool",
+    "id": "int",
+    "scenarioId": "int",
+    "scenarioIsActive": "bool_false",
+    "scenarioIsConfidential": "bool_false",
+    "teamId": "int",
+    "typeName": "gateway-webhook",
+    "url": "webhook_url_redacted"
+  },
+  "live_make_called": true,
+  "provider_api_call": true,
+  "request_contract": {
+    "hook_create": {
+      "data": {
+        "headers": "bool",
+        "method": "bool",
+        "stringify": "bool"
+      },
+      "name": "string",
+      "teamId": "int",
+      "typeName": "gateway-webhook"
+    },
+    "scenario_create": {
+      "blueprint.flow[0].metadata.parameters[hook].type": "hook:gateway-webhook",
+      "blueprint.flow[0].module": "gateway:CustomWebHook",
+      "blueprint.flow[0].parameters.hook": "int",
+      "confirmed": "bool_true",
+      "scheduling.type": "immediately",
+      "teamId": "int"
+    }
+  },
+  "scenario_activation_called": false,
+  "scenario_create_response_shape": {
+    "hookId": "int",
+    "id": "int",
+    "isActive": "bool_false",
+    "isinvalid": "bool_false",
+    "scheduling": {
+      "type": "immediately"
+    },
+    "teamId": "int",
+    "usedPackages": ["gateway"]
+  },
+  "scenario_delete_response": "Scenario has been deleted.",
+  "scenario_get_blueprint_contract": {
+    "$.blueprint.flow[0].metadata.parameters[0].type": "hook:gateway-webhook",
+    "$.blueprint.flow[0].module": "gateway:CustomWebHook",
+    "$.blueprint.flow[0].parameters.hook": "int",
+    "$.hookId": "int",
+    "$.isActive": "bool_false"
+  },
+  "scenario_run_once_called": false,
+  "schema_version": 1,
+  "secret_output": false,
+  "status": "webhook_bind_lifecycle_probe_captured",
+  "steps": [
+    {
+      "name": "hooks_create_gateway_webhook",
+      "status": "ok"
+    },
+    {
+      "name": "scenarios_create_inactive_custom_webhook",
+      "status": "ok"
+    },
+    {
+      "name": "scenarios_get_export_bound_webhook",
+      "status": "ok"
+    },
+    {
+      "name": "hooks_get_bound_to_inactive_scenario",
+      "status": "ok"
+    },
+    {
+      "name": "cleanup_scenarios_delete",
+      "status": "ok"
+    },
+    {
+      "name": "cleanup_hooks_delete",
+      "status": "ok"
+    },
+    {
+      "name": "cleanup_scratch_scenarios_count",
+      "status": "empty"
+    },
+    {
+      "name": "cleanup_scratch_hooks_count",
+      "status": "empty"
+    }
+  ],
+  "validation_actor": "codex_make_mcp_typed_tools"
+}

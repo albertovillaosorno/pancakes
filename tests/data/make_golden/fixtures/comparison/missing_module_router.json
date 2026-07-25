@@ -1,0 +1,23 @@
+{
+  "name": "Golden reference",
+  "metadata": {
+    "schedule": {
+      "type": "manual"
+    }
+  },
+  "flow": [
+    {
+      "id": 1,
+      "module": "http:MakeRequest",
+      "mapper": {
+        "url": "https://example.invalid/api"
+      },
+      "metadata": {
+        "designer": {
+          "x": 10,
+          "y": 20
+        }
+      }
+    }
+  ]
+}

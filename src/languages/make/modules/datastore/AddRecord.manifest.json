@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "asset": "make_module_projector_manifest",
+  "visibility": "private_engine_asset",
+  "module": "datastore:AddRecord",
+  "aliases": [],
+  "native_token": "datastore:AddRecord",
+  "version_policy": {
+    "kind": "fixed",
+    "version": 2
+  },
+  "projector": {
+    "kind": "datastore_add_record"
+  },
+  "mapper_policy": {
+    "kind": "key_overwrite_data",
+    "required_keys": ["key", "overwrite", "data"],
+    "key_sources": ["key", "request_id"],
+    "data_excludes": ["data", "key", "overwrite", "request_id"]
+  },
+  "parameters_policy": {
+    "required_keys": ["datastore"]
+  },
+  "metadata_expect_policy": {
+    "kind": "key_overwrite_data",
+    "required_keys": ["key", "overwrite", "data"]
+  },
+  "metadata_restore_policy": {
+    "kind": "datastore_selector",
+    "required_keys": ["parameters.datastore"],
+    "labels": {
+      "datastore": "Data store"
+    }
+  },
+  "metadata_interface_policy": {
+    "kind": "data_collection"
+  },
+  "connection_projection_policy": {
+    "kind": "resource_identifier",
+    "resource": "datastore"
+  },
+  "placeholder_policy": {
+    "mode": "runtime_required",
+    "placeholders": ["runtime.datastore.*"]
+  },
+  "volatile_field_policy": {
+    "known_paths": [
+      "metadata.designer",
+      "metadata.restore.parameters.datastore.label"
+    ]
+  },
+  "zero_trace_constraints": {
+    "private_fields_forbidden": true,
+    "customer_artifact": false
+  },
+  "roundtrip_behavior": {
+    "status": "fixture_observed",
+    "notes": "Flat data fields must be nested under mapper.data for Make-native shape."
+  },
+  "confidence": "medium",
+  "fixtures": [
+    "tests/mcp/tool_contracts/mcp_stress_scenario_factory_contract.py",
+    "tests/mcp/tool_contracts/mcp_diff_blueprint_giant_fixture_contract.py"
+  ],
+  "last_evidence_source": "local_fixture"
+}

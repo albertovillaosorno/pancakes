@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "asset": "make_module_projector_manifest",
+  "visibility": "private_engine_asset",
+  "module": "gateway:CustomWebHook",
+  "aliases": [],
+  "native_token": "gateway:CustomWebHook",
+  "version_policy": {
+    "kind": "fixed",
+    "version": 1
+  },
+  "projector": {
+    "kind": "gateway_custom_webhook"
+  },
+  "mapper_policy": {
+    "kind": "empty_trigger_mapper",
+    "required_keys": [],
+    "interface_from_mapper": true
+  },
+  "parameters_policy": {
+    "required_keys": ["hook"],
+    "optional_keys": ["maxResults"],
+    "defaults": {
+      "maxResults": 1
+    }
+  },
+  "metadata_expect_policy": {
+    "kind": "not_required_for_trigger"
+  },
+  "metadata_restore_policy": {
+    "kind": "hook_selector",
+    "required_keys": ["parameters.hook"],
+    "labels": {
+      "hook": "Webhook"
+    }
+  },
+  "metadata_interface_policy": {
+    "kind": "webhook_payload_fields",
+    "location": "metadata.interface",
+    "source": "mapper_keys"
+  },
+  "connection_projection_policy": {
+    "kind": "none"
+  },
+  "placeholder_policy": {
+    "mode": "runtime_required",
+    "placeholders": ["runtime.webhook.*"]
+  },
+  "volatile_field_policy": {
+    "known_paths": [
+      "metadata.designer",
+      "metadata.restore.parameters.hook.label"
+    ]
+  },
+  "zero_trace_constraints": {
+    "private_fields_forbidden": true,
+    "customer_artifact": false
+  },
+  "roundtrip_behavior": {
+    "status": "fixture_observed",
+    "notes": "Make may restore hook selector labels and interface field display metadata."
+  },
+  "confidence": "medium",
+  "fixtures": [
+    "tests/blueprints/fixtures/diff_blueprint/generated_router.json",
+    "tests/mcp/tool_contracts/mcp_diff_blueprint_giant_fixture_contract.py"
+  ],
+  "last_evidence_source": "local_fixture"
+}

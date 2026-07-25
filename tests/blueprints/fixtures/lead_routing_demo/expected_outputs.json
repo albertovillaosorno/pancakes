@@ -1,0 +1,24 @@
+{
+  "qualified": [
+    {
+      "lead_id": "demo-lead-001",
+      "destination": "demo_datastore_qualified_leads",
+      "notification": "demo_sales_notification",
+      "public_note": "Qualified lead routed for sales follow-up."
+    }
+  ],
+  "incomplete": [
+    {
+      "lead_id": "demo-lead-002",
+      "destination": "demo_datastore_review_queue",
+      "notification": "demo_ops_notification",
+      "public_note": "Lead needs manual review before sales routing."
+    },
+    {
+      "lead_id": "demo-lead-003",
+      "destination": "demo_datastore_review_queue",
+      "notification": "demo_ops_notification",
+      "public_note": "Lead is missing required contact data."
+    }
+  ]
+}

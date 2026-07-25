@@ -1,0 +1,42 @@
+{
+  "flow": [
+    {
+      "id": 1,
+      "module": "gateway:CustomWebHook",
+      "parameters": {},
+      "routes": [
+        {
+          "filter": {
+            "conditions": {
+              "expression": "{{1.score}} >= 80"
+            },
+            "name": "Misplaced route"
+          },
+          "flow": [
+            {
+              "id": 2,
+              "mapper": {
+                "email": "{{1.email}}",
+                "route": "qualified",
+                "score": "{{1.score}}"
+              },
+              "module": "datastore:AddRecord",
+              "parameters": {
+                "datastore": "demo_datastore_qualified_leads"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "scenario": {
+      "name": "webhook-owned-routes"
+    },
+    "schedule": {
+      "id": "schedule:manual"
+    }
+  },
+  "name": "webhook-owned-routes"
+}

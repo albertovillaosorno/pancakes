@@ -1,0 +1,2 @@
+-- Reviewed live_probe evidence rows are staged here by explicit operator action.
+-- Keep this file empty until a live Make roundtrip probe has been reviewed.

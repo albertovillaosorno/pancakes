@@ -1,0 +1,404 @@
+{
+  "schema_version": 1,
+  "asset": "make_public_research_evidence",
+  "visibility": "private_engine_asset",
+  "last_checked_utc": "2026-05-17T00:00:00Z",
+  "safety_contract": {
+    "live_make_called_by_pancakes": false,
+    "authenticated_make_ui_used": false,
+    "provider_api_call": false,
+    "credential_value_transfer": false,
+    "secret_output": false,
+    "customer_facing": false
+  },
+  "source_policy": {
+    "allowed_source_kinds": [
+      "official_public_doc",
+      "public_fixture_corpus",
+      "operator_approved_screenclip_summary",
+      "sanitized_local_fixture",
+      "local_raw_spec_manifest"
+    ],
+    "forbidden_material": [
+      "customer blueprints",
+      "credential values",
+      "OAuth state",
+      "cookies",
+      "authenticated raw provider payloads",
+      "screenshots with account state"
+    ],
+    "promotion_rule": "Public research may create compact ledgers and deterministic tests only; field parity, dynamic selectors, and runtime behavior still require raw specs or separate live Browser roundtrip evidence."
+  },
+  "public_sources": [
+    {
+      "source_id": "make_help_blueprints",
+      "url": "https://help.make.com/blueprints",
+      "publisher": "Make",
+      "source_kind": "official_public_doc",
+      "last_checked_date": "2026-05-17",
+      "source_date": "public page observed 2026-05-17",
+      "supports": [
+        "blueprint_export_import_json",
+        "post_import_connection_setup_required",
+        "copy_blueprint_as_json_text",
+        "blueprint_size_limit"
+      ]
+    },
+    {
+      "source_id": "make_help_ai_agents_new_app",
+      "url": "https://help.make.com/make-ai-agents-new-app",
+      "publisher": "Make",
+      "source_kind": "official_public_doc",
+      "last_checked_date": "2026-05-17",
+      "source_date": "public page observed 2026-05-17",
+      "supports": [
+        "run_agent_new_module",
+        "agent_tools_and_knowledge",
+        "conversation_id_memory",
+        "response_format_and_metadata"
+      ]
+    },
+    {
+      "source_id": "make_help_general_functions",
+      "url": "https://help.make.com/general-functions",
+      "publisher": "Make",
+      "source_kind": "official_public_doc",
+      "last_checked_date": "2026-05-17",
+      "source_date": "updated 23 Mar 2026",
+      "supports": [
+        "get_if_ifempty_switch",
+        "omit_pick",
+        "erase_keyword"
+      ]
+    },
+    {
+      "source_id": "make_help_math_functions",
+      "url": "https://help.make.com/math-functions",
+      "publisher": "Make",
+      "source_kind": "official_public_doc",
+      "last_checked_date": "2026-05-17",
+      "source_date": "updated 15 Jan 2026",
+      "supports": [
+        "numeric_function_names",
+        "parse_number",
+        "format_number"
+      ]
+    },
+    {
+      "source_id": "make_developer_dynamic_fields_rpc",
+      "url": "https://developers.make.com/custom-apps-documentation/app-components/rpcs/dynamic-fields-rpc",
+      "publisher": "Make",
+      "source_kind": "official_public_doc",
+      "last_checked_date": "2026-05-17",
+      "source_date": "last updated 2 months before 2026-05-17",
+      "supports": [
+        "dynamic_parameter_generation",
+        "make_field_type_conversion",
+        "dynamic_nested_parameters"
+      ]
+    },
+    {
+      "source_id": "make_developer_dynamic_options_rpc",
+      "url": "https://developers.make.com/custom-apps-documentation/app-components/rpcs/dynamic-options-rpc",
+      "publisher": "Make",
+      "source_kind": "official_public_doc",
+      "last_checked_date": "2026-05-17",
+      "source_date": "last updated 4 months before 2026-05-17",
+      "supports": [
+        "dynamic_select_options",
+        "nested_rpc_options",
+        "search_button_selectors",
+        "rpc_query_parameters"
+      ]
+    },
+    {
+      "source_id": "make_developer_interface_block",
+      "url": "https://developers.make.com/custom-apps-documentation/component-blocks/interface",
+      "publisher": "Make",
+      "source_kind": "official_public_doc",
+      "last_checked_date": "2026-05-17",
+      "source_date": "public page observed 2026-05-17",
+      "supports": [
+        "module_output_interface_shape",
+        "field_type_names"
+      ]
+    },
+    {
+      "source_id": "make_developer_parameters_block",
+      "url": "https://developers.make.com/custom-apps-documentation/block-elements/parameters",
+      "publisher": "Make",
+      "source_kind": "official_public_doc",
+      "last_checked_date": "2026-05-17",
+      "source_date": "public page observed 2026-05-17",
+      "supports": [
+        "parameter_shape_terms",
+        "mappable_parameter_shape"
+      ]
+    },
+    {
+      "source_id": "make_help_related_apis",
+      "url": "https://help.make.com/related-apis",
+      "publisher": "Make",
+      "source_kind": "official_public_doc",
+      "last_checked_date": "2026-05-17",
+      "source_date": "updated 16 Feb 2026",
+      "supports": [
+        "scenario_interface_api",
+        "run_scenario_api"
+      ]
+    }
+  ],
+  "records": [
+    {
+      "family_id": "builtins_default_modules",
+      "title": "Make default built-in module identities",
+      "source_kinds": [
+        "sanitized_local_fixture",
+        "local_raw_spec_manifest"
+      ],
+      "public_source_ids": [
+        "make_help_blueprints"
+      ],
+      "local_surfaces": [
+        "src/languages/make/data/default_manifest_coverage.json",
+        "src/data/pancakes.sqlite",
+        "src/languages/make/builtins/*.manifest.json"
+      ],
+      "ingestion_status": "ingested_identity_only",
+      "may_prove": [
+        "default module token identity",
+        "app slug",
+        "module kind",
+        "local raw-spec coverage"
+      ],
+      "must_not_prove": [
+        "complete field schemas",
+        "account-scoped selector values",
+        "runtime execution parity"
+      ],
+      "promotion_gate": "Field-level parity requires raw specs or live Browser roundtrip diff evidence.",
+      "live_browser_follow_up": "0012-full-make-catalog-live-browser-diff-validation",
+      "validation_tests": [
+        "tests/languages/make/make_default_manifest_coverage_contract.py",
+        "tests/catalog/raw_specs/raw_specs_refresh_contract.py"
+      ]
+    },
+    {
+      "family_id": "ai_agents_and_tools",
+      "title": "Make AI Agents and Make AI Toolkit coverage",
+      "source_kinds": [
+        "official_public_doc",
+        "sanitized_local_fixture",
+        "local_raw_spec_manifest"
+      ],
+      "public_source_ids": [
+        "make_help_ai_agents_new_app"
+      ],
+      "local_surfaces": [
+        "src/languages/make/data/default_manifest_coverage.json",
+        "src/languages/make/data/priority_module_families.json",
+        "src/languages/make/data/golden/coverage.json"
+      ],
+      "ingestion_status": "ingested_identity_and_planning_priority",
+      "may_prove": [
+        "AI agent app module family exists in public docs",
+        "local module identities for ai-local-agent and ai-tools",
+        "planner priority for AI module families"
+      ],
+      "must_not_prove": [
+        "current AI model list",
+        "live credit pricing",
+        "agent runtime reasoning output",
+        "customer knowledge contents"
+      ],
+      "promotion_gate": "AI module field schemas and runtime behavior require raw specs plus browser/API roundtrip evidence.",
+      "live_browser_follow_up": "0012-full-make-catalog-live-browser-diff-validation",
+      "validation_tests": [
+        "tests/languages/make/make_priority_module_family_contract.py",
+        "tests/languages/make/make_default_manifest_coverage_contract.py"
+      ]
+    },
+    {
+      "family_id": "dynamic_selectors_and_rpcs",
+      "title": "Dynamic selector and RPC semantics",
+      "source_kinds": [
+        "official_public_doc",
+        "local_raw_spec_manifest"
+      ],
+      "public_source_ids": [
+        "make_developer_dynamic_fields_rpc",
+        "make_developer_dynamic_options_rpc",
+        "make_developer_interface_block",
+        "make_developer_parameters_block"
+      ],
+      "local_surfaces": [
+        "src/data/pancakes.sqlite",
+        "src/languages/make/data/priority_module_families.json",
+        "tests/catalog/raw_specs/raw_specs_refresh_contract.py"
+      ],
+      "ingestion_status": "ingested_selector_shape_terms_only",
+      "may_prove": [
+        "RPC output can drive dynamic fields and options",
+        "nested selector concepts",
+        "search-button selector concepts"
+      ],
+      "must_not_prove": [
+        "account-specific option values",
+        "selector freshness",
+        "provider-side access permissions"
+      ],
+      "promotion_gate": "Dynamic RPC selector parity requires read-only live Browser validation and redacted fixture promotion.",
+      "live_browser_follow_up": "0012-full-make-catalog-live-browser-diff-validation",
+      "validation_tests": [
+        "tests/languages/make/make_priority_module_family_contract.py",
+        "tests/catalog/raw_specs/raw_specs_refresh_contract.py"
+      ]
+    },
+    {
+      "family_id": "catalog_plan_term_maps",
+      "title": "Catalog planning term maps and aliases",
+      "source_kinds": [
+        "official_public_doc",
+        "operator_approved_screenclip_summary",
+        "sanitized_local_fixture",
+        "local_raw_spec_manifest"
+      ],
+      "public_source_ids": [
+        "make_help_blueprints",
+        "make_help_ai_agents_new_app",
+        "make_help_general_functions",
+        "make_help_math_functions"
+      ],
+      "local_surfaces": [
+        "src/languages/make/data/priority_module_families.json",
+        "src/languages/make/data/expression_palette.json",
+        "tests/catalog/priority_module_planning_contract.py",
+        "tests/mcp/tool_contracts/mcp_server_contract.py"
+      ],
+      "ingestion_status": "ingested_planner_terms_and_aliases",
+      "may_prove": [
+        "public connector names map to local raw-spec slugs",
+        "observed expression token names can help catalog search",
+        "broad catalog planning must decompose before noisy fallback"
+      ],
+      "must_not_prove": [
+        "complete workflow synthesis",
+        "function arity",
+        "expression evaluator behavior"
+      ],
+      "promotion_gate": "Planner terms may affect ranking only; generated scenario semantics require manifest or matrix evidence.",
+      "live_browser_follow_up": "0012-full-make-catalog-live-browser-diff-validation",
+      "validation_tests": [
+        "tests/catalog/priority_module_planning_contract.py",
+        "tests/languages/make/make_expression_palette_contract.py"
+      ]
+    },
+    {
+      "family_id": "native_semantics_matrix",
+      "title": "Make-native module shape semantics",
+      "source_kinds": [
+        "official_public_doc",
+        "public_fixture_corpus",
+        "sanitized_local_fixture",
+        "local_raw_spec_manifest"
+      ],
+      "public_source_ids": [
+        "make_developer_dynamic_fields_rpc",
+        "make_developer_dynamic_options_rpc",
+        "make_developer_interface_block",
+        "make_developer_parameters_block"
+      ],
+      "local_surfaces": [
+        "src/languages/make/data/native_semantics_matrix.json",
+        "src/languages/make/{builtins,modules}/**/*.manifest.json",
+        "src/languages/make/data/golden"
+      ],
+      "ingestion_status": "ingested_private_matrix_gates",
+      "may_prove": [
+        "known mapper, parameter, restore, interface, and placeholder posture",
+        "volatile field policy for supported modules",
+        "unknown modules preserve source shape"
+      ],
+      "must_not_prove": [
+        "unsupported module projector completeness",
+        "fresh UI restore labels",
+        "connection creation behavior"
+      ],
+      "promotion_gate": "New native module claims require fixture-backed manifest rows and matrix contracts.",
+      "live_browser_follow_up": "0012-full-make-catalog-live-browser-diff-validation",
+      "validation_tests": [
+        "tests/languages/make/make_native_semantics_matrix_contract.py",
+        "tests/languages/make/make_module_projector_manifest_contract.py"
+      ]
+    },
+    {
+      "family_id": "blueprint_diff_and_roundtrip",
+      "title": "Blueprint import/export and diff evidence",
+      "source_kinds": [
+        "official_public_doc",
+        "public_fixture_corpus",
+        "sanitized_local_fixture"
+      ],
+      "public_source_ids": [
+        "make_help_blueprints",
+        "make_help_related_apis"
+      ],
+      "local_surfaces": [
+        "src/languages/make/data/golden",
+        "tests/blueprints/fixtures/diff_blueprint",
+        "src/mcp/reexport_evidence.py",
+        "tests/mcp/tool_contracts/mcp_reexport_evidence_contract.py"
+      ],
+      "ingestion_status": "ingested_diff_evidence_boundaries",
+      "may_prove": [
+        "blueprint JSON can be exported and imported",
+        "connections still belong to the importing user",
+        "local diff fixtures can classify Make-native shape drift"
+      ],
+      "must_not_prove": [
+        "live import success for every generated scenario",
+        "private account scenario state",
+        "customer runtime readiness"
+      ],
+      "promotion_gate": "Roundtrip-stable claims require re-exported live Browser/API evidence with redaction.",
+      "live_browser_follow_up": "0012-full-make-catalog-live-browser-diff-validation",
+      "validation_tests": [
+        "tests/data/make_golden/golden_comparison_contract.py",
+        "tests/mcp/tool_contracts/mcp_reexport_evidence_contract.py"
+      ]
+    },
+    {
+      "family_id": "expression_functions",
+      "title": "Expression palette and function-family observations",
+      "source_kinds": [
+        "official_public_doc",
+        "operator_approved_screenclip_summary"
+      ],
+      "public_source_ids": [
+        "make_help_general_functions",
+        "make_help_math_functions"
+      ],
+      "local_surfaces": [
+        "src/languages/make/data/expression_palette.json",
+        "src/languages/make/expression_palette.py"
+      ],
+      "ingestion_status": "ingested_observed_tokens_only",
+      "may_prove": [
+        "observed token names",
+        "function family grouping",
+        "system variable display labels"
+      ],
+      "must_not_prove": [
+        "complete expression grammar",
+        "function arity",
+        "hidden system variable identifiers",
+        "evaluator runtime behavior"
+      ],
+      "promotion_gate": "Executable expression validation requires arity, parser, and evaluator roundtrip evidence.",
+      "live_browser_follow_up": "0012-full-make-catalog-live-browser-diff-validation",
+      "validation_tests": [
+        "tests/languages/make/make_expression_palette_contract.py"
+      ]
+    }
+  ]
+}

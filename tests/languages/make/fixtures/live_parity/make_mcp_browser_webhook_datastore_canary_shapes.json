@@ -1,0 +1,280 @@
+{
+  "api_surface": "codex_apps_make_com_typed_tools_plus_public_make_api",
+  "browser_surface": "codex_in_app_browser",
+  "capabilities_proven": [
+    "preload_hooks_before_editor_load",
+    "preload_data_structures_before_editor_load",
+    "preload_data_stores_before_editor_load",
+    "hook_configuration_validation",
+    "data_structures_create",
+    "data_stores_create",
+    "hooks_create_gateway_webhook",
+    "validate_blueprint_schema",
+    "scenarios_create_inactive_filtered_webhook_datastore",
+    "scenarios_get_export_bound_blueprint",
+    "browser_editor_open_edit_mode",
+    "browser_skip_discard_message_absent",
+    "scenario_activate_destructive_probe",
+    "webhook_post_valid_payload",
+    "executions_list_success",
+    "data_store_records_list_observed",
+    "scenario_deactivate",
+    "cleanup_data_store_records_delete",
+    "cleanup_scenarios_delete",
+    "cleanup_hooks_delete",
+    "cleanup_data_stores_delete",
+    "cleanup_data_structures_delete"
+  ],
+  "cleanup_counts": {
+    "scratch_data_stores": 0,
+    "scratch_data_structures": 0,
+    "scratch_hooks": 0,
+    "scratch_scenarios": 0
+  },
+  "credential_value_transfer": false,
+  "credentials_printed": false,
+  "customer_data_used": false,
+  "data_store_delete_response": "Data store has been deleted.",
+  "data_structure_delete_response": "Data structure has been deleted.",
+  "functional_probe": {
+    "data_store_record_contract": {
+      "fields": [
+        "payload",
+        "request_id",
+        "status"
+      ],
+      "key_present": true
+    },
+    "data_store_record_observed": true,
+    "execution_operations": 2,
+    "execution_status": "success",
+    "operator_destructive_canary_authorized": true,
+    "scenario_activation_called": true,
+    "scenario_deactivation_called": true,
+    "webhook_http_status": 200
+  },
+  "hook_delete_response": "Hook has been deleted.",
+  "live_make_called": true,
+  "operation_credit_consumed": true,
+  "operator_destructive_canary_authorized": true,
+  "provider_api_call": true,
+  "public_api_gap": {
+    "fallback_surface": "codex_apps_make_com_typed_tools",
+    "public_api_hook_create_status": "rejected",
+    "safe_error_code": "SC400"
+  },
+  "request_contract": {
+    "data_store_create": {
+      "datastructureId": "int",
+      "maxSizeMB": "int",
+      "name": "string",
+      "teamId": "int"
+    },
+    "data_structure_create": {
+      "name": "string",
+      "spec": [
+        {
+          "name": "string",
+          "required": "bool",
+          "type": "string"
+        }
+      ],
+      "strict": "bool",
+      "teamId": "int"
+    },
+    "hook_create": {
+      "data": {
+        "headers": "bool",
+        "method": "bool",
+        "stringify": "bool"
+      },
+      "name": "string",
+      "teamId": "int",
+      "typeName": "gateway-webhook"
+    },
+    "note_quality_shape": {
+      "designer_note_count": 3,
+      "filter_note_count": 1,
+      "module_note_count": 2,
+      "scenario_note_count": 3
+    },
+    "route_quality_shape": {
+      "flow_control_discard_module_present": false,
+      "retry_module_present": false,
+      "route_filter_count": 1,
+      "route_filter_names": [
+        "Has request id"
+      ],
+      "skip_directive_outside_error_handler_visible": false
+    },
+    "scenario_create": {
+      "blueprint.flow.modules": [
+        "gateway:CustomWebHook",
+        "builtin:BasicRouter"
+      ],
+      "blueprint.flow[0].parameters.hook": "int",
+      "blueprint.route.flow.modules": [
+        "datastore:AddRecord"
+      ],
+      "blueprint.route.flow[0].parameters.datastore": "int",
+      "confirmed": "bool_true",
+      "scheduling.type": "immediately",
+      "teamId": "int"
+    }
+  },
+  "resource_preload": {
+    "before_scenario_editor_load": true,
+    "matched_data_stores": 1,
+    "matched_data_structures": 1,
+    "matched_hooks": 1
+  },
+  "scenario_activation_called": true,
+  "scenario_browser_inspection": {
+    "discard_bundle_description_visible": false,
+    "edit_mode_entered": true,
+    "editor_opened": true,
+    "flow_control_discard_visible": false,
+    "missing_request_route_visible": false,
+    "retry_visible": false,
+    "route_filters_visible": [
+      "Has request id"
+    ],
+    "run_once_visible": true,
+    "schedule_visible": "Immediately as data arrives",
+    "skip_directive_outside_error_handler_visible": false
+  },
+  "scenario_create_response_shape": {
+    "hookId": "int",
+    "id": "int",
+    "isActive": "bool_false",
+    "isinvalid": "bool_false",
+    "scheduling": {
+      "type": "immediately"
+    },
+    "teamId": "int",
+    "usedPackages": [
+      "gateway",
+      "builtin",
+      "datastore"
+    ]
+  },
+  "scenario_delete_response": "Scenario has been deleted.",
+  "scenario_get_blueprint_contract": {
+    "$.blueprint.flow.modules": [
+      "gateway:CustomWebHook",
+      "builtin:BasicRouter"
+    ],
+    "$.blueprint.flow[0].metadata.parameters[0].type": "hook:gateway-webhook",
+    "$.blueprint.flow[0].parameters.hook": "int",
+    "$.blueprint.flow_control_discard_module_present": false,
+    "$.blueprint.metadata.designer.notes": 3,
+    "$.blueprint.metadata.notes": 3,
+    "$.blueprint.retry_module_present": false,
+    "$.blueprint.route.filter.names": [
+      "Has request id"
+    ],
+    "$.blueprint.route.flow.modules": [
+      "datastore:AddRecord"
+    ],
+    "$.blueprint.route.flow[0].parameters.datastore": "int",
+    "$.blueprint.scheduling.type": "immediately",
+    "$.blueprint.skip_directive_outside_error_handler_visible": false,
+    "$.hookId": "int",
+    "$.isActive": "bool_false"
+  },
+  "scenario_run_once_called": false,
+  "schema_version": 3,
+  "secret_output": false,
+  "status": "live_canary_mcp_browser_webhook_datastore_no_discard_passed",
+  "steps": [
+    {
+      "name": "preload_hooks_before_editor_load",
+      "status": "ok"
+    },
+    {
+      "name": "preload_data_structures_before_editor_load",
+      "status": "ok"
+    },
+    {
+      "name": "preload_data_stores_before_editor_load",
+      "status": "ok"
+    },
+    {
+      "name": "validate_gateway_webhook_configuration",
+      "status": "ok"
+    },
+    {
+      "name": "data_structures_create",
+      "status": "ok"
+    },
+    {
+      "name": "data_stores_create",
+      "status": "ok"
+    },
+    {
+      "name": "hooks_create_gateway_webhook",
+      "status": "ok"
+    },
+    {
+      "name": "validate_blueprint_schema",
+      "status": "ok"
+    },
+    {
+      "name": "scenarios_create_inactive_filtered_webhook_datastore",
+      "status": "ok"
+    },
+    {
+      "name": "scenarios_get_export_bound_blueprint",
+      "status": "ok"
+    },
+    {
+      "name": "browser_editor_open_edit_mode",
+      "status": "ok"
+    },
+    {
+      "name": "scenario_activate_destructive_probe",
+      "status": "ok"
+    },
+    {
+      "name": "webhook_post_valid_payload",
+      "status": "ok"
+    },
+    {
+      "name": "executions_list_success",
+      "status": "ok"
+    },
+    {
+      "name": "data_store_records_list_observed",
+      "status": "ok"
+    },
+    {
+      "name": "scenario_deactivate",
+      "status": "ok"
+    },
+    {
+      "name": "cleanup_data_store_records_delete",
+      "status": "ok"
+    },
+    {
+      "name": "cleanup_scenarios_delete",
+      "status": "ok"
+    },
+    {
+      "name": "cleanup_hooks_delete",
+      "status": "ok"
+    },
+    {
+      "name": "cleanup_data_stores_delete",
+      "status": "ok"
+    },
+    {
+      "name": "cleanup_data_structures_delete",
+      "status": "ok"
+    },
+    {
+      "name": "cleanup_scratch_resources_count",
+      "status": "empty"
+    }
+  ],
+  "validation_actor": "codex_make_connector_plus_browser"
+}

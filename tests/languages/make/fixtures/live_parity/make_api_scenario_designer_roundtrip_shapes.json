@@ -1,0 +1,78 @@
+{
+  "api_endpoints_used": [
+    "POST /api/v2/scenarios",
+    "GET /api/v2/scenarios/{scenarioId}/blueprint?draft=false",
+    "DELETE /api/v2/scenarios/{scenarioId}"
+  ],
+  "api_surface": "make_api_v2",
+  "cleanup_status": "scratch_scenarios_deleted",
+  "credential_value_transfer": false,
+  "credentials_printed": false,
+  "customer_data_used": false,
+  "live_make_called": true,
+  "provider_api_call": true,
+  "raw_scenario_id_persisted": false,
+  "reports": [
+    {
+      "coordinate_summaries": [
+        {
+          "has_x": true,
+          "has_y": true,
+          "module": "json:ParseJSON",
+          "node_id": "1",
+          "path": "$.flow[0].metadata.designer",
+          "x": 0,
+          "x_type": "int",
+          "y": 0,
+          "y_type": "int"
+        }
+      ],
+      "label": "json_parse_no_messages",
+      "message_count": 0,
+      "message_summaries": [],
+      "reexport_top_level_keys": ["flow", "metadata", "name"],
+      "semantic_without_designer_unchanged": false
+    },
+    {
+      "coordinate_summaries": [
+        {
+          "has_x": false,
+          "has_y": false,
+          "module": "json:ParseJSON",
+          "node_id": "1",
+          "path": "$.flow[0].metadata.designer",
+          "x": null,
+          "x_type": "missing",
+          "y": null,
+          "y_type": "missing"
+        },
+        {
+          "has_x": false,
+          "has_y": false,
+          "module": "json:CreateJSON",
+          "node_id": "2",
+          "path": "$.flow[1].metadata.designer",
+          "x": null,
+          "x_type": "missing",
+          "y": null,
+          "y_type": "missing"
+        }
+      ],
+      "label": "two_nodes_no_coordinates",
+      "message_count": 0,
+      "message_summaries": [],
+      "reexport_top_level_keys": ["flow", "metadata", "name"],
+      "semantic_without_designer_unchanged": false
+    }
+  ],
+  "request_shape": {
+    "blueprint": "json_string",
+    "scheduling": "json_string"
+  },
+  "scenario_activation_called": false,
+  "scenario_run_once_called": false,
+  "schema_version": 1,
+  "secret_output": false,
+  "status": "scenario_designer_roundtrip_probe_captured",
+  "validation_actor": "codex_terminal_make_api"
+}

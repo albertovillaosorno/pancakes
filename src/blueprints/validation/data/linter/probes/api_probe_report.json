@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "generated_at_utc": "2026-04-30T00:00:00+00:00",
+  "status": "conditional_go_for_documented_designer_messages",
+  "decision": "Do not scrape the Make visual editor. A future operator-approved API probe may use documented blueprint designer messages as reviewed evidence. No standalone documented blueprint validation endpoint is accepted yet.",
+  "raw_designer_message_ingest": {
+    "status": "accepted_when_operator_approved",
+    "raw_dir": "src/catalog/data/make/designer-messages/raw/",
+    "manifest_path": "src/catalog/data/make/designer-messages/raw/manifest.json",
+    "git_posture": "ignored temporary ingest input",
+    "promotion_path": "review normalized findings into src/catalog/data/make/db_snapshots/designer_message_evidence.sql"
+  },
+  "diagnostic_mapping": {
+    "designer_messages": {
+      "severity": "warning",
+      "prefix": "MAKE-DESIGNER-WARN"
+    },
+    "local_validator_errors": {
+      "severity": "error",
+      "prefix": "MAKE-AST-ERROR"
+    },
+    "final_handoff": "requires zero local errors and zero applicable reviewed designer warnings"
+  },
+  "browser_scraping": {
+    "status": "rejected",
+    "rejected_inputs": [
+      "browser automation",
+      "DOM inspection",
+      "canvas inspection",
+      "pixel detection",
+      "color detection",
+      "screen coordinates",
+      "animations",
+      "screenshots",
+      "visual red error counters"
+    ]
+  },
+  "documented_candidates": [
+    {
+      "name": "scenario_blueprint_designer_messages",
+      "method": "GET",
+      "path": "/api/v2/scenarios/{scenarioId}/blueprint",
+      "required_scopes": ["scenarios:read"],
+      "signal_path": "response.blueprint.flow[].metadata.designer.messages[]",
+      "source_url": "https://developers.make.com/api-documentation/api-reference/scenarios-greater-than-blueprints",
+      "risk": "read-only but still credentialed and scenario-specific"
+    },
+    {
+      "name": "scenario_update_blueprint_roundtrip",
+      "method": "PATCH",
+      "path": "/api/v2/scenarios/{scenarioId}",
+      "required_scopes": ["scenarios:write"],
+      "signal_path": "scenario invalid-status flag plus returned or retrieved blueprint designer messages",
+      "source_url": "https://developers.make.com/api-documentation/api-reference/scenarios",
+      "risk": "mutates a scenario and is allowed only for operator-approved disposable scenarios"
+    },
+    {
+      "name": "scenario_clone_analysis",
+      "method": "POST",
+      "path": "/api/v2/scenarios/{scenarioId}/clone",
+      "required_scopes": ["scenarios:write"],
+      "signal_path": "scenario clone blueprint analysis errors when available",
+      "source_url": "https://developers.make.com/api-documentation/api-reference/scenarios",
+      "risk": "creates a scenario and is allowed only for operator-approved disposable scenarios"
+    }
+  ],
+  "rejected_candidates": [
+    {
+      "name": "standalone_blueprint_validate",
+      "method": "POST",
+      "path": "/api/v2/blueprints/validate",
+      "status": "not_found_in_documented_api_or_local_specs"
+    }
+  ],
+  "local_evidence": {
+    "raw_specs": "Local raw-spec JSON files expose app and module schemas, but no accepted Make-hosted standalone blueprint validation endpoint signature was found.",
+    "offline_fallback": "Continue improving AST validation, pancakes.sqlite facts, and blueprint repair when no callable Make linter API is proven."
+  },
+  "next_steps": [
+    "Keep offline validation as the default path.",
+    "Use fake transports for all tests.",
+    "Require explicit operator authorization before any live API request.",
+    "Persist reviewed findings as reports or tracked evidence, not directly into generated SQLite."
+  ]
+}

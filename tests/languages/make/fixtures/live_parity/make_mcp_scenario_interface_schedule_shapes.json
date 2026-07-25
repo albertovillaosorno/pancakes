@@ -1,0 +1,190 @@
+{
+  "api_surface": "make_mcp_typed_tools",
+  "capabilities_proven": [
+    "scenario_create",
+    "scenario_export",
+    "scenario_interface",
+    "scenario_interface_update",
+    "scenario_update"
+  ],
+  "cleanup_counts": {
+    "scratch_scenarios": 0
+  },
+  "credential_value_transfer": false,
+  "credentials_printed": false,
+  "customer_data_used": false,
+  "interface_payload_shape": {
+    "input": [
+      {
+        "label": "Request ID",
+        "name": "request_id",
+        "required": "bool_true",
+        "type": "text"
+      },
+      {
+        "label": "Amount",
+        "name": "amount",
+        "required": "bool_false",
+        "type": "number"
+      }
+    ],
+    "output": [
+      {
+        "label": "Status",
+        "name": "status",
+        "type": "text"
+      },
+      {
+        "label": "Accepted",
+        "name": "accepted",
+        "type": "boolean"
+      }
+    ]
+  },
+  "live_make_called": true,
+  "provider_api_call": true,
+  "request_contract": {
+    "initial_scenario_create": {
+      "blueprint.flow[0].module": "json:ParseJSON",
+      "blueprint.flow[0].version": 1,
+      "blueprint.metadata.designer.orphans": [],
+      "blueprint.metadata.scenario.roundtrips": 1,
+      "blueprint.name": "string",
+      "confirmed": "bool_true",
+      "scheduling.type": "immediately",
+      "teamId": "int"
+    },
+    "on_demand_schedule_update": {
+      "scheduling.type": "on-demand"
+    },
+    "required_input_immediate_rejection": {
+      "error_class": "MakeError",
+      "message_class": "required_inputs_need_on_demand_schedule"
+    },
+    "scenario_interface_update": {
+      "input.required_present": true,
+      "input.type_values": [
+        "text",
+        "number"
+      ],
+      "output.type_values": [
+        "text",
+        "boolean"
+      ]
+    },
+    "validate_blueprint_schema": {
+      "message": "Blueprint is valid against the schema."
+    },
+    "validate_on_demand_scheduling_schema": {
+      "message": "Scheduling configuration is valid against the schema."
+    }
+  },
+  "scenario_activation_called": false,
+  "scenario_create_response_shape": {
+    "hookId": "none",
+    "id": "int",
+    "isActive": "bool_false",
+    "isinvalid": "bool_false",
+    "scheduling": {
+      "type": "immediately"
+    },
+    "teamId": "int",
+    "usedPackages": [
+      "json"
+    ]
+  },
+  "scenario_delete_response": "Scenario has been deleted.",
+  "scenario_get_blueprint_contract": {
+    "$.blueprint.flow[0].module": "json:ParseJSON",
+    "$.blueprint.flow[0].version": 1,
+    "$.blueprint.interface.input.required_count": 1,
+    "$.blueprint.interface.input.types": [
+      "text",
+      "number"
+    ],
+    "$.blueprint.interface.output.types": [
+      "text",
+      "boolean"
+    ],
+    "$.blueprint.metadata.instant": "bool_false",
+    "$.blueprint.scheduling.type": "on-demand",
+    "$.hookId": "none",
+    "$.isActive": "bool_false",
+    "$.isinvalid": "bool_false"
+  },
+  "scenario_interface_shape": {
+    "input": [
+      {
+        "label": "Request ID",
+        "name": "request_id",
+        "required": true,
+        "type": "text"
+      },
+      {
+        "label": "Amount",
+        "name": "amount",
+        "required": false,
+        "type": "number"
+      }
+    ],
+    "output": [
+      {
+        "label": "Status",
+        "name": "status",
+        "type": "text"
+      },
+      {
+        "label": "Accepted",
+        "name": "accepted",
+        "type": "boolean"
+      }
+    ]
+  },
+  "scenario_run_once_called": false,
+  "schema_version": 1,
+  "secret_output": false,
+  "status": "scenario_interface_schedule_probe_captured",
+  "steps": [
+    {
+      "name": "validate_blueprint_schema",
+      "status": "ok"
+    },
+    {
+      "name": "scenarios_create_immediate_inactive",
+      "status": "ok"
+    },
+    {
+      "name": "scenarios_set_interface_required_input_rejected_immediate",
+      "status": "ok"
+    },
+    {
+      "name": "validate_on_demand_scheduling_schema",
+      "status": "ok"
+    },
+    {
+      "name": "scenarios_update_on_demand_schedule",
+      "status": "ok"
+    },
+    {
+      "name": "scenarios_set_interface_required_input_accepted_on_demand",
+      "status": "ok"
+    },
+    {
+      "name": "scenarios_interface_roundtrip",
+      "status": "ok"
+    },
+    {
+      "name": "scenarios_get_export_interface_roundtrip",
+      "status": "ok"
+    },
+    {
+      "name": "cleanup_scenarios_delete",
+      "status": "ok"
+    },
+    {
+      "name": "cleanup_scratch_scenarios_count",
+      "status": "empty"
+    }
+  ],
+  "validation_actor": "codex_make_mcp_typed_tools"
+}

@@ -1,0 +1,1791 @@
+{
+  "schema_version": 1,
+  "asset": "make_native_semantics_matrix",
+  "visibility": "private_engine_asset",
+  "family_coverage": [
+    {
+      "family_id": "basic_router",
+      "module_identifiers": ["builtin:BasicRouter"],
+      "operation_kinds": ["router"],
+      "required_fields": [],
+      "dynamic_fields": "none",
+      "diagnostics": ["route/filter validation belongs to route_filters"],
+      "import_export_behavior": "router routes preserve branch-local flow order",
+      "linter_rules": ["validate route ownership", "validate branch reference scope"],
+      "planner_terms": ["router", "branch", "route"],
+      "known_advisory_gaps": ["visual auto-layout remains volatile"],
+      "evidence": ["src/languages/make/data/native_semantics_matrix.json"]
+    },
+    {
+      "family_id": "iterator",
+      "module_identifiers": ["builtin:Iterator", "builtin:BasicFeeder"],
+      "operation_kinds": ["iterator"],
+      "required_fields": ["array"],
+      "dynamic_fields": "iterator item interface depends on mapped array",
+      "diagnostics": ["missing array is setup evidence"],
+      "import_export_behavior": "export iterator alias as native iterator/feeder shape",
+      "linter_rules": ["require array input", "validate downstream item references"],
+      "planner_terms": ["iterator", "iterate", "for each", "split array"],
+      "known_advisory_gaps": ["full item interface names need roundtrip evidence"],
+      "evidence": ["src/languages/make/data/golden/coverage.json"]
+    },
+    {
+      "family_id": "array_aggregator",
+      "module_identifiers": ["builtin:BasicAggregator"],
+      "operation_kinds": ["aggregator"],
+      "required_fields": ["feeder"],
+      "dynamic_fields": "aggregated mapper fields depend on target schema",
+      "diagnostics": ["missing feeder is setup evidence"],
+      "import_export_behavior": "preserve feeder references and mapper field body",
+      "linter_rules": ["require upstream feeder", "validate aggregator source scope"],
+      "planner_terms": ["array aggregator", "aggregate array", "merge bundles"],
+      "known_advisory_gaps": ["target-specific expect metadata needs fixture coverage"],
+      "evidence": ["src/languages/make/data/golden/coverage.json"]
+    },
+    {
+      "family_id": "text_aggregator",
+      "module_identifiers": ["util:TextAggregator"],
+      "operation_kinds": ["aggregator"],
+      "required_fields": ["feeder", "value"],
+      "dynamic_fields": "row separator restore labels are volatile",
+      "diagnostics": ["missing feeder or value is setup evidence"],
+      "import_export_behavior": "preserve feeder and value mapper fields",
+      "linter_rules": ["require feeder", "require value"],
+      "planner_terms": ["text aggregator", "join text", "combine bundles"],
+      "known_advisory_gaps": ["row separator labels require re-export evidence"],
+      "evidence": ["src/languages/make/data/golden/coverage.json"]
+    },
+    {
+      "family_id": "sleep",
+      "module_identifiers": ["util:FunctionSleep"],
+      "operation_kinds": ["action"],
+      "required_fields": ["duration"],
+      "dynamic_fields": "none",
+      "diagnostics": ["missing duration is setup evidence"],
+      "import_export_behavior": "static delay mapper fields are import-safe",
+      "linter_rules": ["require positive duration", "warn on excessive delay"],
+      "planner_terms": ["sleep", "delay", "wait"],
+      "known_advisory_gaps": ["operation scheduling behavior is runtime-only"],
+      "evidence": ["src/languages/make/data/default_manifest_coverage.json"]
+    },
+    {
+      "family_id": "variables",
+      "module_identifiers": ["util:SetVariable2", "util:GetVariable2"],
+      "operation_kinds": ["action"],
+      "required_fields": ["name"],
+      "dynamic_fields": "variable value references are local scenario state",
+      "diagnostics": ["missing variable name is setup evidence"],
+      "import_export_behavior": "preserve variable names and scope selectors",
+      "linter_rules": ["require variable name", "validate variable reference ordering"],
+      "planner_terms": ["set variable", "get variable", "execution variable"],
+      "known_advisory_gaps": ["custom/system variable hidden IDs need Browser evidence"],
+      "evidence": ["src/languages/make/data/expression_palette.json"]
+    },
+    {
+      "family_id": "error_handlers",
+      "module_identifiers": ["pattern:error_handler"],
+      "operation_kinds": ["pattern"],
+      "required_fields": ["onerror.flow"],
+      "dynamic_fields": "inherits handler modules",
+      "diagnostics": ["setupreq", "link"],
+      "import_export_behavior": "preserve attached onerror branch shape",
+      "linter_rules": ["validate onerror shape", "validate handler reference scope"],
+      "planner_terms": ["error handler", "resume", "rollback", "ignore error"],
+      "known_advisory_gaps": ["directive runtime behavior needs live evidence"],
+      "evidence": ["tests/blueprints/fixtures/importability/valid_onerror_flow.json"]
+    },
+    {
+      "family_id": "text_parser",
+      "module_identifiers": ["regexp:Parser", "regexp:Replace", "regexp:HTMLParser"],
+      "operation_kinds": ["transformer"],
+      "required_fields": ["text", "pattern"],
+      "dynamic_fields": "regex capture output can be RPC-generated",
+      "diagnostics": ["setupreq"],
+      "import_export_behavior": "preserve regex pattern and flags without fabricating groups",
+      "linter_rules": ["require text", "require pattern", "treat capture groups as dynamic"],
+      "planner_terms": ["text parser", "regex", "match pattern", "replace text"],
+      "known_advisory_gaps": ["capture-group interface needs live or fixture evidence"],
+      "evidence": ["temp/raw-specs-json/regexp__1.10.5.json"]
+    },
+    {
+      "family_id": "ai_agents",
+      "module_identifiers": ["ai-local-agent:RunLocalAIAgent"],
+      "operation_kinds": ["agent"],
+      "required_fields": ["message", "outputType", "makeConnectionId"],
+      "dynamic_fields": "provider, model, tools, knowledge, and files are runtime scoped",
+      "diagnostics": ["setupreq"],
+      "import_export_behavior": "placeholder provider and knowledge identifiers",
+      "linter_rules": ["require input message", "redact provider and knowledge identifiers"],
+      "planner_terms": ["ai agent", "agent tools", "knowledge", "conversation"],
+      "known_advisory_gaps": ["tool wiring needs live Browser diff evidence"],
+      "evidence": ["temp/raw-specs-json/ai-local-agent__0.39.0.json"]
+    },
+    {
+      "family_id": "dynamic_selectors",
+      "module_identifiers": ["pattern:dynamic_rpc_selector"],
+      "operation_kinds": ["pattern"],
+      "required_fields": ["runtime.connection.*"],
+      "dynamic_fields": "dynamic fields/options can be generated by Make RPCs",
+      "diagnostics": ["setupreq"],
+      "import_export_behavior": "preserve placeholders and volatile restore labels",
+      "linter_rules": ["do not validate account option values offline"],
+      "planner_terms": ["dynamic fields", "dynamic options", "selector", "rpc"],
+      "known_advisory_gaps": ["requires_browser_live_diff_for_selector_values"],
+      "evidence": ["src/languages/make/data/public_research_evidence.json"]
+    },
+    {
+      "family_id": "webhooks",
+      "module_identifiers": ["gateway:CustomWebHook"],
+      "operation_kinds": ["trigger"],
+      "required_fields": ["hook"],
+      "dynamic_fields": "webhook payload interface depends on captured sample",
+      "diagnostics": ["setupreq"],
+      "import_export_behavior": "placeholder hook id and preserve payload interface",
+      "linter_rules": ["require webhook placeholder", "validate downstream payload references"],
+      "planner_terms": ["webhook", "custom webhook", "instant trigger"],
+      "known_advisory_gaps": ["sample payload fields require runtime evidence"],
+      "evidence": ["tests/blueprints/fixtures/diff_blueprint/generated_router.json"]
+    },
+    {
+      "family_id": "data_stores",
+      "module_identifiers": ["datastore:AddRecord", "datastore:SearchRecord"],
+      "operation_kinds": ["action", "search"],
+      "required_fields": ["datastore", "key", "data"],
+      "dynamic_fields": "data fields depend on selected data-store schema",
+      "diagnostics": ["setupreq"],
+      "import_export_behavior": "placeholder datastore id and nest business fields under data",
+      "linter_rules": ["require datastore placeholder", "validate data mapper nesting"],
+      "planner_terms": ["data store", "record", "add record", "search records"],
+      "known_advisory_gaps": ["field schema requires data-store selector evidence"],
+      "evidence": ["temp/raw-specs-json/datastore__1.15.1.json"]
+    },
+    {
+      "family_id": "slack",
+      "module_identifiers": ["slack:CreateMessage", "slack:watchNewEvents"],
+      "operation_kinds": ["action", "trigger"],
+      "required_fields": ["account"],
+      "dynamic_fields": "channels, users, events, and workspace labels are account scoped",
+      "diagnostics": ["setupreq"],
+      "import_export_behavior": "placeholder Slack connection and dynamic channel selectors",
+      "linter_rules": ["require connection placeholder", "do not hardcode workspace ids"],
+      "planner_terms": ["slack", "message", "channel", "event"],
+      "known_advisory_gaps": ["workspace option lists require live selector evidence"],
+      "evidence": ["temp/raw-specs-json/slack__4.12.22.json"]
+    },
+    {
+      "family_id": "http",
+      "module_identifiers": ["http:MakeRequest", "http:DownloadFile", "http:ResolveUrl"],
+      "operation_kinds": ["action"],
+      "required_fields": ["url", "method"],
+      "dynamic_fields": "none for static request shape",
+      "diagnostics": ["setupreq"],
+      "import_export_behavior": "emit static request mapper fields without credentials",
+      "linter_rules": ["require url and method", "flag unsafe runtime URLs"],
+      "planner_terms": ["http", "api", "request", "download"],
+      "known_advisory_gaps": ["runtime response parsing needs scenario tests"],
+      "evidence": ["temp/raw-specs-json/http__4.13.6.json"]
+    },
+    {
+      "family_id": "google_family",
+      "module_identifiers": [
+        "google-sheets:addRow",
+        "google-email:triggerWatchNewEmails",
+        "google-drive:watchFilesInAFolder",
+        "google-docs:createADocument",
+        "google-calendar:watchEvents"
+      ],
+      "operation_kinds": ["action", "search", "trigger"],
+      "required_fields": ["__IMTCONN__"],
+      "dynamic_fields": "files, folders, sheets, calendars, docs, labels, and columns are resource scoped",
+      "diagnostics": ["setupreq", "epochreq"],
+      "import_export_behavior": "placeholder Google connections/resources and preserve dynamic fields",
+      "linter_rules": ["require connection placeholders", "classify trigger epoch gaps"],
+      "planner_terms": ["google", "sheets", "gmail", "drive", "docs", "calendar"],
+      "known_advisory_gaps": ["resource selectors require live Browser/API evidence"],
+      "evidence": ["temp/raw-specs-json/manifest.json"]
+    },
+    {
+      "family_id": "openai",
+      "module_identifiers": ["openai-gpt-3:askAnything", "openai-gpt-3:CreateCompletion"],
+      "operation_kinds": ["action"],
+      "required_fields": ["model", "textPrompt"],
+      "dynamic_fields": "model selectors and account/provider choices drift",
+      "diagnostics": ["setupreq"],
+      "import_export_behavior": "preserve configurable model/prompt shape",
+      "linter_rules": ["require model and prompt", "avoid stale model claims"],
+      "planner_terms": ["openai", "chatgpt", "completion", "prompt"],
+      "known_advisory_gaps": ["current model list needs fresh raw specs or Browser evidence"],
+      "evidence": ["temp/raw-specs-json/openai-gpt-3__1.43.6.json"]
+    },
+    {
+      "family_id": "anthropic",
+      "module_identifiers": ["anthropic-claude:simpleTextPrompt"],
+      "operation_kinds": ["action"],
+      "required_fields": ["model", "textPrompt", "max_tokens"],
+      "dynamic_fields": "model selector and file/tool options are provider scoped",
+      "diagnostics": ["setupreq"],
+      "import_export_behavior": "render prompt shape without hardcoding provider catalog",
+      "linter_rules": ["require model, prompt, and max token fields"],
+      "planner_terms": ["anthropic", "claude", "prompt"],
+      "known_advisory_gaps": ["file/tool behavior needs separate semantics rows"],
+      "evidence": ["temp/raw-specs-json/anthropic-claude__1.18.18.json"]
+    },
+    {
+      "family_id": "gemini",
+      "module_identifiers": ["gemini-ai:simpleTextPrompt"],
+      "operation_kinds": ["action"],
+      "required_fields": ["model", "textPrompt"],
+      "dynamic_fields": "model selector and file-store options are provider scoped",
+      "diagnostics": ["setupreq"],
+      "import_export_behavior": "render prompt shape without hardcoding provider catalog",
+      "linter_rules": ["require model and prompt"],
+      "planner_terms": ["gemini", "google gemini", "prompt"],
+      "known_advisory_gaps": ["deep research and file-store modules need separate rows"],
+      "evidence": ["temp/raw-specs-json/gemini-ai__1.16.1.json"]
+    },
+    {
+      "family_id": "make_code",
+      "module_identifiers": ["code:ExecuteCode"],
+      "operation_kinds": ["action"],
+      "required_fields": ["language"],
+      "dynamic_fields": "dependencies can be plan and account constrained",
+      "diagnostics": ["setupreq"],
+      "import_export_behavior": "render Make code module without shipping Pancakes compiler logic",
+      "linter_rules": ["require language", "flag secret-like code inputs"],
+      "planner_terms": ["make code", "execute code", "run code"],
+      "known_advisory_gaps": ["runtime package availability is plan-dependent"],
+      "evidence": ["temp/raw-specs-json/code__1.2.3.json"]
+    },
+    {
+      "family_id": "route_filters",
+      "module_identifiers": ["pattern:route_filter"],
+      "operation_kinds": ["pattern"],
+      "required_fields": ["filter.condition"],
+      "dynamic_fields": "expression references depend on upstream branch scope",
+      "diagnostics": ["filter.reference_not_upstream"],
+      "import_export_behavior": "normalize route/filter shape and preserve condition text",
+      "linter_rules": ["validate upstream reference scope", "classify route/filter diffs"],
+      "planner_terms": ["filter", "condition", "route filter"],
+      "known_advisory_gaps": ["full expression truth tables require evaluator evidence"],
+      "evidence": ["tests/mcp/tool_contracts/mcp_diff_blueprint_command_contract.py"]
+    },
+    {
+      "family_id": "ai_connector_families",
+      "module_identifiers": [
+        "ai-tools:Ask",
+        "make-ai-web-search:generateAResponse",
+        "make-ai-extractors:extractADocument"
+      ],
+      "operation_kinds": ["action"],
+      "required_fields": ["input"],
+      "dynamic_fields": "AI usage, model defaults, web/search details, and extractor schemas can vary",
+      "diagnostics": ["setupreq"],
+      "import_export_behavior": "assert shape only; AI output is runtime nondeterministic",
+      "linter_rules": ["require prompt/input", "do not assert deterministic AI content"],
+      "planner_terms": ["ai tools", "ai web search", "extractor", "summarize", "translate"],
+      "known_advisory_gaps": ["extractor-specific fields need additional rows"],
+      "evidence": ["src/languages/make/data/default_manifest_coverage.json"]
+    }
+  ],
+  "records": [
+    {
+      "module": "gateway:CustomWebHook",
+      "aliases": [],
+      "native_token": "gateway:CustomWebHook",
+      "version": 1,
+      "mapper_shape": {
+        "kind": "empty_trigger_mapper",
+        "required_keys": [],
+        "notes": "Webhook payload evidence belongs in metadata.interface, not mapper."
+      },
+      "parameters_shape": {
+        "required_keys": ["hook"],
+        "optional_keys": ["maxResults"]
+      },
+      "expect_shape": {
+        "kind": "not_required_for_trigger"
+      },
+      "restore_shape": {
+        "kind": "hook_selector",
+        "required_keys": ["parameters.hook"]
+      },
+      "interface_shape": {
+        "kind": "webhook_payload_fields",
+        "location": "metadata.interface"
+      },
+      "connection_handling": {
+        "kind": "none"
+      },
+      "placeholder_policy": {
+        "mode": "runtime_required",
+        "placeholders": ["runtime.webhook.*"]
+      },
+      "known_volatile_fields": [
+        "metadata.designer",
+        "metadata.restore.parameters.hook.label"
+      ],
+      "roundtrip_behavior": {
+        "status": "fixture_observed",
+        "notes": "Make may restore hook selector labels and interface field display metadata."
+      },
+      "confidence": "medium",
+      "fixtures": [
+        "tests/blueprints/fixtures/diff_blueprint/generated_router.json",
+        "tests/mcp/tool_contracts/mcp_diff_blueprint_giant_fixture_contract.py"
+      ],
+      "last_evidence_source": "local_fixture"
+    },
+    {
+      "module": "builtin:BasicRouter",
+      "aliases": [],
+      "native_token": "builtin:BasicRouter",
+      "version": 1,
+      "mapper_shape": {
+        "kind": "none"
+      },
+      "parameters_shape": {
+        "required_keys": []
+      },
+      "expect_shape": {
+        "kind": "none"
+      },
+      "restore_shape": {
+        "kind": "none"
+      },
+      "interface_shape": {
+        "kind": "none"
+      },
+      "connection_handling": {
+        "kind": "none"
+      },
+      "placeholder_policy": {
+        "mode": "none",
+        "placeholders": []
+      },
+      "known_volatile_fields": [
+        "metadata.designer",
+        "routes[*].flow[*].metadata.designer"
+      ],
+      "roundtrip_behavior": {
+        "status": "fixture_observed",
+        "notes": "Route filters lower onto the first module in each Make-native branch."
+      },
+      "confidence": "medium",
+      "fixtures": [
+        "tests/blueprints/fixtures/diff_blueprint/generated_router.json",
+        "tests/mcp/tool_contracts/mcp_stress_scenario_factory_contract.py"
+      ],
+      "last_evidence_source": "local_fixture"
+    },
+    {
+      "module": "builtin:Iterator",
+      "aliases": [
+        "builtin:BasicFeeder",
+        "util:Iterator",
+        "tools:Iterator",
+        "builtin.iterator",
+        "iterator"
+      ],
+      "native_token": "builtin:Iterator",
+      "version": 1,
+      "mapper_shape": {
+        "kind": "array_input",
+        "required_keys": ["array"],
+        "notes": "Iterator must map the source array that it splits into downstream bundles."
+      },
+      "parameters_shape": {
+        "required_keys": ["array"]
+      },
+      "expect_shape": {
+        "kind": "array_input",
+        "required_keys": ["array"]
+      },
+      "restore_shape": {
+        "kind": "none"
+      },
+      "interface_shape": {
+        "kind": "iterator_item_output"
+      },
+      "connection_handling": {
+        "kind": "none"
+      },
+      "placeholder_policy": {
+        "mode": "none",
+        "placeholders": []
+      },
+      "known_volatile_fields": [
+        "metadata.designer"
+      ],
+      "roundtrip_behavior": {
+        "status": "course_evidence",
+        "notes": "Iterator output references represent the current item from the mapped array."
+      },
+      "confidence": "medium",
+      "fixtures": [
+        "src/languages/make/data/golden/data/public/priority/Social Media Content & Scheduling Agent.blueprint.json",
+        "tests/mcp/tool_contracts/mcp_make_builtin_manifest_contract.py",
+        "tests/blueprints/validation/blueprint_validation_contract.py"
+      ],
+      "last_evidence_source": "course_evidence"
+    },
+    {
+      "module": "builtin:BasicAggregator",
+      "aliases": ["array aggregator", "builtin:ArrayAggregator", "builtin.array_aggregator"],
+      "native_token": "builtin:BasicAggregator",
+      "version": 1,
+      "mapper_shape": {
+        "kind": "aggregated_array_fields",
+        "required_keys": [],
+        "notes": "Array Aggregator maps the fields that Make rebuilds into the aggregated array."
+      },
+      "parameters_shape": {
+        "required_keys": ["feeder"]
+      },
+      "expect_shape": {
+        "kind": "mapper_fields"
+      },
+      "restore_shape": {
+        "kind": "aggregator_source",
+        "required_keys": ["feeder"]
+      },
+      "interface_shape": {
+        "kind": "array_output",
+        "required_keys": ["array"]
+      },
+      "connection_handling": {
+        "kind": "none"
+      },
+      "placeholder_policy": {
+        "mode": "none",
+        "placeholders": []
+      },
+      "known_volatile_fields": [
+        "metadata.designer",
+        "metadata.restore.feeder.label",
+        "metadata.restore.extra.feeder.label"
+      ],
+      "roundtrip_behavior": {
+        "status": "fixture_observed",
+        "notes": "Make restores feeder labels and may regenerate target-specific expect metadata."
+      },
+      "confidence": "medium",
+      "fixtures": [
+        "src/languages/make/data/golden/data/public/top100/041-4923-4923-save-media-insight-from-instagram-to-google-sheets.blueprint.json",
+        "tests/mcp/tool_contracts/mcp_make_builtin_manifest_contract.py"
+      ],
+      "last_evidence_source": "local_fixture"
+    },
+    {
+      "module": "util:TextAggregator",
+      "aliases": ["text aggregator", "tools:TextAggregator", "util.TextAggregator"],
+      "native_token": "util:TextAggregator",
+      "version": 1,
+      "mapper_shape": {
+        "kind": "text_value",
+        "required_keys": ["value"]
+      },
+      "parameters_shape": {
+        "required_keys": ["feeder"],
+        "optional_keys": ["rowSeparator"]
+      },
+      "expect_shape": {
+        "kind": "text_value",
+        "required_keys": ["value"]
+      },
+      "restore_shape": {
+        "kind": "aggregator_source_and_row_separator",
+        "required_keys": ["feeder"]
+      },
+      "interface_shape": {
+        "kind": "text_output",
+        "required_keys": ["text"]
+      },
+      "connection_handling": {
+        "kind": "none"
+      },
+      "placeholder_policy": {
+        "mode": "none",
+        "placeholders": []
+      },
+      "known_volatile_fields": [
+        "metadata.designer",
+        "metadata.restore.feeder.label",
+        "metadata.restore.extra.feeder.label"
+      ],
+      "roundtrip_behavior": {
+        "status": "fixture_observed",
+        "notes": "Make restores feeder labels and row-separator labels for text aggregation."
+      },
+      "confidence": "medium",
+      "fixtures": [
+        "src/languages/make/data/golden/data/public/top100/042-4066-4066-generate-a-random-string-text.blueprint.json",
+        "tests/mcp/tool_contracts/mcp_make_builtin_manifest_contract.py"
+      ],
+      "last_evidence_source": "local_fixture"
+    },
+    {
+      "module": "builtin:BasicRepeater",
+      "aliases": ["repeater", "builtin:Repeater", "repeat"],
+      "native_token": "builtin:BasicRepeater",
+      "version": 1,
+      "mapper_shape": {
+        "kind": "repeater_bounds",
+        "required_keys": ["start", "repeats", "step"]
+      },
+      "parameters_shape": {
+        "required_keys": []
+      },
+      "expect_shape": {
+        "kind": "repeater_bounds",
+        "required_keys": ["start", "repeats", "step"]
+      },
+      "restore_shape": {
+        "kind": "none"
+      },
+      "interface_shape": {
+        "kind": "counter_output",
+        "required_keys": ["i"]
+      },
+      "connection_handling": {
+        "kind": "none"
+      },
+      "placeholder_policy": {
+        "mode": "none",
+        "placeholders": []
+      },
+      "known_volatile_fields": ["metadata.designer"],
+      "roundtrip_behavior": {
+        "status": "fixture_observed",
+        "notes": "Repeater emits an incremental i counter from mapped bounds."
+      },
+      "confidence": "medium",
+      "fixtures": [
+        "src/languages/make/data/golden/data/public/top100/042-4066-4066-generate-a-random-string-text.blueprint.json"
+      ],
+      "last_evidence_source": "local_fixture"
+    },
+    {
+      "module": "util:FunctionSleep",
+      "aliases": ["sleep", "delay", "tools:Sleep", "util:Sleep"],
+      "native_token": "util:FunctionSleep",
+      "version": 1,
+      "mapper_shape": {
+        "kind": "delay_duration",
+        "required_keys": ["duration"]
+      },
+      "parameters_shape": {
+        "required_keys": []
+      },
+      "expect_shape": {
+        "kind": "delay_duration",
+        "required_keys": ["duration"]
+      },
+      "restore_shape": {
+        "kind": "empty"
+      },
+      "interface_shape": {
+        "kind": "none"
+      },
+      "connection_handling": {
+        "kind": "none"
+      },
+      "placeholder_policy": {
+        "mode": "none",
+        "placeholders": []
+      },
+      "known_volatile_fields": ["metadata.designer"],
+      "roundtrip_behavior": {
+        "status": "fixture_observed",
+        "notes": "Sleep delays execution locally in the scenario without provider resources."
+      },
+      "confidence": "medium",
+      "fixtures": [
+        "src/languages/make/data/golden/data/public/top100/022-12041-12000-get-youtube-videos-in-a-channel-summarize-transcripts-with-chatgpt-and-send-an-email.blueprint.json"
+      ],
+      "last_evidence_source": "local_fixture"
+    },
+    {
+      "module": "util:SetVariable2",
+      "aliases": ["set variable", "util:SetVariable", "tools:SetVariable"],
+      "native_token": "util:SetVariable2",
+      "version": 1,
+      "mapper_shape": {
+        "kind": "variable_assignment",
+        "required_keys": ["name", "scope"]
+      },
+      "parameters_shape": {
+        "required_keys": []
+      },
+      "expect_shape": {
+        "kind": "variable_assignment",
+        "required_keys": ["name", "scope"]
+      },
+      "restore_shape": {
+        "kind": "scope_selector"
+      },
+      "interface_shape": {
+        "kind": "variable_value_output",
+        "required_keys": ["value"]
+      },
+      "connection_handling": {
+        "kind": "none"
+      },
+      "placeholder_policy": {
+        "mode": "none",
+        "placeholders": []
+      },
+      "known_volatile_fields": ["metadata.designer", "metadata.restore.expect.scope.label"],
+      "roundtrip_behavior": {
+        "status": "fixture_observed",
+        "notes": "Set variable exposes the assigned value by variable name."
+      },
+      "confidence": "medium",
+      "fixtures": [
+        "src/languages/make/data/golden/data/public/priority/Competitor Price Monitor Agent.blueprint.json"
+      ],
+      "last_evidence_source": "local_fixture"
+    },
+    {
+      "module": "util:GetVariable2",
+      "aliases": ["get variable", "util:GetVariable", "tools:GetVariable"],
+      "native_token": "util:GetVariable2",
+      "version": 1,
+      "mapper_shape": {
+        "kind": "variable_lookup",
+        "required_keys": ["name"]
+      },
+      "parameters_shape": {
+        "required_keys": []
+      },
+      "expect_shape": {
+        "kind": "variable_lookup",
+        "required_keys": ["name"]
+      },
+      "restore_shape": {
+        "kind": "none"
+      },
+      "interface_shape": {
+        "kind": "variable_value_output",
+        "required_keys": ["value"]
+      },
+      "connection_handling": {
+        "kind": "none"
+      },
+      "placeholder_policy": {
+        "mode": "none",
+        "placeholders": []
+      },
+      "known_volatile_fields": ["metadata.designer"],
+      "roundtrip_behavior": {
+        "status": "raw_spec_evidence",
+        "notes": "Get variable reads a local scenario variable by name."
+      },
+      "confidence": "medium",
+      "fixtures": ["temp/raw-specs-json/util__1.11.14.json"],
+      "last_evidence_source": "raw_spec"
+    },
+    {
+      "module": "util:FunctionIncrement",
+      "aliases": ["increment", "increment function", "tools:Increment"],
+      "native_token": "util:FunctionIncrement",
+      "version": 1,
+      "mapper_shape": {
+        "kind": "none"
+      },
+      "parameters_shape": {
+        "required_keys": ["reset"]
+      },
+      "expect_shape": {
+        "kind": "none"
+      },
+      "restore_shape": {
+        "kind": "reset_selector",
+        "required_keys": ["reset"]
+      },
+      "interface_shape": {
+        "kind": "counter_output",
+        "required_keys": ["i"]
+      },
+      "connection_handling": {
+        "kind": "none"
+      },
+      "placeholder_policy": {
+        "mode": "none",
+        "placeholders": []
+      },
+      "known_volatile_fields": ["metadata.designer", "metadata.restore.reset.label"],
+      "roundtrip_behavior": {
+        "status": "fixture_observed",
+        "notes": "Increment function emits an incrementing i value using a reset policy."
+      },
+      "confidence": "medium",
+      "fixtures": [
+        "src/languages/make/data/golden/data/public/top100/061-2952-2952-controlled-distribution-of-data-flow.blueprint.json"
+      ],
+      "last_evidence_source": "local_fixture"
+    },
+    {
+      "module": "datastore:AddRecord",
+      "aliases": [],
+      "native_token": "datastore:AddRecord",
+      "version": 2,
+      "mapper_shape": {
+        "kind": "key_overwrite_data",
+        "required_keys": ["key", "overwrite", "data"],
+        "data_shape": "business_fields_under_mapper_data"
+      },
+      "parameters_shape": {
+        "required_keys": ["datastore"]
+      },
+      "expect_shape": {
+        "kind": "key_overwrite_data",
+        "required_keys": ["key", "overwrite", "data"]
+      },
+      "restore_shape": {
+        "kind": "datastore_selector",
+        "required_keys": ["parameters.datastore"]
+      },
+      "interface_shape": {
+        "kind": "data_collection"
+      },
+      "connection_handling": {
+        "kind": "resource_identifier",
+        "resource": "datastore"
+      },
+      "placeholder_policy": {
+        "mode": "runtime_required",
+        "placeholders": ["runtime.datastore.*"]
+      },
+      "known_volatile_fields": [
+        "metadata.designer",
+        "metadata.restore.parameters.datastore.label"
+      ],
+      "roundtrip_behavior": {
+        "status": "fixture_observed",
+        "notes": "Flat data fields must be nested under mapper.data for Make-native shape."
+      },
+      "confidence": "medium",
+      "fixtures": [
+        "tests/mcp/tool_contracts/mcp_stress_scenario_factory_contract.py",
+        "tests/mcp/tool_contracts/mcp_diff_blueprint_giant_fixture_contract.py"
+      ],
+      "last_evidence_source": "local_fixture"
+    },
+    {
+      "module": "slack:CreateMessage",
+      "aliases": ["slack:ActionCreateMessage"],
+      "native_token": "slack:CreateMessage",
+      "version": 4,
+      "mapper_shape": {
+        "kind": "message_mapper",
+        "required_keys": ["text"],
+        "optional_keys": ["channel", "thread_ts", "summary"]
+      },
+      "parameters_shape": {
+        "required_keys": ["account"],
+        "optional_keys": ["channel"]
+      },
+      "expect_shape": {
+        "kind": "message_fields"
+      },
+      "restore_shape": {
+        "kind": "connection_and_channel_selectors",
+        "required_keys": ["parameters.account"]
+      },
+      "interface_shape": {
+        "kind": "provider_defined"
+      },
+      "connection_handling": {
+        "kind": "make_connection_alias",
+        "parameter": "account",
+        "projection": "__IMTCONN__",
+        "families": ["slack2", "slack3"]
+      },
+      "placeholder_policy": {
+        "mode": "runtime_required",
+        "placeholders": ["runtime.connection.slack_ops", "runtime.slack.channel.*"]
+      },
+      "known_volatile_fields": [
+        "metadata.designer",
+        "metadata.restore.parameters.account.label",
+        "metadata.restore.parameters.channel.label"
+      ],
+      "roundtrip_behavior": {
+        "status": "single_fixture",
+        "notes": "Connection selectors and channel restore labels vary by workspace."
+      },
+      "confidence": "low",
+      "fixtures": [
+        "tests/mcp/tool_contracts/mcp_stress_scenario_factory_contract.py"
+      ],
+      "last_evidence_source": "local_fixture"
+    },
+    {
+      "module": "pattern:dynamic_rpc_selector",
+      "aliases": [
+        "dynamic selector",
+        "dynamic options",
+        "dynamic fields",
+        "rpc selector"
+      ],
+      "native_token": "pattern:dynamic_rpc_selector",
+      "version": null,
+      "mapper_shape": {
+        "kind": "n/a"
+      },
+      "parameters_shape": {
+        "kind": "provider_rpc_dependent"
+      },
+      "expect_shape": {
+        "kind": "rpc_generated_fields_or_options"
+      },
+      "restore_shape": {
+        "kind": "preserve_restore_labels_when_present"
+      },
+      "interface_shape": {
+        "kind": "rpc_or_static_interface"
+      },
+      "connection_handling": {
+        "kind": "provider_connection_or_account_scoped_resource"
+      },
+      "placeholder_policy": {
+        "mode": "runtime_required",
+        "placeholders": ["runtime.connection.*", "runtime.provider_resource.*"]
+      },
+      "known_volatile_fields": [
+        "metadata.expect",
+        "metadata.interface",
+        "metadata.restore",
+        "parameters.__IMTCONN__",
+        "parameters.account"
+      ],
+      "roundtrip_behavior": {
+        "status": "public_research_and_raw_spec_evidence",
+        "notes": "Make custom-app RPCs can generate dynamic fields and options; account-scoped values are not source truth."
+      },
+      "operation_kind": "pattern",
+      "dynamic_fields": {
+        "status": "expected",
+        "sources": [
+          "make_developer_dynamic_fields_rpc",
+          "make_developer_dynamic_options_rpc"
+        ]
+      },
+      "diagnostics": {
+        "setup_categories": ["setupreq"],
+        "notes": "Missing connection/resource selections should remain setup evidence, not generated credentials."
+      },
+      "import_export_behavior": {
+        "status": "preserve_or_placeholder",
+        "notes": "Importable exports preserve selected ids as placeholders and restore labels as volatile fields."
+      },
+      "linter_rules": [
+        "flag unresolved runtime placeholders",
+        "do not validate account-scoped option values offline"
+      ],
+      "planner_terms": ["dynamic fields", "dynamic options", "select option", "rpc"],
+      "known_advisory_gaps": [
+        "live selector option drift requires read-only Browser/API evidence"
+      ],
+      "confidence": "medium",
+      "fixtures": [
+        "src/languages/make/data/public_research_evidence.json",
+        "temp/raw-specs-json/manifest.json"
+      ],
+      "last_evidence_source": "public_research"
+    },
+    {
+      "module": "pattern:error_handler",
+      "aliases": ["onerror", "error handler", "resume", "rollback"],
+      "native_token": "pattern:error_handler",
+      "version": null,
+      "mapper_shape": {
+        "kind": "attached_error_flow"
+      },
+      "parameters_shape": {
+        "kind": "preserve_if_present"
+      },
+      "expect_shape": {
+        "kind": "preserve_if_present"
+      },
+      "restore_shape": {
+        "kind": "preserve_if_present"
+      },
+      "interface_shape": {
+        "kind": "preserve_if_present"
+      },
+      "connection_handling": {
+        "kind": "inherits_handler_modules"
+      },
+      "placeholder_policy": {
+        "mode": "inherits_handler_modules",
+        "placeholders": []
+      },
+      "known_volatile_fields": [
+        "onerror[*].metadata.designer",
+        "onerror[*].flow[*].metadata.designer"
+      ],
+      "roundtrip_behavior": {
+        "status": "fixture_observed",
+        "notes": "Error-handler branches are attached to module nodes and must stay reachable during importability validation."
+      },
+      "operation_kind": "pattern",
+      "dynamic_fields": {
+        "status": "none"
+      },
+      "diagnostics": {
+        "setup_categories": ["setupreq", "link"],
+        "notes": "Invalid handler shape is an importability blocker; unconfigured handler modules remain setup evidence."
+      },
+      "import_export_behavior": {
+        "status": "preserve_attached_flow",
+        "notes": "Exporter must preserve handler flow structure and reject invalid onerror shapes."
+      },
+      "linter_rules": [
+        "validate onerror shape",
+        "validate handler modules with the same upstream reference rules"
+      ],
+      "planner_terms": ["error handler", "resume", "rollback", "ignore error"],
+      "known_advisory_gaps": [
+        "handler directive behavior beyond shape requires live roundtrip evidence"
+      ],
+      "confidence": "corpus_confirmed",
+      "fixtures": [
+        "tests/blueprints/fixtures/importability/valid_onerror_flow.json",
+        "tests/blueprints/fixtures/importability/invalid_onerror_shape.json"
+      ],
+      "last_evidence_source": "local_fixture"
+    },
+    {
+      "module": "pattern:route_filter",
+      "aliases": ["route filter", "filter", "router filter"],
+      "native_token": "pattern:route_filter",
+      "version": null,
+      "mapper_shape": {
+        "kind": "filter_condition"
+      },
+      "parameters_shape": {
+        "kind": "none"
+      },
+      "expect_shape": {
+        "kind": "none"
+      },
+      "restore_shape": {
+        "kind": "none"
+      },
+      "interface_shape": {
+        "kind": "none"
+      },
+      "connection_handling": {
+        "kind": "none"
+      },
+      "placeholder_policy": {
+        "mode": "none",
+        "placeholders": []
+      },
+      "known_volatile_fields": [
+        "routes[*].filter",
+        "routes[*].flow[0].filter",
+        "metadata.designer"
+      ],
+      "roundtrip_behavior": {
+        "status": "fixture_observed",
+        "notes": "Make route filters lower onto route or first-branch-module filter positions depending on export surface."
+      },
+      "operation_kind": "pattern",
+      "dynamic_fields": {
+        "status": "none"
+      },
+      "diagnostics": {
+        "setup_categories": [],
+        "notes": "Filter references must point only to upstream modules available to the branch."
+      },
+      "import_export_behavior": {
+        "status": "normalize_route_filter_shape",
+        "notes": "Diff learning classifies route/filter deltas separately from business logic."
+      },
+      "linter_rules": [
+        "validate upstream reference availability",
+        "classify route/filter diffs as native shape evidence"
+      ],
+      "planner_terms": ["router", "route", "filter", "condition"],
+      "known_advisory_gaps": [
+        "complex expression truth tables require expression evaluator evidence"
+      ],
+      "confidence": "corpus_confirmed",
+      "fixtures": [
+        "tests/blueprints/fixtures/diff_blueprint/generated_router.json",
+        "tests/mcp/tool_contracts/mcp_diff_blueprint_command_contract.py"
+      ],
+      "last_evidence_source": "local_fixture"
+    },
+    {
+      "module": "http:MakeRequest",
+      "aliases": ["http request", "make a request", "api call"],
+      "native_token": "http:MakeRequest",
+      "version": 4,
+      "mapper_shape": {
+        "kind": "http_request_mapper",
+        "required_keys": ["url", "method"],
+        "optional_keys": ["headers", "body", "queryString", "parseResponse"]
+      },
+      "parameters_shape": {
+        "required_keys": []
+      },
+      "expect_shape": {
+        "kind": "http_request_fields",
+        "required_keys": ["url", "method"]
+      },
+      "restore_shape": {
+        "kind": "method_and_body_selectors"
+      },
+      "interface_shape": {
+        "kind": "status_headers_body_output",
+        "required_keys": ["statusCode"]
+      },
+      "connection_handling": {
+        "kind": "none"
+      },
+      "placeholder_policy": {
+        "mode": "none",
+        "placeholders": []
+      },
+      "known_volatile_fields": [
+        "metadata.designer",
+        "metadata.restore.expect.method.label"
+      ],
+      "roundtrip_behavior": {
+        "status": "raw_spec_evidence",
+        "notes": "HTTP request fields are local raw-spec backed; live network behavior is outside import parity."
+      },
+      "operation_kind": "action",
+      "dynamic_fields": {
+        "status": "none"
+      },
+      "diagnostics": {
+        "setup_categories": ["setupreq"],
+        "notes": "Missing URL or method is a module setup issue."
+      },
+      "import_export_behavior": {
+        "status": "native_shape",
+        "notes": "Static mapper fields can be emitted without provider credentials."
+      },
+      "linter_rules": ["validate required url and method", "warn on unsafe runtime URLs"],
+      "planner_terms": ["http", "api", "webhook", "request", "download"],
+      "known_advisory_gaps": ["pagination/runtime response parsing needs scenario tests"],
+      "confidence": "medium",
+      "fixtures": [
+        "temp/raw-specs-json/http__4.13.6.json",
+        "src/languages/make/data/default_manifest_coverage.json"
+      ],
+      "last_evidence_source": "raw_spec"
+    },
+    {
+      "module": "regexp:Parser",
+      "aliases": ["text parser", "match pattern", "regex parser"],
+      "native_token": "regexp:Parser",
+      "version": 1,
+      "mapper_shape": {
+        "kind": "regex_text_mapper",
+        "required_keys": ["text"]
+      },
+      "parameters_shape": {
+        "required_keys": ["pattern", "global", "sensitive", "multiline"]
+      },
+      "expect_shape": {
+        "kind": "text_input",
+        "required_keys": ["text"]
+      },
+      "restore_shape": {
+        "kind": "regex_flags"
+      },
+      "interface_shape": {
+        "kind": "rpc_generated_capture_groups",
+        "location": "rpc://regexp/groups"
+      },
+      "connection_handling": {
+        "kind": "none"
+      },
+      "placeholder_policy": {
+        "mode": "none",
+        "placeholders": []
+      },
+      "known_volatile_fields": [
+        "metadata.designer",
+        "metadata.interface"
+      ],
+      "roundtrip_behavior": {
+        "status": "raw_spec_evidence",
+        "notes": "Capture-group output is dynamic RPC evidence derived from the pattern."
+      },
+      "operation_kind": "transformer",
+      "dynamic_fields": {
+        "status": "expected",
+        "sources": ["rpc://regexp/groups"]
+      },
+      "diagnostics": {
+        "setup_categories": ["setupreq"],
+        "notes": "Pattern and text omissions are setup blockers."
+      },
+      "import_export_behavior": {
+        "status": "native_shape_with_dynamic_interface",
+        "notes": "Preserve pattern flags and avoid inventing capture-group interface offline."
+      },
+      "linter_rules": ["validate text and pattern fields", "treat capture groups as dynamic output"],
+      "planner_terms": ["text parser", "regex", "regular expression", "match pattern"],
+      "known_advisory_gaps": ["regex runtime and group naming need roundtrip fixtures"],
+      "confidence": "medium",
+      "fixtures": [
+        "temp/raw-specs-json/regexp__1.10.5.json",
+        "src/languages/make/data/default_manifest_coverage.json"
+      ],
+      "last_evidence_source": "raw_spec"
+    },
+    {
+      "module": "json:ParseJSON",
+      "aliases": ["parse json", "json parser"],
+      "native_token": "json:ParseJSON",
+      "version": 1,
+      "mapper_shape": {
+        "kind": "json_text_mapper",
+        "required_keys": ["json"]
+      },
+      "parameters_shape": {
+        "required_keys": ["type"]
+      },
+      "expect_shape": {
+        "kind": "json_text",
+        "required_keys": ["json"]
+      },
+      "restore_shape": {
+        "kind": "data_structure_selector"
+      },
+      "interface_shape": {
+        "kind": "udt_rpc_interface",
+        "location": "rpc://udt"
+      },
+      "connection_handling": {
+        "kind": "none"
+      },
+      "placeholder_policy": {
+        "mode": "runtime_required",
+        "placeholders": ["runtime.data_structure.*"]
+      },
+      "known_volatile_fields": [
+        "metadata.designer",
+        "metadata.interface",
+        "metadata.restore.parameters.type.label"
+      ],
+      "roundtrip_behavior": {
+        "status": "raw_spec_and_golden_observed",
+        "notes": "Data-structure interfaces are dynamic and must be placeholder-backed when not known."
+      },
+      "operation_kind": "transformer",
+      "dynamic_fields": {
+        "status": "expected",
+        "sources": ["rpc://udt"]
+      },
+      "diagnostics": {
+        "setup_categories": ["setupreq"],
+        "notes": "Missing JSON payload or data structure is setup evidence."
+      },
+      "import_export_behavior": {
+        "status": "native_shape_with_runtime_placeholder",
+        "notes": "Data structure IDs must not be fabricated."
+      },
+      "linter_rules": ["validate JSON input", "require data-structure placeholder or source"],
+      "planner_terms": ["json", "parse json", "data structure"],
+      "known_advisory_gaps": ["UDT schema inference requires fixture or browser evidence"],
+      "confidence": "medium",
+      "fixtures": [
+        "temp/raw-specs-json/json__1.8.0.json",
+        "src/languages/make/data/golden/coverage.json"
+      ],
+      "last_evidence_source": "raw_spec"
+    },
+    {
+      "module": "ai-local-agent:RunLocalAIAgent",
+      "aliases": ["make ai agent", "run agent", "ai agent"],
+      "native_token": "ai-local-agent:RunLocalAIAgent",
+      "version": 0,
+      "mapper_shape": {
+        "kind": "agent_prompt_mapper",
+        "required_keys": ["message", "outputType"],
+        "optional_keys": ["systemPrompt", "threadId", "files", "modelConfig"]
+      },
+      "parameters_shape": {
+        "required_keys": ["makeConnectionId"]
+      },
+      "expect_shape": {
+        "kind": "agent_prompt_fields",
+        "required_keys": ["message", "outputType"]
+      },
+      "restore_shape": {
+        "kind": "model_and_connection_selectors"
+      },
+      "interface_shape": {
+        "kind": "agent_response",
+        "required_keys": ["response", "threadId"]
+      },
+      "connection_handling": {
+        "kind": "ai_provider_connection",
+        "parameter": "makeConnectionId"
+      },
+      "placeholder_policy": {
+        "mode": "runtime_required",
+        "placeholders": ["runtime.connection.ai_provider", "runtime.ai_agent.*"]
+      },
+      "known_volatile_fields": [
+        "metadata.designer",
+        "metadata.restore.parameters.makeConnectionId.label",
+        "metadata.restore.expect.modelConfig.label"
+      ],
+      "roundtrip_behavior": {
+        "status": "raw_spec_and_default_manifest_evidence",
+        "notes": "Agent provider, tools, and model choices are runtime/account scoped."
+      },
+      "operation_kind": "agent",
+      "dynamic_fields": {
+        "status": "expected",
+        "sources": ["ai provider connection", "agent tools"]
+      },
+      "diagnostics": {
+        "setup_categories": ["setupreq"],
+        "notes": "Missing AI provider connection or agent fields remains setup evidence."
+      },
+      "import_export_behavior": {
+        "status": "placeholder_required",
+        "notes": "Do not export real AI provider identifiers or customer knowledge state."
+      },
+      "linter_rules": ["require input message", "redact provider and knowledge identifiers"],
+      "planner_terms": ["ai agent", "agent", "tools", "knowledge", "conversation"],
+      "known_advisory_gaps": ["tool wiring and model options need live Browser diff evidence"],
+      "confidence": "medium",
+      "fixtures": [
+        "temp/raw-specs-json/ai-local-agent__0.39.0.json",
+        "src/languages/make/data/default_manifest_coverage.json"
+      ],
+      "last_evidence_source": "raw_spec"
+    },
+    {
+      "module": "ai-tools:Ask",
+      "aliases": ["make ai toolkit", "simple text prompt", "ai tools ask"],
+      "native_token": "ai-tools:Ask",
+      "version": 2,
+      "mapper_shape": {
+        "kind": "ai_text_input",
+        "required_keys": ["input"]
+      },
+      "parameters_shape": {
+        "kind": "ai_tool_defaults"
+      },
+      "expect_shape": {
+        "kind": "ai_text_input",
+        "required_keys": ["input"]
+      },
+      "restore_shape": {
+        "kind": "ai_tool_settings"
+      },
+      "interface_shape": {
+        "kind": "ai_answer_usage",
+        "required_keys": ["answer", "AIUsage"]
+      },
+      "connection_handling": {
+        "kind": "make_ai_internal_or_default"
+      },
+      "placeholder_policy": {
+        "mode": "none",
+        "placeholders": []
+      },
+      "known_volatile_fields": [
+        "metadata.designer",
+        "metadata.restore"
+      ],
+      "roundtrip_behavior": {
+        "status": "raw_spec_and_default_manifest_evidence",
+        "notes": "AI Toolkit output includes token usage but not deterministic content."
+      },
+      "operation_kind": "action",
+      "dynamic_fields": {
+        "status": "minimal"
+      },
+      "diagnostics": {
+        "setup_categories": ["setupreq"],
+        "notes": "Missing prompt text is setup evidence."
+      },
+      "import_export_behavior": {
+        "status": "native_shape",
+        "notes": "Text input may be rendered offline; model/runtime output is not asserted."
+      },
+      "linter_rules": ["require prompt input", "do not assert AI response determinism"],
+      "planner_terms": ["ai tools", "simple text prompt", "summarize", "translate"],
+      "known_advisory_gaps": ["AI output and model availability are runtime-only"],
+      "confidence": "medium",
+      "fixtures": [
+        "temp/raw-specs-json/ai-tools__2.11.0.json",
+        "src/languages/make/data/default_manifest_coverage.json"
+      ],
+      "last_evidence_source": "raw_spec"
+    },
+    {
+      "module": "openai-gpt-3:askAnything",
+      "aliases": ["openai simple text prompt", "chatgpt prompt"],
+      "native_token": "openai-gpt-3:askAnything",
+      "version": 1,
+      "mapper_shape": {
+        "kind": "model_text_prompt",
+        "required_keys": ["model", "textPrompt"]
+      },
+      "parameters_shape": {
+        "required_keys": []
+      },
+      "expect_shape": {
+        "kind": "model_text_prompt",
+        "required_keys": ["model", "textPrompt"]
+      },
+      "restore_shape": {
+        "kind": "model_selector"
+      },
+      "interface_shape": {
+        "kind": "model_result_usage",
+        "required_keys": ["result", "model"]
+      },
+      "connection_handling": {
+        "kind": "module_or_team_ai_provider"
+      },
+      "placeholder_policy": {
+        "mode": "runtime_required",
+        "placeholders": ["runtime.connection.openai", "runtime.openai.model"]
+      },
+      "known_volatile_fields": [
+        "metadata.designer",
+        "metadata.restore.expect.model.label"
+      ],
+      "roundtrip_behavior": {
+        "status": "raw_spec_and_operator_fixture_evidence",
+        "notes": "Model lists and labels drift and must not be hardcoded as complete."
+      },
+      "operation_kind": "action",
+      "dynamic_fields": {
+        "status": "expected",
+        "sources": ["model selector"]
+      },
+      "diagnostics": {
+        "setup_categories": ["setupreq"],
+        "notes": "Missing model or prompt is setup evidence."
+      },
+      "import_export_behavior": {
+        "status": "native_shape_with_runtime_model",
+        "notes": "Preserve selected model as configurable runtime data."
+      },
+      "linter_rules": ["require model and textPrompt", "flag stale hardcoded model assumptions"],
+      "planner_terms": ["openai", "chatgpt", "prompt", "completion"],
+      "known_advisory_gaps": ["current model list requires fresh raw specs or Browser evidence"],
+      "confidence": "medium",
+      "fixtures": [
+        "temp/raw-specs-json/openai-gpt-3__1.43.6.json",
+        "src/languages/make/data/public_research_evidence.json"
+      ],
+      "last_evidence_source": "raw_spec"
+    },
+    {
+      "module": "anthropic-claude:simpleTextPrompt",
+      "aliases": ["claude simple text prompt", "anthropic prompt"],
+      "native_token": "anthropic-claude:simpleTextPrompt",
+      "version": 1,
+      "mapper_shape": {
+        "kind": "model_text_prompt",
+        "required_keys": ["model", "textPrompt", "max_tokens"]
+      },
+      "parameters_shape": {
+        "required_keys": []
+      },
+      "expect_shape": {
+        "kind": "model_text_prompt",
+        "required_keys": ["model", "textPrompt", "max_tokens"]
+      },
+      "restore_shape": {
+        "kind": "model_selector"
+      },
+      "interface_shape": {
+        "kind": "text_result_usage",
+        "required_keys": ["result", "model"]
+      },
+      "connection_handling": {
+        "kind": "ai_provider_connection"
+      },
+      "placeholder_policy": {
+        "mode": "runtime_required",
+        "placeholders": ["runtime.connection.anthropic", "runtime.anthropic.model"]
+      },
+      "known_volatile_fields": ["metadata.designer", "metadata.restore"],
+      "roundtrip_behavior": {
+        "status": "raw_spec_evidence",
+        "notes": "Provider connection, model labels, and usage metadata are runtime-scoped."
+      },
+      "operation_kind": "action",
+      "dynamic_fields": {
+        "status": "expected",
+        "sources": ["model selector"]
+      },
+      "diagnostics": {
+        "setup_categories": ["setupreq"],
+        "notes": "Missing model, prompt, or token limit is setup evidence."
+      },
+      "import_export_behavior": {
+        "status": "native_shape_with_runtime_model",
+        "notes": "Do not assert current Claude model catalog from static matrix rows."
+      },
+      "linter_rules": ["require model, textPrompt, and max_tokens"],
+      "planner_terms": ["anthropic", "claude", "prompt", "text"],
+      "known_advisory_gaps": ["model list and file/tool behavior need raw spec freshness"],
+      "confidence": "medium",
+      "fixtures": [
+        "temp/raw-specs-json/anthropic-claude__1.18.18.json"
+      ],
+      "last_evidence_source": "raw_spec"
+    },
+    {
+      "module": "gemini-ai:simpleTextPrompt",
+      "aliases": ["gemini simple text prompt", "google gemini prompt"],
+      "native_token": "gemini-ai:simpleTextPrompt",
+      "version": 1,
+      "mapper_shape": {
+        "kind": "model_text_prompt",
+        "required_keys": ["model", "textPrompt"]
+      },
+      "parameters_shape": {
+        "required_keys": []
+      },
+      "expect_shape": {
+        "kind": "model_text_prompt",
+        "required_keys": ["model", "textPrompt"]
+      },
+      "restore_shape": {
+        "kind": "model_selector"
+      },
+      "interface_shape": {
+        "kind": "text_result_usage",
+        "required_keys": ["result", "modelVersion"]
+      },
+      "connection_handling": {
+        "kind": "ai_provider_connection"
+      },
+      "placeholder_policy": {
+        "mode": "runtime_required",
+        "placeholders": ["runtime.connection.gemini", "runtime.gemini.model"]
+      },
+      "known_volatile_fields": ["metadata.designer", "metadata.restore"],
+      "roundtrip_behavior": {
+        "status": "raw_spec_evidence",
+        "notes": "Gemini model labels and usage metadata are dynamic provider state."
+      },
+      "operation_kind": "action",
+      "dynamic_fields": {
+        "status": "expected",
+        "sources": ["model selector"]
+      },
+      "diagnostics": {
+        "setup_categories": ["setupreq"],
+        "notes": "Missing model or prompt is setup evidence."
+      },
+      "import_export_behavior": {
+        "status": "native_shape_with_runtime_model",
+        "notes": "Render prompt shape without claiming full provider catalog parity."
+      },
+      "linter_rules": ["require model and textPrompt"],
+      "planner_terms": ["gemini", "google gemini", "prompt", "text"],
+      "known_advisory_gaps": ["deep research and file-store modules need separate rows"],
+      "confidence": "medium",
+      "fixtures": ["temp/raw-specs-json/gemini-ai__1.16.1.json"],
+      "last_evidence_source": "raw_spec"
+    },
+    {
+      "module": "code:ExecuteCode",
+      "aliases": ["make code", "run code", "execute code"],
+      "native_token": "code:ExecuteCode",
+      "version": 1,
+      "mapper_shape": {
+        "kind": "code_execution_input",
+        "required_keys": ["language"],
+        "optional_keys": ["input", "dependencies"]
+      },
+      "parameters_shape": {
+        "required_keys": []
+      },
+      "expect_shape": {
+        "kind": "language_input_dependencies",
+        "required_keys": ["language"]
+      },
+      "restore_shape": {
+        "kind": "language_selector"
+      },
+      "interface_shape": {
+        "kind": "execution_result_logs",
+        "required_keys": ["result", "executionTimeMs", "logs"]
+      },
+      "connection_handling": {
+        "kind": "none"
+      },
+      "placeholder_policy": {
+        "mode": "none",
+        "placeholders": []
+      },
+      "known_volatile_fields": [
+        "metadata.designer",
+        "metadata.restore.expect.language.label"
+      ],
+      "roundtrip_behavior": {
+        "status": "raw_spec_and_default_manifest_evidence",
+        "notes": "Code text may be importable, but runtime execution environment is outside static parity."
+      },
+      "operation_kind": "action",
+      "dynamic_fields": {
+        "status": "minimal"
+      },
+      "diagnostics": {
+        "setup_categories": ["setupreq"],
+        "notes": "Missing language or invalid dependency configuration is setup evidence."
+      },
+      "import_export_behavior": {
+        "status": "native_shape",
+        "notes": "Do not embed Pancakes compiler logic in client-delivered scripts."
+      },
+      "linter_rules": ["require language", "flag secret-like input/output leakage"],
+      "planner_terms": ["make code", "execute code", "javascript", "python"],
+      "known_advisory_gaps": ["runtime package availability is plan-dependent"],
+      "confidence": "medium",
+      "fixtures": [
+        "temp/raw-specs-json/code__1.2.3.json",
+        "src/languages/make/data/default_manifest_coverage.json"
+      ],
+      "last_evidence_source": "raw_spec"
+    },
+    {
+      "module": "google-sheets:addRow",
+      "aliases": ["google sheets add row", "append row", "sheets add row"],
+      "native_token": "google-sheets:addRow",
+      "version": 2,
+      "mapper_shape": {
+        "kind": "dynamic_sheet_row_fields"
+      },
+      "parameters_shape": {
+        "required_keys": ["__IMTCONN__"]
+      },
+      "expect_shape": {
+        "kind": "dynamic_sheet_columns"
+      },
+      "restore_shape": {
+        "kind": "connection_spreadsheet_sheet_selectors"
+      },
+      "interface_shape": {
+        "kind": "append_result",
+        "required_keys": ["spreadsheetId", "updates", "rowNumber"]
+      },
+      "connection_handling": {
+        "kind": "make_connection_alias",
+        "parameter": "__IMTCONN__",
+        "projection": "__IMTCONN__",
+        "families": ["google"]
+      },
+      "placeholder_policy": {
+        "mode": "runtime_required",
+        "placeholders": [
+          "runtime.connection.google",
+          "runtime.google_sheets.spreadsheet",
+          "runtime.google_sheets.sheet"
+        ]
+      },
+      "known_volatile_fields": [
+        "metadata.designer",
+        "metadata.expect",
+        "metadata.restore.parameters.__IMTCONN__.label"
+      ],
+      "roundtrip_behavior": {
+        "status": "raw_spec_and_golden_observed",
+        "notes": "Sheet columns are dynamic account/resource state and must not be guessed."
+      },
+      "operation_kind": "action",
+      "dynamic_fields": {
+        "status": "expected",
+        "sources": ["connection nested expect", "spreadsheet schema"]
+      },
+      "diagnostics": {
+        "setup_categories": ["setupreq"],
+        "notes": "Connection and spreadsheet selections are setup/runtime placeholders."
+      },
+      "import_export_behavior": {
+        "status": "placeholder_required",
+        "notes": "Preserve connection/resource placeholders and dynamic mapper fields."
+      },
+      "linter_rules": ["require connection placeholder", "do not hardcode sheet ids in templates"],
+      "planner_terms": ["google sheets", "spreadsheet", "add row", "append row"],
+      "known_advisory_gaps": ["live sheet columns require Browser/API selector evidence"],
+      "confidence": "low",
+      "fixtures": [
+        "temp/raw-specs-json/google-sheets__2.14.50.json",
+        "src/languages/make/data/golden/coverage.json"
+      ],
+      "last_evidence_source": "raw_spec"
+    },
+    {
+      "module": "google-email:triggerWatchNewEmails",
+      "aliases": ["gmail watch emails", "watch new emails"],
+      "native_token": "google-email:triggerWatchNewEmails",
+      "version": 4,
+      "mapper_shape": {
+        "kind": "trigger_mapper_none"
+      },
+      "parameters_shape": {
+        "required_keys": ["__IMTCONN__"]
+      },
+      "expect_shape": {
+        "kind": "none"
+      },
+      "restore_shape": {
+        "kind": "connection_epoch_folder_selectors"
+      },
+      "interface_shape": {
+        "kind": "email_bundle"
+      },
+      "connection_handling": {
+        "kind": "make_connection_alias",
+        "parameter": "__IMTCONN__",
+        "projection": "__IMTCONN__",
+        "families": ["google-email"]
+      },
+      "placeholder_policy": {
+        "mode": "runtime_required",
+        "placeholders": ["runtime.connection.gmail", "runtime.epoch.email"]
+      },
+      "known_volatile_fields": [
+        "metadata.designer",
+        "metadata.restore.parameters.__IMTCONN__.label",
+        "epoch"
+      ],
+      "roundtrip_behavior": {
+        "status": "raw_spec_and_operator_diagnostic_evidence",
+        "notes": "Email triggers require an epoch/start-point selection before execution."
+      },
+      "operation_kind": "trigger",
+      "dynamic_fields": {
+        "status": "expected",
+        "sources": ["connection mailbox selectors"]
+      },
+      "diagnostics": {
+        "setup_categories": ["setupreq", "epochreq"],
+        "notes": "Missing connection or start point should surface as native Make setup diagnostics."
+      },
+      "import_export_behavior": {
+        "status": "placeholder_required",
+        "notes": "Do not invent mailbox state or trigger epoch values."
+      },
+      "linter_rules": ["require connection placeholder", "surface missing trigger epoch"],
+      "planner_terms": ["gmail", "email", "watch emails", "trigger"],
+      "known_advisory_gaps": ["mailbox folder options require live account evidence"],
+      "confidence": "medium",
+      "fixtures": [
+        "temp/raw-specs-json/google-email__4.4.66.json",
+        "src/languages/make/data/default_manifest_coverage.json"
+      ],
+      "last_evidence_source": "raw_spec"
+    },
+    {
+      "module": "make-ai-web-search:generateAResponse",
+      "aliases": ["make ai web search", "ai web search"],
+      "native_token": "make-ai-web-search:generateAResponse",
+      "version": 1,
+      "mapper_shape": {
+        "kind": "web_search_prompt",
+        "required_keys": ["input", "parseJson"]
+      },
+      "parameters_shape": {
+        "required_keys": []
+      },
+      "expect_shape": {
+        "kind": "web_search_prompt",
+        "required_keys": ["input", "parseJson"]
+      },
+      "restore_shape": {
+        "kind": "json_parse_and_location_selectors"
+      },
+      "interface_shape": {
+        "kind": "result_details",
+        "required_keys": ["result", "details"]
+      },
+      "connection_handling": {
+        "kind": "make_ai_internal_or_default"
+      },
+      "placeholder_policy": {
+        "mode": "none",
+        "placeholders": []
+      },
+      "known_volatile_fields": ["metadata.designer", "metadata.restore"],
+      "roundtrip_behavior": {
+        "status": "raw_spec_and_default_manifest_evidence",
+        "notes": "Search result content is nondeterministic; shape only is local evidence."
+      },
+      "operation_kind": "action",
+      "dynamic_fields": {
+        "status": "minimal"
+      },
+      "diagnostics": {
+        "setup_categories": ["setupreq"],
+        "notes": "Missing input is setup evidence."
+      },
+      "import_export_behavior": {
+        "status": "native_shape",
+        "notes": "Do not assert web-search content parity from static fixtures."
+      },
+      "linter_rules": ["require input text", "treat returned search details as runtime data"],
+      "planner_terms": ["ai web search", "web search", "research"],
+      "known_advisory_gaps": ["result citation shape requires scenario tests"],
+      "confidence": "medium",
+      "fixtures": [
+        "temp/raw-specs-json/make-ai-web-search__1.0.11.json",
+        "src/languages/make/data/default_manifest_coverage.json"
+      ],
+      "last_evidence_source": "raw_spec"
+    },
+    {
+      "module": "unknown:*",
+      "aliases": [],
+      "native_token": "source_token",
+      "version": null,
+      "mapper_shape": {
+        "kind": "pass_through"
+      },
+      "parameters_shape": {
+        "kind": "pass_through"
+      },
+      "expect_shape": {
+        "kind": "preserve_if_present"
+      },
+      "restore_shape": {
+        "kind": "preserve_if_present"
+      },
+      "interface_shape": {
+        "kind": "preserve_if_present"
+      },
+      "connection_handling": {
+        "kind": "preserve_unknown"
+      },
+      "placeholder_policy": {
+        "mode": "preserve_source",
+        "placeholders": []
+      },
+      "known_volatile_fields": [
+        "metadata.designer"
+      ],
+      "roundtrip_behavior": {
+        "status": "policy",
+        "notes": "Unknown modules preserve client artifacts and avoid lossy normalization."
+      },
+      "confidence": "policy",
+      "fixtures": [
+        "tests/languages/make/make_blueprint_export_contract.py"
+      ],
+      "last_evidence_source": "architecture_policy"
+    }
+  ]
+}

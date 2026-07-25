@@ -1,0 +1,203 @@
+{
+  "api_surface": "make_mcp_typed_tools",
+  "capabilities_proven": [
+    "scenario_module_error_inspection",
+    "runtime_resource_requirement_extraction",
+    "webhook_requirement_extraction",
+    "datastore_requirement_extraction",
+    "scenario_create",
+    "scenario_export"
+  ],
+  "cleanup_counts": {
+    "scratch_scenarios": 0
+  },
+  "credential_value_transfer": false,
+  "credentials_printed": false,
+  "customer_data_used": false,
+  "live_make_called": true,
+  "probes": [
+    {
+      "component_extraction_shape": {
+        "connections": [],
+        "dataStores": [],
+        "dataStructures": [],
+        "hooks": [
+          {
+            "componentType": "hook",
+            "id": "hook_1",
+            "moduleIds": [
+              1
+            ],
+            "moduleTargets": {
+              "hook": [
+                1
+              ]
+            },
+            "typeName": "gateway-webhook"
+          }
+        ],
+        "keys": []
+      },
+      "label": "webhook_missing_hook",
+      "request_contract": {
+        "scenario_create": {
+          "blueprint.flow[0].module": "gateway:CustomWebHook",
+          "blueprint.flow[0].parameters": {},
+          "blueprint.flow[0].version": 1,
+          "confirmed": "bool_true",
+          "scheduling.type": "immediately",
+          "teamId": "int"
+        },
+        "validate_blueprint_schema": {
+          "message": "Blueprint is valid against the schema."
+        }
+      },
+      "scenario_create_response_shape": {
+        "hookId": "none",
+        "id": "int",
+        "isActive": "bool_false",
+        "isinvalid": "bool_false",
+        "scheduling": {
+          "type": "immediately"
+        },
+        "teamId": "int",
+        "usedPackages": [
+          "gateway"
+        ]
+      },
+      "scenario_delete_response": "Scenario has been deleted.",
+      "scenario_get_blueprint_contract": {
+        "$.blueprint.flow[0].module": "gateway:CustomWebHook",
+        "$.blueprint.flow[0].parameters": {},
+        "$.blueprint.flow[0].version": 1,
+        "$.blueprint.interface.input": [],
+        "$.blueprint.interface.output": [],
+        "$.blueprint.metadata.instant": "bool_true",
+        "$.hookId": "none",
+        "$.isActive": "bool_false",
+        "$.isinvalid": "bool_false"
+      },
+      "scenario_interface_shape": {
+        "input": [],
+        "output": []
+      }
+    },
+    {
+      "component_extraction_shape": {
+        "connections": [],
+        "dataStores": [
+          {
+            "componentType": "datastore",
+            "id": "datastore_1",
+            "moduleIds": [
+              1
+            ],
+            "moduleTargets": {
+              "datastore": [
+                1
+              ]
+            }
+          }
+        ],
+        "dataStructures": [],
+        "hooks": [],
+        "keys": []
+      },
+      "label": "datastore_missing_store",
+      "request_contract": {
+        "scenario_create": {
+          "blueprint.flow[0].mapper.data": "object",
+          "blueprint.flow[0].mapper.key": "string",
+          "blueprint.flow[0].mapper.overwrite": "bool_false",
+          "blueprint.flow[0].module": "datastore:AddRecord",
+          "blueprint.flow[0].parameters": {},
+          "blueprint.flow[0].version": 1,
+          "confirmed": "bool_true",
+          "scheduling.type": "immediately",
+          "teamId": "int"
+        },
+        "validate_blueprint_schema": {
+          "message": "Blueprint is valid against the schema."
+        }
+      },
+      "scenario_create_response_shape": {
+        "hookId": "none",
+        "id": "int",
+        "isActive": "bool_false",
+        "isinvalid": "bool_false",
+        "scheduling": {
+          "type": "immediately"
+        },
+        "teamId": "int",
+        "usedPackages": [
+          "datastore"
+        ]
+      },
+      "scenario_delete_response": "Scenario has been deleted.",
+      "scenario_get_blueprint_contract": {
+        "$.blueprint.flow[0].module": "datastore:AddRecord",
+        "$.blueprint.flow[0].parameters": {},
+        "$.blueprint.flow[0].version": 1,
+        "$.blueprint.interface.input": [],
+        "$.blueprint.interface.output": [],
+        "$.blueprint.metadata.instant": "bool_true",
+        "$.hookId": "none",
+        "$.isActive": "bool_false",
+        "$.isinvalid": "bool_false"
+      },
+      "scenario_interface_shape": {
+        "input": [],
+        "output": []
+      }
+    }
+  ],
+  "provider_api_call": true,
+  "scenario_activation_called": false,
+  "scenario_run_once_called": false,
+  "schema_version": 1,
+  "secret_output": false,
+  "status": "runtime_resource_requirement_extraction_probe_captured",
+  "steps": [
+    {
+      "name": "validate_blueprint_schema_missing_webhook_resource",
+      "status": "ok"
+    },
+    {
+      "name": "scenarios_create_missing_webhook_inactive",
+      "status": "ok"
+    },
+    {
+      "name": "scenarios_get_missing_webhook_export",
+      "status": "ok"
+    },
+    {
+      "name": "extract_blueprint_components_hook_target",
+      "status": "ok"
+    },
+    {
+      "name": "validate_blueprint_schema_missing_datastore_resource",
+      "status": "ok"
+    },
+    {
+      "name": "scenarios_create_missing_datastore_inactive",
+      "status": "ok"
+    },
+    {
+      "name": "scenarios_get_missing_datastore_export",
+      "status": "ok"
+    },
+    {
+      "name": "extract_blueprint_components_datastore_target",
+      "status": "ok"
+    },
+    {
+      "name": "cleanup_scenarios_delete",
+      "status": "ok"
+    },
+    {
+      "name": "cleanup_scratch_scenarios_count",
+      "status": "empty"
+    }
+  ],
+  "validation_actor": "codex_make_mcp_typed_tools"
+}

@@ -1,0 +1,151 @@
+{
+  "api_surface": "make_mcp_typed_tools",
+  "capabilities_proven": [
+    "datastore_list",
+    "datastore_create",
+    "datastore_delete",
+    "datastore_record_create",
+    "datastore_record_update",
+    "datastore_record_upsert_batch",
+    "datastore_record_delete_batch",
+    "datastore_update_schema"
+  ],
+  "cleanup_counts": {
+    "data_stores": 0,
+    "data_structures": 0
+  },
+  "credential_value_transfer": false,
+  "credentials_printed": false,
+  "customer_data_used": false,
+  "data_store_create_response_shape": {
+    "datastructureId": "int",
+    "id": "int",
+    "maxSize": "numeric_string",
+    "name": "str",
+    "records": "int",
+    "size": "numeric_string",
+    "teamId": "int"
+  },
+  "data_store_delete_response": "Data store has been deleted.",
+  "data_structure_create_response_shape": {
+    "id": "int",
+    "name": "str",
+    "spec": [
+      {
+        "name": "str",
+        "required": "bool",
+        "type": "str"
+      }
+    ],
+    "strict": "bool",
+    "teamId": "int"
+  },
+  "data_structure_delete_response": "Data structure has been deleted.",
+  "live_make_called": true,
+  "provider_api_call": true,
+  "record_create_response_shape": {
+    "data": {
+      "amount": "number",
+      "request_id": "str",
+      "status": "str"
+    },
+    "key": "str"
+  },
+  "record_delete_response": "Records have been deleted.",
+  "record_list_response_shape": [
+    {
+      "data": {
+        "amount": "number",
+        "request_id": "str",
+        "status": "str"
+      },
+      "key": "str"
+    }
+  ],
+  "record_update_response_shape": {
+    "data": {
+      "amount": "number",
+      "request_id": "str",
+      "status": "str"
+    },
+    "key": "str"
+  },
+  "request_contract": {
+    "data_store_create": {
+      "datastructureId": "int",
+      "maxSizeMB": "int",
+      "name": "string",
+      "teamId": "int"
+    },
+    "data_structure_create": {
+      "name": "string",
+      "spec": [
+        {
+          "name": "string",
+          "required": "bool",
+          "type": "string"
+        }
+      ],
+      "strict": "bool",
+      "teamId": "int"
+    },
+    "record_create": {
+      "data": "object",
+      "dataStoreId": "int",
+      "key": "string_optional"
+    },
+    "record_update": {
+      "data": "object",
+      "dataStoreId": "int",
+      "key": "string"
+    }
+  },
+  "scenario_activation_called": false,
+  "scenario_run_once_called": false,
+  "schema_version": 1,
+  "secret_output": false,
+  "status": "datastore_lifecycle_probe_captured",
+  "steps": [
+    {
+      "name": "data_structures_create",
+      "status": "ok"
+    },
+    {
+      "name": "data_stores_create",
+      "status": "ok"
+    },
+    {
+      "name": "data_store_records_create",
+      "status": "ok"
+    },
+    {
+      "name": "data_store_records_update",
+      "status": "ok"
+    },
+    {
+      "name": "data_store_records_list",
+      "status": "ok"
+    },
+    {
+      "name": "data_store_records_delete",
+      "status": "ok"
+    },
+    {
+      "name": "data_stores_delete",
+      "status": "ok"
+    },
+    {
+      "name": "data_structures_delete",
+      "status": "ok"
+    },
+    {
+      "name": "cleanup_data_stores_list",
+      "status": "empty"
+    },
+    {
+      "name": "cleanup_data_structures_list",
+      "status": "empty"
+    }
+  ],
+  "validation_actor": "codex_make_mcp_typed_tools"
+}

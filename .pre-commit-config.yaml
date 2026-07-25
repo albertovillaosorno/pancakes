@@ -1,0 +1,39 @@
+# Local hooks only: this repository has no runtime dependencies and should not
+# grow a toolchain download on clone. Install the dev group first:
+#   pip install -e ".[dev]" && pre-commit install
+default_install_hook_types: [pre-commit]
+fail_fast: false
+minimum_pre_commit_version: "3.7.0"
+
+repos:
+  - repo: local
+    hooks:
+      - id: ruff-check
+        name: ruff check
+        entry: python -m ruff check --fix
+        language: system
+        types: [python]
+        require_serial: true
+
+      - id: ruff-format
+        name: ruff format
+        entry: python -m ruff format
+        language: system
+        types: [python]
+        require_serial: true
+
+      - id: basedpyright
+        name: basedpyright
+        entry: python -m basedpyright
+        language: system
+        types: [python]
+        pass_filenames: false
+        require_serial: true
+
+      - id: pytest
+        name: pytest
+        entry: python -m pytest -q
+        language: system
+        types: [python]
+        pass_filenames: false
+        require_serial: true

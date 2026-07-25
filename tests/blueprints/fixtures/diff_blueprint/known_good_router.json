@@ -1,0 +1,93 @@
+{
+  "flow": [
+    {
+      "id": 1,
+      "metadata": {
+        "designer": {
+          "x": 40,
+          "y": 10
+        }
+      },
+      "module": "builtin:BasicRouter",
+      "routes": [
+        {
+          "filter": {
+            "condition": "{{2.lead_score}} > 80"
+          },
+          "flow": [
+            {
+              "connection": "runtime_connection_reviewed",
+              "id": 2,
+              "mapper": {
+                "method": "POST",
+                "url": "https://example.invalid/router-fixture"
+              },
+              "metadata": {
+                "designer": {
+                  "x": 260,
+                  "y": 30
+                }
+              },
+              "module": "http:MakeRequest",
+              "version": 3
+            }
+          ]
+        },
+        {
+          "filter": {
+            "condition": "{{2.region}} = \"north\""
+          },
+          "flow": [
+            {
+              "id": 3,
+              "mapper": {
+                "table": "fixture_leads"
+              },
+              "metadata": {
+                "designer": {
+                  "x": 260,
+                  "y": 190
+                }
+              },
+              "module": "datastore:AddRecord",
+              "version": 1
+            }
+          ]
+        }
+      ],
+      "version": 1
+    },
+    {
+      "connection": "runtime_connection_reviewed",
+      "id": 4,
+      "mapper": {
+        "method": "POST",
+        "url": "https://example.invalid/router-audit"
+      },
+      "metadata": {
+        "designer": {
+          "x": 480,
+          "y": 80
+        }
+      },
+      "module": "http:MakeRequest",
+      "version": 3
+    }
+  ],
+  "metadata": {
+    "notes": [
+      {
+        "content": "Synthetic reviewed fixture.",
+        "metadata": {
+          "color": "green"
+        },
+        "moduleIds": ["1"]
+      }
+    ],
+    "scenario": {
+      "fixture_stage": "reviewed",
+      "name": "Router Diff Fixture"
+    }
+  },
+  "name": "synthetic-router-diff"
+}

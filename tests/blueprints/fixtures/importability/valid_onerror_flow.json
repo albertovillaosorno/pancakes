@@ -1,0 +1,31 @@
+{
+  "flow": [
+    {
+      "id": 1,
+      "module": "http:MakeRequest",
+      "onerror": [
+        {
+          "flow": [
+            {
+              "id": 2,
+              "module": "make:StartScenario",
+              "parameters": {
+                "scenario": "current"
+              }
+            }
+          ]
+        }
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "https://example.invalid/items"
+      }
+    }
+  ],
+  "metadata": {
+    "schedule": {
+      "id": "schedule:manual"
+    }
+  },
+  "name": "valid-onerror-flow"
+}

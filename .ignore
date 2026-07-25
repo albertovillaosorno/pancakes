@@ -1,0 +1,25 @@
+# Ripgrep and local agent search should skip generated runtime state by default.
+cache/
+dependencies/
+logs/
+temp/
+.basedpyright/
+.pytest_cache/
+.ruff_cache/
+
+# Large local SQLite and SQL restore artifacts are useful operator state, not
+# normal source-search material. Reviewable tracked restore snapshots remain
+# searchable because this list names only generated artifact patterns.
+src/data/*.sqlite
+src/data/*.sqlite*
+src/data/*.sqlite3
+src/data/*.sqlite3*
+src/data/*.db
+src/data/*.db-*
+src/data/sql_snapshots/make.sql
+src/data/sql_snapshots/*.dump.sql
+src/data/sql_snapshots/*.full.sql
+src/data/sql_snapshots/*.backup.sql
+src/data/sql_snapshots/*.generated.sql
+src/data/sql_snapshots/*.sqlite
+src/data/sql_snapshots/*.sqlite*

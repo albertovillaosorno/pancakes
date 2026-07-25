@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "asset": "make_module_projector_manifest",
+  "visibility": "private_engine_asset",
+  "module": "util:FunctionSleep",
+  "aliases": ["sleep", "delay", "tools:Sleep", "util:Sleep"],
+  "native_token": "util:FunctionSleep",
+  "version_policy": {
+    "kind": "fixed",
+    "version": 1
+  },
+  "projector": {
+    "kind": "function_sleep"
+  },
+  "mapper_policy": {
+    "kind": "delay_duration",
+    "required_keys": ["duration"]
+  },
+  "parameters_policy": {
+    "required_keys": []
+  },
+  "metadata_expect_policy": {
+    "kind": "delay_duration",
+    "required_keys": ["duration"]
+  },
+  "metadata_restore_policy": {
+    "kind": "empty"
+  },
+  "metadata_interface_policy": {
+    "kind": "none"
+  },
+  "connection_projection_policy": {
+    "kind": "none"
+  },
+  "placeholder_policy": {
+    "mode": "none",
+    "placeholders": []
+  },
+  "volatile_field_policy": {
+    "known_paths": ["metadata.designer"]
+  },
+  "zero_trace_constraints": {
+    "private_fields_forbidden": true,
+    "customer_artifact": false
+  },
+  "roundtrip_behavior": {
+    "status": "fixture_observed",
+    "notes": "Sleep delays execution for the mapped duration without external credentials."
+  },
+  "confidence": "medium",
+  "fixtures": [
+    "src/languages/make/data/golden/data/public/top100/022-12041-12000-get-youtube-videos-in-a-channel-summarize-transcripts-with-chatgpt-and-send-an-email.blueprint.json"
+  ],
+  "last_evidence_source": "local_fixture"
+}

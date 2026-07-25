@@ -1,0 +1,313 @@
+{
+  "apps": [
+    {
+      "app_id": "app:http",
+      "app_slug": "http",
+      "deprecated": false,
+      "external_id": "http",
+      "fingerprint": "d228d5fc891a8d9b78755f6cb6d2782528fc4fff67ac45bf2007c43627d33031",
+      "label": "http",
+      "versions": [
+        {
+          "app_id": "app:http",
+          "app_slug": "http",
+          "app_version_id": "app-version:http:1.0",
+          "fingerprint": "f0c1e5b3d463c28c78c13e6c55e4491a2ffb72b0d292f95e05ceaf110cb851af",
+          "latest": true,
+          "manifest_version": 2,
+          "modules": [
+            {
+              "app_slug": "http",
+              "app_version": "1.0",
+              "app_version_id": "app-version:http:1.0",
+              "deprecated": true,
+              "display_name": "Make a request",
+              "expect_schema": [],
+              "external_id": "http:1.0:action:makeRequest",
+              "fingerprint": "bbd9a7da21b03f259d6a08cd011453db673e489a3fe8b85295c6d30cbcc4c501",
+              "interface_schema": [
+                {
+                  "advanced": null,
+                  "constraints": [
+                    {
+                      "constraint_id": "constraint:field:module:http:1.0:action:makeRequest:interface:statusCode:type_000",
+                      "field_id": "field:module:http:1.0:action:makeRequest:interface:statusCode",
+                      "fingerprint": "d71d0b876a0b087d77ea37a4143bb3c435f86d620890ebe7b4efaaf541750d58",
+                      "key": "type_000",
+                      "value": {
+                        "type": "number"
+                      }
+                    }
+                  ],
+                  "direction": "interface",
+                  "external_id": "module:http:1.0:action:makeRequest:interface:statusCode",
+                  "field_id": "field:module:http:1.0:action:makeRequest:interface:statusCode",
+                  "field_type": "number",
+                  "fingerprint": "6cbd875562018d55c716f03901e3ccda6a86adc95d18e4011c0528cde7ef5888",
+                  "label": "Status code",
+                  "module_id": "module:http:1.0:action:makeRequest",
+                  "path": ["statusCode"],
+                  "raw_schema": {
+                    "label": "Status code",
+                    "name": "statusCode",
+                    "type": "number"
+                  },
+                  "required": false,
+                  "rpc_dependencies": []
+                }
+              ],
+              "internal_name": "makeRequest",
+              "module_id": "module:http:1.0:action:makeRequest",
+              "module_kind": "action",
+              "parameters": [
+                {
+                  "advanced": null,
+                  "constraints": [
+                    {
+                      "constraint_id": "constraint:field:module:http:1.0:action:makeRequest:parameter:connection:rpc_dependency_000",
+                      "field_id": "field:module:http:1.0:action:makeRequest:parameter:connection",
+                      "fingerprint": "10a986d28bff6a0fddbebf5a09dc6ae04fab7f931890ac9dbd043908c1e5744b",
+                      "key": "rpc_dependency_000",
+                      "value": {
+                        "dependency": "rpc://http/listConnections"
+                      }
+                    }
+                  ],
+                  "direction": "parameter",
+                  "external_id": "module:http:1.0:action:makeRequest:parameter:connection",
+                  "field_id": "field:module:http:1.0:action:makeRequest:parameter:connection",
+                  "field_type": null,
+                  "fingerprint": "66e18fbf02c5f2506ebb4ad7490647a03b8b8c2e1809af383a66de4b8e0f3f0a",
+                  "label": "Connection",
+                  "module_id": "module:http:1.0:action:makeRequest",
+                  "path": ["connection"],
+                  "raw_schema": {
+                    "label": "Connection",
+                    "name": "connection",
+                    "rpc": "rpc://http/listConnections"
+                  },
+                  "required": false,
+                  "rpc_dependencies": ["rpc://http/listConnections"]
+                },
+                {
+                  "advanced": null,
+                  "constraints": [
+                    {
+                      "constraint_id": "constraint:field:module:http:1.0:action:makeRequest:parameter:method:required_000",
+                      "field_id": "field:module:http:1.0:action:makeRequest:parameter:method",
+                      "fingerprint": "e93b01b46c1bd2dad3d53aba560f4c1576ddba1218da10b3e62aa345f01d9adc",
+                      "key": "required_000",
+                      "value": {
+                        "required": true
+                      }
+                    },
+                    {
+                      "constraint_id": "constraint:field:module:http:1.0:action:makeRequest:parameter:method:type_001",
+                      "field_id": "field:module:http:1.0:action:makeRequest:parameter:method",
+                      "fingerprint": "fec1316e5d378713dba3a822847533c9f83308acf0a7b1fd75875785f0c7d7df",
+                      "key": "type_001",
+                      "value": {
+                        "type": "select"
+                      }
+                    },
+                    {
+                      "constraint_id": "constraint:field:module:http:1.0:action:makeRequest:parameter:method:enum_002",
+                      "field_id": "field:module:http:1.0:action:makeRequest:parameter:method",
+                      "fingerprint": "e4f7af267ac3e9328d09b0a15a4b07f00d30301bc5d0c024e8d2d7c0e66d3959",
+                      "key": "enum_002",
+                      "value": {
+                        "values": ["GET", "POST"]
+                      }
+                    }
+                  ],
+                  "direction": "parameter",
+                  "external_id": "module:http:1.0:action:makeRequest:parameter:method",
+                  "field_id": "field:module:http:1.0:action:makeRequest:parameter:method",
+                  "field_type": "select",
+                  "fingerprint": "46d655ec1bf681037949416480cfb68979cd6992d71e88f4eab632989845cc86",
+                  "label": "method",
+                  "module_id": "module:http:1.0:action:makeRequest",
+                  "path": ["method"],
+                  "raw_schema": {
+                    "enum": ["GET", "POST"],
+                    "name": "method",
+                    "required": true,
+                    "type": "select"
+                  },
+                  "required": true,
+                  "rpc_dependencies": []
+                },
+                {
+                  "advanced": null,
+                  "constraints": [
+                    {
+                      "constraint_id": "constraint:field:module:http:1.0:action:makeRequest:parameter:url:required_000",
+                      "field_id": "field:module:http:1.0:action:makeRequest:parameter:url",
+                      "fingerprint": "9c1efad5f4f16d0abb4b01fff017310d611f8f96b0e41f19b3ffa1df7093bfc1",
+                      "key": "required_000",
+                      "value": {
+                        "required": true
+                      }
+                    },
+                    {
+                      "constraint_id": "constraint:field:module:http:1.0:action:makeRequest:parameter:url:type_001",
+                      "field_id": "field:module:http:1.0:action:makeRequest:parameter:url",
+                      "fingerprint": "2555e81eb6f8d493fcad341980bcf5bcd65f17fbd2a2ce0f1edb88371c18a553",
+                      "key": "type_001",
+                      "value": {
+                        "type": "url"
+                      }
+                    }
+                  ],
+                  "direction": "parameter",
+                  "external_id": "module:http:1.0:action:makeRequest:parameter:url",
+                  "field_id": "field:module:http:1.0:action:makeRequest:parameter:url",
+                  "field_type": "url",
+                  "fingerprint": "c7ac2817bc38cebb9dfc7ef831b7db1a60ebb3f9d93989369f0795a7097414c2",
+                  "label": "URL",
+                  "module_id": "module:http:1.0:action:makeRequest",
+                  "path": ["url"],
+                  "raw_schema": {
+                    "label": "URL",
+                    "name": "url",
+                    "required": true,
+                    "type": "url"
+                  },
+                  "required": true,
+                  "rpc_dependencies": []
+                }
+              ],
+              "raw_spec_sha256": "4a3b6d7c75c4e029088830ac6bf751365e4782674f0eac93b34470f7668c562f",
+              "rpc_dependencies": ["rpc://http/listConnections"]
+            },
+            {
+              "app_slug": "http",
+              "app_version": "1.0",
+              "app_version_id": "app-version:http:1.0",
+              "deprecated": false,
+              "display_name": "List requests",
+              "expect_schema": [
+                {
+                  "advanced": null,
+                  "constraints": [
+                    {
+                      "constraint_id": "constraint:field:module:http:1.0:search:listRequests:expect:query:required_000",
+                      "field_id": "field:module:http:1.0:search:listRequests:expect:query",
+                      "fingerprint": "8b65c76e463cd4c6e34ea8ed8a188e06de5948beb532e2e7ab63720ad0d4e333",
+                      "key": "required_000",
+                      "value": {
+                        "required": false
+                      }
+                    },
+                    {
+                      "constraint_id": "constraint:field:module:http:1.0:search:listRequests:expect:query:type_001",
+                      "field_id": "field:module:http:1.0:search:listRequests:expect:query",
+                      "fingerprint": "9d624afe2cca3d355b5358f2e2487b2ea435875dcccddc0b4cb7d8c3a28f7b14",
+                      "key": "type_001",
+                      "value": {
+                        "type": "text"
+                      }
+                    }
+                  ],
+                  "direction": "expect",
+                  "external_id": "module:http:1.0:search:listRequests:expect:query",
+                  "field_id": "field:module:http:1.0:search:listRequests:expect:query",
+                  "field_type": "text",
+                  "fingerprint": "04bab3c57865f65a6750704ae9e82df373f9fd470f257a6fee18765ca38d5427",
+                  "label": "query",
+                  "module_id": "module:http:1.0:search:listRequests",
+                  "path": ["query"],
+                  "raw_schema": {
+                    "name": "query",
+                    "required": false,
+                    "type": "text"
+                  },
+                  "required": false,
+                  "rpc_dependencies": []
+                }
+              ],
+              "external_id": "http:1.0:search:listRequests",
+              "fingerprint": "bd2d17c9ce619378f1bab6bb296088ea9047a0a579a19f2e8e708cf0b7a528b7",
+              "interface_schema": [
+                {
+                  "advanced": null,
+                  "constraints": [
+                    {
+                      "constraint_id": "constraint:field:module:http:1.0:search:listRequests:interface:items:type_000",
+                      "field_id": "field:module:http:1.0:search:listRequests:interface:items",
+                      "fingerprint": "e4f6f406e8a1e7096181fbc281d2d3626b278cdd9157754e197e77e351bed9b2",
+                      "key": "type_000",
+                      "value": {
+                        "type": "array"
+                      }
+                    }
+                  ],
+                  "direction": "interface",
+                  "external_id": "module:http:1.0:search:listRequests:interface:items",
+                  "field_id": "field:module:http:1.0:search:listRequests:interface:items",
+                  "field_type": "array",
+                  "fingerprint": "71e9f0c5369c5f0d90d3be96950e3db47ca9ac236dc0589ebba4806bea6076ac",
+                  "label": "items",
+                  "module_id": "module:http:1.0:search:listRequests",
+                  "path": ["items"],
+                  "raw_schema": {
+                    "fields": [
+                      {
+                        "name": "id",
+                        "type": "text"
+                      }
+                    ],
+                    "name": "items",
+                    "type": "array"
+                  },
+                  "required": false,
+                  "rpc_dependencies": []
+                },
+                {
+                  "advanced": null,
+                  "constraints": [
+                    {
+                      "constraint_id": "constraint:field:module:http:1.0:search:listRequests:interface:items.id:type_000",
+                      "field_id": "field:module:http:1.0:search:listRequests:interface:items.id",
+                      "fingerprint": "170b42dba8f13de14a9e66ddb091f6402b96b95df14f0e5c8011fb6fede71029",
+                      "key": "type_000",
+                      "value": {
+                        "type": "text"
+                      }
+                    }
+                  ],
+                  "direction": "interface",
+                  "external_id": "module:http:1.0:search:listRequests:interface:items.id",
+                  "field_id": "field:module:http:1.0:search:listRequests:interface:items.id",
+                  "field_type": "text",
+                  "fingerprint": "1028b2979585a0ef62bfc1d11560bc1d82f0f33130d5e03510cd5712d78da453",
+                  "label": "id",
+                  "module_id": "module:http:1.0:search:listRequests",
+                  "path": ["items", "id"],
+                  "raw_schema": {
+                    "name": "id",
+                    "type": "text"
+                  },
+                  "required": false,
+                  "rpc_dependencies": []
+                }
+              ],
+              "internal_name": "listRequests",
+              "module_id": "module:http:1.0:search:listRequests",
+              "module_kind": "search",
+              "parameters": [],
+              "raw_spec_sha256": "4a3b6d7c75c4e029088830ac6bf751365e4782674f0eac93b34470f7668c562f",
+              "rpc_dependencies": []
+            }
+          ],
+          "raw_spec_sha256": "4a3b6d7c75c4e029088830ac6bf751365e4782674f0eac93b34470f7668c562f",
+          "version": "1.0"
+        }
+      ]
+    }
+  ],
+  "catalog_schema_version": 1,
+  "fingerprint": "c30abb931770b683c045c24005dc88af2ca695b230b1d4ef925e95394f0d2e22",
+  "generated_at_utc": "2026-04-28T00:00:00+00:00",
+  "raw_spec_manifest_sha256": "38f6777921ff9bbedb9578f4e8a02aca39262c384c7056dfb2d85e9e71a1d12e"
+}

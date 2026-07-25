@@ -1,0 +1,173 @@
+{
+  "flow": [
+    {
+      "id": 1,
+      "interface": [
+        {
+          "name": "email",
+          "type": "text"
+        },
+        {
+          "name": "company",
+          "type": "text"
+        },
+        {
+          "name": "source",
+          "type": "text"
+        },
+        {
+          "name": "score",
+          "type": "number"
+        },
+        {
+          "name": "notes",
+          "type": "text"
+        }
+      ],
+      "mapper": {
+        "company": "{{1.company}}",
+        "email": "{{1.email}}",
+        "notes": "{{1.notes}}",
+        "score": "{{1.score}}",
+        "source": "{{1.source}}"
+      },
+      "metadata": {
+        "raw_spec": {
+          "catalog_module_id": "module:gateway:1.14.1:trigger:CustomWebHook",
+          "issues": [],
+          "raw_spec_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "status": "resolved"
+        }
+      },
+      "module": "gateway:CustomWebHook",
+      "parameters": {
+        "hook": "{{runtime.webhook.lead_intake_hook}}"
+      }
+    },
+    {
+      "id": 2,
+      "metadata": {
+        "raw_spec": {
+          "catalog_module_id": "module:builtin:current:router:BasicRouter",
+          "issues": [],
+          "raw_spec_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "status": "resolved"
+        }
+      },
+      "module": "builtin:BasicRouter",
+      "routes": [
+        {
+          "filter": {
+            "conditions": {
+              "expression": "not empty({{1.email}}) and not empty({{1.company}}) and not empty({{1.source}}) and {{1.score}} >= 80"
+            },
+            "name": "Qualified"
+          },
+          "flow": [
+            {
+              "id": 3,
+              "mapper": {
+                "company": "{{1.company}}",
+                "email": "{{1.email}}",
+                "notes": "{{1.notes}}",
+                "route": "qualified",
+                "score": "{{1.score}}",
+                "source": "{{1.source}}"
+              },
+              "metadata": {
+                "raw_spec": {
+                  "catalog_module_id": "module:datastore:2.0.5:action:AddRecord",
+                  "issues": [],
+                  "raw_spec_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+                  "status": "resolved"
+                }
+              },
+              "module": "datastore:AddRecord",
+              "parameters": {
+                "datastore": "{{runtime.datastore.qualified_leads}}"
+              }
+            }
+          ]
+        },
+        {
+          "filter": {
+            "conditions": {
+              "expression": "empty({{1.email}}) or empty({{1.company}}) or empty({{1.source}}) or empty({{1.score}}) or {{1.score}} < 80"
+            },
+            "name": "Incomplete"
+          },
+          "flow": [
+            {
+              "id": 4,
+              "mapper": {
+                "company": "{{1.company}}",
+                "email": "{{1.email}}",
+                "notes": "{{1.notes}}",
+                "route": "incomplete",
+                "score": "{{1.score}}",
+                "source": "{{1.source}}"
+              },
+              "metadata": {
+                "raw_spec": {
+                  "catalog_module_id": "module:datastore:2.0.5:action:AddRecord",
+                  "issues": [],
+                  "raw_spec_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+                  "status": "resolved"
+                }
+              },
+              "module": "datastore:AddRecord",
+              "parameters": {
+                "datastore": "{{runtime.datastore.incomplete_leads}}"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "notes": [
+      {
+        "content": "<p>Offline portfolio demo candidate with fake lead fields and runtime setup placeholders.</p>",
+        "isFilterNote": false,
+        "metadata": {
+          "color": "#9138FE"
+        },
+        "moduleIds": [2]
+      }
+    ],
+    "placeholder_registry": [
+      {
+        "expected_type": "hook_id",
+        "handoff_instructions": "Create a Custom webhook in Make, then paste its hook ID before activation.",
+        "kind": "runtime_setup",
+        "placeholder": "runtime.webhook.lead_intake_hook",
+        "required": true,
+        "target_path": "/flow/0/parameters/hook"
+      },
+      {
+        "expected_type": "id",
+        "handoff_instructions": "Create or select the qualified leads Data Store, then paste its ID before activation.",
+        "kind": "runtime_setup",
+        "placeholder": "runtime.datastore.qualified_leads",
+        "required": true,
+        "target_path": "/flow/1/routes/0/flow/0/parameters/datastore"
+      },
+      {
+        "expected_type": "id",
+        "handoff_instructions": "Create or select the incomplete leads Data Store, then paste its ID before activation.",
+        "kind": "runtime_setup",
+        "placeholder": "runtime.datastore.incomplete_leads",
+        "required": true,
+        "target_path": "/flow/1/routes/1/flow/0/parameters/datastore"
+      }
+    ],
+    "scenario": {
+      "name": "lead-routing-importable-candidate"
+    },
+    "schedule": {
+      "id": "schedule:manual"
+    }
+  },
+  "name": "lead-routing-importable-candidate"
+}

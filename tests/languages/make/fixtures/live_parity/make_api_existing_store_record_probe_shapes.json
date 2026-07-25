@@ -1,0 +1,54 @@
+{
+  "api_doc_refs": [
+    "https://developers.make.com/api-documentation/api-reference/data-stores",
+    "https://developers.make.com/api-documentation/api-reference/data-stores/data",
+    "https://developers.make.com/api-documentation/api-reference/data-structures"
+  ],
+  "api_surface": "make_api_v2",
+  "blockers": [],
+  "capabilities_proven": [
+    "datastore_list",
+    "datastore_record_create",
+    "datastore_record_update",
+    "datastore_record_upsert_batch",
+    "datastore_record_delete_batch"
+  ],
+  "credential_value_transfer": false,
+  "credentials_printed": false,
+  "customer_data_used": false,
+  "live_make_called": true,
+  "provider_api_call": true,
+  "scenario_activation_called": false,
+  "scenario_run_once_called": false,
+  "schema_version": 1,
+  "scratch_key_deleted": true,
+  "secret_output": false,
+  "status": "existing_store_record_probe_captured",
+  "steps": [
+    {
+      "name": "data_stores_list",
+      "status": "ok"
+    },
+    {
+      "name": "data_stores_get_detail",
+      "status": "ok"
+    },
+    {
+      "name": "data_structures_get_for_existing_store",
+      "status": "ok"
+    },
+    {
+      "name": "data_store_records_create_existing_store_probe",
+      "status": "ok"
+    },
+    {
+      "name": "data_store_records_update_existing_store_probe",
+      "status": "ok"
+    },
+    {
+      "name": "cleanup_data_store_records_delete_probe_key",
+      "status": "ok"
+    }
+  ],
+  "validation_actor": "codex_terminal_make_api"
+}

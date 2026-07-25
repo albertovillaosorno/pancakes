@@ -1,0 +1,19 @@
+{
+  "assets": [
+    {
+      "asset_id": "public_scenario_link",
+      "status": "blocked_until_validation_passes",
+      "notes": "Create only after every scenario module resolves in the validated catalog."
+    },
+    {
+      "asset_id": "input_output_table_image",
+      "status": "ready_from_fake_fixtures",
+      "notes": "Can be generated from input_leads.json and expected_outputs.json."
+    },
+    {
+      "asset_id": "handoff_notes",
+      "status": "optional",
+      "notes": "Explain fake data, Data Store MVP destinations, validation blockers, and any next catalog entries needed."
+    }
+  ]
+}

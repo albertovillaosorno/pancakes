@@ -1,0 +1,25 @@
+{
+  "flow": [
+    {
+      "id": 1,
+      "mapper": {
+        "email": "{{1.email}}",
+        "route": "qualified"
+      },
+      "module": "datastore:AddRecord",
+      "parameters": {
+        "datastore": "demo_datastore_qualified_leads"
+      }
+    }
+  ],
+  "metadata": {
+    "notes": ["String notes are intentionally malformed until note normalization is handled."],
+    "scenario": {
+      "name": "invalid-metadata-note-string"
+    },
+    "schedule": {
+      "id": "schedule:manual"
+    }
+  },
+  "name": "invalid-metadata-note-string"
+}

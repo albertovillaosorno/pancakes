@@ -1,0 +1,189 @@
+{
+  "flow": [
+    {
+      "id": 1,
+      "mapper": {},
+      "metadata": {
+        "designer": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "module": "gateway:CustomWebHook",
+      "parameters": {}
+    },
+    {
+      "id": 2,
+      "module": "builtin:BasicRouter",
+      "routes": [
+        {
+          "filter": {
+            "conditions": {
+              "left": "{{1.score}}",
+              "op": "gte",
+              "right": 80
+            },
+            "name": "Qualified"
+          },
+          "flow": [
+            {
+              "id": 3,
+              "metadata": {
+                "raw_spec": {
+                  "catalog_module_id": "module:http:1.0:action:makeRequest",
+                  "issues": [],
+                  "raw_spec_sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+                  "status": "resolved"
+                }
+              },
+              "module": "http:MakeRequest",
+              "onerror": [
+                {
+                  "id": 11,
+                  "metadata": {
+                    "designer": {
+                      "x": 600,
+                      "y": 120
+                    }
+                  },
+                  "module": "builtin:Commit"
+                }
+              ],
+              "parameters": {
+                "url": "https://example.invalid"
+              },
+              "x-vendor-extra": {
+                "kept": true
+              }
+            },
+            {
+              "id": 4,
+              "mapper": {
+                "company": "{{1.company}}",
+                "email": "{{1.email}}",
+                "key": "{{1.email}}",
+                "notes": "{{1.notes}}",
+                "route": "qualified",
+                "score": "{{1.score}}",
+                "source": "{{1.source}}"
+              },
+              "metadata": {
+                "raw_spec": {
+                  "catalog_module_id": "module:datastore:2.0.5:action:AddRecord",
+                  "issues": [],
+                  "raw_spec_sha256": "03e44023e8be04f9da55f45afedb33f91b145e4d54566ab24db36bbbd28e2a99",
+                  "status": "resolved"
+                }
+              },
+              "module": "datastore:AddRecord",
+              "parameters": {
+                "datastore": "demo_datastore_qualified_leads"
+              }
+            }
+          ]
+        },
+        {
+          "filter": {
+            "conditions": {
+              "expression": "empty({{1.email}}) or empty({{1.company}}) or empty({{1.source}}) or {{1.score}} < 80"
+            },
+            "name": "Incomplete"
+          },
+          "flow": [
+            {
+              "id": 12,
+              "mapper": {
+                "company": "{{1.company}}",
+                "email": "{{1.email}}",
+                "key": "{{1.email}}",
+                "notes": "{{1.notes}}",
+                "route": "incomplete",
+                "score": "{{1.score}}",
+                "source": "{{1.source}}"
+              },
+              "metadata": {
+                "raw_spec": {
+                  "catalog_module_id": "module:datastore:2.0.5:action:AddRecord",
+                  "issues": [],
+                  "raw_spec_sha256": "03e44023e8be04f9da55f45afedb33f91b145e4d54566ab24db36bbbd28e2a99",
+                  "status": "resolved"
+                }
+              },
+              "module": "datastore:AddRecord",
+              "parameters": {
+                "datastore": "demo_datastore_review_queue"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "module": "builtin:Iterator",
+      "parameters": {}
+    },
+    {
+      "id": 6,
+      "module": "builtin:ArrayAggregator",
+      "parameters": {}
+    },
+    {
+      "id": 7,
+      "module": "ai-local-agent:RunLocalAIAgent",
+      "tools": [
+        {
+          "flow": [
+            {
+              "id": 8,
+              "mapper": {
+                "prompt": "{{7.result}}"
+              },
+              "module": "mcp:runTools"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "module": "missing",
+      "opaque": {
+        "future": "value"
+      }
+    }
+  ],
+  "future_root_field": {
+    "preserve": true
+  },
+  "metadata": {
+    "expect": [
+      {
+        "name": "result"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "lead"
+      }
+    ],
+    "scenario": {
+      "name": "lead-routing-demo"
+    },
+    "notes": [
+      {
+        "content": "<p>Synthetic handoff note anchored to the HTTP request.</p>",
+        "isFilterNote": false,
+        "metadata": {
+          "color": "#9138FE"
+        },
+        "moduleIds": [3]
+      }
+    ],
+    "schedule": {
+      "id": "schedule:daily",
+      "interval": "day"
+    }
+  },
+  "name": "lead-routing-demo"
+}

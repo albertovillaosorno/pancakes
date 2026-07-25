@@ -1,0 +1,78 @@
+{
+  "flow": [
+    {
+      "id": 1,
+      "mapper": {
+        "company": "{{1.company}}",
+        "email": "{{1.email}}",
+        "score": "{{1.score}}",
+        "source": "{{1.source}}"
+      },
+      "module": "gateway:CustomWebHook",
+      "parameters": {}
+    },
+    {
+      "id": 2,
+      "module": "builtin:BasicRouter",
+      "routes": [
+        {
+          "filter": {
+            "conditions": {
+              "expression": "not empty({{1.email}}) and {{1.score}} >= 80"
+            },
+            "name": "Qualified"
+          },
+          "flow": [
+            {
+              "id": 3,
+              "mapper": {
+                "company": "{{1.company}}",
+                "email": "{{1.email}}",
+                "route": "qualified",
+                "score": "{{1.score}}",
+                "source": "{{1.source}}"
+              },
+              "module": "datastore:AddRecord",
+              "parameters": {
+                "datastore": "demo_datastore_qualified_leads"
+              }
+            }
+          ]
+        },
+        {
+          "filter": {
+            "conditions": {
+              "expression": "empty({{1.email}}) or {{1.score}} < 80"
+            },
+            "name": "Review"
+          },
+          "flow": [
+            {
+              "id": 4,
+              "mapper": {
+                "company": "{{1.company}}",
+                "email": "{{1.email}}",
+                "route": "review",
+                "score": "{{1.score}}",
+                "source": "{{1.source}}"
+              },
+              "module": "datastore:AddRecord",
+              "parameters": {
+                "datastore": "demo_datastore_review_queue"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "scenario": {
+      "name": "router-owned-routes"
+    },
+    "schedule": {
+      "id": "schedule:manual"
+    }
+  },
+  "name": "router-owned-routes"
+}

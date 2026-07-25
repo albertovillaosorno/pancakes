@@ -1,0 +1,10 @@
+[
+  {
+    "category": "setupreq",
+    "severity": "error",
+    "message": "The module is not set up.",
+    "module": "google-sheets:addRow",
+    "node_id": "2",
+    "evidence_path": "$.flow[1].metadata.designer.messages[0]"
+  }
+]

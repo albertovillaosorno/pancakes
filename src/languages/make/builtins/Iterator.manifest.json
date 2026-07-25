@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "asset": "make_module_projector_manifest",
+  "visibility": "private_engine_asset",
+  "module": "builtin:Iterator",
+  "aliases": [
+    "builtin:BasicFeeder",
+    "util:Iterator",
+    "tools:Iterator",
+    "builtin.iterator",
+    "iterator"
+  ],
+  "native_token": "builtin:Iterator",
+  "version_policy": {
+    "kind": "fixed",
+    "version": 1
+  },
+  "projector": {
+    "kind": "array_iterator"
+  },
+  "mapper_policy": {
+    "kind": "array_input",
+    "required_keys": ["array"]
+  },
+  "parameters_policy": {
+    "required_keys": ["array"]
+  },
+  "metadata_expect_policy": {
+    "kind": "array_input",
+    "required_keys": ["array"]
+  },
+  "metadata_restore_policy": {
+    "kind": "none"
+  },
+  "metadata_interface_policy": {
+    "kind": "iterator_item_output"
+  },
+  "connection_projection_policy": {
+    "kind": "none"
+  },
+  "placeholder_policy": {
+    "mode": "none",
+    "placeholders": []
+  },
+  "volatile_field_policy": {
+    "known_paths": [
+      "metadata.designer"
+    ]
+  },
+  "zero_trace_constraints": {
+    "private_fields_forbidden": true,
+    "customer_artifact": false
+  },
+  "roundtrip_behavior": {
+    "status": "course_evidence",
+    "notes": "Iterator splits a mapped array into downstream bundles; missing array input is ambiguous."
+  },
+  "confidence": "medium",
+  "fixtures": [
+      "src/languages/make/data/golden/data/public/priority/Social Media Content & Scheduling Agent.blueprint.json",
+      "tests/mcp/tool_contracts/mcp_make_builtin_manifest_contract.py",
+    "tests/blueprints/validation/blueprint_validation_contract.py"
+  ],
+  "last_evidence_source": "course_evidence"
+}

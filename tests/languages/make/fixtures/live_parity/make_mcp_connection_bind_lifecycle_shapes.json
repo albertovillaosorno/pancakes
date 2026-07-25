@@ -1,0 +1,103 @@
+{
+  "api_surface": "make_mcp_typed_tools",
+  "capabilities_proven": [
+    "connection_bind_to_module",
+    "connection_list_metadata",
+    "scenario_create",
+    "scenario_export"
+  ],
+  "cleanup_counts": {
+    "scratch_scenarios": 0
+  },
+  "component_extraction_shape": {
+    "connections": [
+      {
+        "componentType": "account",
+        "id": "account_1",
+        "moduleTargets": {
+          "__IMTCONN__": ["int"]
+        },
+        "scope": ["str"],
+        "typeName": "google-email"
+      }
+    ],
+    "dataStores": [],
+    "dataStructures": [],
+    "hooks": [],
+    "keys": []
+  },
+  "connection_list_shape": {
+    "accountName": "google-email",
+    "accountType": "oauth",
+    "id": "int",
+    "metadata_value": "redacted",
+    "scoped": "bool",
+    "teamId": "int"
+  },
+  "credential_value_transfer": false,
+  "credentials_printed": false,
+  "customer_data_used": false,
+  "live_make_called": true,
+  "provider_api_call": true,
+  "request_contract": {
+    "scenario_create": {
+      "blueprint.flow[0].metadata.parameters[__IMTCONN__].type": "account:google-email",
+      "blueprint.flow[0].module": "google-email:sendAnEmail",
+      "blueprint.flow[0].parameters.__IMTCONN__": "int",
+      "confirmed": "bool_true",
+      "scheduling.type": "immediately",
+      "teamId": "int"
+    }
+  },
+  "scenario_activation_called": false,
+  "scenario_create_response_shape": {
+    "hookId": "none",
+    "id": "int",
+    "isActive": "bool_false",
+    "isinvalid": "bool_false",
+    "scheduling": {
+      "type": "immediately"
+    },
+    "teamId": "int",
+    "usedPackages": ["google-email"]
+  },
+  "scenario_delete_response": "Scenario has been deleted.",
+  "scenario_get_blueprint_contract": {
+    "$.blueprint.flow[0].metadata.parameters[0].type": "account:google-email",
+    "$.blueprint.flow[0].module": "google-email:sendAnEmail",
+    "$.blueprint.flow[0].parameters.__IMTCONN__": "int",
+    "$.hookId": "none",
+    "$.isActive": "bool_false"
+  },
+  "scenario_run_once_called": false,
+  "schema_version": 1,
+  "secret_output": false,
+  "status": "connection_bind_lifecycle_probe_captured",
+  "steps": [
+    {
+      "name": "connections_list_metadata_redacted",
+      "status": "ok"
+    },
+    {
+      "name": "extract_module_components_google_email_send",
+      "status": "ok"
+    },
+    {
+      "name": "scenarios_create_inactive_connection_bound_module",
+      "status": "ok"
+    },
+    {
+      "name": "scenarios_get_export_bound_connection",
+      "status": "ok"
+    },
+    {
+      "name": "cleanup_scenarios_delete",
+      "status": "ok"
+    },
+    {
+      "name": "cleanup_scratch_scenarios_count",
+      "status": "empty"
+    }
+  ],
+  "validation_actor": "codex_make_mcp_typed_tools"
+}

@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "asset": "make_module_projector_manifest",
+  "visibility": "private_engine_asset",
+  "module": "util:FunctionIncrement",
+  "aliases": ["increment", "increment function", "tools:Increment"],
+  "native_token": "util:FunctionIncrement",
+  "version_policy": {
+    "kind": "fixed",
+    "version": 1
+  },
+  "projector": {
+    "kind": "function_increment"
+  },
+  "mapper_policy": {
+    "kind": "none",
+    "required_keys": []
+  },
+  "parameters_policy": {
+    "required_keys": ["reset"]
+  },
+  "metadata_expect_policy": {
+    "kind": "none"
+  },
+  "metadata_restore_policy": {
+    "kind": "reset_selector",
+    "required_keys": ["reset"]
+  },
+  "metadata_interface_policy": {
+    "kind": "counter_output",
+    "required_keys": ["i"]
+  },
+  "connection_projection_policy": {
+    "kind": "none"
+  },
+  "placeholder_policy": {
+    "mode": "none",
+    "placeholders": []
+  },
+  "volatile_field_policy": {
+    "known_paths": ["metadata.designer", "metadata.restore.reset.label"]
+  },
+  "zero_trace_constraints": {
+    "private_fields_forbidden": true,
+    "customer_artifact": false
+  },
+  "roundtrip_behavior": {
+    "status": "fixture_observed",
+    "notes": "Increment function emits an incrementing i value and reset policy."
+  },
+  "confidence": "medium",
+  "fixtures": [
+    "src/languages/make/data/golden/data/public/top100/061-2952-2952-controlled-distribution-of-data-flow.blueprint.json"
+  ],
+  "last_evidence_source": "local_fixture"
+}

@@ -1,0 +1,49 @@
+{
+  "name": "Golden reference",
+  "metadata": {
+    "schedule": {
+      "type": "manual"
+    }
+  },
+  "flow": [
+    {
+      "id": 1,
+      "module": "http:MakeRequest",
+      "mapper": {
+        "url": "https://example.invalid/api"
+      },
+      "metadata": {
+        "designer": {
+          "x": 10,
+          "y": 20
+        }
+      }
+    },
+    {
+      "id": 2,
+      "module": "builtin:BasicRouter",
+      "routes": [
+        {
+          "filter": {
+            "condition": "{{1.status}} = \"ok\""
+          },
+          "flow": [
+            {
+              "id": 3,
+              "module": "tools:SetVariable",
+              "mapper": {
+                "value": "{{1.body}}"
+              }
+            }
+          ]
+        }
+      ],
+      "metadata": {
+        "designer": {
+          "x": 300,
+          "y": 20
+        }
+      }
+    }
+  ]
+}

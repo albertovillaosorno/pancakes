@@ -1,0 +1,122 @@
+{
+  "api_surface": "make_mcp_typed_tools",
+  "capabilities_proven": [
+    "scenario_module_error_inspection",
+    "connection_requirement_extraction",
+    "scenario_create",
+    "scenario_export"
+  ],
+  "cleanup_counts": {
+    "scratch_scenarios": 0
+  },
+  "component_extraction_shape": {
+    "connections": [
+      {
+        "componentType": "account",
+        "id": "account_1",
+        "moduleIds": [
+          1
+        ],
+        "moduleTargets": {
+          "__IMTCONN__": [
+            1
+          ]
+        },
+        "scope": [
+          "str",
+          "str"
+        ],
+        "typeName": "google-email"
+      }
+    ],
+    "dataStores": [],
+    "dataStructures": [],
+    "hooks": [],
+    "keys": []
+  },
+  "credential_value_transfer": false,
+  "credentials_printed": false,
+  "customer_data_used": false,
+  "interpretation": {
+    "component_extraction_is_required": true,
+    "is_invalid_is_not_requirement_oracle": true,
+    "missing_connection_target": "__IMTCONN__"
+  },
+  "live_make_called": true,
+  "provider_api_call": true,
+  "request_contract": {
+    "scenario_create": {
+      "blueprint.flow[0].mapper.to": "safe_example_invalid_domain",
+      "blueprint.flow[0].module": "google-email:sendAnEmail",
+      "blueprint.flow[0].parameters": {},
+      "blueprint.flow[0].version": 4,
+      "confirmed": "bool_true",
+      "scheduling.type": "immediately",
+      "teamId": "int"
+    },
+    "validate_blueprint_schema": {
+      "message": "Blueprint is valid against the schema."
+    }
+  },
+  "scenario_activation_called": false,
+  "scenario_create_response_shape": {
+    "hookId": "none",
+    "id": "int",
+    "isActive": "bool_false",
+    "isinvalid": "bool_false",
+    "scheduling": {
+      "type": "immediately"
+    },
+    "teamId": "int",
+    "usedPackages": [
+      "google-email"
+    ]
+  },
+  "scenario_delete_response": "Scenario has been deleted.",
+  "scenario_get_blueprint_contract": {
+    "$.blueprint.flow[0].module": "google-email:sendAnEmail",
+    "$.blueprint.flow[0].parameters": {},
+    "$.blueprint.flow[0].version": 4,
+    "$.blueprint.interface.input": [],
+    "$.blueprint.interface.output": [],
+    "$.blueprint.metadata.instant": "bool_true",
+    "$.hookId": "none",
+    "$.isActive": "bool_false",
+    "$.isinvalid": "bool_false"
+  },
+  "scenario_interface_shape": {
+    "input": [],
+    "output": []
+  },
+  "scenario_run_once_called": false,
+  "schema_version": 1,
+  "secret_output": false,
+  "status": "module_requirement_extraction_probe_captured",
+  "steps": [
+    {
+      "name": "validate_blueprint_schema_missing_connection_module",
+      "status": "ok"
+    },
+    {
+      "name": "scenarios_create_missing_connection_inactive",
+      "status": "ok"
+    },
+    {
+      "name": "scenarios_get_missing_connection_export",
+      "status": "ok"
+    },
+    {
+      "name": "extract_blueprint_components_account_target",
+      "status": "ok"
+    },
+    {
+      "name": "cleanup_scenarios_delete",
+      "status": "ok"
+    },
+    {
+      "name": "cleanup_scratch_scenarios_count",
+      "status": "empty"
+    }
+  ],
+  "validation_actor": "codex_make_mcp_typed_tools"
+}
