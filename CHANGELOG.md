@@ -1,5 +1,8 @@
 # Changelog
 
+> Entries before 2026-07-25 are preserved from the pre-reset history; their
+> hashes refer to that earlier Git history.
+
 ## 2026-07-25
 
 - Marked Pancakes as an unmaintained historical project without archiving the repository.
